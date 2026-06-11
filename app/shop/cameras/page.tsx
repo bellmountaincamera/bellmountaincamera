@@ -1,0 +1,42 @@
+import type { Metadata } from "next";
+import { ProductCard } from "@/components/ui/ProductCard";
+import { PageHeader } from "@/components/ui/PageHeader";
+import { TerminalLabel } from "@/components/ui/TerminalLabel";
+import { getCameraProducts } from "@/lib/products";
+
+export const metadata: Metadata = {
+  title: "Shop Cameras",
+  description:
+    "Shop used film cameras from Bell Mountain Camera with condition notes, tested status, local pickup, and shipping support."
+};
+
+export default function ShopCamerasPage() {
+  const cameras = getCameraProducts();
+
+  return (
+    <main>
+      <PageHeader
+        label="Camera Shelf"
+        title="Shop Cameras"
+        description="Used camera inventory changes often. Contact BMC with any questions about condition, functionality, or availability."
+        meta={["USED CAMERAS", "SOLD STATUS", "SHIPPING + PICKUP"]}
+      />
+      <section className="mx-auto grid max-w-7xl gap-8 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
+        <div>
+          <TerminalLabel>Listing Details</TerminalLabel>
+          <p className="mt-5 text-sm leading-7 text-[#4a4036]">
+            Camera product pages are structured for tested status, known
+            issues, cosmetic condition, light meter status, battery compartment
+            condition, lens condition, sample photos when available, return
+            policy, and sold-as-is language if needed.
+          </p>
+        </div>
+        <div className="grid gap-px overflow-hidden border border-[#111111]/20 bg-[#111111]/20">
+          {cameras.map((product) => (
+            <ProductCard key={product.slug} product={product} />
+          ))}
+        </div>
+      </section>
+    </main>
+  );
+}

@@ -1,0 +1,204 @@
+export const site = {
+  name: "Bell Mountain Camera",
+  abbreviation: "BMC",
+  domain: "bellmountaincamera.com",
+  owner: "Isai Torres",
+  email: "bellmountaincamera@gmail.com",
+  phone: "760-669-8544",
+  instagram: "@bellmountaincamera",
+  locationName: "Inside Wild Goose Vintage & Thrift Store",
+  street: "21810 CA-18 Unit #2",
+  cityStateZip: "Apple Valley, CA 92307",
+  hoursShort: "Tuesday - Saturday, 10 AM - 4 PM",
+  hours: [
+    { days: "Tuesday - Saturday", time: "10:00 AM - 4:00 PM" },
+    { days: "Sunday - Monday", time: "Closed" }
+  ],
+  locationCopy:
+    "Bell Mountain Camera is located inside Wild Goose Vintage & Thrift Store in Apple Valley, California. Walk-ins are welcome Tuesday through Saturday from 10 AM to 4 PM, or customers can contact BMC to set up an appointment.",
+  description:
+    "Bell Mountain Camera is a High Desert film camera shop and film lab located inside Wild Goose Vintage & Thrift Store in Apple Valley, California. BMC offers film cameras, film stock, online shopping, shipping, local pickup, film development, scanning, film drop-off and pickup, and basic camera services.",
+  nav: [
+    { href: "/", label: "Home" },
+    { href: "/lab", label: "Film Lab" },
+    { href: "/shop", label: "Shop" },
+    { href: "/services", label: "Services" },
+    { href: "/about", label: "About" },
+    { href: "/contact", label: "Contact" }
+  ]
+};
+
+export const services = [
+  {
+    title: "Film Development",
+    code: "PROCESS: C-41",
+    text: "35mm C-41 film development for local drop-off and pickup in Apple Valley."
+  },
+  {
+    title: "Film Scanning",
+    code: "STATUS: SCANNED",
+    text: "Digital scan delivery through a download link so customers can save, share, and back up files."
+  },
+  {
+    title: "Film Drop-off / Pickup",
+    code: "FILM RECEIVED",
+    text: "Walk in during business hours to drop off film, pick up negatives, or ask about the current lab queue."
+  },
+  {
+    title: "Film Cameras",
+    code: "SHELF: 35MM",
+    text: "Used film cameras for the High Desert film community, with availability, sold status, local pickup, and shipping support."
+  },
+  {
+    title: "Film Stock",
+    code: "COLD STORE",
+    text: "Practical 35mm, 110, instant, and specialty film stock for online purchase, shipping, and local pickup."
+  },
+  {
+    title: "Basic Camera Service",
+    code: "SERVICE INTAKE",
+    text: "Diagnosis, cleaning, light seal replacement, and basic shutter speed adjustment when possible."
+  }
+];
+
+export const sampleRoll = [
+  "ROLL NO. 4821",
+  "PROCESS: C-41",
+  "STATUS: SCANNED",
+  "DELIVERY: DIGITAL"
+];
+
+export const statusBoard = [
+  ["C-41 Development", "Available"],
+  ["Film Scanning", "Available"],
+  ["Camera Service Intake", "Available"],
+  ["Film Stock", "Rotating"],
+  ["Online Orders", "Planned"],
+  ["Local Pickup", "Available"],
+  ["Walk-Ins", "Welcome"]
+];
+
+export const labWorkflow = [
+  {
+    step: "01",
+    title: "Drop off your film",
+    text: "Bring 35mm film to Bell Mountain Camera inside Wild Goose Vintage & Thrift Store during business hours."
+  },
+  {
+    step: "02",
+    title: "Order and rolls are logged",
+    text: "BMC logs each order and tracks rolls with order numbers and roll numbers."
+  },
+  {
+    step: "03",
+    title: "Film is developed",
+    text: "C-41 color negative film is processed through a hands-on lab workflow."
+  },
+  {
+    step: "04",
+    title: "Film is scanned",
+    text: "Rolls are scanned and prepared for digital delivery."
+  },
+  {
+    step: "05",
+    title: "Scans are delivered",
+    text: "Scans are delivered digitally through a download link. Download and back up your files after delivery."
+  }
+];
+
+export const filmStock = [
+  "Kodak Gold",
+  "Kodak Ultramax",
+  "Kodak Tri-X",
+  "Kodak ColorPlus",
+  "Kodak Portra",
+  "Kodak Ektar",
+  "Kodak single-use cameras",
+  "REFLX Lab film",
+  "Lucky film",
+  "Occasional specialty 35mm film"
+];
+
+export const shopInventoryFields = [
+  "Camera name",
+  "Brand",
+  "Model",
+  "Format",
+  "Condition",
+  "Tested status",
+  "Lens included",
+  "Notes",
+  "Price",
+  "Availability"
+];
+
+export const cameraServiceMenu = [
+  {
+    title: "Diagnose",
+    price: "$15",
+    text: "Inspection of overall camera condition and basic function, including light leaks, shutter behavior, film transport, and general function."
+  },
+  {
+    title: "Cleaning",
+    price: "$45",
+    text: "Basic cleaning of the camera body, film compartment, battery contacts, and accessible viewfinder areas."
+  },
+  {
+    title: "Shutter Speed Adjustment",
+    price: "$40",
+    text: "Basic shutter speed adjustment when possible."
+  },
+  {
+    title: "Light Seal Replacement",
+    price: "$40",
+    text: "Replacement of deteriorated light seals."
+  },
+  {
+    title: "Full Service",
+    price: "$125",
+    text: "A bundled basic service intake for cameras that need diagnosis, cleaning, light seals, and shutter speed adjustment when possible."
+  }
+];
+
+export const serviceBundles = [
+  { title: "Diagnose + Cleaning", price: "$55" },
+  { title: "Diagnose + Light Seals", price: "$50" },
+  { title: "Diagnose + Shutter Speed Adjustment", price: "$50" },
+  { title: "Full Service", price: "$125" }
+];
+
+export const filmLabPricing = [
+  {
+    title: "35mm C-41 Develop Only",
+    price: "$__",
+    text: "Editable pricing field for 35mm C-41 film development."
+  },
+  {
+    title: "35mm C-41 Develop + Standard Scan",
+    price: "$__",
+    text: "Editable pricing field for standard develop and scan."
+  },
+  {
+    title: "35mm C-41 Develop + High-Res Scan",
+    price: "$__",
+    text: "Editable pricing field for high-resolution develop and scan."
+  },
+  {
+    title: "Scan Only",
+    price: "$__",
+    text: "Editable pricing field for scan-only orders."
+  },
+  {
+    title: "Push / Pull",
+    price: "$__",
+    text: "Editable pricing field if push or pull processing is offered."
+  },
+  {
+    title: "Rush Service",
+    price: "$__",
+    text: "Editable pricing field if rush service is offered."
+  }
+];
+
+export const filmLabDisclaimer =
+  "Film processing carries inherent risk due to film age, exposure, storage condition, camera condition, and development variables. Bell Mountain Camera is not responsible for blank rolls, pre-existing film damage, camera loading issues, heat damage, expired film damage, or exposure problems.";
