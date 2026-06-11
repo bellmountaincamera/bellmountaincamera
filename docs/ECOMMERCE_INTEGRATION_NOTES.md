@@ -1,42 +1,113 @@
 # Ecommerce Integration Notes
 
 Bell Mountain Camera is currently ecommerce-ready at the frontend level only.
-Payments, live cart state, shipping rates, inventory sync, and order emails are
-not connected yet.
+Payments, Shopify checkout, live cart state, shipping rates, inventory sync, and
+order emails are not connected yet.
 
-## Current Product Shape
+## Provider Decision
 
-Products live in `lib/products.ts` and are intentionally provider-neutral. The
-shape is prepared to map to Shopify, Square, Stripe Checkout, or Snipcart:
+Use Shopify as the ecommerce backend while keeping this Next.js site as the
+custom public frontend.
 
-- `id`
-- `slug`
-- `name`
-- `brand`
-- `category`
-- `price`
-- `status` / `inventoryStatus`
-- `quantity`
-- `image` / `images`
-- `localPickup`
-- `shippingAvailable`
-- `description`
-- camera-only fields such as `condition`, `testedStatus`, `included`, and `notes`
+Shopify was chosen because BMC needs product editing without rebuilding the
+site, inventory tracking, shipping, local pickup, one-off used camera listings,
+product photos, sold-out handling, and a clear path toward in-person sales
+support. Stripe Checkout would be simpler to wire to the current mock product
+data, but it would not give Isai a practical store admin for rotating film and
+camera inventory.
 
-## Provider Fit
+## What Shopify Will Handle
 
-- **Shopify**: best if BMC wants a full store backend, inventory management,
-  discount codes, order management, shipping tools, and admin editing.
-- **Square**: strong option if BMC already plans to use Square point-of-sale in
-  the physical shop.
-- **Stripe Checkout**: cleanest developer-owned option if BMC wants to keep this
-  Next.js site and add a focused checkout without a full storefront backend.
-- **Snipcart**: quickest static-site cart option if BMC wants a lightweight
-  cart while keeping product data mostly in code.
+- Product records
+- Product photos
+- Inventory quantities
+- Sold-out status
+- Used camera quantity-one listings
+- Cart and hosted checkout
+- Payments
+- Shipping setup
+- Local pickup setup
+- Taxes
+- Discount codes if needed later
+- Order confirmations and order records
 
-## Recommendation
+## What Next.js Will Handle
 
-For the current code structure, Stripe Checkout is the cleanest next technical
-step because the site already has product data, static pages, and no CMS. If BMC
-needs easy non-code inventory editing immediately, Shopify or Square should be
-chosen before connecting checkout.
+- Bell Mountain Camera public frontend
+- Brand styling, page layout, and SEO
+- Product listing and product detail presentation
+- Film lab, services, about, contact, FAQ, and policy pages
+- Cart/checkout preview pages until Shopify checkout is connected
+- Mock product fallback while Shopify credentials/products are not connected
+
+## Required Environment Variables
+
+Add these only when Shopify integration is implemented:
+
+- `SHOPIFY_STORE_DOMAIN`
+- `SHOPIFY_STOREFRONT_ACCESS_TOKEN`
+- `SHOPIFY_API_VERSION`
+
+Do not expose Shopify Admin API tokens in frontend code. Admin tokens, private
+app secrets, Vercel tokens, and payment credentials must stay out of Git.
+
+## Product Mapping Notes
+
+Local products live in `lib/products.ts` and now include fields that can map to
+Shopify:
+
+- `externalProvider`
+- `externalProductId`
+- `externalVariantId`
+- `sku`
+- `barcode`
+- `weight`
+- `taxable`
+- `requiresShipping`
+- `pickupEligible`
+- `conditionGrade`
+- `soldAt`
+
+For Shopify, `externalProductId` should map to the Shopify product ID and
+`externalVariantId` should map to the Shopify variant ID. The local `slug`
+should map to the Shopify handle.
+
+## Used Camera Notes
+
+Each used camera should be its own Shopify product with quantity `1`. Public
+fields should include condition, tested status, included lens/accessories,
+known issues, photos, price, shipping availability, and local pickup
+availability. Private serial numbers or internal buying notes should not be
+stored in public frontend data.
+
+## Local Pickup Notes
+
+Local pickup should be configured in Shopify for:
+
+Bell Mountain Camera  
+Inside Wild Goose Vintage & Thrift Store  
+21810 CA-18 Unit #2  
+Apple Valley, CA 92307
+
+Pickup hours: Tuesday - Saturday, 10:00 AM - 4:00 PM.
+
+## Shipping Notes
+
+Shipping is planned but not finalized. Shopify should eventually own shipping
+rates, shipping zones, carrier rules, and order fulfillment settings. The
+public shipping policy remains editable until final rules are confirmed.
+
+## Current Preview Status
+
+- Cart remains `Cart Preview`.
+- Checkout remains `Checkout Preview`.
+- Order confirmation remains `Order Confirmation Preview`.
+- Product CTAs remain contact/pickup focused.
+- Do not show `Buy Now`, `Add to Cart`, `Complete Order`, or `Pay Now` until
+  Shopify checkout is connected and tested.
+
+## Mock Data Still In Use
+
+The site currently uses `lib/products.ts` as mock/fallback data. `lib/commerce.ts`
+provides a provider boundary, and `lib/shopify.ts` contains placeholder
+configuration/mapping helpers. No live Shopify API calls are made yet.

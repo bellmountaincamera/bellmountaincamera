@@ -14,6 +14,8 @@ export type ProductCategory =
   | "110 film"
   | "Specialty film";
 
+export type ExternalProvider = "mock" | "shopify" | "square" | "stripe";
+
 export type BaseProduct = {
   id?: string;
   slug: string;
@@ -29,6 +31,16 @@ export type BaseProduct = {
   images?: string[];
   description: string;
   featured?: boolean;
+  externalProvider?: ExternalProvider;
+  externalProductId?: string;
+  externalVariantId?: string;
+  sku?: string;
+  barcode?: string;
+  weight?: number;
+  taxable?: boolean;
+  requiresShipping?: boolean;
+  pickupEligible?: boolean;
+  soldAt?: string | null;
 };
 
 export type FilmProduct = BaseProduct & {
@@ -48,15 +60,16 @@ export type CameraProduct = BaseProduct & {
   testedStatus: string;
   included: string;
   notes: string;
+  conditionGrade?: string;
 };
 
 export type Product = FilmProduct | CameraProduct;
 
 // Ecommerce integration notes:
-// - Shopify/Square can use `id` as the external product or variation id.
-// - Stripe Checkout can map `slug`, `name`, `price`, `images`, and quantity to Price/Product records.
-// - Snipcart can map `slug`, `name`, `price`, `inventoryStatus`, and shipping flags to item attributes.
-// Keep provider-specific ids optional until BMC chooses a checkout platform.
+// - Shopify can map `externalProductId` and `externalVariantId` to product/variant IDs.
+// - Square can map those same fields to catalog item and variation IDs.
+// - Stripe Checkout can map `slug`, `name`, `price`, `images`, and quantity to Product/Price records.
+// - Keep private/internal notes, serials, admin tokens, and provider secrets out of this public product data.
 
 export const productCategories: ProductCategory[] = [
   "Film",
@@ -67,7 +80,56 @@ export const productCategories: ProductCategory[] = [
   "Specialty film"
 ];
 
-export const products: Product[] = [
+type CommerceManagedFields =
+  | "id"
+  | "externalProvider"
+  | "externalProductId"
+  | "externalVariantId"
+  | "sku"
+  | "barcode"
+  | "weight"
+  | "taxable"
+  | "requiresShipping"
+  | "pickupEligible"
+  | "soldAt"
+  | "images";
+
+type ProductSeed =
+  | Omit<FilmProduct, CommerceManagedFields>
+  | Omit<CameraProduct, CommerceManagedFields>;
+
+function toSku(slug: string) {
+  return `BMC-${slug.replaceAll("-", "_").toUpperCase()}`;
+}
+
+function withMockCommerceFields(product: ProductSeed): Product {
+  const base = {
+    ...product,
+    id: `mock_${product.slug}`,
+    externalProvider: "mock" as const,
+    externalProductId: undefined,
+    externalVariantId: undefined,
+    sku: toSku(product.slug),
+    barcode: undefined,
+    weight: product.kind === "camera" ? 2 : 0.1,
+    taxable: true,
+    requiresShipping: product.shippingAvailable,
+    pickupEligible: product.localPickup,
+    soldAt: product.status === "Sold" ? new Date().toISOString() : null,
+    images: [product.image]
+  };
+
+  if (base.kind === "camera") {
+    return {
+      ...base,
+      quantity: base.status === "Sold" ? 0 : Math.min(base.quantity || 1, 1)
+    };
+  }
+
+  return base;
+}
+
+const mockProducts: ProductSeed[] = [
   {
     kind: "film",
     slug: "reflex-lab-400d",
@@ -346,6 +408,8 @@ export const products: Product[] = [
       "A future product listing area for one-off used film cameras with condition notes, tested status, lens details, price, shipping, and pickup options."
   }
 ];
+
+export const products: Product[] = mockProducts.map(withMockCommerceFields);
 
 export function formatPrice(price: number) {
   if (price === 0) {

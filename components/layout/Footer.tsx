@@ -49,8 +49,6 @@ export function Footer() {
                 { href: "/returns", label: "Returns" },
                 { href: "/policies", label: "Policies" },
                 { href: "/local-pickup", label: "Local Pickup" },
-                { href: "/film-lab-policy", label: "Film Lab Policy" },
-                { href: "/used-camera-policy", label: "Used Camera Policy" },
                 { href: "/faq", label: "FAQ" }
               ].map((item) => (
                 <Link

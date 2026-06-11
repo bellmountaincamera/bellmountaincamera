@@ -96,8 +96,8 @@ export default function ShopPage() {
           <CTAButton href="/returns" variant="secondary">
             Returns Policy
           </CTAButton>
-          <CTAButton href="/store-policy" variant="secondary">
-            Store Policy
+          <CTAButton href="/policies" variant="secondary">
+            Store Policies
           </CTAButton>
           <CTAButton href="/faq" variant="secondary">
             FAQ

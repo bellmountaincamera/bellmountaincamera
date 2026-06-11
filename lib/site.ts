@@ -73,7 +73,8 @@ export const statusBoard = [
   ["Film Scanning", "Available"],
   ["Camera Service Intake", "Available"],
   ["Film Stock", "Rotating"],
-  ["Online Orders", "Planned"],
+  ["Online Orders", "Coming Soon"],
+  ["Shipping", "Planned"],
   ["Local Pickup", "Available"],
   ["Walk-Ins", "Welcome"]
 ];
@@ -202,3 +203,6 @@ export const filmLabPricing = [
 
 export const filmLabDisclaimer =
   "Film processing carries inherent risk due to film age, exposure, storage condition, camera condition, and development variables. Bell Mountain Camera is not responsible for blank rolls, pre-existing film damage, camera loading issues, heat damage, expired film damage, or exposure problems.";
+
+export const serviceDisclaimer =
+  "Service depends on the camera model, condition, and issue. Some cameras may need parts or repairs beyond what Bell Mountain Camera can provide in-house.";
