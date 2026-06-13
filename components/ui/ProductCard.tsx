@@ -14,7 +14,7 @@ type ProductCardProps = {
 
 export function ProductCard({ product }: ProductCardProps) {
   return (
-    <article className="bg-[#f3eee5] p-4">
+    <article className="group bg-[#FAFAF8] p-4 transition-colors hover:bg-[#FFFFFF]">
       <Link href={`/shop/${product.slug}`} className="block">
         <ProductImage
           src={getProductImages(product)[0]}
@@ -22,31 +22,31 @@ export function ProductCard({ product }: ProductCardProps) {
           label={product.name}
         />
       </Link>
-      <div className="mt-4 flex items-start justify-between gap-4">
+      <div className="mt-4 flex items-start justify-between gap-4 border-t border-[#D8D8D2] pt-4">
         <div>
-          <p className="mono text-[0.68rem] uppercase tracking-[0.14em] text-[#8c7b6a]">
-            {product.category}
+          <p className="mono text-[0.68rem] uppercase tracking-[0.14em] text-[#2457C5]">
+            INV / {product.category}
           </p>
           <h3 className="mt-2 text-lg font-semibold uppercase tracking-[0.03em]">
             <Link href={`/shop/${product.slug}`}>{product.name}</Link>
           </h3>
         </div>
-        <p className="mono text-xs font-semibold uppercase tracking-[0.12em] text-[#6f604f]">
+        <p className="mono text-xs font-semibold uppercase tracking-[0.12em] text-[#111111]">
           {formatPrice(product.price)}
         </p>
       </div>
-      <p className="mt-3 text-sm leading-6 text-[#4a4036]">{product.description}</p>
+      <p className="mt-3 text-sm leading-6 text-[#333333]">{product.description}</p>
       <div className="mt-4 flex flex-wrap gap-2">
-        <span className="mono border border-[#111111]/20 px-2 py-1 text-[0.65rem] uppercase tracking-[0.12em] text-[#6f604f]">
+        <span className="mono border border-[#2457C5] px-2 py-1 text-[0.65rem] uppercase tracking-[0.12em] text-[#2457C5]">
           {getInventoryStatus(product)}
         </span>
         {product.localPickup ? (
-          <span className="mono border border-[#111111]/20 px-2 py-1 text-[0.65rem] uppercase tracking-[0.12em] text-[#6f604f]">
+          <span className="mono border border-[#D8D8D2] px-2 py-1 text-[0.65rem] uppercase tracking-[0.12em] text-[#666666]">
             Local Pickup
           </span>
         ) : null}
         {product.shippingAvailable ? (
-          <span className="mono border border-[#111111]/20 px-2 py-1 text-[0.65rem] uppercase tracking-[0.12em] text-[#6f604f]">
+          <span className="mono border border-[#D8D8D2] px-2 py-1 text-[0.65rem] uppercase tracking-[0.12em] text-[#666666]">
             Ships
           </span>
         ) : null}

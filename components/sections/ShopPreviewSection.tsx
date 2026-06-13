@@ -1,3 +1,5 @@
+import { AsciiLineLogo } from "@/components/brand/AsciiLineLogo";
+import { TerminalDivider } from "@/components/brand/TerminalDivider";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { ProductCard } from "@/components/ui/ProductCard";
 import { TerminalLabel } from "@/components/ui/TerminalLabel";
@@ -16,7 +18,7 @@ export function ShopPreviewSection() {
           <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em] sm:text-5xl">
             Featured film and rotating camera inventory
           </h2>
-          <p className="mt-5 text-sm leading-7 text-[#4a4036]">
+          <p className="mt-5 text-sm leading-7 text-[#333333]">
             Preview film stock, cameras, and rotating inventory. Contact BMC for
             availability while online checkout is being prepared.
           </p>
@@ -34,13 +36,14 @@ export function ShopPreviewSection() {
           </div>
         </div>
         <div className="document-panel p-6">
+          <AsciiLineLogo className="mb-5" />
           <div className="grid gap-px bg-[#111111]/20">
             {items.map((item, index) => (
               <div
                 key={item}
-                className="grid grid-cols-[4rem_1fr] bg-[#f3eee5] px-4 py-4"
+                className="grid grid-cols-[4rem_1fr] bg-[#FAFAF8] px-4 py-4"
               >
-                <span className="mono text-xs font-semibold text-[#8c7b6a]">
+                <span className="mono text-xs font-semibold text-[#666666]">
                   INV-{String(index + 1).padStart(2, "0")}
                 </span>
                 <span className="font-semibold uppercase tracking-[0.03em]">
@@ -49,7 +52,7 @@ export function ShopPreviewSection() {
               </div>
             ))}
           </div>
-          <p className="mt-5 text-sm leading-7 text-[#4a4036]">
+          <p className="mt-5 text-sm leading-7 text-[#333333]">
             Inventory changes often. Stop by during business hours or contact
             BMC to ask about current film cameras, 35mm film stock, batteries,
             straps, accessories, shipping, and local pickup.
@@ -57,6 +60,9 @@ export function ShopPreviewSection() {
         </div>
       </div>
       <div className="mx-auto max-w-7xl px-4 pb-14 sm:px-6 sm:pb-20 lg:px-8">
+        <div className="mb-6">
+          <TerminalDivider label="FEATURED STOCK / PREVIEW" />
+        </div>
         <div className="grid gap-px overflow-hidden border border-[#111111]/20 bg-[#111111]/20 md:grid-cols-3">
           {featured.map((product) => (
             <ProductCard key={product.slug} product={product} />

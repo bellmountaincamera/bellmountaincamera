@@ -27,7 +27,7 @@ export default function ContactPage() {
           <TerminalLabel>Direct Lines</TerminalLabel>
           <div className="mt-6 grid gap-5 text-sm">
             <div>
-              <p className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#6f604f]">
+              <p className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#666666]">
                 Email
               </p>
               <a
@@ -38,7 +38,7 @@ export default function ContactPage() {
               </a>
             </div>
             <div>
-              <p className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#6f604f]">
+              <p className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#666666]">
                 Phone
               </p>
               <a
@@ -49,13 +49,13 @@ export default function ContactPage() {
               </a>
             </div>
             <div>
-              <p className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#6f604f]">
+              <p className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#666666]">
                 Instagram
               </p>
               <p className="mt-1 text-lg font-semibold">{site.instagram}</p>
             </div>
             <div>
-              <p className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#6f604f]">
+              <p className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#666666]">
                 Visit
               </p>
               <p className="mt-1 text-lg font-semibold">
@@ -67,7 +67,7 @@ export default function ContactPage() {
               </p>
             </div>
             <div>
-              <p className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#6f604f]">
+              <p className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#666666]">
                 Hours
               </p>
               {site.hours.map((item) => (
@@ -77,7 +77,7 @@ export default function ContactPage() {
               ))}
             </div>
             <div>
-              <p className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#6f604f]">
+              <p className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#666666]">
                 Appointments
               </p>
               <p className="mt-1 text-lg font-semibold">
@@ -102,24 +102,24 @@ export default function ContactPage() {
           </div>
         </div>
         <div className="terminal-panel p-6">
-          <p className="mono text-xs font-semibold uppercase tracking-[0.16em] text-[#8c7b6a]">
+          <p className="mono text-xs font-semibold uppercase tracking-[0.16em] text-[#666666]">
             Email Intake Sheet
           </p>
           <div className="mt-6 grid gap-4">
             {["Name", "Email", "Phone", "Reason for contact", "Message"].map((label) => (
               <div key={label}>
-                <label className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#c7b8a3]">
+                <label className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#D8D8D2]">
                   {label}
                 </label>
-                <div className="mt-2 min-h-11 border border-[#e8e2d8]/25 bg-[#e8e2d8]/5" />
+                <div className="mt-2 min-h-11 border border-[#FAFAF8]/25 bg-[#FAFAF8]/5" />
               </div>
             ))}
           </div>
-          <p className="mt-5 text-sm leading-7 text-[#c7b8a3]">
+          <p className="mt-5 text-sm leading-7 text-[#D8D8D2]">
             No backend is connected in version 1. The public action is a mailto
             link so the site stays static, fast, and deployment-ready.
           </p>
-          <div className="mt-5 grid gap-2 text-sm text-[#c7b8a3] sm:grid-cols-2">
+          <div className="mt-5 grid gap-2 text-sm text-[#D8D8D2] sm:grid-cols-2">
             {[
               "Film drop-off",
               "Film scanning",
@@ -150,7 +150,7 @@ export default function ContactPage() {
             <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
               Visit Bell Mountain Camera
             </h2>
-            <p className="mt-5 text-sm leading-7 text-[#4a4036]">
+            <p className="mt-5 text-sm leading-7 text-[#333333]">
               {site.locationName}
               <br />
               {site.street}

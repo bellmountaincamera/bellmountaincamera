@@ -30,7 +30,7 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
         className="min-h-[24rem]"
       />
       <div className="mt-3 flex items-center justify-between gap-3">
-        <p className="mono text-xs uppercase tracking-[0.12em] text-[#6f604f]">
+        <p className="mono text-xs uppercase tracking-[0.12em] text-[#2457C5]">
           Photo {index + 1} / {usableImages.length}
         </p>
         <div className="flex gap-2">
@@ -59,11 +59,11 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
             key={`${image}-${imageIndex}`}
             onClick={() => setIndex(imageIndex)}
             className={`min-w-0 border p-2 ${
-              imageIndex === index ? "border-[#111111]" : "border-[#111111]/20"
+              imageIndex === index ? "border-[#2457C5]" : "border-[#D8D8D2]"
             }`}
             aria-label={`Show image ${imageIndex + 1}`}
           >
-            <span className="mono block text-xs uppercase tracking-[0.12em] text-[#6f604f]">
+            <span className="mono block text-xs uppercase tracking-[0.12em] text-[#666666]">
               {String(imageIndex + 1).padStart(2, "0")}
             </span>
           </button>

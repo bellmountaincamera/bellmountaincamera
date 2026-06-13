@@ -21,7 +21,7 @@ export default function OrderConfirmationPage() {
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
         <div className="document-panel max-w-3xl p-6">
           <TerminalLabel>Next Steps</TerminalLabel>
-          <div className="mt-6 grid gap-4 text-sm leading-7 text-[#4a4036]">
+          <div className="mt-6 grid gap-4 text-sm leading-7 text-[#333333]">
             <p>1. Customer receives an email receipt.</p>
             <p>2. BMC confirms inventory and fulfillment method.</p>
             <p>3. Order status moves to processing, pickup ready, shipped, or complete.</p>

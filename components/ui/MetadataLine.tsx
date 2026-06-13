@@ -8,7 +8,7 @@ export function MetadataLine({ items, tone = "light" }: MetadataLineProps) {
     <div
       className={[
         "mono flex flex-wrap gap-x-5 gap-y-2 text-[0.7rem] uppercase tracking-[0.12em]",
-        tone === "dark" ? "text-[#c7b8a3]" : "text-[#6f604f]"
+        tone === "dark" ? "text-[#D8D8D2]" : "text-[#2457C5]"
       ].join(" ")}
     >
       {items.map((item) => (

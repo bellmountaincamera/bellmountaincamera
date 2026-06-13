@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { TerminalDivider } from "@/components/brand/TerminalDivider";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { MetadataLine } from "@/components/ui/MetadataLine";
 import { PageHeader } from "@/components/ui/PageHeader";
@@ -89,7 +90,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
           <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
             {formatPrice(product.price)}
           </h2>
-          <p className="mt-5 text-sm leading-7 text-[#4a4036]">
+          <p className="mt-5 text-sm leading-7 text-[#333333]">
             Online purchasing is coming soon. Until real checkout is connected,
             contact BMC to confirm availability, shipping, and local pickup for
             this item.
@@ -112,20 +113,23 @@ export default async function ProductPage({ params }: ProductPageProps) {
             </CTAButton>
           </div>
           <div className="mt-8 grid gap-px border border-[#111111]/20 bg-[#111111]/20">
+            <div className="bg-[#FAFAF8] p-4">
+              <TerminalDivider label="PRODUCT SPEC / PREVIEW" />
+            </div>
             {detailRows.map(([label, value]) => (
               <div
                 key={label}
-                className="grid gap-2 bg-[#f3eee5] p-4 sm:grid-cols-[12rem_1fr]"
+                className="grid gap-2 bg-[#FAFAF8] p-4 sm:grid-cols-[12rem_1fr]"
               >
-                <p className="mono text-xs uppercase tracking-[0.14em] text-[#8c7b6a]">
+                <p className="mono text-xs uppercase tracking-[0.14em] text-[#666666]">
                   {label}
                 </p>
-                <p className="text-sm leading-6 text-[#3a342e]">{value}</p>
+                <p className="text-sm leading-6 text-[#333333]">{value}</p>
               </div>
             ))}
           </div>
           {product.kind === "camera" ? (
-            <p className="mt-5 text-sm leading-7 text-[#4a4036]">
+            <p className="mt-5 text-sm leading-7 text-[#333333]">
               {product.notes}
             </p>
           ) : null}
@@ -143,7 +147,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
             <br />
             {site.cityStateZip}
           </p>
-          <p className="mono mt-5 text-xs uppercase tracking-[0.14em] text-[#6f604f]">
+          <p className="mono mt-5 text-xs uppercase tracking-[0.14em] text-[#666666]">
             {site.hoursShort}
           </p>
         </div>

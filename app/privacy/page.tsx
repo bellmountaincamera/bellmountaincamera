@@ -20,7 +20,7 @@ export default function PrivacyPage() {
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
         <div className="document-panel p-6">
           <TerminalLabel>Editable Policy</TerminalLabel>
-          <p className="mt-5 text-sm leading-7 text-[#4a4036]">
+          <p className="mt-5 text-sm leading-7 text-[#333333]">
             This page is a placeholder for final privacy language. It should be
             reviewed before live checkout, analytics, customer accounts, or
             email notification integrations are connected.

@@ -96,11 +96,11 @@ export default function FAQPage() {
               </h2>
               <div className="grid gap-px border border-[#111111]/20 bg-[#111111]/20">
                 {group.questions.map(([question, answer]) => (
-                  <details key={question} className="bg-[#f3eee5] p-5">
+                  <details key={question} className="bg-[#FAFAF8] p-5">
                     <summary className="cursor-pointer text-lg font-semibold uppercase tracking-[0.03em]">
                       {question}
                     </summary>
-                    <p className="mt-4 text-sm leading-7 text-[#4a4036]">{answer}</p>
+                    <p className="mt-4 text-sm leading-7 text-[#333333]">{answer}</p>
                   </details>
                 ))}
               </div>

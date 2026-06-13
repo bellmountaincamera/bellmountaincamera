@@ -1,13 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --background: #e8e2d8;
+  --background: #F5F5F2;
   --foreground: #111111;
   --charcoal: #1a1a1a;
-  --paper: #f3eee5;
-  --desert: #c7b8a3;
-  --faded: #8c7b6a;
-  --line: rgba(17, 17, 17, 0.18);
+  --paper: #FAFAF8;
+  --paper-2: #F5F5F2;
+  --muted: #666666;
+  --line: #D8D8D2;
+  --line-dark: #2A2A2A;
+  --accent: #2457C5;
 }
 
 * {
@@ -21,10 +23,10 @@ html {
 body {
   margin: 0;
   background:
-    linear-gradient(rgba(17, 17, 17, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(17, 17, 17, 0.025) 1px, transparent 1px),
+    linear-gradient(rgba(17, 17, 17, 0.026) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17, 17, 17, 0.018) 1px, transparent 1px),
     var(--background);
-  background-size: 24px 24px;
+  background-size: 28px 28px;
   color: var(--foreground);
   font-family: Inter, "IBM Plex Sans", Arial, sans-serif;
 }
@@ -35,8 +37,13 @@ a {
 }
 
 ::selection {
-  background: var(--charcoal);
-  color: var(--paper);
+  background: var(--accent);
+  color: #ffffff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 
 .mono {
@@ -55,17 +62,18 @@ a {
   min-height: 2.75rem;
   padding: 0.75rem 1.25rem;
   text-transform: uppercase;
-  transition: background-color 160ms ease, color 160ms ease;
+  transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease;
 }
 
 .cta-primary {
   background: #111111;
   border-color: #111111;
-  color: #e8e2d8;
+  color: #FAFAF8;
 }
 
 .cta-primary:hover {
-  background: #2a2824;
+  background: #1A1A1A;
+  border-color: var(--accent);
 }
 
 .cta-secondary {
@@ -76,31 +84,33 @@ a {
 
 .cta-secondary:hover {
   background: #111111;
-  color: #e8e2d8;
+  border-color: var(--accent);
+  color: #FAFAF8;
 }
 
 .cta-dark {
-  background: #e8e2d8;
-  border-color: #e8e2d8;
+  background: #FAFAF8;
+  border-color: #FAFAF8;
   color: #111111;
 }
 
 .cta-dark:hover {
-  background: #c7b8a3;
+  background: #ffffff;
+  border-color: var(--accent);
 }
 
 .document-panel {
   border: 1px solid var(--line);
   background:
-    linear-gradient(rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.08)),
+    linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.14)),
     var(--paper);
-  box-shadow: 0 1px 0 rgba(17, 17, 17, 0.16);
+  box-shadow: 0 1px 0 rgba(17, 17, 17, 0.12);
 }
 
 .terminal-panel {
-  border: 1px solid rgba(232, 226, 216, 0.18);
+  border: 1px solid rgba(250, 250, 248, 0.24);
   background:
-    linear-gradient(rgba(232, 226, 216, 0.05) 1px, transparent 1px),
+    linear-gradient(rgba(250, 250, 248, 0.055) 1px, transparent 1px),
     #111111;
   background-size: 100% 18px;
   color: var(--paper);
@@ -111,15 +121,26 @@ a {
   aspect-ratio: 4 / 3;
   background:
     linear-gradient(rgba(17, 17, 17, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(17, 17, 17, 0.06) 1px, transparent 1px),
-    #ded4c5;
+    linear-gradient(90deg, rgba(17, 17, 17, 0.055) 1px, transparent 1px),
+    #F5F5F2;
   background-size: 18px 18px;
-  border: 1px solid rgba(17, 17, 17, 0.18);
+  border: 1px solid var(--line);
   display: flex;
   flex-direction: column;
   justify-content: center;
   min-height: 14rem;
   padding: 1rem;
+}
+
+.ascii-mark {
+  font-family: "IBM Plex Mono", "Space Mono", "JetBrains Mono", "Courier New", monospace;
+  letter-spacing: 0;
+  line-height: 1;
+  white-space: pre;
+}
+
+.blue-accent {
+  color: var(--accent);
 }
 
 .photo-grain {

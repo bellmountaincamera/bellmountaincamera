@@ -5,14 +5,14 @@ import { site } from "@/lib/site";
 
 export function VisitSection() {
   return (
-    <section className="border-y border-[#111111]/15 bg-[#c7b8a3]">
+    <section className="border-y border-[#D8D8D2] bg-[#FAFAF8]">
       <div className="mx-auto grid max-w-7xl gap-8 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
         <div>
           <TerminalLabel>Visit BMC</TerminalLabel>
           <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em] sm:text-5xl">
             Walk-ins welcome in Apple Valley
           </h2>
-          <p className="mt-6 text-sm leading-7 text-[#2f2a24]">
+          <p className="mt-6 text-sm leading-7 text-[#333333]">
             {site.locationCopy}
           </p>
           <div className="mt-8">
@@ -27,7 +27,7 @@ export function VisitSection() {
           />
           <div className="mt-6 grid gap-5 sm:grid-cols-2">
             <div>
-              <p className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#6f604f]">
+              <p className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#666666]">
                 Location
               </p>
               <p className="mt-2 text-lg font-semibold leading-7">
@@ -39,7 +39,7 @@ export function VisitSection() {
               </p>
             </div>
             <div>
-              <p className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#6f604f]">
+              <p className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#666666]">
                 Hours
               </p>
               {site.hours.map((item) => (

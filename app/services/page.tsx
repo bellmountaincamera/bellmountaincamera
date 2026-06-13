@@ -25,7 +25,7 @@ export default function ServicesPage() {
           <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
             Maintenance first, deeper repair by inquiry
           </h2>
-          <p className="mt-5 text-sm leading-7 text-[#4a4036]">
+          <p className="mt-5 text-sm leading-7 text-[#333333]">
             Bring your camera into the shop inside Wild Goose Vintage & Thrift
             Store during business hours or contact BMC to set up an
             appointment.
@@ -36,16 +36,16 @@ export default function ServicesPage() {
         </div>
         <div className="grid gap-px border border-[#111111]/20 bg-[#111111]/20">
           {cameraServiceMenu.map((service) => (
-            <article key={service.title} className="grid gap-4 bg-[#f3eee5] p-5 sm:grid-cols-[1fr_auto]">
+            <article key={service.title} className="grid gap-4 bg-[#FAFAF8] p-5 sm:grid-cols-[1fr_auto]">
               <div>
                 <h3 className="text-xl font-semibold uppercase tracking-[0.03em]">
                   {service.title}
                 </h3>
-                <p className="mt-3 text-sm leading-7 text-[#4a4036]">
+                <p className="mt-3 text-sm leading-7 text-[#333333]">
                   {service.text}
                 </p>
               </div>
-              <p className="mono text-xs font-semibold uppercase tracking-[0.14em] text-[#8c7b6a]">
+              <p className="mono text-xs font-semibold uppercase tracking-[0.14em] text-[#666666]">
                 {service.price}
               </p>
             </article>
@@ -57,11 +57,11 @@ export default function ServicesPage() {
           <TerminalLabel>Service Bundles</TerminalLabel>
           <div className="mt-8 grid gap-px border border-[#111111]/20 bg-[#111111]/20 sm:grid-cols-2 lg:grid-cols-4">
             {serviceBundles.map((bundle) => (
-              <article key={bundle.title} className="bg-[#f3eee5] p-5">
+              <article key={bundle.title} className="bg-[#FAFAF8] p-5">
                 <p className="text-lg font-semibold uppercase tracking-[0.03em]">
                   {bundle.title}
                 </p>
-                <p className="mono mt-4 text-sm font-semibold uppercase tracking-[0.14em] text-[#8c7b6a]">
+                <p className="mono mt-4 text-sm font-semibold uppercase tracking-[0.14em] text-[#666666]">
                   {bundle.price}
                 </p>
               </article>
@@ -75,7 +75,7 @@ export default function ServicesPage() {
           <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
             Tell BMC what the camera is doing
           </h2>
-          <p className="mt-5 text-sm leading-7 text-[#4a4036]">
+          <p className="mt-5 text-sm leading-7 text-[#333333]">
             This static intake form is ready for a future form handler, email
             notification, or service ticket workflow.
           </p>
@@ -96,19 +96,19 @@ export default function ServicesPage() {
               "Notes"
             ].map((label) => (
               <div key={label} className={label === "Notes" ? "sm:col-span-2" : ""}>
-                <label className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#c7b8a3]">
+                <label className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#D8D8D2]">
                   {label}
                 </label>
-                <div className="mt-2 min-h-11 border border-[#e8e2d8]/25 bg-[#e8e2d8]/5" />
+                <div className="mt-2 min-h-11 border border-[#FAFAF8]/25 bg-[#FAFAF8]/5" />
               </div>
             ))}
           </div>
         </div>
       </section>
-      <section className="border-t border-[#111111]/15 bg-[#111111] text-[#e8e2d8]">
+      <section className="border-t border-[#111111]/15 bg-[#111111] text-[#FAFAF8]">
         <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
           <TerminalLabel tone="dark">Service Disclaimer</TerminalLabel>
-          <p className="mt-5 max-w-3xl text-base leading-8 text-[#c7b8a3]">
+          <p className="mt-5 max-w-3xl text-base leading-8 text-[#D8D8D2]">
             Service depends on the camera model, condition, and issue. Some
             cameras may need parts or repairs beyond what Bell Mountain Camera
             can provide in-house.

@@ -1,16 +1,18 @@
 import Link from "next/link";
+import { AsciiBlockLogo } from "@/components/brand/AsciiBlockLogo";
 import { site } from "@/lib/site";
 import { MetadataLine } from "@/components/ui/MetadataLine";
 
 export function Footer() {
   return (
-    <footer className="border-t border-[#111111]/15 bg-[#111111] text-[#e8e2d8]">
+    <footer className="border-t border-[#2A2A2A] bg-[#111111] text-[#FAFAF8]">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.2fr_0.8fr] lg:px-8">
         <div>
-          <p className="text-xl font-semibold uppercase tracking-[0.08em]">
+          <AsciiBlockLogo tone="dark" />
+          <p className="mt-5 text-xl font-semibold uppercase tracking-[0.08em]">
             Bell Mountain Camera
           </p>
-          <p className="mt-4 max-w-xl text-sm leading-7 text-[#c7b8a3]">
+          <p className="mt-4 max-w-xl text-sm leading-7 text-[#D8D8D2]">
             {site.description}
           </p>
           <div className="mt-6">
@@ -22,7 +24,7 @@ export function Footer() {
         </div>
         <div className="grid gap-5 sm:grid-cols-3">
           <div>
-            <p className="mono text-xs font-semibold uppercase tracking-[0.16em] text-[#8c7b6a]">
+            <p className="mono text-xs font-semibold uppercase tracking-[0.16em] text-[#666666]">
               Visit
             </p>
             <div className="mt-4 grid gap-2">
@@ -34,7 +36,7 @@ export function Footer() {
                 <Link
                   key={`${item.href}-${item.label}`}
                   href={item.href}
-                  className="text-sm text-[#e8e2d8] hover:text-[#c7b8a3]"
+                  className="text-sm text-[#FAFAF8] hover:text-[#D8D8D2]"
                 >
                   {item.label}
                 </Link>
@@ -42,7 +44,7 @@ export function Footer() {
             </div>
           </div>
           <div>
-            <p className="mono text-xs font-semibold uppercase tracking-[0.16em] text-[#8c7b6a]">
+            <p className="mono text-xs font-semibold uppercase tracking-[0.16em] text-[#666666]">
               Shop
             </p>
             <div className="mt-4 grid gap-2">
@@ -56,7 +58,7 @@ export function Footer() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-sm text-[#e8e2d8] hover:text-[#c7b8a3]"
+                  className="text-sm text-[#FAFAF8] hover:text-[#D8D8D2]"
                 >
                   {item.label}
                 </Link>
@@ -64,7 +66,7 @@ export function Footer() {
             </div>
           </div>
           <div>
-            <p className="mono text-xs font-semibold uppercase tracking-[0.16em] text-[#8c7b6a]">
+            <p className="mono text-xs font-semibold uppercase tracking-[0.16em] text-[#666666]">
               Info
             </p>
             <div className="mt-4 grid gap-2">
@@ -77,7 +79,7 @@ export function Footer() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-sm text-[#e8e2d8] hover:text-[#c7b8a3]"
+                  className="text-sm text-[#FAFAF8] hover:text-[#D8D8D2]"
                 >
                   {item.label}
                 </Link>

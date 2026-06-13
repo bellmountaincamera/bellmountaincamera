@@ -37,9 +37,9 @@ export default function ReturnsPage() {
               "Damaged shipping item rules are not finalized yet. Customers should contact BMC with order details and photos if a shipped item arrives damaged."
             ]
           ].map(([title, text]) => (
-            <article key={title} className="bg-[#f3eee5] p-6">
+            <article key={title} className="bg-[#FAFAF8] p-6">
               <TerminalLabel>{title}</TerminalLabel>
-              <p className="mt-5 text-sm leading-7 text-[#4a4036]">{text}</p>
+              <p className="mt-5 text-sm leading-7 text-[#333333]">{text}</p>
             </article>
           ))}
         </div>

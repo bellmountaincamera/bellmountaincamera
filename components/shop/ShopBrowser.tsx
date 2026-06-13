@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { AsciiLineLogo } from "@/components/brand/AsciiLineLogo";
 import { ProductCard } from "@/components/ui/ProductCard";
 import type { Product } from "@/lib/products";
 
@@ -66,9 +67,9 @@ export function ShopBrowser({ products, initialFilter = "" }: ShopBrowserProps) 
 
   return (
     <div>
-      <div className="mb-6 grid gap-3 border border-[#111111]/20 bg-[#f3eee5] p-4 lg:grid-cols-[1fr_auto] lg:items-end">
+      <div className="mb-6 grid gap-3 border border-[#2A2A2A] bg-[#FAFAF8] p-4 lg:grid-cols-[1fr_auto] lg:items-end">
         <label className="block">
-          <span className="mono text-xs font-semibold uppercase tracking-[0.14em] text-[#6f604f]">
+          <span className="mono text-xs font-semibold uppercase tracking-[0.14em] text-[#2457C5]">
             Search
           </span>
           <input
@@ -76,7 +77,7 @@ export function ShopBrowser({ products, initialFilter = "" }: ShopBrowserProps) 
             onChange={(event) => setQuery(event.currentTarget.value)}
             onInput={(event) => setQuery(event.currentTarget.value)}
             placeholder="Search film, cameras, or products..."
-            className="mt-2 w-full border border-[#111111]/20 bg-[#fffaf2] px-4 py-3 text-sm outline-none"
+            className="mt-2 w-full border border-[#D8D8D2] bg-[#FFFFFF] px-4 py-3 text-sm outline-none focus:border-[#2457C5]"
           />
         </label>
         <button
@@ -98,8 +99,8 @@ export function ShopBrowser({ products, initialFilter = "" }: ShopBrowserProps) 
             onClick={() => toggleFilter(filter)}
             className={`mono border px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-[0.14em] ${
               activeFilters.includes(filter)
-                ? "border-[#111111] bg-[#111111] text-[#e8e2d8]"
-                : "border-[#111111]/20 bg-[#f3eee5] text-[#6f604f]"
+                ? "border-[#2457C5] bg-[#111111] text-[#FAFAF8]"
+                : "border-[#D8D8D2] bg-[#FAFAF8] text-[#666666] hover:border-[#2457C5]"
             }`}
           >
             {filter}
@@ -113,7 +114,8 @@ export function ShopBrowser({ products, initialFilter = "" }: ShopBrowserProps) 
           ))}
         </div>
       ) : (
-        <div className="border border-[#111111]/20 bg-[#f3eee5] p-6 text-sm leading-7 text-[#4a4036]">
+        <div className="border border-[#2A2A2A] bg-[#FAFAF8] p-6 text-sm leading-7 text-[#333333]">
+          <AsciiLineLogo className="mb-4" />
           No products found. Contact BMC for current availability.
         </div>
       )}

@@ -12,7 +12,7 @@ export function ServicesGrid() {
             What BMC does
           </h2>
         </div>
-        <p className="max-w-md text-sm leading-7 text-[#4a4036]">
+        <p className="max-w-md text-sm leading-7 text-[#333333]">
           Film cameras, 35mm film stock, film development, scanning, film
           drop-off and pickup, and basic camera service for the High Desert film
           community.
@@ -20,14 +20,14 @@ export function ServicesGrid() {
       </div>
       <div className="grid gap-px overflow-hidden border border-[#111111]/20 bg-[#111111]/20 sm:grid-cols-2 lg:grid-cols-3">
         {services.map((service) => (
-          <Link key={service.title} href={service.href} className="bg-[#f3eee5] p-6 hover:bg-[#fffaf2]">
-            <p className="mono text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-[#8c7b6a]">
+          <Link key={service.title} href={service.href} className="bg-[#FAFAF8] p-6 hover:bg-[#FFFFFF]">
+            <p className="mono text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-[#2457C5]">
               {service.code}
             </p>
             <h3 className="mt-4 text-xl font-semibold uppercase tracking-[0.03em]">
               {service.title}
             </h3>
-            <p className="mt-4 text-sm leading-7 text-[#4a4036]">
+            <p className="mt-4 text-sm leading-7 text-[#333333]">
               {service.text}
             </p>
           </Link>

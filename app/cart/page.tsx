@@ -27,21 +27,21 @@ export default function CartPage() {
           {cartItems.map((item) => (
             <article
               key={item.slug}
-              className="grid gap-4 bg-[#f3eee5] p-5 sm:grid-cols-[1fr_auto]"
+              className="grid gap-4 bg-[#FAFAF8] p-5 sm:grid-cols-[1fr_auto]"
             >
               <div>
-                <p className="mono text-xs uppercase tracking-[0.14em] text-[#8c7b6a]">
+                <p className="mono text-xs uppercase tracking-[0.14em] text-[#666666]">
                   {item.category} / Qty 1
                 </p>
                 <h2 className="mt-2 text-xl font-semibold uppercase tracking-[0.03em]">
                   {item.name}
                 </h2>
-                <p className="mt-3 text-sm leading-7 text-[#4a4036]">
+                <p className="mt-3 text-sm leading-7 text-[#333333]">
                   {item.localPickup ? "Local pickup available. " : ""}
                   {item.shippingAvailable ? "Shipping available." : ""}
                 </p>
               </div>
-              <p className="mono text-sm font-semibold uppercase tracking-[0.12em] text-[#6f604f]">
+              <p className="mono text-sm font-semibold uppercase tracking-[0.12em] text-[#666666]">
                 {formatPrice(item.price)}
               </p>
             </article>
@@ -63,7 +63,7 @@ export default function CartPage() {
               <span className="mono">Available</span>
             </div>
           </div>
-          <p className="mt-5 text-sm leading-7 text-[#4a4036]">
+          <p className="mt-5 text-sm leading-7 text-[#333333]">
             This is a preview cart. Live checkout will require a payment
             processor, inventory source, and shipping setup before customers can
             complete real purchases.
