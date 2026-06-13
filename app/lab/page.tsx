@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { AsciiBlockLogo } from "@/components/brand/AsciiBlockLogo";
 import { TerminalDivider } from "@/components/brand/TerminalDivider";
-import { TerminalMetaPanel } from "@/components/brand/TerminalMetaPanel";
+import { TerminalStatusPanel } from "@/components/brand/TerminalStatusPanel";
 import { ContactCTA } from "@/components/sections/ContactCTA";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { MetadataLine } from "@/components/ui/MetadataLine";
@@ -56,7 +56,8 @@ export default function LabPage() {
             usually 3-7 business days depending on volume.
           </p>
           <div className="mt-6">
-            <TerminalMetaPanel
+            <TerminalStatusPanel
+              title="LAB PROCESS LOG"
               rows={[
                 ["Roll No.", "4821"],
                 ["Process", "C-41"],
@@ -72,9 +73,9 @@ export default function LabPage() {
             </CTAButton>
           </div>
         </div>
-        <div className="grid gap-px border border-[#111111]/20 bg-[#111111]/20">
+        <div className="record-grid">
           {labWorkflow.map((item) => (
-            <article key={item.step} className="bg-[#FAFAF8] p-5">
+            <article key={item.step} className="record-cell p-5">
               <p className="mono text-xs font-semibold uppercase tracking-[0.16em] text-[#666666]">
                 STEP {item.step}
               </p>
@@ -180,9 +181,9 @@ export default function LabPage() {
             this site.
           </p>
         </div>
-        <div className="grid gap-px border border-[#111111]/20 bg-[#111111]/20 md:grid-cols-2 lg:grid-cols-3">
+        <div className="record-grid md:grid-cols-2 lg:grid-cols-3">
           {filmLabPricing.map((item) => (
-            <article key={item.title} className="bg-[#FAFAF8] p-5">
+            <article key={item.title} className="record-cell p-5">
               <div className="flex items-start justify-between gap-4">
                 <h3 className="text-lg font-semibold uppercase tracking-[0.03em]">
                   {item.title}
@@ -206,9 +207,9 @@ export default function LabPage() {
       </section>
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
         <TerminalLabel>FAQ</TerminalLabel>
-        <div className="mt-6 grid gap-px border border-[#111111]/20 bg-[#111111]/20">
+        <div className="mt-6 record-grid">
           {faqs.map(([question, answer]) => (
-            <details key={question} className="group bg-[#FAFAF8] p-5">
+            <details key={question} className="group record-cell p-5">
               <summary className="cursor-pointer text-lg font-semibold uppercase tracking-[0.03em]">
                 {question}
               </summary>

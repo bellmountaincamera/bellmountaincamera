@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { AsciiLineLogo } from "@/components/brand/AsciiLineLogo";
+import { TerminalStatusPanel } from "@/components/brand/TerminalStatusPanel";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { ShopBrowser } from "@/components/shop/ShopBrowser";
@@ -52,21 +53,16 @@ export default function ShopPage() {
               local pickup.
             </p>
           </div>
-          <div className="grid gap-px border border-[#FAFAF8]/20 bg-[#FAFAF8]/20">
-            {[
-              ["SHIP TO ADDRESS", "Domestic shipping rates to be configured."],
-              ["LOCAL PICKUP", `${site.locationName}, ${site.street}, ${site.cityStateZip}`],
-              ["PICKUP HOURS", site.hoursShort],
-              ["ORDER STATUS", "Future admin can track processing, pickup, shipped, and complete."]
-            ].map(([label, text]) => (
-              <div key={label} className="bg-[#111111] p-5">
-                <p className="mono text-xs uppercase tracking-[0.14em] text-[#666666]">
-                  {label}
-                </p>
-                <p className="mt-3 text-sm leading-7 text-[#FAFAF8]">{text}</p>
-              </div>
-            ))}
-          </div>
+          <TerminalStatusPanel
+            title="FULFILLMENT STATUS / PREVIEW"
+            tone="dark"
+            rows={[
+              ["Online", "Coming Soon"],
+              ["Pickup", "Available"],
+              ["Shipping", "Planned"],
+              ["Hours", site.hoursShort]
+            ]}
+          />
         </div>
       </section>
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">

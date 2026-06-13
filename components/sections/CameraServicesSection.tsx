@@ -1,3 +1,4 @@
+import { TerminalStatusPanel } from "@/components/brand/TerminalStatusPanel";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { TerminalLabel } from "@/components/ui/TerminalLabel";
 
@@ -5,24 +6,15 @@ export function CameraServicesSection() {
   return (
     <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
       <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-        <div className="document-panel p-6">
-          <p className="mono text-xs font-semibold uppercase tracking-[0.16em] text-[#2457C5]">
-            Service Ticket / Basic
-          </p>
-          <div className="mt-5 grid gap-3 text-sm">
-            {["Diagnose", "Cleaning", "Light seal replacement", "Shutter speed adjustment"].map(
-              (item) => (
-                <div
-                  key={item}
-                  className="flex items-center justify-between border-b border-[#111111]/15 pb-3"
-                >
-                  <span>{item}</span>
-                  <span className="mono text-xs text-[#2457C5]">OPEN</span>
-                </div>
-              )
-            )}
-          </div>
-        </div>
+        <TerminalStatusPanel
+          title="SERVICE TICKET / BASIC"
+          rows={[
+            ["Diagnose", "Open"],
+            ["Cleaning", "Open"],
+            ["Light Seals", "Open"],
+            ["Shutter", "By Camera"]
+          ]}
+        />
         <div>
           <TerminalLabel>Camera Services</TerminalLabel>
           <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em] sm:text-5xl">

@@ -94,9 +94,9 @@ export default function FAQPage() {
               <h2 className="mb-4 text-2xl font-semibold uppercase tracking-[0.02em]">
                 {group.title}
               </h2>
-              <div className="grid gap-px border border-[#111111]/20 bg-[#111111]/20">
+              <div className="record-grid">
                 {group.questions.map(([question, answer]) => (
-                  <details key={question} className="bg-[#FAFAF8] p-5">
+                  <details key={question} className="record-cell p-5">
                     <summary className="cursor-pointer text-lg font-semibold uppercase tracking-[0.03em]">
                       {question}
                     </summary>

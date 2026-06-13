@@ -67,7 +67,7 @@ export function ShopBrowser({ products, initialFilter = "" }: ShopBrowserProps) 
 
   return (
     <div>
-      <div className="mb-6 grid gap-3 border border-[#2A2A2A] bg-[#FAFAF8] p-4 lg:grid-cols-[1fr_auto] lg:items-end">
+      <div className="mb-6 grid gap-3 border border-[#2A2A2A] record-cell p-4 lg:grid-cols-[1fr_auto] lg:items-end">
         <label className="block">
           <span className="mono text-xs font-semibold uppercase tracking-[0.14em] text-[#2457C5]">
             Search
@@ -108,13 +108,13 @@ export function ShopBrowser({ products, initialFilter = "" }: ShopBrowserProps) 
         ))}
       </div>
       {filtered.length ? (
-        <div className="grid gap-px overflow-hidden border border-[#111111]/20 bg-[#111111]/20 md:grid-cols-2 xl:grid-cols-3">
+        <div className="record-grid md:grid-cols-2 xl:grid-cols-3">
           {filtered.map((product) => (
             <ProductCard key={product.slug} product={product} />
           ))}
         </div>
       ) : (
-        <div className="border border-[#2A2A2A] bg-[#FAFAF8] p-6 text-sm leading-7 text-[#333333]">
+        <div className="border border-[#2A2A2A] record-cell p-6 text-sm leading-7 text-[#333333]">
           <AsciiLineLogo className="mb-4" />
           No products found. Contact BMC for current availability.
         </div>

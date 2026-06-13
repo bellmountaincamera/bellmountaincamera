@@ -112,14 +112,14 @@ export default async function ProductPage({ params }: ProductPageProps) {
               Local Pickup Available
             </CTAButton>
           </div>
-          <div className="mt-8 grid gap-px border border-[#111111]/20 bg-[#111111]/20">
-            <div className="bg-[#FAFAF8] p-4">
+          <div className="mt-8 record-grid">
+            <div className="record-cell p-4">
               <TerminalDivider label="PRODUCT SPEC / PREVIEW" />
             </div>
             {detailRows.map(([label, value]) => (
               <div
                 key={label}
-                className="grid gap-2 bg-[#FAFAF8] p-4 sm:grid-cols-[12rem_1fr]"
+                className="grid gap-2 record-cell p-4 sm:grid-cols-[12rem_1fr]"
               >
                 <p className="mono text-xs uppercase tracking-[0.14em] text-[#666666]">
                   {label}

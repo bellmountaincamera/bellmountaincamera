@@ -18,9 +18,9 @@ export function ServicesGrid() {
           community.
         </p>
       </div>
-      <div className="grid gap-px overflow-hidden border border-[#111111]/20 bg-[#111111]/20 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="record-grid sm:grid-cols-2 lg:grid-cols-3">
         {services.map((service) => (
-          <Link key={service.title} href={service.href} className="bg-[#FAFAF8] p-6 hover:bg-[#FFFFFF]">
+          <Link key={service.title} href={service.href} className="record-cell p-6 hover:bg-[#FFFFFF]">
             <p className="mono text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-[#2457C5]">
               {service.code}
             </p>

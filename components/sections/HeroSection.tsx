@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { AsciiBlockLogo } from "@/components/brand/AsciiBlockLogo";
-import { TerminalMetaPanel } from "@/components/brand/TerminalMetaPanel";
+import { TerminalStatusPanel } from "@/components/brand/TerminalStatusPanel";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { MetadataLine } from "@/components/ui/MetadataLine";
 import { TerminalLabel } from "@/components/ui/TerminalLabel";
@@ -33,7 +33,8 @@ export function HeroSection() {
             <MetadataLine items={sampleRoll} />
           </div>
           <div className="mt-6 max-w-xl">
-            <TerminalMetaPanel
+            <TerminalStatusPanel
+              title="CURRENT LAB / SHOP STATUS"
               rows={[
                 ["Process", "C-41"],
                 ["Status", "Accepting Orders"],
@@ -43,7 +44,7 @@ export function HeroSection() {
             />
           </div>
         </div>
-        <div className="document-panel p-3">
+        <div className="border border-[#2A2A2A] bg-[#FAFAF8] p-3">
           <div className="photo-grain relative aspect-[4/3] border border-[#111111]/20 bg-[#1a1a1a]">
             <Image
               src="/images/film-lab-workbench.png"
@@ -60,7 +61,7 @@ export function HeroSection() {
             <span>SCAN SET A</span>
             <span>APPLE VALLEY</span>
           </div>
-          <div className="mt-4 border-t border-[#D8D8D2] pt-4">
+          <div className="mt-4 border-t border-[#2A2A2A] pt-4">
             <AsciiBlockLogo />
           </div>
         </div>

@@ -14,7 +14,7 @@ type ProductCardProps = {
 
 export function ProductCard({ product }: ProductCardProps) {
   return (
-    <article className="group bg-[#FAFAF8] p-4 transition-colors hover:bg-[#FFFFFF]">
+    <article className="group record-cell p-4 transition-colors hover:bg-[#FFFFFF]">
       <Link href={`/shop/${product.slug}`} className="block">
         <ProductImage
           src={getProductImages(product)[0]}
@@ -51,7 +51,7 @@ export function ProductCard({ product }: ProductCardProps) {
           </span>
         ) : null}
       </div>
-      <div className="mt-5 grid gap-2 sm:grid-cols-2">
+      <div className="mt-5 grid gap-2">
         <Link
           href={`/shop/${product.slug}`}
           className="cta-button cta-primary"

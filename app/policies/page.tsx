@@ -57,9 +57,9 @@ export default function PoliciesPage() {
         meta={["STORE POLICY", "LOCAL PICKUP", "SHIPPING"]}
       />
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
-        <div className="grid gap-px border border-[#111111]/20 bg-[#111111]/20 md:grid-cols-2">
+        <div className="record-grid md:grid-cols-2">
           {policySections.map((section) => (
-            <article key={section.title} className="bg-[#FAFAF8] p-6">
+            <article key={section.title} className="record-cell p-6">
               <TerminalLabel>{section.title}</TerminalLabel>
               <p className="mt-5 text-sm leading-7 text-[#333333]">
                 {section.text}

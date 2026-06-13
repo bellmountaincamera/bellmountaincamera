@@ -1,4 +1,5 @@
 import { CTAButton } from "@/components/ui/CTAButton";
+import { MetadataPanel } from "@/components/brand/MetadataPanel";
 import { MetadataLine } from "@/components/ui/MetadataLine";
 import { TerminalLabel } from "@/components/ui/TerminalLabel";
 import { site } from "@/lib/site";
@@ -21,35 +22,19 @@ export function VisitSection() {
             </CTAButton>
           </div>
         </div>
-        <div className="document-panel p-6">
+        <div>
           <MetadataLine
             items={["WALK-INS WELCOME", "FILM DROP-OFF", "CAMERA SERVICE INTAKE"]}
           />
-          <div className="mt-6 grid gap-5 sm:grid-cols-2">
-            <div>
-              <p className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#666666]">
-                Location
-              </p>
-              <p className="mt-2 text-lg font-semibold leading-7">
-                {site.locationName}
-                <br />
-                {site.street}
-                <br />
-                {site.cityStateZip}
-              </p>
-            </div>
-            <div>
-              <p className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#666666]">
-                Hours
-              </p>
-              {site.hours.map((item) => (
-                <p key={item.days} className="mt-2 text-lg font-semibold leading-7">
-                  {item.days}
-                  <br />
-                  {item.time}
-                </p>
-              ))}
-            </div>
+          <div className="mt-6">
+            <MetadataPanel
+              rows={[
+                ["Location", `${site.locationName} / ${site.street} / ${site.cityStateZip}`],
+                ["Hours", site.hoursShort],
+                ["Access", "Walk-ins welcome"],
+                ["Appointment", "Email or phone"]
+              ]}
+            />
           </div>
         </div>
       </div>

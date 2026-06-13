@@ -1,5 +1,7 @@
 import { AsciiLineLogo } from "@/components/brand/AsciiLineLogo";
 
+// Kept as a compatibility wrapper for earlier pages. Prefer MetadataPanel or
+// TerminalStatusPanel for new terminal/documentation surfaces.
 type TerminalMetaPanelProps = {
   rows: Array<[string, string]>;
   tone?: "light" | "dark";

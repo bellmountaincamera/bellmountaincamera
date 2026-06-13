@@ -23,11 +23,11 @@ export default function CartPage() {
         meta={["DEMO ONLY", "LOCAL PICKUP", "SHIPPING PLANNED"]}
       />
       <section className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[1.2fr_0.8fr] lg:px-8">
-        <div className="grid gap-px border border-[#111111]/20 bg-[#111111]/20">
+        <div className="record-grid">
           {cartItems.map((item) => (
             <article
               key={item.slug}
-              className="grid gap-4 bg-[#FAFAF8] p-5 sm:grid-cols-[1fr_auto]"
+              className="grid gap-4 record-cell p-5 sm:grid-cols-[1fr_auto]"
             >
               <div>
                 <p className="mono text-xs uppercase tracking-[0.14em] text-[#666666]">

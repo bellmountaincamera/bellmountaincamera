@@ -1,4 +1,5 @@
 import { AsciiLineLogo } from "@/components/brand/AsciiLineLogo";
+import { MetadataPanel } from "@/components/brand/MetadataPanel";
 import { TerminalDivider } from "@/components/brand/TerminalDivider";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { ProductCard } from "@/components/ui/ProductCard";
@@ -35,23 +36,14 @@ export function ShopPreviewSection() {
             </CTAButton>
           </div>
         </div>
-        <div className="document-panel p-6">
+        <div>
           <AsciiLineLogo className="mb-5" />
-          <div className="grid gap-px bg-[#111111]/20">
-            {items.map((item, index) => (
-              <div
-                key={item}
-                className="grid grid-cols-[4rem_1fr] bg-[#FAFAF8] px-4 py-4"
-              >
-                <span className="mono text-xs font-semibold text-[#666666]">
-                  INV-{String(index + 1).padStart(2, "0")}
-                </span>
-                <span className="font-semibold uppercase tracking-[0.03em]">
-                  {item}
-                </span>
-              </div>
-            ))}
-          </div>
+          <MetadataPanel
+            rows={items.map((item, index) => [
+              `INV-${String(index + 1).padStart(2, "0")}`,
+              item
+            ])}
+          />
           <p className="mt-5 text-sm leading-7 text-[#333333]">
             Inventory changes often. Stop by during business hours or contact
             BMC to ask about current film cameras, 35mm film stock, batteries,
@@ -63,7 +55,7 @@ export function ShopPreviewSection() {
         <div className="mb-6">
           <TerminalDivider label="FEATURED STOCK / PREVIEW" />
         </div>
-        <div className="grid gap-px overflow-hidden border border-[#111111]/20 bg-[#111111]/20 md:grid-cols-3">
+        <div className="record-grid md:grid-cols-3">
           {featured.map((product) => (
             <ProductCard key={product.slug} product={product} />
           ))}

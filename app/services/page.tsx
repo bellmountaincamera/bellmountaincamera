@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { TerminalStatusPanel } from "@/components/brand/TerminalStatusPanel";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { TerminalLabel } from "@/components/ui/TerminalLabel";
@@ -33,10 +34,21 @@ export default function ServicesPage() {
           <div className="mt-7">
             <CTAButton href="/contact">Start Service Inquiry</CTAButton>
           </div>
+          <div className="mt-6">
+            <TerminalStatusPanel
+              title="SERVICE BENCH STATUS"
+              rows={[
+                ["Diagnostics", "Available"],
+                ["Cleaning", "Available"],
+                ["Light Seals", "Available"],
+                ["Shutter", "When Possible"]
+              ]}
+            />
+          </div>
         </div>
-        <div className="grid gap-px border border-[#111111]/20 bg-[#111111]/20">
+        <div className="record-grid">
           {cameraServiceMenu.map((service) => (
-            <article key={service.title} className="grid gap-4 bg-[#FAFAF8] p-5 sm:grid-cols-[1fr_auto]">
+            <article key={service.title} className="grid gap-4 record-cell p-5 sm:grid-cols-[1fr_auto]">
               <div>
                 <h3 className="text-xl font-semibold uppercase tracking-[0.03em]">
                   {service.title}
@@ -55,9 +67,9 @@ export default function ServicesPage() {
       <section className="border-t border-[#111111]/15">
         <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
           <TerminalLabel>Service Bundles</TerminalLabel>
-          <div className="mt-8 grid gap-px border border-[#111111]/20 bg-[#111111]/20 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 record-grid sm:grid-cols-2 lg:grid-cols-4">
             {serviceBundles.map((bundle) => (
-              <article key={bundle.title} className="bg-[#FAFAF8] p-5">
+              <article key={bundle.title} className="record-cell p-5">
                 <p className="text-lg font-semibold uppercase tracking-[0.03em]">
                   {bundle.title}
                 </p>
