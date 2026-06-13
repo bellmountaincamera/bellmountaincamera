@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { AsciiBlockLogo } from "@/components/brand/AsciiBlockLogo";
+import { AsciiLineLogo } from "@/components/brand/AsciiLineLogo";
 import { site } from "@/lib/site";
 import { MetadataLine } from "@/components/ui/MetadataLine";
 
@@ -8,7 +8,7 @@ export function Footer() {
     <footer className="border-t border-[#2A2A2A] bg-[#111111] text-[#FAFAF8]">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.2fr_0.8fr] lg:px-8">
         <div>
-          <AsciiBlockLogo tone="dark" />
+          <AsciiLineLogo tone="dark" variant="full" />
           <p className="mt-5 text-xl font-semibold uppercase tracking-[0.08em]">
             Bell Mountain Camera
           </p>

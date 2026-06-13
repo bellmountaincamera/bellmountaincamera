@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { AsciiBlockLogo } from "@/components/brand/AsciiBlockLogo";
+import { AsciiLineLogo } from "@/components/brand/AsciiLineLogo";
 import { TerminalStatusPanel } from "@/components/brand/TerminalStatusPanel";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { MetadataLine } from "@/components/ui/MetadataLine";
@@ -62,7 +62,7 @@ export function HeroSection() {
             <span>APPLE VALLEY</span>
           </div>
           <div className="mt-4 border-t border-[#2A2A2A] pt-4">
-            <AsciiBlockLogo />
+            <AsciiLineLogo variant="full" />
           </div>
         </div>
       </div>

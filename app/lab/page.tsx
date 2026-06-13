@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { AsciiBlockLogo } from "@/components/brand/AsciiBlockLogo";
+import { AsciiLineLogo } from "@/components/brand/AsciiLineLogo";
 import { TerminalDivider } from "@/components/brand/TerminalDivider";
 import { TerminalStatusPanel } from "@/components/brand/TerminalStatusPanel";
 import { ContactCTA } from "@/components/sections/ContactCTA";
@@ -96,7 +96,7 @@ export default function LabPage() {
                 Sample scan reference frames
               </h2>
             </div>
-            <AsciiBlockLogo tone="dark" />
+            <AsciiLineLogo tone="dark" variant="full" />
           </div>
           <div className="grid gap-4 sm:grid-cols-3">
             {[1, 2, 3].map((frame) => (
