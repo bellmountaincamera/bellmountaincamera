@@ -10,27 +10,21 @@ export function HeroSection() {
       <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 sm:py-16 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
         <div className="flex flex-col justify-center">
           <TerminalLabel>PUBLIC FILE / BMC-001</TerminalLabel>
-          <h1 className="mt-5 text-5xl font-semibold uppercase leading-[0.88] tracking-[0.01em] sm:text-7xl lg:text-8xl">
-            Bell Mountain Camera
-          </h1>
-          <p className="mt-6 max-w-xl text-lg leading-8 text-[#3a342e]">
+          <h1 className="mt-5 text-5xl font-semibold uppercase leading-[0.92] tracking-[0.01em] sm:text-7xl lg:text-8xl">
             Film cameras, film development, and scanning in Apple Valley.
-          </p>
+          </h1>
           <p className="mt-4 max-w-xl text-sm leading-7 text-[#4a4036]">
             {site.name} is a High Desert film camera shop and film lab located
             inside Wild Goose Vintage & Thrift Store in Apple Valley,
             California.
           </p>
-          <div className="mt-8 grid gap-3 sm:grid-cols-2">
-            <CTAButton href="/shop/film">Shop Film</CTAButton>
-            <CTAButton href="/shop/cameras" variant="secondary">
-              Shop Cameras
-            </CTAButton>
+          <div className="mt-8 grid gap-3 sm:grid-cols-3">
+            <CTAButton href="/contact">Visit the Shop</CTAButton>
             <CTAButton href="/lab" variant="secondary">
-              Film Lab Services
+              Film Lab
             </CTAButton>
-            <CTAButton href="/services" variant="secondary">
-              Camera Services
+            <CTAButton href="/shop" variant="secondary">
+              Shop Preview
             </CTAButton>
           </div>
           <div className="mt-9">

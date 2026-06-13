@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { services } from "@/lib/site";
 import { TerminalLabel } from "@/components/ui/TerminalLabel";
 
@@ -19,7 +20,7 @@ export function ServicesGrid() {
       </div>
       <div className="grid gap-px overflow-hidden border border-[#111111]/20 bg-[#111111]/20 sm:grid-cols-2 lg:grid-cols-3">
         {services.map((service) => (
-          <article key={service.title} className="bg-[#f3eee5] p-6">
+          <Link key={service.title} href={service.href} className="bg-[#f3eee5] p-6 hover:bg-[#fffaf2]">
             <p className="mono text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-[#8c7b6a]">
               {service.code}
             </p>
@@ -29,7 +30,7 @@ export function ServicesGrid() {
             <p className="mt-4 text-sm leading-7 text-[#4a4036]">
               {service.text}
             </p>
-          </article>
+          </Link>
         ))}
       </div>
     </section>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ProductCard } from "@/components/ui/ProductCard";
+import { ShopBrowser } from "@/components/shop/ShopBrowser";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { TerminalLabel } from "@/components/ui/TerminalLabel";
 import { getCameraProducts } from "@/lib/products";
@@ -31,11 +31,7 @@ export default function ShopCamerasPage() {
             policy, and sold-as-is language if needed.
           </p>
         </div>
-        <div className="grid gap-px overflow-hidden border border-[#111111]/20 bg-[#111111]/20">
-          {cameras.map((product) => (
-            <ProductCard key={product.slug} product={product} />
-          ))}
-        </div>
+        <ShopBrowser products={cameras} initialFilter="Cameras" />
       </section>
     </main>
   );

@@ -1,3 +1,5 @@
+import { productImages } from "@/lib/product-images";
+
 export type ProductStatus =
   | "In Stock"
   | "Low Stock"
@@ -129,6 +131,9 @@ function withMockCommerceFields(product: ProductSeed): Product {
   return base;
 }
 
+// Add film products here until Shopify is connected.
+// Use slug-based image names in /public/images/products/film/, such as:
+// kodak-ultramax-400-01.jpg, kodak-ultramax-400-02.jpg
 const mockProducts: ProductSeed[] = [
   {
     kind: "film",
@@ -144,7 +149,7 @@ const mockProducts: ProductSeed[] = [
     quantity: 8,
     localPickup: true,
     shippingAvailable: true,
-    image: "/images/film/reflex-lab-400d.jpg",
+    image: "/images/products/film/reflex-lab-400d-01.jpg",
     featured: true,
     description:
       "A flexible 35mm color negative film option for everyday daylight shooting, travel, and desert color."
@@ -163,7 +168,7 @@ const mockProducts: ProductSeed[] = [
     quantity: 6,
     localPickup: true,
     shippingAvailable: true,
-    image: "/images/film/reflex-lab-800t.jpg",
+    image: "/images/products/film/reflex-lab-800t-01.jpg",
     featured: true,
     description:
       "A tungsten-balanced 35mm color negative film for night scenes, mixed light, and cinematic color."
@@ -182,7 +187,7 @@ const mockProducts: ProductSeed[] = [
     quantity: 5,
     localPickup: true,
     shippingAvailable: true,
-    image: "/images/film/reflex-lab-100d.jpg",
+    image: "/images/products/film/reflex-lab-100d-01.jpg",
     description:
       "A daylight-balanced 35mm film for bright conditions, clean color, and slower-speed shooting."
   },
@@ -200,7 +205,7 @@ const mockProducts: ProductSeed[] = [
     quantity: 10,
     localPickup: true,
     shippingAvailable: true,
-    image: "/images/film/lucky-color-200.jpg",
+    image: "/images/products/film/lucky-color-200-01.jpg",
     description:
       "Affordable 35mm color negative film for everyday cameras, quick walks, and casual rolls."
   },
@@ -218,7 +223,7 @@ const mockProducts: ProductSeed[] = [
     quantity: 12,
     localPickup: true,
     shippingAvailable: true,
-    image: "/images/film/luckypan-shd100.jpg",
+    image: "/images/products/film/luckypan-shd100-01.jpg",
     description:
       "Slow black-and-white 35mm film for bright light, clean contrast, and deliberate shooting."
   },
@@ -236,7 +241,7 @@ const mockProducts: ProductSeed[] = [
     quantity: 12,
     localPickup: true,
     shippingAvailable: true,
-    image: "/images/film/luckypan-shd400.jpg",
+    image: "/images/products/film/luckypan-shd400-01.jpg",
     description:
       "Faster black-and-white 35mm film for handheld shooting, shade, interiors, and daily carry."
   },
@@ -254,7 +259,7 @@ const mockProducts: ProductSeed[] = [
     quantity: 0,
     localPickup: true,
     shippingAvailable: true,
-    image: "/images/film/kodak-colorplus-200.jpg",
+    image: "/images/products/film/kodak-colorplus-200-01.jpg",
     description:
       "Classic Kodak 35mm color negative film. Availability rotates with shelf stock."
   },
@@ -272,7 +277,7 @@ const mockProducts: ProductSeed[] = [
     quantity: 0,
     localPickup: true,
     shippingAvailable: true,
-    image: "/images/film/kodak-ultramax-400.jpg",
+    image: "/images/products/film/kodak-ultramax-400-01.jpg",
     description:
       "A flexible Kodak 400-speed color film for everyday shooting. Availability rotates with stock."
   },
@@ -290,7 +295,7 @@ const mockProducts: ProductSeed[] = [
     quantity: 0,
     localPickup: true,
     shippingAvailable: true,
-    image: "/images/film/kodak-kodacolor-100.jpg",
+    image: "/images/products/film/kodak-kodacolor-100-01.jpg",
     description:
       "A slower Kodak color negative film option when available in rotating stock."
   },
@@ -308,7 +313,7 @@ const mockProducts: ProductSeed[] = [
     quantity: 0,
     localPickup: true,
     shippingAvailable: true,
-    image: "/images/film/kodak-eastman-100d.jpg",
+    image: "/images/products/film/kodak-eastman-100d-01.jpg",
     description:
       "A Kodak daylight-balanced specialty stock when available in rotating inventory."
   },
@@ -326,7 +331,7 @@ const mockProducts: ProductSeed[] = [
     quantity: 0,
     localPickup: true,
     shippingAvailable: true,
-    image: "/images/film/kodak-pro-400.jpg",
+    image: "/images/products/film/kodak-pro-400-01.jpg",
     description:
       "Kodak 400-speed professional color negative film when available in rotating stock."
   },
@@ -344,7 +349,7 @@ const mockProducts: ProductSeed[] = [
     quantity: 0,
     localPickup: true,
     shippingAvailable: true,
-    image: "/images/film/kodak-pro-800.jpg",
+    image: "/images/products/film/kodak-pro-800-01.jpg",
     description:
       "Kodak 800-speed professional color negative film when available in rotating stock."
   },
@@ -362,7 +367,7 @@ const mockProducts: ProductSeed[] = [
     quantity: 0,
     localPickup: true,
     shippingAvailable: true,
-    image: "/images/film/lomography-metropolis-110.jpg",
+    image: "/images/products/film/lomography-metropolis-110-01.jpg",
     description:
       "110 color negative film for pocket cameras when available in rotating stock."
   },
@@ -380,7 +385,7 @@ const mockProducts: ProductSeed[] = [
     quantity: 0,
     localPickup: true,
     shippingAvailable: true,
-    image: "/images/film/fujifilm-instax-wide.jpg",
+    image: "/images/products/film/fujifilm-instax-wide-01.jpg",
     description:
       "Instant film for FUJIFILM instax WIDE cameras when available in rotating stock."
   },
@@ -402,7 +407,7 @@ const mockProducts: ProductSeed[] = [
     quantity: 0,
     localPickup: true,
     shippingAvailable: true,
-    image: "/images/cameras/used-35mm-camera-intake.jpg",
+    image: "/images/products/cameras/used-35mm-camera-intake-01.jpg",
     featured: true,
     description:
       "A future product listing area for one-off used film cameras with condition notes, tested status, lens details, price, shipping, and pickup options."
@@ -431,7 +436,7 @@ export function getInventoryStatus(product: Product) {
 }
 
 export function getProductImages(product: Product) {
-  return product.images ?? [product.image];
+  return productImages[product.slug] ?? product.images ?? [product.image];
 }
 
 export function getContactCta(product: Product) {

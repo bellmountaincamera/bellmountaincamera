@@ -11,6 +11,9 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
+  const directionsUrl =
+    "https://www.google.com/maps/search/?api=1&query=Bell%20Mountain%20Camera%2021810%20CA-18%20Unit%20%232%20Apple%20Valley%20CA%2092307";
+
   return (
     <main>
       <PageHeader
@@ -82,6 +85,20 @@ export default function ContactPage() {
                 by email or phone.
               </p>
             </div>
+            <div className="grid gap-3 sm:grid-cols-2">
+              <CTAButton href={`tel:${site.phone.replaceAll("-", "")}`}>
+                Call BMC
+              </CTAButton>
+              <CTAButton href={`mailto:${site.email}`} variant="secondary">
+                Email BMC
+              </CTAButton>
+              <CTAButton href={directionsUrl} variant="secondary">
+                Get Directions
+              </CTAButton>
+              <CTAButton href="/local-pickup" variant="secondary">
+                Visit the Shop
+              </CTAButton>
+            </div>
           </div>
         </div>
         <div className="terminal-panel p-6">
@@ -147,6 +164,11 @@ export default function ContactPage() {
             className="min-h-[22rem] w-full border border-[#111111]/20"
             loading="lazy"
           />
+          <div className="mt-4">
+            <CTAButton href={directionsUrl} variant="secondary">
+              Open Directions
+            </CTAButton>
+          </div>
         </div>
       </section>
     </main>

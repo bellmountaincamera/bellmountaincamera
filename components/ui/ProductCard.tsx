@@ -1,8 +1,10 @@
 import Link from "next/link";
+import { ProductImage } from "@/components/ui/ProductImage";
 import {
   formatPrice,
   getContactCta,
   getInventoryStatus,
+  getProductImages,
   type Product
 } from "@/lib/products";
 
@@ -14,14 +16,11 @@ export function ProductCard({ product }: ProductCardProps) {
   return (
     <article className="bg-[#f3eee5] p-4">
       <Link href={`/shop/${product.slug}`} className="block">
-        <div className="product-photo">
-          <span className="mono text-[0.68rem] uppercase tracking-[0.14em] text-[#6f604f]">
-            Product image coming soon
-          </span>
-          <span className="mt-3 text-center text-xl font-semibold uppercase tracking-[0.03em]">
-            {product.name}
-          </span>
-        </div>
+        <ProductImage
+          src={getProductImages(product)[0]}
+          alt={`${product.name} product photo`}
+          label={product.name}
+        />
       </Link>
       <div className="mt-4 flex items-start justify-between gap-4">
         <div>

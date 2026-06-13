@@ -111,3 +111,40 @@ public shipping policy remains editable until final rules are confirmed.
 The site currently uses `lib/products.ts` as mock/fallback data. `lib/commerce.ts`
 provides a provider boundary, and `lib/shopify.ts` contains placeholder
 configuration/mapping helpers. No live Shopify API calls are made yet.
+# Ecommerce Integration Notes
+
+Current pass: UI polish and shop preparation only.
+
+Do not connect Shopify yet. Do not add payment processing yet.
+
+Future Shopify responsibilities:
+- Products
+- Product photos
+- Inventory
+- Cart
+- Checkout
+- Payments
+- Shipping
+- Local pickup
+- Taxes
+- Discounts
+- Order confirmation emails
+
+Next.js responsibilities:
+- Custom frontend
+- Brand styling
+- SEO
+- Static content pages
+- Product listing display
+- Product detail display
+- Mock fallback data until Shopify is connected
+
+Environment variables for later:
+
+```text
+SHOPIFY_STORE_DOMAIN
+SHOPIFY_STOREFRONT_ACCESS_TOKEN
+SHOPIFY_API_VERSION
+```
+
+Never expose Shopify Admin API tokens in frontend code.

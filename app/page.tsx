@@ -1,11 +1,9 @@
-import { AboutPreviewSection } from "@/components/sections/AboutPreviewSection";
 import { CameraServicesSection } from "@/components/sections/CameraServicesSection";
 import { ContactCTA } from "@/components/sections/ContactCTA";
 import { FilmLabSection } from "@/components/sections/FilmLabSection";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { ServicesGrid } from "@/components/sections/ServicesGrid";
 import { ShopPreviewSection } from "@/components/sections/ShopPreviewSection";
-import { StatusBoardSection } from "@/components/sections/StatusBoardSection";
 import { VisitSection } from "@/components/sections/VisitSection";
 
 export default function Home() {
@@ -13,12 +11,10 @@ export default function Home() {
     <main>
       <HeroSection />
       <ServicesGrid />
-      <StatusBoardSection />
       <VisitSection />
-      <FilmLabSection />
       <ShopPreviewSection />
+      <FilmLabSection />
       <CameraServicesSection />
-      <AboutPreviewSection />
       <ContactCTA />
     </main>
   );

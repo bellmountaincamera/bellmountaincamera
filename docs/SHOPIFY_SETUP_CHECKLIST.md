@@ -61,3 +61,26 @@
 - [ ] Test tax calculation.
 - [ ] Test order confirmation emails.
 - [ ] Test mobile checkout flow.
+# Shopify Setup Checklist
+
+Do this after the static site is reviewed.
+
+- Create or confirm Shopify account
+- Confirm Shopify store domain
+- Add film products
+- Add used camera products as quantity 1 items
+- Upload product photos
+- Set inventory quantities
+- Configure local pickup
+- Configure shipping zones/rates
+- Configure taxes
+- Set product statuses
+- Create Storefront API token
+- Add Storefront token to Vercel environment variables
+- Test cart
+- Test checkout
+- Test local pickup
+- Test shipping
+- Test order confirmation email
+
+Do not commit Shopify secrets or `.env` files.

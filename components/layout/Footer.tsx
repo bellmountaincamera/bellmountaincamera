@@ -20,15 +20,19 @@ export function Footer() {
             />
           </div>
         </div>
-        <div className="grid gap-5 sm:grid-cols-2">
+        <div className="grid gap-5 sm:grid-cols-3">
           <div>
             <p className="mono text-xs font-semibold uppercase tracking-[0.16em] text-[#8c7b6a]">
-              Pages
+              Visit
             </p>
             <div className="mt-4 grid gap-2">
-              {site.nav.map((item) => (
+              {[
+                { href: "/contact", label: "Contact" },
+                { href: "/local-pickup", label: "Local Pickup" },
+                { href: "/contact", label: "Hours / Location" }
+              ].map((item) => (
                 <Link
-                  key={item.href}
+                  key={`${item.href}-${item.label}`}
                   href={item.href}
                   className="text-sm text-[#e8e2d8] hover:text-[#c7b8a3]"
                 >
@@ -39,17 +43,15 @@ export function Footer() {
           </div>
           <div>
             <p className="mono text-xs font-semibold uppercase tracking-[0.16em] text-[#8c7b6a]">
-              Store
+              Shop
             </p>
             <div className="mt-4 grid gap-2">
               {[
-                { href: "/cart", label: "Cart" },
-                { href: "/checkout", label: "Checkout Preview" },
+                { href: "/shop", label: "Shop" },
+                { href: "/shop/film", label: "Film" },
+                { href: "/shop/cameras", label: "Cameras" },
                 { href: "/shipping", label: "Shipping" },
-                { href: "/returns", label: "Returns" },
-                { href: "/policies", label: "Policies" },
-                { href: "/local-pickup", label: "Local Pickup" },
-                { href: "/faq", label: "FAQ" }
+                { href: "/returns", label: "Returns" }
               ].map((item) => (
                 <Link
                   key={item.href}
@@ -63,21 +65,23 @@ export function Footer() {
           </div>
           <div>
             <p className="mono text-xs font-semibold uppercase tracking-[0.16em] text-[#8c7b6a]">
-              Contact
+              Info
             </p>
-            <div className="mt-4 grid gap-2 text-sm text-[#e8e2d8]">
-              <a href={`mailto:${site.email}`} className="hover:text-[#c7b8a3]">
-                {site.email}
-              </a>
-              <a href={`tel:${site.phone.replaceAll("-", "")}`} className="hover:text-[#c7b8a3]">
-                {site.phone}
-              </a>
-              <span>{site.instagram}</span>
-              <span>{site.locationName}</span>
-              <span>{site.street}</span>
-              <span>{site.cityStateZip}</span>
-              <span>{site.hoursShort}</span>
-              <span>{site.domain}</span>
+            <div className="mt-4 grid gap-2">
+              {[
+                { href: "/faq", label: "FAQ" },
+                { href: "/policies", label: "Policies" },
+                { href: "/privacy", label: "Privacy" },
+                { href: "/terms", label: "Terms" }
+              ].map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="text-sm text-[#e8e2d8] hover:text-[#c7b8a3]"
+                >
+                  {item.label}
+                </Link>
+              ))}
             </div>
           </div>
         </div>

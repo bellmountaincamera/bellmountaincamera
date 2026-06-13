@@ -3,12 +3,14 @@ import { notFound } from "next/navigation";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { MetadataLine } from "@/components/ui/MetadataLine";
 import { PageHeader } from "@/components/ui/PageHeader";
+import { ProductGallery } from "@/components/ui/ProductGallery";
 import { TerminalLabel } from "@/components/ui/TerminalLabel";
 import {
   formatPrice,
   getContactCta,
   getInventoryStatus,
   getProduct,
+  getProductImages,
   products
 } from "@/lib/products";
 import { site } from "@/lib/site";
@@ -81,19 +83,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
         meta={[product.category, getInventoryStatus(product), formatPrice(product.price)]}
       />
       <section className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
-        <div className="document-panel p-4">
-          <div className="product-photo min-h-[24rem]">
-            <span className="mono text-[0.72rem] uppercase tracking-[0.14em] text-[#6f604f]">
-              Product image coming soon
-            </span>
-            <span className="mt-4 text-center text-3xl font-semibold uppercase tracking-[0.03em]">
-              {product.name}
-            </span>
-            <span className="mono mt-5 text-xs uppercase tracking-[0.12em] text-[#8c7b6a]">
-              {product.image}
-            </span>
-          </div>
-        </div>
+        <ProductGallery images={getProductImages(product)} productName={product.name} />
         <div>
           <TerminalLabel>Online Shop Coming Soon</TerminalLabel>
           <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
@@ -109,7 +99,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
               items={[
                 product.localPickup ? "LOCAL PICKUP AVAILABLE" : "NO PICKUP",
                 product.shippingAvailable ? "SHIP TO ADDRESS" : "NO SHIPPING",
-                "CONTACT TO BUY"
+                "CONTACT FOR AVAILABILITY"
               ]}
             />
           </div>

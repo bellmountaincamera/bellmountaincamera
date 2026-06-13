@@ -22,7 +22,7 @@ export const site = {
     { href: "/", label: "Home" },
     { href: "/lab", label: "Film Lab" },
     { href: "/shop", label: "Shop" },
-    { href: "/services", label: "Services" },
+    { href: "/services", label: "Camera Services" },
     { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" }
   ]
@@ -32,32 +32,26 @@ export const services = [
   {
     title: "Film Development",
     code: "PROCESS: C-41",
-    text: "35mm C-41 film development for local drop-off and pickup in Apple Valley."
-  },
-  {
-    title: "Film Scanning",
-    code: "STATUS: SCANNED",
-    text: "Digital scan delivery through a download link so customers can save, share, and back up files."
-  },
-  {
-    title: "Film Drop-off / Pickup",
-    code: "FILM RECEIVED",
-    text: "Walk in during business hours to drop off film, pick up negatives, or ask about the current lab queue."
-  },
-  {
-    title: "Film Cameras",
-    code: "SHELF: 35MM",
-    text: "Used film cameras for the High Desert film community, with availability, sold status, local pickup, and shipping support."
+    text: "C-41 processing and scanning.",
+    href: "/lab"
   },
   {
     title: "Film Stock",
     code: "COLD STORE",
-    text: "Practical 35mm, 110, instant, and specialty film stock for online purchase, shipping, and local pickup."
+    text: "Rotating 35mm film, Kodak, black-and-white, and specialty film.",
+    href: "/shop/film"
   },
   {
-    title: "Basic Camera Service",
+    title: "Used Cameras",
+    code: "SHELF: 35MM",
+    text: "Film cameras available in-store and online soon.",
+    href: "/shop/cameras"
+  },
+  {
+    title: "Camera Services",
     code: "SERVICE INTAKE",
-    text: "Diagnosis, cleaning, light seal replacement, and basic shutter speed adjustment when possible."
+    text: "Diagnosis, cleaning, light seals, and shutter speed adjustment when possible.",
+    href: "/services"
   }
 ];
 

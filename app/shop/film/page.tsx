@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ProductCard } from "@/components/ui/ProductCard";
+import { ShopBrowser } from "@/components/shop/ShopBrowser";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { getFilmProducts } from "@/lib/products";
 
@@ -21,11 +21,7 @@ export default function ShopFilmPage() {
         meta={["35MM FILM", "KODAK STOCK", "SHIPPING + PICKUP"]}
       />
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
-        <div className="grid gap-px overflow-hidden border border-[#111111]/20 bg-[#111111]/20 md:grid-cols-2 xl:grid-cols-3">
-          {film.map((product) => (
-            <ProductCard key={product.slug} product={product} />
-          ))}
-        </div>
+        <ShopBrowser products={film} initialFilter="Film" />
       </section>
     </main>
   );

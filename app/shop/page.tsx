@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { PageHeader } from "@/components/ui/PageHeader";
-import { ProductCard } from "@/components/ui/ProductCard";
+import { ShopBrowser } from "@/components/shop/ShopBrowser";
 import { TerminalLabel } from "@/components/ui/TerminalLabel";
-import { productCategories, products } from "@/lib/products";
+import { products } from "@/lib/products";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -28,31 +28,14 @@ export default function ShopPage() {
             <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
               Film, cameras, and rotating inventory
             </h2>
-          </div>
-          <div className="flex flex-wrap gap-2">
-            <CTAButton href="/cart" variant="secondary">
-              Cart Preview
-            </CTAButton>
-            <CTAButton href="/checkout" variant="secondary">
-              Checkout Preview
-            </CTAButton>
+            <p className="mt-4 text-sm leading-7 text-[#4a4036]">
+              Online ordering is coming soon. For now, search the preview
+              catalog and contact BMC for current availability, local pickup,
+              or shipping questions.
+            </p>
           </div>
         </div>
-        <div className="mb-8 flex flex-wrap gap-2">
-          {productCategories.map((category) => (
-            <span
-              key={category}
-              className="mono border border-[#111111]/20 bg-[#f3eee5] px-3 py-2 text-[0.7rem] uppercase tracking-[0.14em] text-[#6f604f]"
-            >
-              {category}
-            </span>
-          ))}
-        </div>
-        <div className="grid gap-px overflow-hidden border border-[#111111]/20 bg-[#111111]/20 md:grid-cols-2 xl:grid-cols-3">
-          {products.map((product) => (
-            <ProductCard key={product.slug} product={product} />
-          ))}
-        </div>
+        <ShopBrowser products={products} />
       </section>
       <section className="border-t border-[#111111]/15 bg-[#111111] text-[#e8e2d8]">
         <div className="mx-auto grid max-w-7xl gap-8 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-2 lg:px-8">
