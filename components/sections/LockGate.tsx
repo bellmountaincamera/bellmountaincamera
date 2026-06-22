@@ -10,21 +10,15 @@ type LockGateProps = {
 };
 
 export function LockGate({ children }: LockGateProps) {
-  const [isReady, setIsReady] = useState(false);
   const [isUnlocked, setIsUnlocked] = useState(false);
 
   useEffect(() => {
     setIsUnlocked(window.localStorage.getItem(storageKey) === "true");
-    setIsReady(true);
   }, []);
 
   function unlock() {
     window.localStorage.setItem(storageKey, "true");
     setIsUnlocked(true);
-  }
-
-  if (!isReady) {
-    return null;
   }
 
   if (!isUnlocked) {
