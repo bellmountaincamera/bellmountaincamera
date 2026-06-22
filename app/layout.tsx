@@ -1,17 +1,22 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Footer } from "@/components/layout/Footer";
-import { Header } from "@/components/layout/Header";
+import { LockScreen } from "@/components/sections/LockScreen";
 import { site } from "@/lib/site";
+
+const siteLocked = true;
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://bellmountaincamera.com"),
   title: {
-    default: "Bell Mountain Camera | High Desert Film Lab and Camera Shop",
+    default: siteLocked
+      ? "Bell Mountain Camera | Coming Soon"
+      : "Bell Mountain Camera | High Desert Film Lab and Camera Shop",
     template: "%s | Bell Mountain Camera"
   },
   description:
-    site.description,
+    siteLocked
+      ? "Film cameras and equipment in Apple Valley, CA. Site is locked, coming soon."
+      : site.description,
   keywords: [
     "Bell Mountain Camera",
     "Bell Mountain Camera Apple Valley",
@@ -35,7 +40,9 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Bell Mountain Camera",
-    description: "Film cameras and film development in Apple Valley.",
+    description: siteLocked
+      ? "Film cameras and equipment in Apple Valley, CA. Site is locked, coming soon."
+      : "Film cameras and film development in Apple Valley.",
     url: "https://bellmountaincamera.com",
     siteName: "Bell Mountain Camera",
     images: [
@@ -103,9 +110,7 @@ export default function RootLayout({
             __html: JSON.stringify(localBusinessJsonLd)
           }}
         />
-        <Header />
-        {children}
-        <Footer />
+        {siteLocked ? <LockScreen /> : children}
       </body>
     </html>
   );
