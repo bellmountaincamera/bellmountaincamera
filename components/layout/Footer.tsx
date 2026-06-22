@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { AsciiLineLogo } from "@/components/brand/AsciiLineLogo";
-import { site } from "@/lib/site";
+import { site, siteStatusLine } from "@/lib/site";
 import { MetadataLine } from "@/components/ui/MetadataLine";
 
 export function Footer() {
@@ -18,7 +18,7 @@ export function Footer() {
           <div className="mt-6">
             <MetadataLine
               tone="dark"
-              items={["ROLL NO. 4821", "PROCESS: C-41", "DELIVERY: DIGITAL"]}
+              items={siteStatusLine}
             />
           </div>
         </div>

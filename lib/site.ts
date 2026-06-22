@@ -55,11 +55,11 @@ export const services = [
   }
 ];
 
-export const sampleRoll = [
-  "ROLL NO. 4821",
-  "PROCESS: C-41",
-  "STATUS: SCANNED",
-  "DELIVERY: DIGITAL"
+export const siteStatusLine = [
+  "FILM DROP-OFF",
+  "USED CAMERAS",
+  "FILM STOCK",
+  "LOCAL PICKUP"
 ];
 
 export const statusBoard = [

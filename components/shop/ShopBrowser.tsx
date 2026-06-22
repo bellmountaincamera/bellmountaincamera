@@ -115,7 +115,10 @@ export function ShopBrowser({ products, initialFilter = "" }: ShopBrowserProps) 
         </div>
       ) : (
         <div className="border border-[#2A2A2A] record-cell p-6 text-sm leading-7 text-[#333333]">
-          <AsciiLineLogo className="mb-4" />
+          <AsciiLineLogo
+            className="mb-4"
+            lines={["SEARCH", "NO MATCH", "ASK BMC"]}
+          />
           No products found. Contact BMC for current availability.
         </div>
       )}

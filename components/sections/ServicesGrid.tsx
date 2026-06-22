@@ -1,33 +1,68 @@
 import Link from "next/link";
-import { services } from "@/lib/site";
 import { TerminalLabel } from "@/components/ui/TerminalLabel";
+
+const topics = [
+  {
+    title: "Film Lab",
+    code: "PROCESS: C-41",
+    text: "Film development, scanning, turnaround notes, and lab pricing placeholders.",
+    href: "/lab"
+  },
+  {
+    title: "Shop",
+    code: "INVENTORY",
+    text: "Preview film stock and used cameras. Contact BMC for availability.",
+    href: "/shop"
+  },
+  {
+    title: "Camera Services",
+    code: "SERVICE",
+    text: "Diagnosis, cleaning, light seals, and basic shutter adjustment when possible.",
+    href: "/services"
+  },
+  {
+    title: "About",
+    code: "HIGH DESERT",
+    text: "A short note on Bell Mountain Camera and the Apple Valley film community.",
+    href: "/about"
+  },
+  {
+    title: "Contact",
+    code: "VISIT",
+    text: "Location, hours, email, phone, and walk-in information.",
+    href: "/contact"
+  }
+];
 
 export function ServicesGrid() {
   return (
-    <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
-      <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+    <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+      <div className="mb-8 max-w-2xl">
         <div>
-          <TerminalLabel>Service Index</TerminalLabel>
+          <TerminalLabel>Page Guide</TerminalLabel>
           <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em] sm:text-4xl">
-            What BMC does
+            Find the right page fast
           </h2>
         </div>
-        <p className="max-w-md text-sm leading-7 text-[#333333]">
-          Film cameras, 35mm film stock, film development, scanning, film
-          drop-off and pickup, and basic camera service for the High Desert film
-          community.
+        <p className="mt-4 text-sm leading-7 text-[#333333]">
+          Each page keeps to one job: lab, shop, camera service, shop story, or
+          contact details.
         </p>
       </div>
-      <div className="record-grid sm:grid-cols-2 lg:grid-cols-3">
-        {services.map((service) => (
-          <Link key={service.title} href={service.href} className="record-cell p-6 hover:bg-[#FFFFFF]">
+      <div className="record-grid sm:grid-cols-2 lg:grid-cols-5">
+        {topics.map((service) => (
+          <Link
+            key={service.title}
+            href={service.href}
+            className="record-cell p-5 hover:bg-[#FFFFFF]"
+          >
             <p className="mono text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-[#2457C5]">
               {service.code}
             </p>
-            <h3 className="mt-4 text-xl font-semibold uppercase tracking-[0.03em]">
+            <h3 className="mt-4 text-lg font-semibold uppercase tracking-[0.03em]">
               {service.title}
             </h3>
-            <p className="mt-4 text-sm leading-7 text-[#333333]">
+            <p className="mt-3 text-sm leading-6 text-[#333333]">
               {service.text}
             </p>
           </Link>

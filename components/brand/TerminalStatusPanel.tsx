@@ -25,7 +25,10 @@ export function TerminalStatusPanel({
         <p className="mono text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#2457C5]">
           {title}
         </p>
-        <AsciiLineLogo tone={tone} />
+        <AsciiLineLogo
+          tone={tone}
+          lines={["STATUS", "ACTIVE", "LOG"]}
+        />
       </div>
       <div className="mt-4 flex flex-wrap gap-2">
         {rows.map(([label, status]) => (

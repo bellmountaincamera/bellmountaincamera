@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Bell Mountain Camera",
-    description: "Film cameras, film development, and scanning in Apple Valley.",
+    description: "Film cameras and film development in Apple Valley.",
     url: "https://bellmountaincamera.com",
     siteName: "Bell Mountain Camera",
     images: [

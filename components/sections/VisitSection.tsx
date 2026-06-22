@@ -1,41 +1,31 @@
-import { CTAButton } from "@/components/ui/CTAButton";
-import { MetadataPanel } from "@/components/brand/MetadataPanel";
-import { MetadataLine } from "@/components/ui/MetadataLine";
+import Link from "next/link";
 import { TerminalLabel } from "@/components/ui/TerminalLabel";
 import { site } from "@/lib/site";
 
 export function VisitSection() {
   return (
     <section className="border-y border-[#D8D8D2] bg-[#FAFAF8]">
-      <div className="mx-auto grid max-w-7xl gap-8 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
+      <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 sm:py-12 lg:grid-cols-[1fr_1.1fr] lg:items-end lg:px-8">
         <div>
           <TerminalLabel>Visit BMC</TerminalLabel>
-          <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em] sm:text-5xl">
-            Walk-ins welcome in Apple Valley
+          <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em] sm:text-4xl">
+            Inside Wild Goose Vintage & Thrift Store
           </h2>
-          <p className="mt-6 text-sm leading-7 text-[#333333]">
-            {site.locationCopy}
-          </p>
-          <div className="mt-8">
-            <CTAButton href="/contact" variant="secondary">
-              Contact BMC
-            </CTAButton>
-          </div>
         </div>
-        <div>
-          <MetadataLine
-            items={["WALK-INS WELCOME", "FILM DROP-OFF", "CAMERA SERVICE INTAKE"]}
-          />
-          <div className="mt-6">
-            <MetadataPanel
-              rows={[
-                ["Location", `${site.locationName} / ${site.street} / ${site.cityStateZip}`],
-                ["Hours", site.hoursShort],
-                ["Access", "Walk-ins welcome"],
-                ["Appointment", "Email or phone"]
-              ]}
-            />
+        <div className="grid gap-3 text-sm leading-6 text-[#333333] sm:grid-cols-[1fr_auto] sm:items-end">
+          <div>
+            <p>{site.street}</p>
+            <p>{site.cityStateZip}</p>
+            <p className="mono mt-2 text-[0.72rem] uppercase tracking-[0.14em] text-[#666666]">
+              {site.hoursShort} / Walk-ins welcome
+            </p>
           </div>
+          <Link
+            href="/contact"
+            className="mono text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-[#2457C5] underline-offset-4 hover:underline"
+          >
+            Contact details
+          </Link>
         </div>
       </div>
     </section>

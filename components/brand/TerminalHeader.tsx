@@ -38,7 +38,10 @@ export function TerminalHeader({
           </p>
         ) : null}
       </div>
-      <AsciiLineLogo tone={tone} />
+      <AsciiLineLogo
+        tone={tone}
+        lines={[eyebrow.slice(0, 12), "SECTION", "INDEX"]}
+      />
     </div>
   );
 }

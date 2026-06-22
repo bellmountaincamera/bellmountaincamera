@@ -26,7 +26,11 @@ export function TerminalMetaPanel({
         <p className="mono text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#2457C5]">
           {title}
         </p>
-        <AsciiLineLogo tone={tone} className="hidden sm:block" />
+        <AsciiLineLogo
+          tone={tone}
+          className="hidden sm:block"
+          lines={["META", "RECORD", "FILE"]}
+        />
       </div>
       <dl className="mt-4 grid gap-2">
         {rows.map(([label, value]) => (

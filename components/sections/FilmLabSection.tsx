@@ -43,7 +43,7 @@ export function FilmLabSection() {
           <div className="sm:col-span-2">
             <MetadataLine
               tone="dark"
-              items={["ROLL NO. 4821", "STATUS: SCANNED", "QUALITY CHECK: PASS"]}
+              items={["FILM DROP-OFF", "C-41 DEVELOPMENT", "DIGITAL SCANS"]}
             />
           </div>
         </div>

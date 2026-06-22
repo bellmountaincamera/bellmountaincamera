@@ -26,7 +26,10 @@ export default function ShopPage() {
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
         <div className="mb-8 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-2xl">
-            <AsciiLineLogo className="mb-5" />
+            <AsciiLineLogo
+              className="mb-5"
+              lines={["SHOP", "PREVIEW", "NO CART"]}
+            />
             <TerminalLabel>All Products</TerminalLabel>
             <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
               Film, cameras, and rotating inventory

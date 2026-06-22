@@ -37,7 +37,10 @@ export function ShopPreviewSection() {
           </div>
         </div>
         <div>
-          <AsciiLineLogo className="mb-5" />
+          <AsciiLineLogo
+            className="mb-5"
+            lines={["STOCK", "PREVIEW", "INQUIRE"]}
+          />
           <MetadataPanel
             rows={items.map((item, index) => [
               `INV-${String(index + 1).padStart(2, "0")}`,

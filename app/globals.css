@@ -131,10 +131,52 @@ a {
 }
 
 .ascii-mark {
+  display: inline-block;
   font-family: "IBM Plex Mono", "Space Mono", "JetBrains Mono", "Courier New", monospace;
   letter-spacing: 0;
-  line-height: 1;
+  line-height: 0.95;
+  margin: 0;
   white-space: pre;
+}
+
+.ascii-logo-shell {
+  line-height: 0;
+}
+
+.ascii-logo-image {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  user-select: none;
+  width: min(100%, 34rem);
+}
+
+.ascii-logo-dark .ascii-logo-image {
+  filter: invert(1);
+}
+
+.ascii-mark-full {
+  font-size: 0.42rem;
+}
+
+.ascii-mark-compact {
+  font-size: 0.62rem;
+}
+
+@media (min-width: 640px) {
+  .ascii-mark-full {
+    font-size: 0.56rem;
+  }
+
+  .ascii-mark-compact {
+    font-size: 0.75rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .ascii-mark-full {
+    font-size: 0.72rem;
+  }
 }
 
 .blue-accent {

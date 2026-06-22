@@ -1,5 +1,3 @@
-import { AsciiLineLogo } from "@/components/brand/AsciiLineLogo";
-
 type TerminalDividerProps = {
   label?: string;
   tone?: "light" | "dark";
@@ -18,7 +16,6 @@ export function TerminalDivider({
     >
       <span className="h-px flex-1 bg-current opacity-40" />
       <span className="hidden sm:block">{label}</span>
-      <AsciiLineLogo tone={tone} className="shrink-0" />
       <span className="h-px flex-1 bg-current opacity-40" />
     </div>
   );
