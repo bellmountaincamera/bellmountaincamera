@@ -48,15 +48,32 @@ export function LockScreen({ onUnlock }: LockScreenProps) {
           </p>
         </div>
 
-        <div className="grid gap-10 py-14 lg:grid-cols-[1fr_0.72fr] lg:items-center">
-          <div>
-            <h1 className="mt-5 max-w-4xl text-4xl font-semibold uppercase leading-[0.96] tracking-[0.01em] sm:text-6xl lg:text-7xl">
+        <div className="py-14 sm:py-20">
+          <div className="max-w-5xl">
+            <h1 className="mono max-w-5xl text-3xl font-semibold uppercase leading-[1.02] tracking-[0.08em] sm:text-5xl lg:text-6xl">
               Film cameras and equipment in Apple Valley, CA.
             </h1>
             <div className="mt-8">
               <MetadataLine
                 items={["SITE IS LOCKED", "COMING SOON", "APPLE VALLEY, CA"]}
               />
+            </div>
+            <div className="my-10 border-y border-[#2A2A2A] py-8">
+              <AsciiLineLogo variant="full" />
+            </div>
+            <div className="grid gap-3 border-b border-[#D8D8D2] pb-8 text-sm sm:grid-cols-3">
+              {[
+                ["Status", "Coming soon"],
+                ["Focus", "Film cameras / equipment"],
+                ["Location", "Apple Valley, CA"]
+              ].map(([label, value]) => (
+                <div key={label} className="border-t border-[#D8D8D2] pt-3">
+                  <p className="mono text-[0.68rem] uppercase tracking-[0.18em] text-[#666666]">
+                    {label}
+                  </p>
+                  <p className="mt-2 font-medium">{value}</p>
+                </div>
+              ))}
             </div>
             <form
               onSubmit={handleSubmit}
@@ -90,29 +107,6 @@ export function LockScreen({ onUnlock }: LockScreenProps) {
                 </p>
               ) : null}
             </form>
-          </div>
-
-          <div className="document-panel p-5 sm:p-6">
-            <p className="mono text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#2457C5]">
-              BMC Preview
-            </p>
-            <div className="mt-6 border-t border-[#2A2A2A] pt-6">
-              <AsciiLineLogo variant="full" />
-            </div>
-            <div className="mt-6 grid gap-3 border-t border-[#D8D8D2] pt-5 text-sm">
-              {[
-                ["Status", "Coming soon"],
-                ["Focus", "Film cameras / equipment"],
-                ["Location", "Apple Valley, CA"]
-              ].map(([label, value]) => (
-                <div key={label} className="grid grid-cols-[6rem_1fr] gap-4">
-                  <span className="mono text-[0.68rem] uppercase tracking-[0.14em] text-[#666666]">
-                    {label}
-                  </span>
-                  <span className="font-medium">{value}</span>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
 
