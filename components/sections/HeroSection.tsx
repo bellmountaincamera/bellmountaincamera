@@ -1,4 +1,4 @@
-import { AsciiLineLogo } from "@/components/brand/AsciiLineLogo";
+import Image from "next/image";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { MetadataLine } from "@/components/ui/MetadataLine";
 import { TerminalLabel } from "@/components/ui/TerminalLabel";
@@ -30,32 +30,22 @@ export function HeroSection() {
             <MetadataLine items={siteStatusLine} />
           </div>
         </div>
-        <div className="document-panel flex flex-col justify-between p-5 sm:p-6">
-          <div>
-            <p className="mono text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#2457C5]">
-              Current Status
-            </p>
-            <div className="mt-5 grid gap-3 text-sm">
-              {[
-                ["Lab", "C-41 intake"],
-                ["Shop", "Film and used cameras"],
-                ["Service", "Basic camera work"],
-                ["Visit", "Walk-ins welcome"]
-              ].map(([label, value]) => (
-                <div
-                  key={label}
-                  className="grid grid-cols-[6rem_1fr] border-t border-[#D8D8D2] pt-3"
-                >
-                  <span className="mono text-[0.68rem] uppercase tracking-[0.14em] text-[#666666]">
-                    {label}
-                  </span>
-                  <span className="font-medium">{value}</span>
-                </div>
-              ))}
-            </div>
+        <div className="border border-[#2A2A2A] bg-[#FAFAF8] p-3">
+          <div className="photo-grain relative aspect-[4/3] border border-[#111111]/20 bg-[#1a1a1a]">
+            <Image
+              src="/images/home-camera-counter.jpg"
+              alt="Hands holding a Nikon Nikkormat film camera over a counter of used cameras"
+              fill
+              priority
+              sizes="(min-width: 1024px) 38vw, 100vw"
+              className="object-cover"
+            />
           </div>
-          <div className="mt-8 border-t border-[#2A2A2A] pt-5">
-            <AsciiLineLogo variant="full" className="text-[#111111]" />
+          <div className="mono mt-3 grid grid-cols-2 gap-2 text-[0.68rem] uppercase tracking-[0.12em] text-[#666666] sm:grid-cols-4">
+            <span>35MM</span>
+            <span>USED CAMERAS</span>
+            <span>APPLE VALLEY</span>
+            <span>SHOP COUNTER</span>
           </div>
         </div>
       </div>
