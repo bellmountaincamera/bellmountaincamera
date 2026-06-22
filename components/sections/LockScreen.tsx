@@ -1,7 +1,6 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import { AsciiLineLogo } from "@/components/brand/AsciiLineLogo";
 import { MetadataLine } from "@/components/ui/MetadataLine";
 
 type LockScreenProps = {
@@ -48,32 +47,15 @@ export function LockScreen({ onUnlock }: LockScreenProps) {
           </p>
         </div>
 
-        <div className="py-14 sm:py-20">
-          <div className="max-w-5xl">
-            <h1 className="mono max-w-5xl text-3xl font-semibold uppercase leading-[1.02] tracking-[0.08em] sm:text-5xl lg:text-6xl">
+        <div className="grid gap-10 py-14 lg:grid-cols-[1fr_0.72fr] lg:items-center">
+          <div>
+            <h1 className="mt-5 max-w-4xl text-4xl font-semibold uppercase leading-[0.96] tracking-[0.01em] sm:text-6xl lg:text-7xl">
               Film cameras and equipment in Apple Valley, CA.
             </h1>
             <div className="mt-8">
               <MetadataLine
                 items={["SITE IS LOCKED", "COMING SOON", "APPLE VALLEY, CA"]}
               />
-            </div>
-            <div className="my-10 border-y border-[#2A2A2A] py-8">
-              <AsciiLineLogo variant="full" />
-            </div>
-            <div className="grid gap-3 border-b border-[#D8D8D2] pb-8 text-sm sm:grid-cols-3">
-              {[
-                ["Status", "Coming soon"],
-                ["Focus", "Film cameras / equipment"],
-                ["Location", "Apple Valley, CA"]
-              ].map(([label, value]) => (
-                <div key={label} className="border-t border-[#D8D8D2] pt-3">
-                  <p className="mono text-[0.68rem] uppercase tracking-[0.18em] text-[#666666]">
-                    {label}
-                  </p>
-                  <p className="mt-2 font-medium">{value}</p>
-                </div>
-              ))}
             </div>
             <form
               onSubmit={handleSubmit}
