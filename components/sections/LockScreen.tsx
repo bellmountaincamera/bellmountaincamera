@@ -27,17 +27,17 @@ export function LockScreen({ onUnlock }: LockScreenProps) {
 
   return (
     <main className="min-h-screen border-[#2A2A2A] bg-[#FAFAF8] text-[#111111]">
-      <section className="mx-auto flex min-h-screen max-w-5xl flex-col justify-between px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
-        <div className="flex items-center justify-between border-b border-[#2A2A2A] pb-4">
+      <section className="mx-auto flex min-h-screen max-w-5xl flex-col justify-between px-4 py-5 sm:px-6 sm:py-8 lg:px-8">
+        <div className="flex items-center justify-between gap-4 border-b border-[#2A2A2A] pb-4">
           <div className="flex items-center gap-3">
-            <span className="grid h-9 w-9 place-items-center border border-[#111111] bg-[#111111] text-[#FAFAF8]">
-              <span className="mono text-xs font-semibold">BM</span>
+            <span className="grid h-8 w-8 shrink-0 place-items-center border border-[#111111] bg-[#111111] text-[#FAFAF8] sm:h-9 sm:w-9">
+              <span className="mono text-[0.68rem] font-semibold sm:text-xs">BM</span>
             </span>
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.08em]">
+              <p className="text-xs font-semibold uppercase tracking-[0.08em] sm:text-sm">
                 Bell Mountain Camera
               </p>
-              <p className="mono text-[0.68rem] uppercase tracking-[0.16em] text-[#666666]">
+              <p className="mono mt-0.5 text-[0.62rem] uppercase tracking-[0.14em] text-[#666666] sm:text-[0.68rem] sm:tracking-[0.16em]">
                 Apple Valley, CA
               </p>
             </div>
@@ -47,19 +47,19 @@ export function LockScreen({ onUnlock }: LockScreenProps) {
           </p>
         </div>
 
-        <div className="grid gap-10 py-14 lg:grid-cols-[1fr_0.72fr] lg:items-center">
+        <div className="grid gap-8 py-10 sm:py-14 lg:grid-cols-[1fr_0.72fr] lg:items-center">
           <div>
-            <h1 className="mt-5 max-w-4xl text-4xl font-semibold uppercase leading-[0.96] tracking-[0.01em] sm:text-6xl lg:text-7xl">
+            <h1 className="max-w-4xl text-[2.35rem] font-semibold uppercase leading-[0.98] tracking-[0.01em] sm:text-6xl lg:text-7xl">
               Film cameras and equipment in Apple Valley, CA.
             </h1>
-            <div className="mt-8">
+            <div className="mt-6 sm:mt-8">
               <MetadataLine
                 items={["SITE IS LOCKED", "COMING SOON", "APPLE VALLEY, CA"]}
               />
             </div>
             <form
               onSubmit={handleSubmit}
-              className="mt-8 grid max-w-sm gap-3 sm:grid-cols-[1fr_auto]"
+              className="mt-7 grid w-full max-w-sm gap-3 sm:mt-8 sm:grid-cols-[1fr_auto]"
             >
               <label className="block">
                 <span className="mono text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#666666]">
@@ -70,7 +70,7 @@ export function LockScreen({ onUnlock }: LockScreenProps) {
                   onChange={(event) => setCode(event.currentTarget.value)}
                   inputMode="numeric"
                   autoComplete="off"
-                  className="mt-2 w-full border border-[#2A2A2A] bg-[#FFFFFF] px-4 py-3 text-sm outline-none focus:border-[#2457C5]"
+                  className="mt-2 w-full border border-[#2A2A2A] bg-[#FFFFFF] px-4 py-3 text-base outline-none focus:border-[#2457C5] sm:text-sm"
                   aria-describedby={error ? "unlock-error" : undefined}
                 />
               </label>
@@ -93,7 +93,7 @@ export function LockScreen({ onUnlock }: LockScreenProps) {
         </div>
 
         <div className="border-t border-[#2A2A2A] pt-4">
-          <p className="mono text-[0.68rem] uppercase tracking-[0.16em] text-[#666666]">
+          <p className="mono text-[0.62rem] uppercase leading-5 tracking-[0.14em] text-[#666666] sm:text-[0.68rem] sm:tracking-[0.16em]">
             Bell Mountain Camera / High Desert Film Camera Shop
           </p>
         </div>
