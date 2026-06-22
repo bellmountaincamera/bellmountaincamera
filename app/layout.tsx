@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { LockScreen } from "@/components/sections/LockScreen";
+import { Footer } from "@/components/layout/Footer";
+import { Header } from "@/components/layout/Header";
+import { LockGate } from "@/components/sections/LockGate";
 import { site } from "@/lib/site";
 
 const siteLocked = true;
@@ -110,7 +112,19 @@ export default function RootLayout({
             __html: JSON.stringify(localBusinessJsonLd)
           }}
         />
-        {siteLocked ? <LockScreen /> : children}
+        {siteLocked ? (
+          <LockGate>
+            <Header />
+            {children}
+            <Footer />
+          </LockGate>
+        ) : (
+          <>
+            <Header />
+            {children}
+            <Footer />
+          </>
+        )}
       </body>
     </html>
   );
