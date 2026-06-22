@@ -50,9 +50,6 @@ export function LockScreen({ onUnlock }: LockScreenProps) {
 
         <div className="grid gap-10 py-14 lg:grid-cols-[1fr_0.72fr] lg:items-center">
           <div>
-            <p className="mono text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-[#2457C5]">
-              Public Site / Coming Soon
-            </p>
             <h1 className="mt-5 max-w-4xl text-4xl font-semibold uppercase leading-[0.96] tracking-[0.01em] sm:text-6xl lg:text-7xl">
               Film cameras and equipment in Apple Valley, CA.
             </h1>
