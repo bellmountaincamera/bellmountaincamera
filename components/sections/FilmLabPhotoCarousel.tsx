@@ -3,73 +3,11 @@
 import Image from "next/image";
 import { useState } from "react";
 import { TerminalLabel } from "@/components/ui/TerminalLabel";
-
-const labFrames = [
-  {
-    src: "/images/test-rolls/lab-processor-vertical.jpg",
-    label: "PROCESSOR",
-    title: "Noritsu Film Processor",
-    text: "Film transport and processor detail from the BMC lab setup."
-  },
-  {
-    src: "/images/test-rolls/lab-processor-soft.jpg",
-    label: "PROCESSOR DETAIL",
-    title: "Processor Path Detail",
-    text: "Soft-focus processor frame showing the mechanical film path."
-  },
-  {
-    src: "/images/test-rolls/lab-processor-wide.jpg",
-    label: "PROCESSOR PATH",
-    title: "Open Processor Bed",
-    text: "Wide view of the processor channel and film handling area."
-  },
-  {
-    src: "/images/test-rolls/processor-lines.jpg",
-    label: "REGULAR SCAN",
-    title: "Regular Border Sample",
-    text: "A cropped scan sample focused on the image area."
-  },
-  {
-    src: "/images/test-rolls/processor-open.jpg",
-    label: "TRANSPORT",
-    title: "Open Transport Section",
-    text: "Processor transport section used as a technical lab reference frame."
-  },
-  {
-    src: "/images/test-rolls/chemistry-bottles.jpg",
-    label: "CHEMISTRY",
-    title: "Color Chemistry",
-    text: "Kodak color chemistry bottles used as lab environment photography."
-  },
-  {
-    src: "/images/test-rolls/full-border-kodak.jpg",
-    label: "FULL BORDER",
-    title: "Full Border Sample",
-    text: "A full-border scan showing the frame edge and surrounding film area."
-  },
-  {
-    src: "/images/test-rolls/full-border-detail.jpg",
-    label: "FULL BORDER DETAIL",
-    title: "Frame Edge Detail",
-    text: "Full-border detail frame with visible film edge and lab texture."
-  },
-  {
-    src: "/images/test-rolls/camera-shelf.jpg",
-    label: "TEST FRAME",
-    title: "Camera Shelf Frame",
-    text: "A test-roll frame with shop gear and camera shelf detail."
-  },
-  {
-    src: "/images/test-rolls/archive-audio-shelf.jpg",
-    label: "ARCHIVE FRAME",
-    title: "Archival Shelf Frame",
-    text: "A test-roll frame with archival storage and analog equipment texture."
-  }
-];
+import { labPhotos } from "@/lib/photo-sets";
 
 export function FilmLabPhotoCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const activeFrame = labFrames[activeIndex];
+  const activeFrame = labPhotos[activeIndex];
 
   return (
     <section className="border-y border-[#111111]/15 bg-[#FFFFFF]">
@@ -114,7 +52,7 @@ export function FilmLabPhotoCarousel() {
           </div>
 
           <div className="record-grid sm:grid-cols-2 lg:grid-cols-1">
-            {labFrames.map((frame, index) => {
+            {labPhotos.map((frame, index) => {
               const isActive = index === activeIndex;
 
               return (

@@ -3,6 +3,7 @@ import Image from "next/image";
 import { ShopBrowser } from "@/components/shop/ShopBrowser";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { TerminalLabel } from "@/components/ui/TerminalLabel";
+import { cameraPhotos } from "@/lib/photo-sets";
 import { getCameraProducts } from "@/lib/products";
 
 export const metadata: Metadata = {
@@ -10,87 +11,6 @@ export const metadata: Metadata = {
   description:
     "Shop used film cameras from Bell Mountain Camera with condition notes, tested status, local pickup, and shipping support."
 };
-
-const cameraPhotos = [
-  {
-    src: "/images/camera-photos/olympus-closeup.jpg",
-    title: "Olympus Superzoom 105",
-    code: "BMC-23",
-    text: "Close detail of an Olympus point-and-shoot with quartz date marking and compact zoom body."
-  },
-  {
-    src: "/images/camera-photos/canon-z115-closeup.jpg",
-    title: "Canon Sure Shot Z115",
-    code: "BMC-2",
-    text: "Autofocus Canon compact with 38-115mm zoom lens and built-in flash."
-  },
-  {
-    src: "/images/camera-photos/superzoom-detail.jpg",
-    title: "Olympus Superzoom 105 Detail",
-    code: "BMC-22",
-    text: "Close-up of the viewfinder, flash, and front control area on the Olympus Superzoom."
-  },
-  {
-    src: "/images/camera-photos/pentax-iqzoom.jpg",
-    title: "Pentax IQZoom 110",
-    code: "BMC-13",
-    text: "Black Pentax IQZoom point-and-shoot with 38-110mm autofocus zoom lens."
-  },
-  {
-    src: "/images/camera-photos/canon-sureshot-film.jpg",
-    title: "Canon Sure Shot 85 Zoom",
-    code: "BMC-8",
-    text: "Canon compact camera photographed with 35mm film rolls and other shop cameras."
-  },
-  {
-    src: "/images/camera-photos/olympus-twin-flatlay.jpg",
-    title: "Olympus Infinity Twin",
-    code: "BMC CAMERAS-7",
-    text: "Flatlay with an Olympus Infinity Twin, Kodak 400 film, lenses, and assorted point-and-shoot cameras."
-  },
-  {
-    src: "/images/camera-photos/canon-owl-flatlay.jpg",
-    title: "Canon Sure Shot Owl Date",
-    code: "BMC CAMERAS-2",
-    text: "Canon Sure Shot Owl Date flatlay with film and camera accessories."
-  },
-  {
-    src: "/images/camera-photos/minolta-7-rangefinder.jpg",
-    title: "Minolta Hi-Matic 7s",
-    code: "BMC-21",
-    text: "Classic Minolta rangefinder photographed on a wood counter with warm shop light."
-  },
-  {
-    src: "/images/camera-photos/canon-a1-flatlay-wide.jpg",
-    title: "Canon A-1 System",
-    code: "CAMERA-2",
-    text: "Canon A-1 SLR shown with Kodak Portra 400, lenses, and camera service tools."
-  },
-  {
-    src: "/images/camera-photos/canon-ae1-flatlay.jpg",
-    title: "Canon AE-1 Program",
-    code: "CAMERA-3",
-    text: "Canon AE-1 Program flatlay with Kodak 400 film and surrounding lenses."
-  },
-  {
-    src: "/images/camera-photos/olympus-superzoom-flatlay.jpg",
-    title: "Olympus Superzoom 105",
-    code: "CAMERA-1",
-    text: "Full camera layout showing the Olympus Superzoom 105 among film and lenses."
-  },
-  {
-    src: "/images/camera-photos/canon-a1-closeup.jpg",
-    title: "Canon A-1 Close-Up",
-    code: "BMC CAM-2",
-    text: "Close frame on the Canon A-1 body and FD lens, useful for condition and listing reference."
-  },
-  {
-    src: "/images/camera-photos/olympus-superzoom-closeup.jpg",
-    title: "Olympus Superzoom 105 Close-Up",
-    code: "BMC CAM-3",
-    text: "Straight-on product-style view of the Olympus Superzoom 105 with surrounding compact cameras."
-  }
-];
 
 export default function ShopCamerasPage() {
   const cameras = getCameraProducts();
@@ -102,6 +22,7 @@ export default function ShopCamerasPage() {
         title="Shop Cameras"
         description="Used camera inventory changes often. Contact BMC with any questions about condition, functionality, or availability."
         meta={["USED CAMERAS", "SOLD STATUS", "SHIPPING + PICKUP"]}
+        photoSet="camera"
       />
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
         <div className="mb-8 max-w-3xl">
@@ -128,7 +49,7 @@ export default function ShopCamerasPage() {
                 />
               </div>
               <p className="mono mt-4 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#0B3D91]">
-                {camera.code}
+                {camera.label}
               </p>
               <h3 className="mt-2 text-lg font-semibold uppercase tracking-[0.03em]">
                 {camera.title}

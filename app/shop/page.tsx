@@ -22,6 +22,40 @@ export default function ShopPage() {
         description="Online shop coming soon. Preview film stock, cameras, and rotating inventory, then contact BMC for availability or choose local pickup at the Apple Valley shop."
         meta={["ONLINE SHOP COMING SOON", "LOCAL PICKUP", "SHIPPING PLANNED"]}
       />
+      <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
+        <div className="record-grid md:grid-cols-2">
+          <article className="record-cell p-6">
+            <TerminalLabel>Film Side</TerminalLabel>
+            <h2 className="mt-4 text-2xl font-semibold uppercase tracking-[0.02em]">
+              Film stock
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-[#111111]">
+              Browse film separately from cameras. This section is for 35mm,
+              specialty stocks, and rotating film inventory.
+            </p>
+            <div className="mt-6">
+              <CTAButton href="/shop/film" variant="secondary">
+                Shop Film
+              </CTAButton>
+            </div>
+          </article>
+          <article className="record-cell p-6">
+            <TerminalLabel>Camera Side</TerminalLabel>
+            <h2 className="mt-4 text-2xl font-semibold uppercase tracking-[0.02em]">
+              Used cameras
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-[#111111]">
+              Camera photos, camera IDs, short descriptions, and preview
+              inventory now live in their own organized camera tab.
+            </p>
+            <div className="mt-6">
+              <CTAButton href="/shop/cameras" variant="secondary">
+                Shop Cameras
+              </CTAButton>
+            </div>
+          </article>
+        </div>
+      </section>
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
         <div className="mb-8 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-2xl">

@@ -50,6 +50,7 @@ export default function LabPage() {
         title="Film Lab"
         description="Simple film development and scanning in Apple Valley. C-41 is the main process, with black-and-white and E-6 handled in specialty batches."
         meta={["C-41 MAIN PROCESS", "B&W / E-6 SPECIALTY", "JPEG OR TIFF SCANS"]}
+        photoSet="lab"
       />
 
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">

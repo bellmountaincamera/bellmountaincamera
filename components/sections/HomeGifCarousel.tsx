@@ -90,6 +90,12 @@ export function HomeGifCarousel() {
               alt={`${activeClip.caption} animated GIF`}
               className="h-full w-full object-cover"
             />
+            <img
+              src="/images/bmc-ascii-line-logo.png"
+              alt=""
+              aria-hidden="true"
+              className="pointer-events-none absolute left-1/2 top-1/2 w-[82%] -translate-x-1/2 -translate-y-1/2 invert opacity-30 mix-blend-screen"
+            />
           </div>
           <div className="mono mt-3 flex flex-wrap justify-between gap-2 text-[0.68rem] uppercase tracking-[0.12em] text-[#0B3D91]">
             <span>{activeClip.caption}</span>

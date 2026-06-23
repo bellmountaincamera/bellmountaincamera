@@ -31,6 +31,40 @@ body {
   font-family: Inter, "IBM Plex Sans", Arial, sans-serif;
 }
 
+body::before,
+body::after {
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      #111111 0 0.72rem,
+      #FFFFFF 0.72rem 1.1rem,
+      #111111 1.1rem 1.82rem
+    );
+  border-inline: 1px solid #111111;
+  bottom: 0;
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  width: 0.72rem;
+  z-index: 40;
+}
+
+body::before {
+  left: 0;
+}
+
+body::after {
+  right: 0;
+}
+
+@media (min-width: 768px) {
+  body::before,
+  body::after {
+    width: 1rem;
+  }
+}
+
 a {
   color: inherit;
   text-decoration: none;
