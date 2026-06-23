@@ -142,8 +142,8 @@ export default function LabPage() {
             <div className="border border-[#FAFAF8]/20 p-3">
               <div className="photo-grain relative aspect-[4/3] overflow-hidden bg-[#1A1A1A]">
                 <Image
-                  src="/images/home-camera-counter.jpg"
-                  alt="Regular-border film scan example"
+                  src="/images/test-rolls/processor-lines.jpg"
+                  alt="Regular-border scan sample of film lab processor lines"
                   fill
                   sizes="(min-width: 768px) 50vw, 100vw"
                   className="scale-110 object-cover opacity-80"
@@ -170,8 +170,8 @@ export default function LabPage() {
               <div className="bg-[#FAFAF8] p-3">
                 <div className="photo-grain relative aspect-[4/3] overflow-hidden bg-[#1A1A1A]">
                   <Image
-                    src="/images/home-camera-counter.jpg"
-                    alt="Full-border film scan example"
+                    src="/images/test-rolls/full-border-kodak.jpg"
+                    alt="Full-border scan sample with visible film edge"
                     fill
                     sizes="(min-width: 768px) 50vw, 100vw"
                     className="object-cover opacity-80"
@@ -224,6 +224,46 @@ export default function LabPage() {
               </p>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="border-y border-[#111111]/15 bg-[#FAFAF8]">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+          <TerminalLabel>Lab Reference Frames</TerminalLabel>
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            {[
+              {
+                src: "/images/test-rolls/lab-processor-vertical.jpg",
+                alt: "Noritsu film processor with film carrier",
+                label: "PROCESSOR"
+              },
+              {
+                src: "/images/test-rolls/chemistry-bottles.jpg",
+                alt: "Kodak color processing chemistry bottles",
+                label: "CHEMISTRY"
+              },
+              {
+                src: "/images/test-rolls/processor-open.jpg",
+                alt: "Open film processor transport path",
+                label: "TRANSPORT"
+              }
+            ].map((frame) => (
+              <div key={frame.src} className="border border-[#2A2A2A] bg-[#FAFAF8] p-3">
+                <div className="photo-grain relative aspect-[4/3] overflow-hidden bg-[#111111]">
+                  <Image
+                    src={frame.src}
+                    alt={frame.alt}
+                    fill
+                    sizes="(min-width: 768px) 33vw, 100vw"
+                    className="object-cover"
+                  />
+                </div>
+                <p className="mono mt-3 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#2457C5]">
+                  {frame.label}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

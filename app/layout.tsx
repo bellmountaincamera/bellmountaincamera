@@ -49,10 +49,10 @@ export const metadata: Metadata = {
     siteName: "Bell Mountain Camera",
     images: [
       {
-        url: "/images/home-camera-counter.jpg",
-        width: 1280,
-        height: 853,
-        alt: "Hands holding a Nikon Nikkormat film camera over a counter of used cameras"
+        url: "/images/test-rolls/camera-shelf.jpg",
+        width: 1800,
+        height: 1012,
+        alt: "Used film cameras on a Bell Mountain Camera shop shelf"
       }
     ],
     locale: "en_US",
