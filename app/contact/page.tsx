@@ -7,20 +7,23 @@ import { TerminalLabel } from "@/components/ui/TerminalLabel";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact Bell Mountain Camera in Apple Valley for film drop-off, development, scanning, film stock, online orders, shipping, local pickup, and camera service."
+    "Contact Bell Mountain Camera in Apple Valley for film drop-off, development, scanning, film stock, appointments, local pickup, and camera service."
 };
 
 export default function ContactPage() {
   const directionsUrl =
     "https://www.google.com/maps/search/?api=1&query=Bell%20Mountain%20Camera%2021810%20CA-18%20Unit%20%232%20Apple%20Valley%20CA%2092307";
+  const appointmentMailto = `mailto:${site.email}?subject=${encodeURIComponent(
+    site.appointmentEmailSubject
+  )}&body=${encodeURIComponent(site.appointmentEmailBody)}`;
 
   return (
     <main>
       <PageHeader
         label="Contact Desk"
         title="Contact"
-        description="Have a question about film, cameras, development, scanning, film stock, online orders, shipping, local pickup, or camera service? Walk into Bell Mountain Camera during business hours or contact BMC to set up an appointment."
-        meta={["WALK-INS WELCOME", site.hoursShort, "APPLE VALLEY, CA"]}
+        description="Have a question about film, cameras, development, scanning, film stock, local pickup, or camera service? Walk in during business hours or request an appointment."
+        meta={["WALK-INS WELCOME", "APPOINTMENTS AVAILABLE", "APPLE VALLEY, CA"]}
       />
       <section className="mx-auto grid max-w-7xl gap-8 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
         <div className="document-panel p-6">
@@ -81,8 +84,8 @@ export default function ContactPage() {
                 Appointments
               </p>
               <p className="mt-1 text-lg font-semibold">
-                Walk-ins welcome during business hours. Appointments available
-                by email or phone.
+                Request appointments one week in advance for best availability.
+                Questions are always welcome by email or phone.
               </p>
             </div>
             <div className="grid gap-3 sm:grid-cols-2">
@@ -91,6 +94,9 @@ export default function ContactPage() {
               </CTAButton>
               <CTAButton href={`mailto:${site.email}`} variant="secondary">
                 Email BMC
+              </CTAButton>
+              <CTAButton href={appointmentMailto} variant="secondary">
+                Request Appointment
               </CTAButton>
               <CTAButton href={directionsUrl} variant="secondary">
                 Get Directions
@@ -140,6 +146,46 @@ export default function ContactPage() {
             <CTAButton href={`mailto:${site.email}`} variant="dark">
               Email the Shop
             </CTAButton>
+          </div>
+        </div>
+      </section>
+      <section className="border-t border-[#111111]/15 bg-[#FAFAF8]">
+        <div className="mx-auto grid max-w-7xl gap-8 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
+          <div>
+            <TerminalLabel>Appointment Request</TerminalLabel>
+            <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
+              Plan a camera or lab visit
+            </h2>
+            <p className="mt-5 text-sm leading-7 text-[#333333]">
+              Appointments are helpful for camera questions, service intake,
+              film lab questions, pickup timing, or anything that may need a
+              little more attention than a quick walk-in.
+            </p>
+            <div className="mt-7">
+              <CTAButton href={appointmentMailto}>
+                Request Appointment
+              </CTAButton>
+            </div>
+          </div>
+          <div className="record-grid">
+            {site.appointmentAvailability.map((item) => (
+              <article key={item.days} className="record-cell p-5">
+                <p className="mono text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#2457C5]">
+                  {item.days}
+                </p>
+                <p className="mt-4 text-lg font-semibold uppercase tracking-[0.03em]">
+                  {item.time}
+                </p>
+              </article>
+            ))}
+            <article className="record-cell p-5">
+              <p className="mono text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#2457C5]">
+                Questions
+              </p>
+              <p className="mt-4 text-lg font-semibold uppercase tracking-[0.03em]">
+                Contact BMC anytime for information before stopping by.
+              </p>
+            </article>
           </div>
         </div>
       </section>

@@ -10,11 +10,20 @@ export function ContactCTA() {
           <div>
             <MetadataLine
               tone="dark"
-              items={["WALK-INS WELCOME", site.hoursShort, "APPLE VALLEY, CA"]}
+              items={[
+                "WALK-INS WELCOME",
+                "APPOINTMENTS AVAILABLE",
+                "APPLE VALLEY, CA"
+              ]}
             />
             <h2 className="mt-5 max-w-2xl text-2xl font-semibold uppercase tracking-[0.02em] sm:text-4xl">
               Drop off film, ask about a camera, or plan a visit.
             </h2>
+            <p className="mt-4 max-w-2xl text-sm leading-7 text-[#D8D8D2]">
+              For appointments, BMC is usually available 11 AM - 1 PM Tuesday
+              through Thursday, and most of the day Friday and Saturday. Request
+              one week in advance for best availability.
+            </p>
           </div>
           <CTAButton href="/contact" variant="dark">
             Contact Bell Mountain Camera
