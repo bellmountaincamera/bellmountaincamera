@@ -1,37 +1,35 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { AsciiLineLogo } from "@/components/brand/AsciiLineLogo";
-import { TerminalDivider } from "@/components/brand/TerminalDivider";
 import { TerminalStatusPanel } from "@/components/brand/TerminalStatusPanel";
 import { ContactCTA } from "@/components/sections/ContactCTA";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { MetadataLine } from "@/components/ui/MetadataLine";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { TerminalLabel } from "@/components/ui/TerminalLabel";
-import { filmLabDisclaimer, filmLabPricing, labWorkflow } from "@/lib/site";
+import { filmLabDisclaimer, filmLabPricing } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Film Lab",
   description:
-    "C-41 film processing, black-and-white and E-6 specialty processing, scanning, and film order information for Bell Mountain Camera."
+    "Film development, scanning, JPEG and TIFF delivery, regular-border scans, and full-border scans from Bell Mountain Camera."
 };
 
 const faqs = [
   [
-    "What film processes are available?",
-    "C-41 is the main process. Black-and-white and E-6 are available as specialty orders and may have delayed delivery."
+    "What film can I drop off?",
+    "Disposable cameras, 35mm, 110, and APS film are accepted."
   ],
   [
-    "How long is turnaround?",
-    "Turnaround depends on current volume and film process. Specialty black-and-white and E-6 orders may take longer than standard C-41 orders."
+    "What processes are available?",
+    "C-41 is the main process. Black-and-white and E-6 are handled in specialty batches, so turnaround may be longer."
   ],
   [
-    "How are scans delivered?",
-    "Scans are delivered digitally as JPEG or TIFF files. Customers should download and back up their files after delivery."
+    "What is the difference between JPEG and TIFF?",
+    "JPEG files are smaller, easy to share, and work well for everyday posting, texting, and general use. TIFF files are larger and keep more image information, which makes them better for editing, archiving, and higher-quality output."
   ],
   [
-    "What film formats can I drop off?",
-    "BMC accepts disposable cameras, 35mm, 110, and APS film."
+    "Can I get full-border scans?",
+    "Yes. Regular scans crop to the image area. Full-border scans show the film edge and frame border for a more archival look."
   ],
   [
     "Can C-41 be pushed or pulled?",
@@ -49,27 +47,28 @@ export default function LabPage() {
       <PageHeader
         label="Lab Counter"
         title="Film Lab"
-        description="Drop off disposable cameras, 35mm, 110, or APS film at Bell Mountain Camera. C-41 is the main process, with black-and-white and E-6 handled as specialty orders."
+        description="Simple film development and scanning in Apple Valley. C-41 is the main process, with black-and-white and E-6 handled in specialty batches."
         meta={["C-41 MAIN PROCESS", "B&W / E-6 SPECIALTY", "JPEG OR TIFF SCANS"]}
       />
-      <section className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
+
+      <section className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
         <div>
-          <TerminalLabel>Order Workflow</TerminalLabel>
+          <TerminalLabel>Film Development</TerminalLabel>
           <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
-            A clear path from roll to scan
+            Drop off film. Get clean scans.
           </h2>
           <p className="mt-5 text-sm leading-7 text-[#333333]">
-            BMC develops disposable cameras, 35mm, 110, and APS film. C-41 is
-            the main process. Black-and-white and E-6 are specialty orders and
-            may have delayed delivery depending on batch timing.
+            Bell Mountain Camera develops disposable cameras, 35mm, 110, and
+            APS film. Scans are delivered digitally as JPEG or TIFF files.
+            C-41 push and pull processing is available by request.
           </p>
           <div className="mt-6">
             <TerminalStatusPanel
-              title="LAB PROCESS LOG"
+              title="LAB MENU"
               rows={[
                 ["Main", "C-41"],
                 ["Specialty", "B&W / E-6"],
-                ["Formats", "35mm / 110 / APS"],
+                ["Formats", "Disposable / 35mm / 110 / APS"],
                 ["Scans", "JPEG / TIFF"]
               ]}
             />
@@ -81,115 +80,8 @@ export default function LabPage() {
             </CTAButton>
           </div>
         </div>
-        <div className="record-grid">
-          {labWorkflow.map((item) => (
-            <article key={item.step} className="record-cell p-5">
-              <p className="mono text-xs font-semibold uppercase tracking-[0.16em] text-[#666666]">
-                STEP {item.step}
-              </p>
-              <h3 className="mt-3 text-xl font-semibold uppercase tracking-[0.03em]">
-                {item.title}
-              </h3>
-              <p className="mt-3 text-sm leading-7 text-[#333333]">{item.text}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-      <section className="bg-[#111111] text-[#FAFAF8]">
-        <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
-          <div className="mb-8 grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
-            <div>
-              <TerminalLabel tone="dark">Scan Samples</TerminalLabel>
-              <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
-                Sample scan reference frames
-              </h2>
-            </div>
-            <AsciiLineLogo tone="dark" variant="full" />
-          </div>
-          <div className="grid gap-4 sm:grid-cols-3">
-            {[1, 2, 3].map((frame) => (
-              <div key={frame} className="border border-[#FAFAF8]/20 p-3">
-                <div className="photo-grain relative aspect-[4/3] bg-[#1A1A1A]">
-                  <Image
-                    src="/images/film-lab-workbench.png"
-                    alt={`Film scan reference frame ${frame}`}
-                    fill
-                    sizes="(min-width: 768px) 33vw, 100vw"
-                    className="object-cover opacity-75"
-                  />
-                </div>
-                <MetadataLine
-                  tone="dark"
-                  items={[`FRAME 0${frame}`, "SCAN: SAMPLE", "JPEG / TIFF"]}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      <section className="border-b border-[#111111]/15 bg-[#111111] text-[#FAFAF8]">
-        <div className="mx-auto grid max-w-7xl gap-8 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
-          <div>
-            <TerminalLabel tone="dark">Film Order Intake</TerminalLabel>
-            <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
-              Prepare a roll for drop-off
-            </h2>
-            <p className="mt-5 text-sm leading-7 text-[#D8D8D2]">
-              This static intake form is ready for a future backend. For now,
-              customers can use it as a guide for what to include when asking
-              about film development.
-            </p>
-          </div>
-          <div className="grid gap-4">
-            {[
-              "Name",
-              "Email",
-              "Phone",
-              "Number of rolls",
-              "Film format",
-              "Film process: C-41 / B&W / E-6",
-              "Develop only / Develop + scan",
-              "Scan file type: JPEG / TIFF",
-              "Push / pull notes",
-              "Digital delivery email",
-              "Comments"
-            ].map((label) => (
-              <div key={label}>
-                <label className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#D8D8D2]">
-                  {label}
-                </label>
-                <div className="mt-2 min-h-11 border border-[#FAFAF8]/25 bg-[#FAFAF8]/5" />
-              </div>
-            ))}
-            {[
-              "I understand old, expired, heat-damaged, or improperly loaded film may produce poor or blank results.",
-              "I understand scans are delivered digitally as JPEG or TIFF files.",
-              "I understand black-and-white and E-6 specialty orders may have delayed delivery."
-            ].map((label) => (
-              <div key={label} className="flex gap-3">
-                <div className="mt-1 h-4 w-4 border border-[#FAFAF8]/40" />
-                <p className="text-sm leading-6 text-[#D8D8D2]">{label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
-        <div className="mb-10">
-          <TerminalDivider label="LAB PRICE TABLE / EDITABLE" />
-        </div>
-        <div className="mb-8 max-w-3xl">
-          <TerminalLabel>Lab Pricing</TerminalLabel>
-          <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
-            Film lab pricing
-          </h2>
-          <p className="mt-5 text-sm leading-7 text-[#333333]">
-            Simple lab pricing for common film orders. C-41 is the standard
-            process. Black-and-white and E-6 are handled in specialty batches,
-            so turnaround may be longer.
-          </p>
-        </div>
-        <div className="record-grid md:grid-cols-2 lg:grid-cols-3">
+
+        <div className="record-grid sm:grid-cols-2">
           {filmLabPricing.map((item) => (
             <article key={item.title} className="record-cell p-5">
               <div className="flex items-start justify-between gap-4">
@@ -200,20 +92,126 @@ export default function LabPage() {
                   {item.price}
                 </p>
               </div>
-              <p className="mt-4 text-sm leading-7 text-[#333333]">{item.text}</p>
+              <p className="mt-4 text-sm leading-7 text-[#333333]">
+                {item.text}
+              </p>
             </article>
           ))}
         </div>
       </section>
+
+      <section className="bg-[#111111] text-[#FAFAF8]">
+        <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
+          <div className="mb-8 max-w-3xl">
+            <TerminalLabel tone="dark">Scan Options</TerminalLabel>
+            <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
+              Regular border or full border
+            </h2>
+            <p className="mt-5 text-sm leading-7 text-[#D8D8D2]">
+              Regular scans focus on the image. Full-border scans include the
+              film edge and frame border for a more archival look.
+            </p>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-2">
+            <div className="border border-[#FAFAF8]/20 p-3">
+              <div className="photo-grain relative aspect-[4/3] overflow-hidden bg-[#1A1A1A]">
+                <Image
+                  src="/images/home-camera-counter.jpg"
+                  alt="Regular-border film scan example"
+                  fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="scale-110 object-cover opacity-80"
+                />
+              </div>
+              <div className="mt-4">
+                <h3 className="text-xl font-semibold uppercase tracking-[0.03em]">
+                  Regular Border Scan
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-[#D8D8D2]">
+                  A clean crop focused on the photograph. Best for sharing,
+                  printing, and everyday delivery.
+                </p>
+                <div className="mt-4">
+                  <MetadataLine
+                    tone="dark"
+                    items={["CROP: IMAGE AREA", "FILES: JPEG / TIFF"]}
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div className="border border-[#FAFAF8]/20 p-3">
+              <div className="bg-[#FAFAF8] p-3">
+                <div className="photo-grain relative aspect-[4/3] overflow-hidden bg-[#1A1A1A]">
+                  <Image
+                    src="/images/home-camera-counter.jpg"
+                    alt="Full-border film scan example"
+                    fill
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                    className="object-cover opacity-80"
+                  />
+                </div>
+              </div>
+              <div className="mt-4">
+                <h3 className="text-xl font-semibold uppercase tracking-[0.03em]">
+                  Full Border Scan
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-[#D8D8D2]">
+                  Shows the frame edge and surrounding border. Good for
+                  contact-sheet style previews and archival presentation.
+                </p>
+                <div className="mt-4">
+                  <MetadataLine
+                    tone="dark"
+                    items={["CROP: FULL FRAME", "FILES: JPEG / TIFF"]}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+        <div className="mb-8 max-w-3xl">
+          <TerminalLabel>Important Notes</TerminalLabel>
+          <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
+            Specialty orders may take longer
+          </h2>
+          <p className="mt-5 text-sm leading-7 text-[#333333]">
+            Black-and-white and E-6 are processed in specialty batches. C-41 is
+            the standard process and is the fastest regular lab option.
+          </p>
+        </div>
+        <div className="record-grid md:grid-cols-3">
+          {[
+            ["Standard", "C-41 color negative film"],
+            ["Specialty", "Black-and-white and E-6 slide film"],
+            ["Delivery", "Digital scans as JPEG or TIFF files"]
+          ].map(([label, value]) => (
+            <article key={label} className="record-cell p-5">
+              <p className="mono text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#2457C5]">
+                {label}
+              </p>
+              <p className="mt-4 text-lg font-semibold uppercase tracking-[0.03em]">
+                {value}
+              </p>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section className="border-y border-[#111111]/15">
-        <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
           <TerminalLabel>Film Lab Policy</TerminalLabel>
           <p className="mt-5 max-w-4xl text-sm leading-7 text-[#333333]">
             {filmLabDisclaimer}
           </p>
         </div>
       </section>
-      <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
+
+      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
         <TerminalLabel>FAQ</TerminalLabel>
         <div className="mt-6 record-grid">
           {faqs.map(([question, answer]) => (
@@ -226,6 +224,7 @@ export default function LabPage() {
           ))}
         </div>
       </section>
+
       <ContactCTA />
     </main>
   );
