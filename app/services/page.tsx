@@ -22,14 +22,15 @@ export default function ServicesPage() {
       />
       <section className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
         <div>
-          <TerminalLabel>Service Scope</TerminalLabel>
+          <TerminalLabel>Service Menu</TerminalLabel>
           <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
-            Maintenance first, deeper repair by inquiry
+            Service scope and bundles
           </h2>
           <p className="mt-5 text-sm leading-7 text-[#333333]">
-            Bring your camera into the shop inside Wild Goose Vintage & Thrift
-            Store during business hours or contact BMC to set up an
-            appointment.
+            BMC handles practical film camera maintenance: diagnosis, cleaning,
+            light seals, and shutter speed adjustment when possible. Bring your
+            camera in during business hours or contact BMC to set up an
+            appointment for deeper repair questions.
           </p>
           <div className="mt-7">
             <CTAButton href="/contact">Start Service Inquiry</CTAButton>
@@ -46,38 +47,44 @@ export default function ServicesPage() {
             />
           </div>
         </div>
-        <div className="record-grid">
-          {cameraServiceMenu.map((service) => (
-            <article key={service.title} className="grid gap-4 record-cell p-5 sm:grid-cols-[1fr_auto]">
-              <div>
-                <h3 className="text-xl font-semibold uppercase tracking-[0.03em]">
-                  {service.title}
-                </h3>
-                <p className="mt-3 text-sm leading-7 text-[#333333]">
-                  {service.text}
-                </p>
-              </div>
-              <p className="mono text-xs font-semibold uppercase tracking-[0.14em] text-[#666666]">
-                {service.price}
-              </p>
-            </article>
-          ))}
-        </div>
-      </section>
-      <section className="border-t border-[#111111]/15">
-        <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
-          <TerminalLabel>Service Bundles</TerminalLabel>
-          <div className="mt-8 record-grid sm:grid-cols-2 lg:grid-cols-4">
-            {serviceBundles.map((bundle) => (
-              <article key={bundle.title} className="record-cell p-5">
-                <p className="text-lg font-semibold uppercase tracking-[0.03em]">
-                  {bundle.title}
-                </p>
-                <p className="mono mt-4 text-sm font-semibold uppercase tracking-[0.14em] text-[#666666]">
-                  {bundle.price}
-                </p>
-              </article>
-            ))}
+        <div className="grid gap-6">
+          <div>
+            <TerminalLabel>Individual Services</TerminalLabel>
+            <div className="mt-4 record-grid">
+              {cameraServiceMenu.map((service) => (
+                <article
+                  key={service.title}
+                  className="grid gap-4 record-cell p-5 sm:grid-cols-[1fr_auto]"
+                >
+                  <div>
+                    <h3 className="text-xl font-semibold uppercase tracking-[0.03em]">
+                      {service.title}
+                    </h3>
+                    <p className="mt-3 text-sm leading-7 text-[#333333]">
+                      {service.text}
+                    </p>
+                  </div>
+                  <p className="mono text-xs font-semibold uppercase tracking-[0.14em] text-[#666666]">
+                    {service.price}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </div>
+          <div>
+            <TerminalLabel>Bundles</TerminalLabel>
+            <div className="mt-4 record-grid sm:grid-cols-2">
+              {serviceBundles.map((bundle) => (
+                <article key={bundle.title} className="record-cell p-5">
+                  <p className="text-lg font-semibold uppercase tracking-[0.03em]">
+                    {bundle.title}
+                  </p>
+                  <p className="mono mt-4 text-sm font-semibold uppercase tracking-[0.14em] text-[#666666]">
+                    {bundle.price}
+                  </p>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </section>
