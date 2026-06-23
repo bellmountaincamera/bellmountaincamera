@@ -179,14 +179,14 @@ export default function LabPage() {
           <TerminalDivider label="LAB PRICE TABLE / EDITABLE" />
         </div>
         <div className="mb-8 max-w-3xl">
-          <TerminalLabel>Editable Lab Pricing</TerminalLabel>
+          <TerminalLabel>Lab Pricing</TerminalLabel>
           <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
             Film lab pricing
           </h2>
           <p className="mt-5 text-sm leading-7 text-[#333333]">
-            Develop + scan is $15. Develop only is $10. C-41 push or pull
-            development is $3 per stop. Black-and-white and E-6 are specialty
-            orders and may have delayed delivery.
+            Simple lab pricing for common film orders. C-41 is the standard
+            process. Black-and-white and E-6 are handled in specialty batches,
+            so turnaround may be longer.
           </p>
         </div>
         <div className="record-grid md:grid-cols-2 lg:grid-cols-3">

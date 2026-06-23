@@ -166,32 +166,32 @@ export const filmLabPricing = [
   {
     title: "Develop + Scan",
     price: "$15",
-    text: "Film development with digital scans delivered as JPEG or TIFF files."
+    text: "Includes film development and digital scan delivery. JPEG or TIFF files available."
   },
   {
     title: "Develop Only",
     price: "$10",
-    text: "Film development without digital scan delivery."
+    text: "Processing only. Choose this if you do not need digital scans."
   },
   {
     title: "Push / Pull",
     price: "$3 / stop",
-    text: "Push or pull development for C-41 orders, priced per stop."
+    text: "Available for C-41 orders when exposure needs adjustment."
   },
   {
     title: "Accepted Formats",
     price: "35MM / 110 / APS",
-    text: "Disposable cameras, 35mm rolls, 110 film, and APS film are accepted for development."
+    text: "Disposable cameras, 35mm, 110, and APS film accepted."
   },
   {
     title: "Main Process",
     price: "C-41",
-    text: "C-41 color negative film is the main processing service."
+    text: "Standard color negative processing for most common film stocks."
   },
   {
     title: "Specialty Process",
     price: "B&W / E-6",
-    text: "Black-and-white and E-6 are processed as specialty orders and may have delayed delivery."
+    text: "Black-and-white and slide film are handled in specialty batches. Turnaround may be longer."
   }
 ];
 
