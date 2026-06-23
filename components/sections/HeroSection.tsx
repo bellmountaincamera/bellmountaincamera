@@ -31,8 +31,8 @@ export function HeroSection() {
         <div className="border border-[#2A2A2A] bg-[#FAFAF8] p-3">
           <div className="photo-grain relative aspect-[4/3] border border-[#111111]/20 bg-[#1a1a1a]">
             <Image
-              src="/images/test-rolls/camera-shelf.jpg"
-              alt="Used film cameras on a shop shelf"
+              src="/images/camera-photos/canon-ae1-flatlay.jpg"
+              alt="Canon AE-1 film camera with film and lenses on a green cutting mat"
               fill
               priority
               sizes="(min-width: 1024px) 38vw, 100vw"
