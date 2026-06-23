@@ -1,26 +1,17 @@
 import Link from "next/link";
-import { AsciiLineLogo } from "@/components/brand/AsciiLineLogo";
-import { site, siteStatusLine } from "@/lib/site";
-import { MetadataLine } from "@/components/ui/MetadataLine";
+import { site } from "@/lib/site";
 
 export function Footer() {
   return (
     <footer className="border-t border-[#2A2A2A] bg-[#111111] text-[#FAFAF8]">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.2fr_0.8fr] lg:px-8">
         <div>
-          <AsciiLineLogo tone="dark" variant="full" />
-          <p className="mt-5 text-xl font-semibold uppercase tracking-[0.08em]">
+          <p className="text-xl font-semibold uppercase tracking-[0.08em]">
             Bell Mountain Camera
           </p>
           <p className="mt-4 max-w-xl text-sm leading-7 text-[#D8D8D2]">
             {site.description}
           </p>
-          <div className="mt-6">
-            <MetadataLine
-              tone="dark"
-              items={siteStatusLine}
-            />
-          </div>
         </div>
         <div className="grid gap-5 sm:grid-cols-3">
           <div>

@@ -1,9 +1,7 @@
 import Image from "next/image";
 import { AsciiLineLogo } from "@/components/brand/AsciiLineLogo";
 import { CTAButton } from "@/components/ui/CTAButton";
-import { MetadataLine } from "@/components/ui/MetadataLine";
-import { TerminalLabel } from "@/components/ui/TerminalLabel";
-import { site, siteStatusLine } from "@/lib/site";
+import { site } from "@/lib/site";
 
 export function HeroSection() {
   return (
@@ -13,8 +11,7 @@ export function HeroSection() {
           <div className="mb-6 border-b border-[#2A2A2A] pb-5">
             <AsciiLineLogo variant="full" />
           </div>
-          <TerminalLabel>PUBLIC FILE / BMC-001</TerminalLabel>
-          <h1 className="mt-5 max-w-4xl text-4xl font-semibold uppercase leading-[0.96] tracking-[0.01em] sm:text-6xl lg:text-7xl">
+          <h1 className="max-w-4xl text-4xl font-semibold uppercase leading-[0.96] tracking-[0.01em] sm:text-6xl lg:text-7xl">
             Film cameras and film development in Apple Valley.
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-7 text-[#333333]">
@@ -29,9 +26,6 @@ export function HeroSection() {
             <CTAButton href="/shop" variant="secondary">
               Shop Preview
             </CTAButton>
-          </div>
-          <div className="mt-9">
-            <MetadataLine items={siteStatusLine} />
           </div>
         </div>
         <div className="border border-[#2A2A2A] bg-[#FAFAF8] p-3">
