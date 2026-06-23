@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { TerminalLabel } from "@/components/ui/TerminalLabel";
 
 const clips = [
@@ -55,13 +55,13 @@ export function HomeGifCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeClip = clips[activeIndex];
 
-  function goToPrevious() {
-    setActiveIndex((current) => (current === 0 ? clips.length - 1 : current - 1));
-  }
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setActiveIndex((current) => (current === clips.length - 1 ? 0 : current + 1));
+    }, 3000);
 
-  function goToNext() {
-    setActiveIndex((current) => (current === clips.length - 1 ? 0 : current + 1));
-  }
+    return () => window.clearInterval(timer);
+  }, []);
 
   return (
     <section className="border-b border-[#111111]/15">
@@ -72,58 +72,24 @@ export function HomeGifCarousel() {
             Film cameras, lab tools, and shop motion
           </h2>
           <p className="mt-5 text-sm leading-7 text-[#333333]">
-            Short motion loops from Bell Mountain Camera. Use the controls to
-            scan through the clips without leaving the homepage.
+            Short motion loops from Bell Mountain Camera. Each clip plays for
+            three seconds before moving to the next frame.
           </p>
-          <div className="mt-7 flex gap-3">
-            <button
-              type="button"
-              onClick={goToPrevious}
-              className="cta-button cta-secondary"
-              aria-label="Show previous clip"
-            >
-              Prev
-            </button>
-            <button
-              type="button"
-              onClick={goToNext}
-              className="cta-button cta-primary"
-              aria-label="Show next clip"
-            >
-              Next
-            </button>
+          <div className="mono mt-7 grid max-w-sm grid-cols-3 gap-2 text-[0.68rem] uppercase tracking-[0.12em] text-[#666666]">
+            <span>GIF LOOP</span>
+            <span>3 SEC</span>
+            <span>{String(activeIndex + 1).padStart(2, "0")} / {clips.length}</span>
           </div>
         </div>
 
         <div className="border border-[#2A2A2A] bg-[#FAFAF8] p-3">
-          <div className="grid gap-4 md:grid-cols-[minmax(0,0.8fr)_minmax(0,0.2fr)]">
-            <div className="photo-grain relative aspect-[9/16] max-h-[34rem] overflow-hidden border border-[#111111]/20 bg-[#111111] md:max-h-[40rem]">
-              <img
-                key={activeClip.src}
-                src={activeClip.src}
-                alt={`${activeClip.caption} animated GIF`}
-                className="h-full w-full object-cover"
-              />
-            </div>
-            <div className="grid grid-cols-3 gap-2 md:grid-cols-1">
-              {clips.map((clip, index) => (
-                <button
-                  key={clip.src}
-                  type="button"
-                  onClick={() => setActiveIndex(index)}
-                  className={[
-                    "mono border px-2 py-2 text-[0.62rem] font-semibold uppercase tracking-[0.12em]",
-                    index === activeIndex
-                      ? "border-[#2457C5] bg-[#111111] text-[#FAFAF8]"
-                      : "border-[#2A2A2A] bg-[#FAFAF8] text-[#111111]"
-                  ].join(" ")}
-                  aria-label={`Show ${clip.label}`}
-                  aria-current={index === activeIndex ? "true" : undefined}
-                >
-                  {clip.label}
-                </button>
-              ))}
-            </div>
+          <div className="photo-grain relative mx-auto aspect-[9/16] max-h-[34rem] max-w-sm overflow-hidden border border-[#111111]/20 bg-[#111111] md:max-h-[40rem]">
+            <img
+              key={activeClip.src}
+              src={activeClip.src}
+              alt={`${activeClip.caption} animated GIF`}
+              className="h-full w-full object-cover"
+            />
           </div>
           <div className="mono mt-3 flex flex-wrap justify-between gap-2 text-[0.68rem] uppercase tracking-[0.12em] text-[#666666]">
             <span>{activeClip.caption}</span>
