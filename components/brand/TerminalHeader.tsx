@@ -1,5 +1,3 @@
-import { AsciiLineLogo } from "@/components/brand/AsciiLineLogo";
-
 type TerminalHeaderProps = {
   eyebrow: string;
   title: string;
@@ -16,7 +14,7 @@ export function TerminalHeader({
   return (
     <div
       className={[
-        "grid gap-5 border-b pb-6 md:grid-cols-[1fr_auto] md:items-end",
+        "border-b pb-6",
         tone === "dark" ? "border-[#FAFAF8]/20" : "border-[#2A2A2A]"
       ].join(" ")}
     >
@@ -38,10 +36,6 @@ export function TerminalHeader({
           </p>
         ) : null}
       </div>
-      <AsciiLineLogo
-        tone={tone}
-        lines={[eyebrow.slice(0, 12), "SECTION", "INDEX"]}
-      />
     </div>
   );
 }

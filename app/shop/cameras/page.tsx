@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { AsciiLineLogo } from "@/components/brand/AsciiLineLogo";
 import { ShopBrowser } from "@/components/shop/ShopBrowser";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { TerminalLabel } from "@/components/ui/TerminalLabel";
@@ -24,10 +23,6 @@ export default function ShopCamerasPage() {
       />
       <section className="mx-auto grid max-w-7xl gap-8 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
         <div>
-          <AsciiLineLogo
-            className="mb-5"
-            lines={["CAMERA", "SHELF", "TESTED"]}
-          />
           <TerminalLabel>Listing Details</TerminalLabel>
           <p className="mt-5 text-sm leading-7 text-[#333333]">
             Camera product pages are structured for tested status, known

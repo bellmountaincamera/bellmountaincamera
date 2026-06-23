@@ -51,37 +51,12 @@ export default function LabPage() {
         meta={["C-41 MAIN PROCESS", "B&W / E-6 SPECIALTY", "JPEG OR TIFF SCANS"]}
       />
 
-      <section className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
-        <div>
-          <TerminalLabel>Film Development</TerminalLabel>
-          <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
-            Drop off film. Get clean scans.
-          </h2>
-          <p className="mt-5 text-sm leading-7 text-[#333333]">
-            Bell Mountain Camera develops disposable cameras, 35mm, 110, and
-            APS film. Scans are delivered digitally as JPEG or TIFF files.
-            C-41 push and pull processing is available by request.
-          </p>
-          <div className="mt-6">
-            <TerminalStatusPanel
-              title="LAB MENU"
-              rows={[
-                ["Main", "C-41"],
-                ["Specialty", "B&W / E-6"],
-                ["Formats", "Disposable / 35mm / 110 / APS"],
-                ["Scans", "JPEG / TIFF"]
-              ]}
-            />
-          </div>
-          <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-            <CTAButton href="/contact">Start a Film Order</CTAButton>
-            <CTAButton href="/contact" variant="secondary">
-              Contact the Lab
-            </CTAButton>
-          </div>
-        </div>
-
-        <div className="record-grid sm:grid-cols-2">
+      <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
+        <TerminalLabel>Film Lab Pricing</TerminalLabel>
+        <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
+          Current development menu
+        </h2>
+        <div className="mt-8 record-grid sm:grid-cols-2 lg:grid-cols-3">
           {filmLabPricing.map((item) => (
             <article key={item.title} className="record-cell p-5">
               <div className="flex items-start justify-between gap-4">
@@ -97,6 +72,56 @@ export default function LabPage() {
               </p>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="border-t border-[#111111]/15">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
+          <div>
+            <TerminalLabel>Film Development</TerminalLabel>
+            <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
+              Drop off film. Get clean scans.
+            </h2>
+            <p className="mt-5 text-sm leading-7 text-[#333333]">
+              Bell Mountain Camera develops disposable cameras, 35mm, 110, and
+              APS film. Scans are delivered digitally as JPEG or TIFF files.
+              C-41 push and pull processing is available by request.
+            </p>
+            <div className="mt-6">
+              <TerminalStatusPanel
+                title="LAB MENU"
+                rows={[
+                  ["Main", "C-41"],
+                  ["Specialty", "B&W / E-6"],
+                  ["Formats", "Disposable / 35mm / 110 / APS"],
+                  ["Scans", "JPEG / TIFF"]
+                ]}
+              />
+            </div>
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+              <CTAButton href="/contact">Start a Film Order</CTAButton>
+              <CTAButton href="/contact" variant="secondary">
+                Contact the Lab
+              </CTAButton>
+            </div>
+          </div>
+
+          <div className="record-grid">
+            {[
+              ["Standard", "C-41 color negative film"],
+              ["Specialty", "Black-and-white and E-6 slide film"],
+              ["Delivery", "Digital scans as JPEG or TIFF files"]
+            ].map(([label, value]) => (
+              <article key={label} className="record-cell p-5">
+                <p className="mono text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#2457C5]">
+                  {label}
+                </p>
+                <p className="mt-4 text-lg font-semibold uppercase tracking-[0.03em]">
+                  {value}
+                </p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -186,9 +211,9 @@ export default function LabPage() {
         </div>
         <div className="record-grid md:grid-cols-3">
           {[
-            ["Standard", "C-41 color negative film"],
-            ["Specialty", "Black-and-white and E-6 slide film"],
-            ["Delivery", "Digital scans as JPEG or TIFF files"]
+            ["C-41", "Main color negative process"],
+            ["B&W / E-6", "Specialty batch processing"],
+            ["Push / Pull", "$3 per stop for C-41 orders"]
           ].map(([label, value]) => (
             <article key={label} className="record-cell p-5">
               <p className="mono text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#2457C5]">
