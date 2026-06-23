@@ -77,27 +77,27 @@ export const labWorkflow = [
   {
     step: "01",
     title: "Drop off your film",
-    text: "Bring 35mm film to Bell Mountain Camera inside Wild Goose Vintage & Thrift Store during business hours."
+    text: "Bring disposable cameras, 35mm, 110, or APS film to Bell Mountain Camera during business hours."
   },
   {
     step: "02",
-    title: "Order and rolls are logged",
-    text: "BMC logs each order and tracks rolls with order numbers and roll numbers."
+    title: "Choose processing",
+    text: "C-41 is the main process. Black-and-white and E-6 are handled as specialty orders and may take longer."
   },
   {
     step: "03",
-    title: "Film is developed",
-    text: "C-41 color negative film is processed through a hands-on lab workflow."
+    title: "Add push or pull notes",
+    text: "C-41 orders can include push or pull development for $3 per stop."
   },
   {
     step: "04",
-    title: "Film is scanned",
-    text: "Rolls are scanned and prepared for digital delivery."
+    title: "Select scan files",
+    text: "Scans can be delivered as JPEG files or TIFF files."
   },
   {
     step: "05",
     title: "Scans are delivered",
-    text: "Scans are delivered digitally through a download link. Download and back up your files after delivery."
+    text: "Digital scans are delivered after processing. Specialty orders may have a delayed turnaround."
   }
 ];
 
@@ -164,34 +164,34 @@ export const serviceBundles = [
 
 export const filmLabPricing = [
   {
-    title: "35mm C-41 Develop Only",
-    price: "$__",
-    text: "Editable pricing field for 35mm C-41 film development."
+    title: "Develop + Scan",
+    price: "$15",
+    text: "Film development with digital scans delivered as JPEG or TIFF files."
   },
   {
-    title: "35mm C-41 Develop + Standard Scan",
-    price: "$__",
-    text: "Editable pricing field for standard develop and scan."
-  },
-  {
-    title: "35mm C-41 Develop + High-Res Scan",
-    price: "$__",
-    text: "Editable pricing field for high-resolution develop and scan."
-  },
-  {
-    title: "Scan Only",
-    price: "$__",
-    text: "Editable pricing field for scan-only orders."
+    title: "Develop Only",
+    price: "$10",
+    text: "Film development without digital scan delivery."
   },
   {
     title: "Push / Pull",
-    price: "$__",
-    text: "Editable pricing field if push or pull processing is offered."
+    price: "$3 / stop",
+    text: "Push or pull development for C-41 orders, priced per stop."
   },
   {
-    title: "Rush Service",
-    price: "$__",
-    text: "Editable pricing field if rush service is offered."
+    title: "Accepted Formats",
+    price: "35MM / 110 / APS",
+    text: "Disposable cameras, 35mm rolls, 110 film, and APS film are accepted for development."
+  },
+  {
+    title: "Main Process",
+    price: "C-41",
+    text: "C-41 color negative film is the main processing service."
+  },
+  {
+    title: "Specialty Process",
+    price: "B&W / E-6",
+    text: "Black-and-white and E-6 are processed as specialty orders and may have delayed delivery."
   }
 ];
 

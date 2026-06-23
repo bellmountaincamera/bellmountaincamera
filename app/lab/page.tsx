@@ -13,21 +13,29 @@ import { filmLabDisclaimer, filmLabPricing, labWorkflow } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Film Lab",
   description:
-    "C-41 film processing, scanning, digital delivery, and film order information for Bell Mountain Camera."
+    "C-41 film processing, black-and-white and E-6 specialty processing, scanning, and film order information for Bell Mountain Camera."
 };
 
 const faqs = [
   [
-    "What film process is available first?",
-    "BMC is focused on 35mm C-41 color negative film development and scanning. Black-and-white and E-6 are not listed as active services until confirmed."
+    "What film processes are available?",
+    "C-41 is the main process. Black-and-white and E-6 are available as specialty orders and may have delayed delivery."
   ],
   [
     "How long is turnaround?",
-    "Typical turnaround is usually 3-7 business days depending on volume. BMC keeps this flexible instead of guaranteeing a fixed timeline."
+    "Turnaround depends on current volume and film process. Specialty black-and-white and E-6 orders may take longer than standard C-41 orders."
   ],
   [
     "How are scans delivered?",
-    "Scans are delivered digitally through a download link. Customers should download and back up their files after delivery."
+    "Scans are delivered digitally as JPEG or TIFF files. Customers should download and back up their files after delivery."
+  ],
+  [
+    "What film formats can I drop off?",
+    "BMC accepts disposable cameras, 35mm, 110, and APS film."
+  ],
+  [
+    "Can C-41 be pushed or pulled?",
+    "Yes. Push and pull development is available for C-41 orders at $3 per stop."
   ],
   [
     "Where do I drop off film?",
@@ -41,8 +49,8 @@ export default function LabPage() {
       <PageHeader
         label="Lab Counter"
         title="Film Lab"
-        description="Drop off your film at Bell Mountain Camera inside Wild Goose Vintage & Thrift Store. BMC logs each order, tracks each roll, develops and scans the film, then sends digital scans by email."
-        meta={["35MM FILM", "C-41 PROCESS", "SCANS DELIVERED DIGITALLY"]}
+        description="Drop off disposable cameras, 35mm, 110, or APS film at Bell Mountain Camera. C-41 is the main process, with black-and-white and E-6 handled as specialty orders."
+        meta={["C-41 MAIN PROCESS", "B&W / E-6 SPECIALTY", "JPEG OR TIFF SCANS"]}
       />
       <section className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
         <div>
@@ -51,18 +59,18 @@ export default function LabPage() {
             A clear path from roll to scan
           </h2>
           <p className="mt-5 text-sm leading-7 text-[#333333]">
-            BMC uses a hands-on film lab workflow with order tracking, roll
-            numbers, scanning, and digital delivery. Typical turnaround is
-            usually 3-7 business days depending on volume.
+            BMC develops disposable cameras, 35mm, 110, and APS film. C-41 is
+            the main process. Black-and-white and E-6 are specialty orders and
+            may have delayed delivery depending on batch timing.
           </p>
           <div className="mt-6">
             <TerminalStatusPanel
               title="LAB PROCESS LOG"
               rows={[
-                ["Roll No.", "4821"],
-                ["Process", "C-41"],
-                ["Status", "Scanned"],
-                ["Delivery", "Digital"]
+                ["Main", "C-41"],
+                ["Specialty", "B&W / E-6"],
+                ["Formats", "35mm / 110 / APS"],
+                ["Scans", "JPEG / TIFF"]
               ]}
             />
           </div>
@@ -112,7 +120,7 @@ export default function LabPage() {
                 </div>
                 <MetadataLine
                   tone="dark"
-                  items={[`FRAME 0${frame}`, "SCAN: SAMPLE", "COLOR: C-41"]}
+                  items={[`FRAME 0${frame}`, "SCAN: SAMPLE", "JPEG / TIFF"]}
                 />
               </div>
             ))}
@@ -127,8 +135,9 @@ export default function LabPage() {
               Prepare a roll for drop-off
             </h2>
             <p className="mt-5 text-sm leading-7 text-[#D8D8D2]">
-              This static intake form is ready for a future backend, email
-              notification, or lab manager connection.
+              This static intake form is ready for a future backend. For now,
+              customers can use it as a guide for what to include when asking
+              about film development.
             </p>
           </div>
           <div className="grid gap-4">
@@ -138,11 +147,11 @@ export default function LabPage() {
               "Phone",
               "Number of rolls",
               "Film format",
-              "Film process",
+              "Film process: C-41 / B&W / E-6",
               "Develop only / Develop + scan",
-              "Scan resolution",
+              "Scan file type: JPEG / TIFF",
               "Push / pull notes",
-              "Dropbox delivery email",
+              "Digital delivery email",
               "Comments"
             ].map((label) => (
               <div key={label}>
@@ -154,8 +163,8 @@ export default function LabPage() {
             ))}
             {[
               "I understand old, expired, heat-damaged, or improperly loaded film may produce poor or blank results.",
-              "I understand scans are delivered digitally.",
-              "I understand turnaround depends on current volume."
+              "I understand scans are delivered digitally as JPEG or TIFF files.",
+              "I understand black-and-white and E-6 specialty orders may have delayed delivery."
             ].map((label) => (
               <div key={label} className="flex gap-3">
                 <div className="mt-1 h-4 w-4 border border-[#FAFAF8]/40" />
@@ -172,13 +181,12 @@ export default function LabPage() {
         <div className="mb-8 max-w-3xl">
           <TerminalLabel>Editable Lab Pricing</TerminalLabel>
           <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
-            Film lab prices are not confirmed yet
+            Film lab pricing
           </h2>
           <p className="mt-5 text-sm leading-7 text-[#333333]">
-            C-41 film development, film scanning, develop + scan, film
-            drop-off, film pickup, and Dropbox digital scan delivery are listed
-            here as editable pricing fields. No film lab prices are invented on
-            this site.
+            Develop + scan is $15. Develop only is $10. C-41 push or pull
+            development is $3 per stop. Black-and-white and E-6 are specialty
+            orders and may have delayed delivery.
           </p>
         </div>
         <div className="record-grid md:grid-cols-2 lg:grid-cols-3">

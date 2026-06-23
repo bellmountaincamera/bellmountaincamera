@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { AsciiLineLogo } from "@/components/brand/AsciiLineLogo";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { MetadataLine } from "@/components/ui/MetadataLine";
 import { TerminalLabel } from "@/components/ui/TerminalLabel";
@@ -9,6 +10,9 @@ export function HeroSection() {
     <section className="border-b border-[#D8D8D2]">
       <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 sm:py-16 lg:grid-cols-[1fr_0.78fr] lg:px-8">
         <div className="flex flex-col justify-center">
+          <div className="mb-6 border-b border-[#2A2A2A] pb-5">
+            <AsciiLineLogo variant="full" />
+          </div>
           <TerminalLabel>PUBLIC FILE / BMC-001</TerminalLabel>
           <h1 className="mt-5 max-w-4xl text-4xl font-semibold uppercase leading-[0.96] tracking-[0.01em] sm:text-6xl lg:text-7xl">
             Film cameras and film development in Apple Valley.
