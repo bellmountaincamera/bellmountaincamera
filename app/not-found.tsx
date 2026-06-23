@@ -14,7 +14,7 @@ export default function NotFound() {
         <h1 className="mt-6 max-w-3xl text-4xl font-semibold uppercase leading-none tracking-[0.02em] sm:text-6xl">
           Page not found.
         </h1>
-        <p className="mt-5 max-w-xl text-sm leading-7 text-[#D8D8D2]">
+        <p className="mt-5 max-w-xl text-sm leading-7 text-[#FFFFFF]">
           This page is not in the public Bell Mountain Camera file system.
         </p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">

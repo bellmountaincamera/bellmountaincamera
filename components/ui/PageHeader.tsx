@@ -12,9 +12,9 @@ type PageHeaderProps = {
 
 export function PageHeader({ label, title, description, meta }: PageHeaderProps) {
   return (
-    <section className="border-b border-[#2A2A2A]">
+    <section className="border-b border-[#111111]">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
-        <div className="mb-7 border-b border-[#2A2A2A] pb-5">
+        <div className="mb-7 border-b border-[#111111] pb-5">
           <AsciiLineLogo variant="full" />
         </div>
         <TerminalHeader eyebrow={label} title={title} description={description} />

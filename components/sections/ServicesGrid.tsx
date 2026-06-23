@@ -44,7 +44,7 @@ export function ServicesGrid() {
             Find the right page fast
           </h2>
         </div>
-        <p className="mt-4 text-sm leading-7 text-[#333333]">
+        <p className="mt-4 text-sm leading-7 text-[#111111]">
           Each page keeps to one job: lab, shop, camera service, shop story, or
           contact details.
         </p>
@@ -56,13 +56,13 @@ export function ServicesGrid() {
             href={service.href}
             className="record-cell p-5 hover:bg-[#FFFFFF]"
           >
-            <p className="mono text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-[#2457C5]">
+            <p className="mono text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-[#0B3D91]">
               {service.code}
             </p>
             <h3 className="mt-4 text-lg font-semibold uppercase tracking-[0.03em]">
               {service.title}
             </h3>
-            <p className="mt-3 text-sm leading-6 text-[#333333]">
+            <p className="mt-3 text-sm leading-6 text-[#111111]">
               {service.text}
             </p>
           </Link>

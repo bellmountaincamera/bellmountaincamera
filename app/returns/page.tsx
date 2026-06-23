@@ -39,7 +39,7 @@ export default function ReturnsPage() {
           ].map(([title, text]) => (
             <article key={title} className="record-cell p-6">
               <TerminalLabel>{title}</TerminalLabel>
-              <p className="mt-5 text-sm leading-7 text-[#333333]">{text}</p>
+              <p className="mt-5 text-sm leading-7 text-[#111111]">{text}</p>
             </article>
           ))}
         </div>

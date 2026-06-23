@@ -12,7 +12,7 @@ export function AsciiBlockLogo({
       aria-hidden="true"
       className={[
         "ascii-mark overflow-hidden text-[0.42rem] font-bold sm:text-[0.5rem]",
-        tone === "dark" ? "text-[#FAFAF8]" : "text-[#111111]",
+        tone === "dark" ? "text-[#FFFFFF]" : "text-[#111111]",
         className
       ].join(" ")}
     >{`######  ##   ##  ######

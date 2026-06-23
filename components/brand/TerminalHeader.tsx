@@ -15,11 +15,11 @@ export function TerminalHeader({
     <div
       className={[
         "border-b pb-6",
-        tone === "dark" ? "border-[#FAFAF8]/20" : "border-[#2A2A2A]"
+        tone === "dark" ? "border-[#FFFFFF]/20" : "border-[#111111]"
       ].join(" ")}
     >
       <div>
-        <p className="mono text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-[#2457C5]">
+        <p className="mono text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-[#0B3D91]">
           {eyebrow}
         </p>
         <h2 className="mt-3 text-3xl font-semibold uppercase leading-none tracking-[0.02em] sm:text-5xl">
@@ -29,7 +29,7 @@ export function TerminalHeader({
           <p
             className={[
               "mt-4 max-w-2xl text-sm leading-7",
-              tone === "dark" ? "text-[#D8D8D2]" : "text-[#333333]"
+              tone === "dark" ? "text-[#FFFFFF]" : "text-[#111111]"
             ].join(" ")}
           >
             {description}

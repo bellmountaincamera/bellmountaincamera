@@ -22,9 +22,9 @@ export function ProductCard({ product }: ProductCardProps) {
           label={product.name}
         />
       </Link>
-      <div className="mt-4 flex items-start justify-between gap-4 border-t border-[#D8D8D2] pt-4">
+      <div className="mt-4 flex items-start justify-between gap-4 border-t border-[#111111]/15 pt-4">
         <div>
-          <p className="mono text-[0.68rem] uppercase tracking-[0.14em] text-[#2457C5]">
+          <p className="mono text-[0.68rem] uppercase tracking-[0.14em] text-[#0B3D91]">
             INV / {product.category}
           </p>
           <h3 className="mt-2 text-lg font-semibold uppercase tracking-[0.03em]">
@@ -35,18 +35,18 @@ export function ProductCard({ product }: ProductCardProps) {
           {formatPrice(product.price)}
         </p>
       </div>
-      <p className="mt-3 text-sm leading-6 text-[#333333]">{product.description}</p>
+      <p className="mt-3 text-sm leading-6 text-[#111111]">{product.description}</p>
       <div className="mt-4 flex flex-wrap gap-2">
-        <span className="mono border border-[#2457C5] px-2 py-1 text-[0.65rem] uppercase tracking-[0.12em] text-[#2457C5]">
+        <span className="mono border border-[#0B3D91] px-2 py-1 text-[0.65rem] uppercase tracking-[0.12em] text-[#0B3D91]">
           {getInventoryStatus(product)}
         </span>
         {product.localPickup ? (
-          <span className="mono border border-[#D8D8D2] px-2 py-1 text-[0.65rem] uppercase tracking-[0.12em] text-[#666666]">
+          <span className="mono border border-[#111111]/15 px-2 py-1 text-[0.65rem] uppercase tracking-[0.12em] text-[#0B3D91]">
             Local Pickup
           </span>
         ) : null}
         {product.shippingAvailable ? (
-          <span className="mono border border-[#D8D8D2] px-2 py-1 text-[0.65rem] uppercase tracking-[0.12em] text-[#666666]">
+          <span className="mono border border-[#111111]/15 px-2 py-1 text-[0.65rem] uppercase tracking-[0.12em] text-[#0B3D91]">
             Ships
           </span>
         ) : null}

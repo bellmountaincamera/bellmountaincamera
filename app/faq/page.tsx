@@ -100,7 +100,7 @@ export default function FAQPage() {
                     <summary className="cursor-pointer text-lg font-semibold uppercase tracking-[0.03em]">
                       {question}
                     </summary>
-                    <p className="mt-4 text-sm leading-7 text-[#333333]">{answer}</p>
+                    <p className="mt-4 text-sm leading-7 text-[#111111]">{answer}</p>
                   </details>
                 ))}
               </div>

@@ -20,7 +20,7 @@ export default function TermsPage() {
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
         <div className="document-panel p-6">
           <TerminalLabel>Editable Terms</TerminalLabel>
-          <p className="mt-5 text-sm leading-7 text-[#333333]">
+          <p className="mt-5 text-sm leading-7 text-[#111111]">
             This page is a placeholder for final terms. It should be reviewed
             before payment processing, live inventory, shipping rates, customer
             accounts, or online order submission are enabled.

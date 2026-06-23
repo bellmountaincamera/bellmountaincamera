@@ -9,8 +9,8 @@ export function MetadataPanel({ rows, tone = "light" }: MetadataPanelProps) {
       className={[
         "grid border text-sm sm:grid-cols-2",
         tone === "dark"
-          ? "border-[#FAFAF8]/20 bg-[#FAFAF8]/10 text-[#FAFAF8]"
-          : "border-[#2A2A2A] bg-[#FAFAF8] text-[#111111]"
+          ? "border-[#FFFFFF]/20 bg-[#FFFFFF]/10 text-[#FFFFFF]"
+          : "border-[#111111] bg-[#FFFFFF] text-[#111111]"
       ].join(" ")}
     >
       {rows.map(([label, value]) => (
@@ -18,10 +18,10 @@ export function MetadataPanel({ rows, tone = "light" }: MetadataPanelProps) {
           key={label}
           className={[
             "grid gap-2 border-b p-4 last:border-b-0 sm:border-r sm:last:border-r-0",
-            tone === "dark" ? "border-[#FAFAF8]/20" : "border-[#D8D8D2]"
+            tone === "dark" ? "border-[#FFFFFF]/20" : "border-[#111111]/15"
           ].join(" ")}
         >
-          <dt className="mono text-[0.68rem] uppercase tracking-[0.14em] text-[#2457C5]">
+          <dt className="mono text-[0.68rem] uppercase tracking-[0.14em] text-[#0B3D91]">
             {label}
           </dt>
           <dd className="mono text-xs uppercase tracking-[0.1em]">{value}</dd>

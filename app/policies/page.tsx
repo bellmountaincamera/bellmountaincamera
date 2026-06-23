@@ -61,7 +61,7 @@ export default function PoliciesPage() {
           {policySections.map((section) => (
             <article key={section.title} className="record-cell p-6">
               <TerminalLabel>{section.title}</TerminalLabel>
-              <p className="mt-5 text-sm leading-7 text-[#333333]">
+              <p className="mt-5 text-sm leading-7 text-[#111111]">
                 {section.text}
               </p>
             </article>

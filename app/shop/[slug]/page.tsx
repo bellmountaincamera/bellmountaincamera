@@ -90,7 +90,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
           <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
             {formatPrice(product.price)}
           </h2>
-          <p className="mt-5 text-sm leading-7 text-[#333333]">
+          <p className="mt-5 text-sm leading-7 text-[#111111]">
             Online purchasing is coming soon. Until real checkout is connected,
             contact BMC to confirm availability, shipping, and local pickup for
             this item.
@@ -121,15 +121,15 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 key={label}
                 className="grid gap-2 record-cell p-4 sm:grid-cols-[12rem_1fr]"
               >
-                <p className="mono text-xs uppercase tracking-[0.14em] text-[#666666]">
+                <p className="mono text-xs uppercase tracking-[0.14em] text-[#0B3D91]">
                   {label}
                 </p>
-                <p className="text-sm leading-6 text-[#333333]">{value}</p>
+                <p className="text-sm leading-6 text-[#111111]">{value}</p>
               </div>
             ))}
           </div>
           {product.kind === "camera" ? (
-            <p className="mt-5 text-sm leading-7 text-[#333333]">
+            <p className="mt-5 text-sm leading-7 text-[#111111]">
               {product.notes}
             </p>
           ) : null}
@@ -147,7 +147,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
             <br />
             {site.cityStateZip}
           </p>
-          <p className="mono mt-5 text-xs uppercase tracking-[0.14em] text-[#666666]">
+          <p className="mono mt-5 text-xs uppercase tracking-[0.14em] text-[#0B3D91]">
             {site.hoursShort}
           </p>
         </div>

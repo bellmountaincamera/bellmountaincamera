@@ -64,11 +64,11 @@ export default function LabPage() {
                 <h3 className="text-lg font-semibold uppercase tracking-[0.03em]">
                   {item.title}
                 </h3>
-                <p className="mono text-xs font-semibold uppercase tracking-[0.12em] text-[#666666]">
+                <p className="mono text-xs font-semibold uppercase tracking-[0.12em] text-[#0B3D91]">
                   {item.price}
                 </p>
               </div>
-              <p className="mt-4 text-sm leading-7 text-[#333333]">
+              <p className="mt-4 text-sm leading-7 text-[#111111]">
                 {item.text}
               </p>
             </article>
@@ -83,7 +83,7 @@ export default function LabPage() {
             <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
               Drop off film. Get clean scans.
             </h2>
-            <p className="mt-5 text-sm leading-7 text-[#333333]">
+            <p className="mt-5 text-sm leading-7 text-[#111111]">
               Bell Mountain Camera develops disposable cameras, 35mm, 110, and
               APS film. Scans are delivered digitally as JPEG or TIFF files.
               C-41 push and pull processing is available by request.
@@ -114,7 +114,7 @@ export default function LabPage() {
               ["Delivery", "Digital scans as JPEG or TIFF files"]
             ].map(([label, value]) => (
               <article key={label} className="record-cell p-5">
-                <p className="mono text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#2457C5]">
+                <p className="mono text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#0B3D91]">
                   {label}
                 </p>
                 <p className="mt-4 text-lg font-semibold uppercase tracking-[0.03em]">
@@ -126,22 +126,22 @@ export default function LabPage() {
         </div>
       </section>
 
-      <section className="bg-[#111111] text-[#FAFAF8]">
+      <section className="bg-[#111111] text-[#FFFFFF]">
         <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
           <div className="mb-8 max-w-3xl">
             <TerminalLabel tone="dark">Scan Options</TerminalLabel>
             <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
               Regular border or full border
             </h2>
-            <p className="mt-5 text-sm leading-7 text-[#D8D8D2]">
+            <p className="mt-5 text-sm leading-7 text-[#FFFFFF]">
               Regular scans focus on the image. Full-border scans include the
               film edge and frame border for a more archival look.
             </p>
           </div>
 
           <div className="grid gap-5 md:grid-cols-2">
-            <div className="border border-[#FAFAF8]/20 p-3">
-              <div className="photo-grain relative aspect-[4/3] overflow-hidden bg-[#1A1A1A]">
+            <div className="border border-[#FFFFFF]/20 p-3">
+              <div className="photo-grain relative aspect-[4/3] overflow-hidden bg-[#111111]">
                 <Image
                   src="/images/test-rolls/processor-lines.jpg"
                   alt="Regular-border scan sample of film lab processor lines"
@@ -154,7 +154,7 @@ export default function LabPage() {
                 <h3 className="text-xl font-semibold uppercase tracking-[0.03em]">
                   Regular Border Scan
                 </h3>
-                <p className="mt-3 text-sm leading-7 text-[#D8D8D2]">
+                <p className="mt-3 text-sm leading-7 text-[#FFFFFF]">
                   A clean crop focused on the photograph. Best for sharing,
                   printing, and everyday delivery.
                 </p>
@@ -167,9 +167,9 @@ export default function LabPage() {
               </div>
             </div>
 
-            <div className="border border-[#FAFAF8]/20 p-3">
-              <div className="bg-[#FAFAF8] p-3">
-                <div className="photo-grain relative aspect-[4/3] overflow-hidden bg-[#1A1A1A]">
+            <div className="border border-[#FFFFFF]/20 p-3">
+              <div className="bg-[#FFFFFF] p-3">
+                <div className="photo-grain relative aspect-[4/3] overflow-hidden bg-[#111111]">
                   <Image
                     src="/images/test-rolls/full-border-kodak.jpg"
                     alt="Full-border scan sample with visible film edge"
@@ -183,7 +183,7 @@ export default function LabPage() {
                 <h3 className="text-xl font-semibold uppercase tracking-[0.03em]">
                   Full Border Scan
                 </h3>
-                <p className="mt-3 text-sm leading-7 text-[#D8D8D2]">
+                <p className="mt-3 text-sm leading-7 text-[#FFFFFF]">
                   Shows the frame edge and surrounding border. Good for
                   contact-sheet style previews and archival presentation.
                 </p>
@@ -205,7 +205,7 @@ export default function LabPage() {
           <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
             Specialty orders may take longer
           </h2>
-          <p className="mt-5 text-sm leading-7 text-[#333333]">
+          <p className="mt-5 text-sm leading-7 text-[#111111]">
             Black-and-white and E-6 are processed in specialty batches. C-41 is
             the standard process and is the fastest regular lab option.
           </p>
@@ -217,7 +217,7 @@ export default function LabPage() {
             ["Push / Pull", "$3 per stop for C-41 orders"]
           ].map(([label, value]) => (
             <article key={label} className="record-cell p-5">
-              <p className="mono text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#2457C5]">
+              <p className="mono text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#0B3D91]">
                 {label}
               </p>
               <p className="mt-4 text-lg font-semibold uppercase tracking-[0.03em]">
@@ -233,7 +233,7 @@ export default function LabPage() {
       <section className="border-y border-[#111111]/15">
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
           <TerminalLabel>Film Lab Policy</TerminalLabel>
-          <p className="mt-5 max-w-4xl text-sm leading-7 text-[#333333]">
+          <p className="mt-5 max-w-4xl text-sm leading-7 text-[#111111]">
             {filmLabDisclaimer}
           </p>
         </div>
@@ -247,7 +247,7 @@ export default function LabPage() {
               <summary className="cursor-pointer text-lg font-semibold uppercase tracking-[0.03em]">
                 {question}
               </summary>
-              <p className="mt-4 text-sm leading-7 text-[#333333]">{answer}</p>
+              <p className="mt-4 text-sm leading-7 text-[#111111]">{answer}</p>
             </details>
           ))}
         </div>

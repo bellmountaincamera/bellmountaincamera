@@ -30,13 +30,13 @@ export default function LocalPickupPage() {
             <br />
             {site.cityStateZip}
           </p>
-          <p className="mono mt-5 text-xs uppercase tracking-[0.14em] text-[#666666]">
+          <p className="mono mt-5 text-xs uppercase tracking-[0.14em] text-[#0B3D91]">
             Pickup hours: {site.hoursShort}
           </p>
         </div>
         <div className="document-panel p-6">
           <TerminalLabel>Pickup Notes</TerminalLabel>
-          <p className="mt-5 text-sm leading-7 text-[#333333]">
+          <p className="mt-5 text-sm leading-7 text-[#111111]">
             Walk-ins are welcome during business hours. Customers can also call
             or email to arrange pickup for online orders.
           </p>

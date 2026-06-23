@@ -109,7 +109,7 @@ export default function ShopCamerasPage() {
           <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
             Cameras photographed for BMC inventory
           </h2>
-          <p className="mt-5 text-sm leading-7 text-[#333333]">
+          <p className="mt-5 text-sm leading-7 text-[#111111]">
             These photos document the camera inventory style for Bell Mountain
             Camera. Listings can later use the same structure for model,
             condition, tested status, price, and pickup or shipping notes.
@@ -127,13 +127,13 @@ export default function ShopCamerasPage() {
                   className="object-cover"
                 />
               </div>
-              <p className="mono mt-4 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#2457C5]">
+              <p className="mono mt-4 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#0B3D91]">
                 {camera.code}
               </p>
               <h3 className="mt-2 text-lg font-semibold uppercase tracking-[0.03em]">
                 {camera.title}
               </h3>
-              <p className="mt-3 text-sm leading-7 text-[#333333]">
+              <p className="mt-3 text-sm leading-7 text-[#111111]">
                 {camera.text}
               </p>
             </article>
@@ -143,7 +143,7 @@ export default function ShopCamerasPage() {
       <section className="mx-auto grid max-w-7xl gap-8 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
         <div>
           <TerminalLabel>Listing Details</TerminalLabel>
-          <p className="mt-5 text-sm leading-7 text-[#333333]">
+          <p className="mt-5 text-sm leading-7 text-[#111111]">
             Camera product pages are structured for tested status, known
             issues, cosmetic condition, light meter status, battery compartment
             condition, lens condition, sample photos when available, return
@@ -162,7 +162,7 @@ export default function ShopCamerasPage() {
                 label: "RANGEFINDER"
               }
             ].map((image) => (
-              <div key={image.src} className="border border-[#2A2A2A] bg-[#FAFAF8] p-3">
+              <div key={image.src} className="border border-[#111111] bg-[#FFFFFF] p-3">
                 <div className="photo-grain relative aspect-[4/3] overflow-hidden bg-[#111111]">
                   <Image
                     src={image.src}
@@ -172,7 +172,7 @@ export default function ShopCamerasPage() {
                     className="object-cover"
                   />
                 </div>
-                <p className="mono mt-3 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#2457C5]">
+                <p className="mono mt-3 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#0B3D91]">
                   {image.label}
                 </p>
               </div>

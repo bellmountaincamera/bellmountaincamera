@@ -26,7 +26,7 @@ export default function ServicesPage() {
           <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
             Service scope and bundles
           </h2>
-          <p className="mt-5 text-sm leading-7 text-[#333333]">
+          <p className="mt-5 text-sm leading-7 text-[#111111]">
             BMC handles practical film camera maintenance: diagnosis, cleaning,
             light seals, and shutter speed adjustment when possible. Bring your
             camera in during business hours or contact BMC to set up an
@@ -60,11 +60,11 @@ export default function ServicesPage() {
                     <h3 className="text-xl font-semibold uppercase tracking-[0.03em]">
                       {service.title}
                     </h3>
-                    <p className="mt-3 text-sm leading-7 text-[#333333]">
+                    <p className="mt-3 text-sm leading-7 text-[#111111]">
                       {service.text}
                     </p>
                   </div>
-                  <p className="mono text-xs font-semibold uppercase tracking-[0.14em] text-[#666666]">
+                  <p className="mono text-xs font-semibold uppercase tracking-[0.14em] text-[#0B3D91]">
                     {service.price}
                   </p>
                 </article>
@@ -79,7 +79,7 @@ export default function ServicesPage() {
                   <p className="text-lg font-semibold uppercase tracking-[0.03em]">
                     {bundle.title}
                   </p>
-                  <p className="mono mt-4 text-sm font-semibold uppercase tracking-[0.14em] text-[#666666]">
+                  <p className="mono mt-4 text-sm font-semibold uppercase tracking-[0.14em] text-[#0B3D91]">
                     {bundle.price}
                   </p>
                 </article>
@@ -94,7 +94,7 @@ export default function ServicesPage() {
           <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
             Tell BMC what the camera is doing
           </h2>
-          <p className="mt-5 text-sm leading-7 text-[#333333]">
+          <p className="mt-5 text-sm leading-7 text-[#111111]">
             This static intake form is ready for a future form handler, email
             notification, or service ticket workflow.
           </p>
@@ -115,19 +115,19 @@ export default function ServicesPage() {
               "Notes"
             ].map((label) => (
               <div key={label} className={label === "Notes" ? "sm:col-span-2" : ""}>
-                <label className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#D8D8D2]">
+                <label className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#FFFFFF]">
                   {label}
                 </label>
-                <div className="mt-2 min-h-11 border border-[#FAFAF8]/25 bg-[#FAFAF8]/5" />
+                <div className="mt-2 min-h-11 border border-[#FFFFFF]/25 bg-[#FFFFFF]/5" />
               </div>
             ))}
           </div>
         </div>
       </section>
-      <section className="border-t border-[#111111]/15 bg-[#111111] text-[#FAFAF8]">
+      <section className="border-t border-[#111111]/15 bg-[#111111] text-[#FFFFFF]">
         <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
           <TerminalLabel tone="dark">Service Disclaimer</TerminalLabel>
-          <p className="mt-5 max-w-3xl text-base leading-8 text-[#D8D8D2]">
+          <p className="mt-5 max-w-3xl text-base leading-8 text-[#FFFFFF]">
             Service depends on the camera model, condition, and issue. Some
             cameras may need parts or repairs beyond what Bell Mountain Camera
             can provide in-house.

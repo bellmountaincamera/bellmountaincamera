@@ -19,7 +19,7 @@ export function ShopPreviewSection() {
           <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em] sm:text-5xl">
             Featured film and rotating camera inventory
           </h2>
-          <p className="mt-5 text-sm leading-7 text-[#333333]">
+          <p className="mt-5 text-sm leading-7 text-[#111111]">
             Preview film stock, cameras, and rotating inventory. Contact BMC for
             availability while online checkout is being prepared.
           </p>
@@ -47,7 +47,7 @@ export function ShopPreviewSection() {
               item
             ])}
           />
-          <p className="mt-5 text-sm leading-7 text-[#333333]">
+          <p className="mt-5 text-sm leading-7 text-[#111111]">
             Inventory changes often. Stop by during business hours or contact
             BMC to ask about current film cameras, 35mm film stock, batteries,
             straps, accessories, shipping, and local pickup.

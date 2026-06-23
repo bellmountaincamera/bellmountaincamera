@@ -5,7 +5,7 @@ import { TerminalLabel } from "@/components/ui/TerminalLabel";
 
 export function FilmLabSection() {
   return (
-    <section className="bg-[#111111] text-[#FAFAF8]">
+    <section className="bg-[#111111] text-[#FFFFFF]">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
         <div>
           <TerminalLabel tone="dark">Film Lab / C-41</TerminalLabel>
@@ -15,7 +15,7 @@ export function FilmLabSection() {
           <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em] sm:text-5xl">
             Processing and scans with a clean paper trail
           </h2>
-          <p className="mt-6 text-sm leading-7 text-[#D8D8D2]">
+          <p className="mt-6 text-sm leading-7 text-[#FFFFFF]">
             The lab is built for real rolls: local drop-off, mail-in workflow,
             roll numbers, digital scan delivery, and useful customer updates
             without turning the order process into a maze.
@@ -34,7 +34,7 @@ export function FilmLabSection() {
             ["DELIVERY", "Download link delivery"]
           ].map(([label, value]) => (
             <div key={label} className="terminal-panel p-5">
-              <p className="mono text-[0.7rem] uppercase tracking-[0.16em] text-[#666666]">
+              <p className="mono text-[0.7rem] uppercase tracking-[0.16em] text-[#0B3D91]">
                 {label}
               </p>
               <p className="mt-4 text-xl font-semibold">{value}</p>

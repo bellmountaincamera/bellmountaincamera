@@ -71,18 +71,18 @@ export function HomeGifCarousel() {
           <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em] sm:text-4xl">
             Film cameras, lab tools, and shop motion
           </h2>
-          <p className="mt-5 text-sm leading-7 text-[#333333]">
+          <p className="mt-5 text-sm leading-7 text-[#111111]">
             Short motion loops from Bell Mountain Camera. Each clip plays for
             three seconds before moving to the next frame.
           </p>
-          <div className="mono mt-7 grid max-w-sm grid-cols-3 gap-2 text-[0.68rem] uppercase tracking-[0.12em] text-[#666666]">
+          <div className="mono mt-7 grid max-w-sm grid-cols-3 gap-2 text-[0.68rem] uppercase tracking-[0.12em] text-[#0B3D91]">
             <span>GIF LOOP</span>
             <span>3 SEC</span>
             <span>{String(activeIndex + 1).padStart(2, "0")} / {clips.length}</span>
           </div>
         </div>
 
-        <div className="border border-[#2A2A2A] bg-[#FAFAF8] p-3">
+        <div className="border border-[#111111] bg-[#FFFFFF] p-3">
           <div className="photo-grain relative mx-auto aspect-[9/16] max-h-[34rem] max-w-sm overflow-hidden border border-[#111111]/20 bg-[#111111] md:max-h-[40rem]">
             <img
               key={activeClip.src}
@@ -91,7 +91,7 @@ export function HomeGifCarousel() {
               className="h-full w-full object-cover"
             />
           </div>
-          <div className="mono mt-3 flex flex-wrap justify-between gap-2 text-[0.68rem] uppercase tracking-[0.12em] text-[#666666]">
+          <div className="mono mt-3 flex flex-wrap justify-between gap-2 text-[0.68rem] uppercase tracking-[0.12em] text-[#0B3D91]">
             <span>{activeClip.caption}</span>
             <span>{activeClip.label}</span>
           </div>

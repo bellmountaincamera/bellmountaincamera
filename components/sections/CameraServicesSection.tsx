@@ -20,7 +20,7 @@ export function CameraServicesSection() {
           <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em] sm:text-5xl">
             Basic camera work before the next roll
           </h2>
-          <p className="mt-6 max-w-xl text-sm leading-7 text-[#333333]">
+          <p className="mt-6 max-w-xl text-sm leading-7 text-[#111111]">
             Camera services focus on practical checks and maintenance: cleaning,
             battery compartment review, light seals, diagnosis, and basic
             shutter speed adjustment when possible.

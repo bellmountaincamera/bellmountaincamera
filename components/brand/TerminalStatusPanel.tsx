@@ -17,12 +17,12 @@ export function TerminalStatusPanel({
       className={[
         "border p-4",
         tone === "dark"
-          ? "border-[#FAFAF8]/20 bg-[#1A1A1A] text-[#FAFAF8]"
-          : "border-[#2A2A2A] bg-[#FAFAF8] text-[#111111]"
+          ? "border-[#FFFFFF]/20 bg-[#111111] text-[#FFFFFF]"
+          : "border-[#111111] bg-[#FFFFFF] text-[#111111]"
       ].join(" ")}
     >
       <div className="flex items-start justify-between gap-4 border-b border-current/20 pb-4">
-        <p className="mono text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#2457C5]">
+        <p className="mono text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#0B3D91]">
           {title}
         </p>
         <AsciiLineLogo

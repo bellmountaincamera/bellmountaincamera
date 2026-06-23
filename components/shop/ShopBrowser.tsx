@@ -67,9 +67,9 @@ export function ShopBrowser({ products, initialFilter = "" }: ShopBrowserProps) 
 
   return (
     <div>
-      <div className="mb-6 grid gap-3 border border-[#2A2A2A] record-cell p-4 lg:grid-cols-[1fr_auto] lg:items-end">
+      <div className="mb-6 grid gap-3 border border-[#111111] record-cell p-4 lg:grid-cols-[1fr_auto] lg:items-end">
         <label className="block">
-          <span className="mono text-xs font-semibold uppercase tracking-[0.14em] text-[#2457C5]">
+          <span className="mono text-xs font-semibold uppercase tracking-[0.14em] text-[#0B3D91]">
             Search
           </span>
           <input
@@ -77,7 +77,7 @@ export function ShopBrowser({ products, initialFilter = "" }: ShopBrowserProps) 
             onChange={(event) => setQuery(event.currentTarget.value)}
             onInput={(event) => setQuery(event.currentTarget.value)}
             placeholder="Search film, cameras, or products..."
-            className="mt-2 w-full border border-[#D8D8D2] bg-[#FFFFFF] px-4 py-3 text-sm outline-none focus:border-[#2457C5]"
+            className="mt-2 w-full border border-[#111111]/15 bg-[#FFFFFF] px-4 py-3 text-sm outline-none focus:border-[#0B3D91]"
           />
         </label>
         <button
@@ -99,8 +99,8 @@ export function ShopBrowser({ products, initialFilter = "" }: ShopBrowserProps) 
             onClick={() => toggleFilter(filter)}
             className={`mono border px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-[0.14em] ${
               activeFilters.includes(filter)
-                ? "border-[#2457C5] bg-[#111111] text-[#FAFAF8]"
-                : "border-[#D8D8D2] bg-[#FAFAF8] text-[#666666] hover:border-[#2457C5]"
+                ? "border-[#0B3D91] bg-[#111111] text-[#FFFFFF]"
+                : "border-[#111111]/15 bg-[#FFFFFF] text-[#0B3D91] hover:border-[#0B3D91]"
             }`}
           >
             {filter}
@@ -114,7 +114,7 @@ export function ShopBrowser({ products, initialFilter = "" }: ShopBrowserProps) 
           ))}
         </div>
       ) : (
-        <div className="border border-[#2A2A2A] record-cell p-6 text-sm leading-7 text-[#333333]">
+        <div className="border border-[#111111] record-cell p-6 text-sm leading-7 text-[#111111]">
           <AsciiLineLogo
             className="mb-4"
             lines={["SEARCH", "NO MATCH", "ASK BMC"]}

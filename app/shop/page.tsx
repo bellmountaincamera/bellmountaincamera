@@ -29,7 +29,7 @@ export default function ShopPage() {
             <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
               Film, cameras, and rotating inventory
             </h2>
-            <p className="mt-4 text-sm leading-7 text-[#333333]">
+            <p className="mt-4 text-sm leading-7 text-[#111111]">
               Online ordering is coming soon. For now, search the preview
               catalog and contact BMC for current availability, local pickup,
               or shipping questions.
@@ -38,14 +38,14 @@ export default function ShopPage() {
         </div>
         <ShopBrowser products={products} />
       </section>
-      <section className="border-t border-[#111111]/15 bg-[#111111] text-[#FAFAF8]">
+      <section className="border-t border-[#111111]/15 bg-[#111111] text-[#FFFFFF]">
         <div className="mx-auto grid max-w-7xl gap-8 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-2 lg:px-8">
           <div>
             <TerminalLabel tone="dark">Pickup / Shipping Info</TerminalLabel>
             <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
               Shipping planned, pickup available
             </h2>
-            <p className="mt-5 text-sm leading-7 text-[#D8D8D2]">
+            <p className="mt-5 text-sm leading-7 text-[#FFFFFF]">
               Online ordering and shipping are being prepared. Until checkout is
               connected, contact BMC for availability, shipping questions, and
               local pickup.
