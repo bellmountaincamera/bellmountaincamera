@@ -32,9 +32,11 @@ export function PageHeader({
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div>
             <TerminalHeader eyebrow={label} title={title} description={description} />
-            <div className="mt-6">
-              <MetadataPanel rows={meta.map((item, index) => [`META ${index + 1}`, item])} />
-            </div>
+            {meta.length > 0 ? (
+              <div className="mt-6">
+                <MetadataPanel rows={meta.map((item, index) => [`META ${index + 1}`, item])} />
+              </div>
+            ) : null}
             <div className="mt-5">
               <MetadataLine items={["BMC PUBLIC RECORD", "APPLE VALLEY, CA"]} />
             </div>

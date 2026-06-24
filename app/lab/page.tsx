@@ -46,8 +46,8 @@ export default function LabPage() {
       <PageHeader
         label="Lab Counter"
         title="Film Lab"
-        description="Simple film development and scanning in Apple Valley. C-41 is the main process, with black-and-white and E-6 handled in specialty batches."
-        meta={["C-41 MAIN PROCESS", "B&W / E-6 SPECIALTY", "JPEG OR TIFF SCANS"]}
+        description="Film developing and scanning in Apple Valley."
+        meta={[]}
         photoSet="lab"
       />
 
@@ -173,28 +173,12 @@ export default function LabPage() {
         <div className="mb-8 max-w-3xl">
           <TerminalLabel>Important Notes</TerminalLabel>
           <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
-            Specialty orders may take longer
+            Before you drop off film
           </h2>
           <p className="mt-5 text-sm leading-7 text-[#111111]">
-            Black-and-white and E-6 are processed in specialty batches. C-41 is
-            the standard process and is the fastest regular lab option.
+            Write your name, phone number, film type, and scan preference with
+            each order. Specialty film may need extra time.
           </p>
-        </div>
-        <div className="record-grid md:grid-cols-3">
-          {[
-            ["C-41", "Main color negative process"],
-            ["B&W / E-6", "Specialty batch processing"],
-            ["Push / Pull", "$3 per stop for C-41 orders"]
-          ].map(([label, value]) => (
-            <article key={label} className="record-cell p-5">
-              <p className="mono text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#0B3D91]">
-                {label}
-              </p>
-              <p className="mt-4 text-lg font-semibold uppercase tracking-[0.03em]">
-                {value}
-              </p>
-            </article>
-          ))}
         </div>
       </section>
 
