@@ -101,70 +101,47 @@ export default function LabPage() {
           <div className="mb-8 max-w-3xl">
             <TerminalLabel tone="dark">Scan Options</TerminalLabel>
             <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
-              Regular border or full border
+              Full-border DSLR scans
             </h2>
             <p className="mt-5 text-sm leading-7 text-[#FFFFFF]">
-              Regular scans focus on the image. Full-border scans include the
-              film edge and frame border for a more archival look.
+              Full-border scans are DSLR scanned for higher-detail files and
+              include the film edge around the frame.
             </p>
           </div>
 
-          <div className="grid gap-5 md:grid-cols-2">
-            <div className="border border-[#FFFFFF]/20 p-3">
-              <div className="photo-grain relative aspect-[4/3] overflow-hidden bg-[#111111]">
-                <Image
-                  src="/images/test-rolls/processor-lines.jpg"
-                  alt="Regular-border scan sample of film lab processor lines"
-                  fill
-                  sizes="(min-width: 768px) 50vw, 100vw"
-                  className="scale-110 object-cover opacity-80"
-                />
-              </div>
-              <div className="mt-4">
-                <h3 className="text-xl font-semibold uppercase tracking-[0.03em]">
-                  Regular Border Scan
-                </h3>
-                <p className="mt-3 text-sm leading-7 text-[#FFFFFF]">
-                  A clean crop focused on the photograph. Best for sharing,
-                  printing, and everyday delivery.
-                </p>
-                <div className="mt-4">
-                  <MetadataLine
-                    tone="dark"
-                    items={["CROP: IMAGE AREA", "FILES: JPEG / TIFF"]}
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div className="border border-[#FFFFFF]/20 p-3">
-              <div className="bg-[#FFFFFF] p-3">
-                <div className="photo-grain relative aspect-[4/3] overflow-hidden bg-[#111111]">
+          <div className="grid gap-4 lg:grid-cols-3">
+            {[
+              {
+                src: "/images/test-rolls/full-border-dslr-01.jpg",
+                alt: "Full-border DSLR scan sample of a house between trees"
+              },
+              {
+                src: "/images/test-rolls/full-border-dslr-02.jpg",
+                alt: "Full-border DSLR scan sample of Half Dome"
+              },
+              {
+                src: "/images/test-rolls/full-border-dslr-03.jpg",
+                alt: "Full-border DSLR scan sample of a mountain wall"
+              }
+            ].map((sample, index) => (
+              <article key={sample.src} className="border border-[#FFFFFF]/20 p-3">
+                <div className="photo-grain relative aspect-[4/5] overflow-hidden bg-[#111111]">
                   <Image
-                    src="/images/test-rolls/full-border-kodak.jpg"
-                    alt="Full-border scan sample with visible film edge"
+                    src={sample.src}
+                    alt={sample.alt}
                     fill
-                    sizes="(min-width: 768px) 50vw, 100vw"
-                    className="object-cover opacity-80"
+                    sizes="(min-width: 1024px) 33vw, 100vw"
+                    className="object-cover"
                   />
                 </div>
-              </div>
-              <div className="mt-4">
-                <h3 className="text-xl font-semibold uppercase tracking-[0.03em]">
-                  Full Border Scan
-                </h3>
-                <p className="mt-3 text-sm leading-7 text-[#FFFFFF]">
-                  Shows the frame edge and surrounding border. Good for
-                  contact-sheet style previews and archival presentation.
-                </p>
                 <div className="mt-4">
                   <MetadataLine
                     tone="dark"
-                    items={["CROP: FULL FRAME", "FILES: JPEG / TIFF"]}
+                    items={[`DSLR SAMPLE ${String(index + 1).padStart(2, "0")}`, "FULL BORDER"]}
                   />
                 </div>
-              </div>
-            </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
