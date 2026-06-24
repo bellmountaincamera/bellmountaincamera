@@ -109,39 +109,41 @@ export default function LabPage() {
             </p>
           </div>
 
-          <div className="grid gap-4 lg:grid-cols-3">
-            {[
-              {
-                src: "/images/test-rolls/full-border-dslr-01.jpg",
-                alt: "Full-border DSLR scan sample of a house between trees"
-              },
-              {
-                src: "/images/test-rolls/full-border-dslr-02.jpg",
-                alt: "Full-border DSLR scan sample of Half Dome"
-              },
-              {
-                src: "/images/test-rolls/full-border-dslr-03.jpg",
-                alt: "Full-border DSLR scan sample of a mountain wall"
-              }
-            ].map((sample, index) => (
-              <article key={sample.src} className="border border-[#FFFFFF]/20 p-3">
-                <div className="photo-grain relative aspect-[4/5] overflow-hidden bg-[#111111]">
-                  <Image
-                    src={sample.src}
-                    alt={sample.alt}
-                    fill
-                    sizes="(min-width: 1024px) 33vw, 100vw"
-                    className="object-cover"
-                  />
-                </div>
-                <div className="mt-4">
-                  <MetadataLine
-                    tone="dark"
-                    items={[`DSLR SAMPLE ${String(index + 1).padStart(2, "0")}`, "FULL BORDER"]}
-                  />
-                </div>
-              </article>
-            ))}
+          <div className="overflow-x-auto">
+            <div className="flex min-w-max gap-4 pb-2">
+              {[
+                {
+                  src: "/images/test-rolls/full-border-dslr-01.jpg",
+                  alt: "Full-border DSLR scan sample of a house between trees"
+                },
+                {
+                  src: "/images/test-rolls/full-border-dslr-02.jpg",
+                  alt: "Full-border DSLR scan sample of Half Dome"
+                },
+                {
+                  src: "/images/test-rolls/full-border-dslr-03.jpg",
+                  alt: "Full-border DSLR scan sample of a mountain wall"
+                }
+              ].map((sample, index) => (
+                <article key={sample.src} className="w-[18rem] shrink-0 border border-[#FFFFFF]/20 p-3 sm:w-[22rem] lg:w-[24rem]">
+                  <div className="photo-grain relative aspect-square overflow-hidden bg-[#111111]">
+                    <Image
+                      src={sample.src}
+                      alt={sample.alt}
+                      fill
+                      sizes="(min-width: 1024px) 24rem, (min-width: 640px) 22rem, 18rem"
+                      className="object-contain"
+                    />
+                  </div>
+                  <div className="mt-4">
+                    <MetadataLine
+                      tone="dark"
+                      items={[`DSLR SAMPLE ${String(index + 1).padStart(2, "0")}`, "FULL BORDER"]}
+                    />
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </section>
