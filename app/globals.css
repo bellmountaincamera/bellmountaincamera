@@ -31,6 +31,28 @@ body {
   font-family: Inter, "IBM Plex Sans", Arial, sans-serif;
 }
 
+p,
+li,
+dd,
+dt,
+summary,
+label,
+input,
+textarea,
+select {
+  font-family: "IBM Plex Mono", "Space Mono", "JetBrains Mono", "Courier New", monospace;
+  letter-spacing: 0.01em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Inter, "IBM Plex Sans", Arial, sans-serif;
+}
+
 body::before,
 body::after {
   background:

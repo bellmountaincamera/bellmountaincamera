@@ -29,9 +29,9 @@ export const site = {
   nav: [
     { href: "/", label: "Home" },
     { href: "/lab", label: "Film Lab" },
-    { href: "/shop", label: "Shop" },
-    { href: "/services", label: "Camera Services" },
-    { href: "/about", label: "About" },
+    { href: "/shop/film", label: "Film" },
+    { href: "/shop/cameras", label: "Cameras" },
+    { href: "/services", label: "Services" },
     { href: "/contact", label: "Contact" }
   ]
 };

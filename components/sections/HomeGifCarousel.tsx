@@ -90,12 +90,14 @@ export function HomeGifCarousel() {
               alt={`${activeClip.caption} animated GIF`}
               className="h-full w-full object-cover"
             />
-            <img
-              src="/images/bmc-ascii-line-logo.png"
-              alt=""
+            <div
               aria-hidden="true"
-              className="pointer-events-none absolute left-1/2 top-1/2 w-[82%] -translate-x-1/2 -translate-y-1/2 invert opacity-30 mix-blend-screen"
-            />
+              className="pointer-events-none absolute inset-x-4 top-1/2 -translate-y-1/2 border border-[#FFFFFF]/35 bg-[#111111]/20 px-3 py-4 text-center mix-blend-screen"
+            >
+              <p className="mono text-xl font-semibold uppercase leading-tight tracking-[0.08em] text-[#FFFFFF] opacity-75 sm:text-2xl">
+                Film cameras and film development in Apple Valley.
+              </p>
+            </div>
           </div>
           <div className="mono mt-3 flex flex-wrap justify-between gap-2 text-[0.68rem] uppercase tracking-[0.12em] text-[#0B3D91]">
             <span>{activeClip.caption}</span>

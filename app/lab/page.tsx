@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { TerminalStatusPanel } from "@/components/brand/TerminalStatusPanel";
 import { ContactCTA } from "@/components/sections/ContactCTA";
 import { FilmLabPhotoCarousel } from "@/components/sections/FilmLabPhotoCarousel";
 import { CTAButton } from "@/components/ui/CTAButton";
@@ -58,22 +57,43 @@ export default function LabPage() {
         <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
           Current development menu
         </h2>
-        <div className="mt-8 record-grid sm:grid-cols-2 lg:grid-cols-3">
-          {filmLabPricing.map((item) => (
-            <article key={item.title} className="record-cell p-5">
-              <div className="flex items-start justify-between gap-4">
-                <h3 className="text-lg font-semibold uppercase tracking-[0.03em]">
-                  {item.title}
-                </h3>
-                <p className="mono text-xs font-semibold uppercase tracking-[0.12em] text-[#0B3D91]">
-                  {item.price}
-                </p>
-              </div>
-              <p className="mt-4 text-sm leading-7 text-[#111111]">
-                {item.text}
-              </p>
-            </article>
-          ))}
+        <div className="mt-8 overflow-x-auto border border-[#111111]">
+          <table className="w-full min-w-[44rem] border-collapse text-left">
+            <caption className="sr-only">
+              Bell Mountain Camera film development pricing and processing notes
+            </caption>
+            <thead className="bg-[#111111] text-[#FFFFFF]">
+              <tr>
+                <th scope="col" className="mono px-4 py-3 text-xs uppercase tracking-[0.14em]">
+                  Service
+                </th>
+                <th scope="col" className="mono px-4 py-3 text-xs uppercase tracking-[0.14em]">
+                  Price / Detail
+                </th>
+                <th scope="col" className="mono px-4 py-3 text-xs uppercase tracking-[0.14em]">
+                  Notes
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {filmLabPricing.map((item) => (
+                <tr key={item.title} className="border-t border-[#111111] bg-[#FFFFFF]">
+                  <th
+                    scope="row"
+                    className="px-4 py-4 text-sm font-semibold uppercase tracking-[0.03em]"
+                  >
+                    {item.title}
+                  </th>
+                  <td className="mono px-4 py-4 text-sm font-semibold uppercase tracking-[0.12em] text-[#0B3D91]">
+                    {item.price}
+                  </td>
+                  <td className="px-4 py-4 text-sm leading-6 text-[#111111]">
+                    {item.text}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </section>
 
@@ -89,17 +109,6 @@ export default function LabPage() {
               APS film. Scans are delivered digitally as JPEG or TIFF files.
               C-41 push and pull processing is available by request.
             </p>
-            <div className="mt-6">
-              <TerminalStatusPanel
-                title="LAB MENU"
-                rows={[
-                  ["Main", "C-41"],
-                  ["Specialty", "B&W / E-6"],
-                  ["Formats", "Disposable / 35mm / 110 / APS"],
-                  ["Scans", "JPEG / TIFF"]
-                ]}
-              />
-            </div>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <CTAButton href="/contact">Start a Film Order</CTAButton>
               <CTAButton href="/contact" variant="secondary">
@@ -110,9 +119,9 @@ export default function LabPage() {
 
           <div className="record-grid">
             {[
-              ["Standard", "C-41 color negative film"],
-              ["Specialty", "Black-and-white and E-6 slide film"],
-              ["Delivery", "Digital scans as JPEG or TIFF files"]
+              ["Main", "C-41 color negative film"],
+              ["Specialty", "B&W and E-6 may take longer"],
+              ["Files", "JPEG or TIFF scan delivery"]
             ].map(([label, value]) => (
               <article key={label} className="record-cell p-5">
                 <p className="mono text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#0B3D91]">
