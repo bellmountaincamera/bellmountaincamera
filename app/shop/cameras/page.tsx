@@ -31,9 +31,8 @@ export default function ShopCamerasPage() {
             Cameras photographed for BMC inventory
           </h2>
           <p className="mt-5 text-sm leading-7 text-[#111111]">
-            These photos document the camera inventory style for Bell Mountain
-            Camera. Listings can later use the same structure for model,
-            condition, tested status, price, and pickup or shipping notes.
+            Short reference files for camera models, film format, lens range,
+            and camera type.
           </p>
         </div>
         <div className="record-grid sm:grid-cols-2 lg:grid-cols-3">

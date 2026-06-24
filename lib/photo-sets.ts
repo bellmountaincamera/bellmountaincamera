@@ -11,79 +11,79 @@ export const cameraPhotos: PhotoFrame[] = [
     src: "/images/camera-photos/olympus-closeup.jpg",
     title: "Olympus Superzoom 105",
     label: "BMC-23",
-    text: "Close detail of an Olympus point-and-shoot with quartz date marking and compact zoom body."
+    text: "35mm / autofocus point-and-shoot / 38-105mm zoom / quartz date."
   },
   {
     src: "/images/camera-photos/canon-z115-closeup.jpg",
     title: "Canon Sure Shot Z115",
     label: "BMC-2",
-    text: "Autofocus Canon compact with 38-115mm zoom lens and built-in flash."
+    text: "35mm / autofocus compact / 38-115mm zoom / built-in flash."
   },
   {
     src: "/images/camera-photos/superzoom-detail.jpg",
     title: "Olympus Superzoom 105 Detail",
     label: "BMC-22",
-    text: "Close-up of the viewfinder, flash, and front control area on the Olympus Superzoom."
+    text: "35mm / autofocus point-and-shoot / 38-105mm zoom / illuminated viewfinder."
   },
   {
     src: "/images/camera-photos/pentax-iqzoom.jpg",
     title: "Pentax IQZoom 110",
     label: "BMC-13",
-    text: "Black Pentax IQZoom point-and-shoot with 38-110mm autofocus zoom lens."
+    text: "35mm / autofocus point-and-shoot / 38-110mm zoom / built-in flash."
   },
   {
     src: "/images/camera-photos/canon-sureshot-film.jpg",
     title: "Canon Sure Shot 85 Zoom",
     label: "BMC-8",
-    text: "Canon compact camera photographed with 35mm film rolls and other shop cameras."
+    text: "35mm / autofocus compact / 38-85mm zoom / date imprint model."
   },
   {
     src: "/images/camera-photos/olympus-twin-flatlay.jpg",
     title: "Olympus Infinity Twin",
     label: "BMC CAMERAS-7",
-    text: "Flatlay with an Olympus Infinity Twin, Kodak 400 film, lenses, and assorted point-and-shoot cameras."
+    text: "35mm / autofocus compact / twin-lens system / weatherproof body."
   },
   {
     src: "/images/camera-photos/canon-owl-flatlay.jpg",
     title: "Canon Sure Shot Owl Date",
     label: "BMC CAMERAS-2",
-    text: "Canon Sure Shot Owl Date flatlay with film and camera accessories."
+    text: "35mm / autofocus compact / 35mm lens / large viewfinder / date model."
   },
   {
     src: "/images/camera-photos/minolta-7-rangefinder.jpg",
     title: "Minolta Hi-Matic 7s",
     label: "BMC-21",
-    text: "Classic Minolta rangefinder photographed on a wood counter with warm shop light."
+    text: "35mm / rangefinder / 45mm f/1.8 lens / manual and auto exposure."
   },
   {
     src: "/images/camera-photos/canon-a1-flatlay-wide.jpg",
     title: "Canon A-1 System",
     label: "CAMERA-2",
-    text: "Canon A-1 SLR shown with Kodak Portra 400, lenses, and camera service tools."
+    text: "35mm / SLR / Canon FD mount / electronic exposure modes."
   },
   {
     src: "/images/camera-photos/canon-ae1-flatlay.jpg",
     title: "Canon AE-1 Program",
     label: "CAMERA-3",
-    text: "Canon AE-1 Program flatlay with Kodak 400 film and surrounding lenses."
+    text: "35mm / SLR / Canon FD mount / program auto exposure."
   },
   {
     src: "/images/camera-photos/olympus-superzoom-flatlay.jpg",
     title: "Olympus Superzoom 105",
     label: "CAMERA-1",
-    text: "Full camera layout showing the Olympus Superzoom 105 among film and lenses."
+    text: "35mm / autofocus point-and-shoot / 38-105mm zoom / quartz date."
   },
   {
     src: "/images/camera-photos/canon-a1-closeup.jpg",
     title: "Canon A-1 Close-Up",
     label: "BMC CAM-2",
-    text: "Close frame on the Canon A-1 body and FD lens, useful for condition and listing reference."
+    text: "35mm / SLR / Canon FD mount / 50mm FD lens shown."
   },
   {
     src: "/images/camera-photos/olympus-superzoom-closeup.jpg",
     title: "Olympus Superzoom 105 Close-Up",
     label: "BMC CAM-3",
-    text: "Straight-on product-style view of the Olympus Superzoom 105 with surrounding compact cameras."
+    text: "35mm / autofocus point-and-shoot / 38-105mm zoom / built-in flash."
   }
 ];
 

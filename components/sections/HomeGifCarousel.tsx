@@ -1,8 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { TerminalLabel } from "@/components/ui/TerminalLabel";
-
 const clips = [
   {
     src: "/images/home-carousel/clip-01.gif",
@@ -65,42 +63,24 @@ export function HomeGifCarousel() {
 
   return (
     <section className="border-b border-[#111111]/15">
-      <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:px-8">
-        <div>
-          <TerminalLabel>Moving Frames</TerminalLabel>
-          <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em] sm:text-4xl">
-            Film cameras, lab tools, and shop motion
-          </h2>
-          <p className="mt-5 text-sm leading-7 text-[#111111]">
-            Short motion loops from Bell Mountain Camera. Each clip plays for
-            three seconds before moving to the next frame.
-          </p>
-          <div className="mono mt-7 grid max-w-sm grid-cols-3 gap-2 text-[0.68rem] uppercase tracking-[0.12em] text-[#0B3D91]">
-            <span>GIF LOOP</span>
-            <span>3 SEC</span>
-            <span>{String(activeIndex + 1).padStart(2, "0")} / {clips.length}</span>
-          </div>
-        </div>
-
+      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
         <div className="border border-[#111111] bg-[#FFFFFF] p-3">
-          <div className="photo-grain relative mx-auto aspect-[9/16] max-h-[34rem] max-w-sm overflow-hidden border border-[#111111]/20 bg-[#111111] md:max-h-[40rem]">
+          <div className="photo-grain relative mx-auto aspect-[9/16] max-h-[36rem] max-w-sm overflow-hidden border border-[#111111]/20 bg-[#111111] sm:max-h-[42rem] lg:aspect-[16/9] lg:max-h-[36rem] lg:max-w-none">
             <img
               key={activeClip.src}
               src={activeClip.src}
               alt={`${activeClip.caption} animated GIF`}
               className="h-full w-full object-cover"
             />
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute inset-x-4 top-1/2 -translate-y-1/2 border border-[#FFFFFF]/35 bg-[#111111]/20 px-3 py-4 text-center mix-blend-screen"
-            >
-              <p className="mono text-xl font-semibold uppercase leading-tight tracking-[0.08em] text-[#FFFFFF] opacity-75 sm:text-2xl">
+            <div className="pointer-events-none absolute inset-x-4 top-1/2 -translate-y-1/2 border border-[#FFFFFF]/35 bg-[#111111]/20 px-3 py-4 text-center mix-blend-screen sm:inset-x-8 sm:py-6">
+              <h1 className="mx-auto max-w-4xl text-3xl font-semibold uppercase leading-[0.96] tracking-[0.01em] text-[#FFFFFF] opacity-80 sm:text-5xl lg:text-7xl">
                 Film cameras and film development in Apple Valley.
-              </p>
+              </h1>
             </div>
           </div>
           <div className="mono mt-3 flex flex-wrap justify-between gap-2 text-[0.68rem] uppercase tracking-[0.12em] text-[#0B3D91]">
             <span>{activeClip.caption}</span>
+            <span>3 SEC LOOP</span>
             <span>{activeClip.label}</span>
           </div>
         </div>
