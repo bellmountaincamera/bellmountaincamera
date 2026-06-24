@@ -9,6 +9,8 @@ export const site = {
   locationName: "Inside Wild Goose Vintage & Thrift Store",
   street: "21810 CA-18 Unit #2",
   cityStateZip: "Apple Valley, CA 92307",
+  vendorNumber: "Vendor #24",
+  filmDevelopmentStatus: "Accepting film development orders",
   hoursShort: "Tuesday - Saturday, 10 AM - 4 PM",
   hours: [
     { days: "Tuesday - Saturday", time: "10:00 AM - 4:00 PM" },

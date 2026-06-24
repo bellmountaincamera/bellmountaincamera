@@ -9,11 +9,15 @@ export function VisitSection() {
         <div>
           <TerminalLabel>Visit BMC</TerminalLabel>
           <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em] sm:text-4xl">
-            Inside Wild Goose Vintage & Thrift Store
+            Located inside Wild Goose Vintage & Thrift
           </h2>
         </div>
         <div className="grid gap-3 text-sm leading-6 text-[#111111] sm:grid-cols-[1fr_auto] sm:items-end">
           <div>
+            <p className="font-semibold uppercase tracking-[0.03em]">
+              Unit #2 / {site.vendorNumber}
+            </p>
+            <p>Find Bell Mountain Camera by the cashier.</p>
             <p>{site.street}</p>
             <p>{site.cityStateZip}</p>
             <p className="mono mt-2 text-[0.72rem] uppercase tracking-[0.14em] text-[#0B3D91]">
