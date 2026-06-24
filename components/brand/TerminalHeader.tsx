@@ -1,6 +1,6 @@
 type TerminalHeaderProps = {
   eyebrow: string;
-  title: string;
+  title?: string;
   description?: string;
   tone?: "light" | "dark";
 };
@@ -22,9 +22,11 @@ export function TerminalHeader({
         <p className="mono text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-[#0B3D91]">
           {eyebrow}
         </p>
-        <h2 className="mt-3 text-3xl font-semibold uppercase leading-none tracking-[0.02em] sm:text-5xl">
-          {title}
-        </h2>
+        {title ? (
+          <h2 className="mt-3 text-3xl font-semibold uppercase leading-none tracking-[0.02em] sm:text-5xl">
+            {title}
+          </h2>
+        ) : null}
         {description ? (
           <p
             className={[

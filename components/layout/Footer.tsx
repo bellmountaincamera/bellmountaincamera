@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { AsciiLineLogo } from "@/components/brand/AsciiLineLogo";
 import { site } from "@/lib/site";
 
 export function Footer() {
@@ -78,6 +79,13 @@ export function Footer() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="mx-auto max-w-7xl border-t border-[#FFFFFF]/15 px-4 py-6 text-center sm:px-6 lg:px-8">
+        <AsciiLineLogo
+          tone="dark"
+          lines={["B M C", "EST 2025", "AV, CA"]}
+          className="inline-block"
+        />
       </div>
     </footer>
   );

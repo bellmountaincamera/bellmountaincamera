@@ -86,7 +86,7 @@ export function HomeGifCarousel() {
           </div>
           <Link
             href="/lab"
-            className="mono mt-4 inline-flex border border-[#111111] bg-[#111111] px-4 py-3 text-xs font-semibold uppercase tracking-[0.14em] text-[#FFFFFF] transition hover:bg-[#0B3D91]"
+            className="mono mt-4 inline-flex border border-[#111111] bg-[#FFFFFF] px-4 py-3 text-xs font-semibold uppercase tracking-[0.14em] text-[#111111] transition hover:border-[#0B3D91] hover:text-[#0B3D91]"
           >
             Film Development &amp; Info
           </Link>

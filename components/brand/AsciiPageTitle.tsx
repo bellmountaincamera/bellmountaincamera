@@ -67,11 +67,11 @@ export function AsciiPageTitle({ title, tone = "light" }: AsciiPageTitleProps) {
     <div
       aria-label={title}
       className={[
-        "max-w-full overflow-x-auto border-b pb-5",
+        "max-w-full overflow-x-auto border-b pb-5 text-center",
         tone === "dark" ? "border-[#FFFFFF]/30 text-[#FFFFFF]" : "border-[#111111] text-[#111111]"
       ].join(" ")}
     >
-      <pre className="mono text-[0.62rem] font-semibold leading-[0.95] tracking-normal sm:text-xs md:text-sm">
+      <pre className="mono inline-block text-left text-[0.62rem] font-semibold leading-[0.95] tracking-normal sm:text-xs md:text-sm">
         {buildAsciiTitle(title)}
       </pre>
     </div>
