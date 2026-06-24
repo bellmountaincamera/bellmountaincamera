@@ -14,7 +14,7 @@ export default function ReturnsPage() {
       <PageHeader
         label="Store Policy"
         title="Returns Policy"
-        description="Return rules will depend on item type, condition, and final store setup."
+        description="Return notes for film, cameras, and services."
         meta={["FILM STOCK", "USED CAMERAS", "CONDITION NOTES"]}
       />
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">

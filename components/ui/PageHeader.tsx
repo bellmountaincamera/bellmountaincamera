@@ -1,5 +1,4 @@
-import { AsciiLineLogo } from "@/components/brand/AsciiLineLogo";
-import { MetadataPanel } from "@/components/brand/MetadataPanel";
+import { AsciiPageTitle } from "@/components/brand/AsciiPageTitle";
 import { TerminalHeader } from "@/components/brand/TerminalHeader";
 import { PagePhotoSlideshow } from "@/components/sections/PagePhotoSlideshow";
 import { MetadataLine } from "@/components/ui/MetadataLine";
@@ -26,17 +25,12 @@ export function PageHeader({
   return (
     <section className="border-b border-[#111111]">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
-        <div className="mb-7 border-b border-[#111111] pb-5">
-          <AsciiLineLogo variant="full" />
+        <div className="mb-7">
+          <AsciiPageTitle title={title} />
         </div>
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div>
             <TerminalHeader eyebrow={label} title={title} description={description} />
-            {meta.length > 0 ? (
-              <div className="mt-6">
-                <MetadataPanel rows={meta.map((item, index) => [`META ${index + 1}`, item])} />
-              </div>
-            ) : null}
             <div className="mt-5">
               <MetadataLine items={["BMC PUBLIC RECORD", "APPLE VALLEY, CA"]} />
             </div>

@@ -22,7 +22,7 @@ export default function ContactPage() {
       <PageHeader
         label="Contact Desk"
         title="Contact"
-        description="Have a question about film, cameras, development, scanning, film stock, local pickup, or camera service? Walk in during business hours or request an appointment."
+        description="Walk in, call, email, or request an appointment."
         meta={["WALK-INS WELCOME", "APPOINTMENTS AVAILABLE", "APPLE VALLEY, CA"]}
       />
       <section className="mx-auto grid max-w-7xl gap-8 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">

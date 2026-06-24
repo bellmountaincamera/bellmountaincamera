@@ -19,7 +19,7 @@ export default function CartPage() {
       <PageHeader
         label="Cart Preview"
         title="Cart Preview"
-        description="Preview how a future cart can work. Real checkout is not connected yet; contact BMC for product availability."
+        description="Cart preview. Contact BMC for availability."
         meta={["DEMO ONLY", "LOCAL PICKUP", "SHIPPING PLANNED"]}
       />
       <section className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[1.2fr_0.8fr] lg:px-8">

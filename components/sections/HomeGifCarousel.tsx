@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 const clips = [
   {
@@ -83,6 +84,12 @@ export function HomeGifCarousel() {
             <span>3 SEC LOOP</span>
             <span>{activeClip.label}</span>
           </div>
+          <Link
+            href="/lab"
+            className="mono mt-4 inline-flex border border-[#111111] bg-[#111111] px-4 py-3 text-xs font-semibold uppercase tracking-[0.14em] text-[#FFFFFF] transition hover:bg-[#0B3D91]"
+          >
+            Film Development &amp; Info
+          </Link>
         </div>
       </div>
     </section>

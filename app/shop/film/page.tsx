@@ -18,7 +18,7 @@ export default function ShopFilmPage() {
       <PageHeader
         label="Film Stock"
         title="Shop Film"
-        description="Film stock changes often. Bell Mountain Camera carries rotating 35mm film, Kodak film, black-and-white film, color negative film, specialty stocks, and occasional 110 or instant film."
+        description="Rotating film stock and availability."
         meta={["35MM FILM", "KODAK STOCK", "SHIPPING + PICKUP"]}
         photoSet="lab"
       />

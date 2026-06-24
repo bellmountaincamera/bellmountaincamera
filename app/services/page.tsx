@@ -17,7 +17,7 @@ export default function ServicesPage() {
       <PageHeader
         label="Service Bench"
         title="Camera Services"
-        description="Bell Mountain Camera offers basic film camera service including diagnosis, cleaning, light seal replacement, and shutter speed adjustment when possible."
+        description="Basic service for film cameras."
         meta={["CAMERA SERVICE INTAKE", "WALK-INS WELCOME", "APPOINTMENTS AVAILABLE"]}
       />
       <section className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">

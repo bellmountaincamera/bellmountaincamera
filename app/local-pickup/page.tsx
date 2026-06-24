@@ -15,7 +15,7 @@ export default function LocalPickupPage() {
       <PageHeader
         label="Pickup Policy"
         title="Local Pickup"
-        description="Local pickup is available at Bell Mountain Camera inside Wild Goose Vintage & Thrift Store during business hours."
+        description="Pickup at BMC during business hours."
         meta={["LOCAL PICKUP", site.hoursShort, "APPLE VALLEY"]}
       />
       <section className="mx-auto grid max-w-7xl gap-8 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-2 lg:px-8">

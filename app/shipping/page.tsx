@@ -15,7 +15,7 @@ export default function ShippingPage() {
       <PageHeader
         label="Store Policy"
         title="Shipping Policy"
-        description="Bell Mountain Camera plans to support shipped online orders and local pickup from the Apple Valley shop."
+        description="Shipping is planned. Local pickup is available."
         meta={["SHIP TO ADDRESS", "LOCAL PICKUP", "RATES TO BE CONFIGURED"]}
       />
       <section className="mx-auto grid max-w-7xl gap-6 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-3 lg:px-8">

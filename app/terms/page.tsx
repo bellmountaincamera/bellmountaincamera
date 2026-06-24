@@ -14,7 +14,7 @@ export default function TermsPage() {
       <PageHeader
         label="Terms"
         title="Terms of Service"
-        description="Editable terms page for future online purchases, shipping, local pickup, film lab services, and camera service intake."
+        description="Terms for shop, lab, and service use."
         meta={["ONLINE ORDERS", "LAB SERVICES", "CAMERA SERVICE"]}
       />
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">

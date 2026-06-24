@@ -53,7 +53,7 @@ export default function PoliciesPage() {
       <PageHeader
         label="Policy Index"
         title="Policies"
-        description="Editable policy pages for online orders, local pickup, used cameras, film lab work, privacy, and terms."
+        description="Store, pickup, shipping, lab, and service policies."
         meta={["STORE POLICY", "LOCAL PICKUP", "SHIPPING"]}
       />
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">

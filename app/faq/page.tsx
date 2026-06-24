@@ -84,7 +84,7 @@ export default function FAQPage() {
       <PageHeader
         label="Customer FAQ"
         title="FAQ"
-        description="Answers for shipping, local pickup, film stock, camera inventory, and future online ordering."
+        description="Quick answers before you visit or contact BMC."
         meta={["SHIPPING", "LOCAL PICKUP", "INVENTORY"]}
       />
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">

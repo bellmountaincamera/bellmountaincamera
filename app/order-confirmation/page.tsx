@@ -15,7 +15,7 @@ export default function OrderConfirmationPage() {
       <PageHeader
         label="Order Confirmation Preview"
         title="Order Confirmation Preview"
-        description="This preview page shows where a future real order confirmation can live after checkout is connected."
+        description="Preview page for future online orders."
         meta={["DEMO ORDER", "STATUS: PREVIEW", "CUSTOMER COPY"]}
       />
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">

@@ -14,7 +14,7 @@ export default function PrivacyPage() {
       <PageHeader
         label="Privacy"
         title="Privacy Policy"
-        description="Editable privacy policy page for future ecommerce checkout, contact forms, email notifications, and customer order data."
+        description="How customer information will be handled."
         meta={["CUSTOMER DATA", "EMAIL", "ORDER INFO"]}
       />
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
