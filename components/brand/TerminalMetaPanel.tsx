@@ -23,7 +23,7 @@ export function TerminalMetaPanel({
       ].join(" ")}
     >
       <div className="flex items-start justify-between gap-4">
-        <p className="mono text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#0B3D91]">
+        <p className="ocr text-[0.68rem] font-semibold uppercase text-[#2457C5]">
           {title}
         </p>
         <AsciiLineLogo
@@ -38,10 +38,10 @@ export function TerminalMetaPanel({
             key={label}
             className="grid grid-cols-[8rem_1fr] gap-3 border-t border-current/15 pt-2"
           >
-            <dt className="mono text-[0.68rem] uppercase tracking-[0.12em] text-[#0B3D91]">
+            <dt className="ocr text-[0.68rem] uppercase text-[#2457C5]">
               {label}
             </dt>
-            <dd className="mono text-[0.72rem] uppercase tracking-[0.1em]">
+            <dd className="ocr text-[0.72rem] uppercase">
               {value}
             </dd>
           </div>

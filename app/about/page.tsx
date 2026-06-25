@@ -44,30 +44,30 @@ export default function AboutPage() {
           </div>
         </div>
         <aside className="document-panel h-fit p-6">
-          <p className="mono text-xs font-semibold uppercase tracking-[0.16em] text-[#0B3D91]">
+          <p className="mono text-xs font-semibold uppercase tracking-[0.16em] text-[#2457C5]">
             Archive Card
           </p>
           <dl className="mt-5 grid gap-4 text-sm">
             <div>
-              <dt className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#0B3D91]">
+              <dt className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#2457C5]">
                 Named for
               </dt>
               <dd className="mt-1 font-semibold">Bell Mountain</dd>
             </div>
             <div>
-              <dt className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#0B3D91]">
+              <dt className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#2457C5]">
                 Region
               </dt>
               <dd className="mt-1 font-semibold">Apple Valley / High Desert</dd>
             </div>
             <div>
-              <dt className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#0B3D91]">
+              <dt className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#2457C5]">
                 Owner / Operator
               </dt>
               <dd className="mt-1 font-semibold">{site.owner}</dd>
             </div>
             <div>
-              <dt className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#0B3D91]">
+              <dt className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#2457C5]">
                 Work
               </dt>
               <dd className="mt-1 font-semibold">
@@ -75,7 +75,7 @@ export default function AboutPage() {
               </dd>
             </div>
             <div>
-              <dt className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#0B3D91]">
+              <dt className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#2457C5]">
                 Location
               </dt>
               <dd className="mt-1 font-semibold">

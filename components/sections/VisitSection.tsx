@@ -20,13 +20,13 @@ export function VisitSection() {
             <p>Find Bell Mountain Camera by the cashier.</p>
             <p>{site.street}</p>
             <p>{site.cityStateZip}</p>
-            <p className="mono mt-2 text-[0.72rem] uppercase tracking-[0.14em] text-[#0B3D91]">
+            <p className="mono mt-2 text-[0.72rem] uppercase tracking-[0.14em] text-[#2457C5]">
               {site.hoursShort} / Walk-ins welcome
             </p>
           </div>
           <Link
             href="/contact"
-            className="mono text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-[#0B3D91] underline-offset-4 hover:underline"
+            className="mono text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-[#2457C5] underline-offset-4 hover:underline"
           >
             Contact details
           </Link>

@@ -79,7 +79,7 @@ export function HomeGifCarousel() {
               </h1>
             </div>
           </div>
-          <div className="mono mt-3 flex flex-wrap justify-between gap-2 text-[0.68rem] uppercase tracking-[0.12em] text-[#0B3D91]">
+          <div className="mono mt-3 flex flex-wrap justify-between gap-2 text-[0.68rem] uppercase tracking-[0.12em] text-[#2457C5]">
             <span>{activeClip.caption}</span>
             <span>3 SEC LOOP</span>
             <span>{activeClip.label}</span>
@@ -87,7 +87,7 @@ export function HomeGifCarousel() {
           <div className="mt-4 flex justify-center">
             <Link
               href="/lab"
-              className="mono inline-flex border border-[#111111] bg-[#FFFFFF] px-4 py-3 text-xs font-semibold uppercase tracking-[0.14em] text-[#111111] transition hover:border-[#0B3D91] hover:text-[#0B3D91]"
+              className="mono inline-flex border border-[#111111] bg-[#FFFFFF] px-4 py-3 text-xs font-semibold uppercase tracking-[0.14em] text-[#111111] transition hover:border-[#2457C5] hover:text-[#2457C5]"
             >
               Film Development &amp; Info
             </Link>

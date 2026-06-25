@@ -30,7 +30,7 @@ export default function CartPage() {
               className="grid gap-4 record-cell p-5 sm:grid-cols-[1fr_auto]"
             >
               <div>
-                <p className="mono text-xs uppercase tracking-[0.14em] text-[#0B3D91]">
+                <p className="mono text-xs uppercase tracking-[0.14em] text-[#2457C5]">
                   {item.category} / Qty 1
                 </p>
                 <h2 className="mt-2 text-xl font-semibold uppercase tracking-[0.03em]">
@@ -41,7 +41,7 @@ export default function CartPage() {
                   {item.shippingAvailable ? "Shipping available." : ""}
                 </p>
               </div>
-              <p className="mono text-sm font-semibold uppercase tracking-[0.12em] text-[#0B3D91]">
+              <p className="mono text-sm font-semibold uppercase tracking-[0.12em] text-[#2457C5]">
                 {formatPrice(item.price)}
               </p>
             </article>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
+import { Geist, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
@@ -7,6 +8,19 @@ import { LockGate } from "@/components/sections/LockGate";
 import { site } from "@/lib/site";
 
 const siteLocked = true;
+
+const geist = Geist({
+  subsets: ["latin"],
+  variable: "--font-geist",
+  display: "swap"
+});
+
+const ibmPlexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-plex-mono",
+  display: "swap"
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://bellmountaincamera.com"),
@@ -102,7 +116,7 @@ export default async function RootLayout({
   };
 
   return (
-    <html lang="en">
+    <html lang="en" className={`${geist.variable} ${ibmPlexMono.variable}`}>
       <body>
         <script
           type="application/ld+json"

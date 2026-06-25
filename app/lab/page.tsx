@@ -83,7 +83,7 @@ export default function LabPage() {
                   >
                     {item.title}
                   </th>
-                  <td className="mono px-4 py-4 text-sm font-semibold uppercase tracking-[0.12em] text-[#0B3D91]">
+                  <td className="mono px-4 py-4 text-sm font-semibold uppercase tracking-[0.12em] text-[#2457C5]">
                     {item.price}
                   </td>
                   <td className="px-4 py-4 text-sm leading-6 text-[#111111]">

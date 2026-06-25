@@ -16,7 +16,7 @@ export function Footer() {
         </div>
         <div className="grid gap-5 sm:grid-cols-3">
           <div>
-            <p className="mono text-xs font-semibold uppercase tracking-[0.16em] text-[#0B3D91]">
+            <p className="mono text-xs font-semibold uppercase tracking-[0.16em] text-[#2457C5]">
               Visit
             </p>
             <div className="mt-4 grid gap-2">
@@ -36,7 +36,7 @@ export function Footer() {
             </div>
           </div>
           <div>
-            <p className="mono text-xs font-semibold uppercase tracking-[0.16em] text-[#0B3D91]">
+            <p className="mono text-xs font-semibold uppercase tracking-[0.16em] text-[#2457C5]">
               Shop
             </p>
             <div className="mt-4 grid gap-2">
@@ -58,7 +58,7 @@ export function Footer() {
             </div>
           </div>
           <div>
-            <p className="mono text-xs font-semibold uppercase tracking-[0.16em] text-[#0B3D91]">
+            <p className="mono text-xs font-semibold uppercase tracking-[0.16em] text-[#2457C5]">
               Info
             </p>
             <div className="mt-4 grid gap-2">

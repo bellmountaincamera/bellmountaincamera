@@ -11,7 +11,7 @@ export function TerminalDivider({
     <div
       className={[
         "mono flex items-center gap-3 text-[0.68rem] uppercase tracking-[0.14em]",
-        tone === "dark" ? "text-[#FFFFFF]" : "text-[#0B3D91]"
+        tone === "dark" ? "text-[#FFFFFF]" : "text-[#2457C5]"
       ].join(" ")}
     >
       <span className="h-px flex-1 bg-current opacity-40" />

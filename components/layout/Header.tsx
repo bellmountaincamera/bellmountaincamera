@@ -29,7 +29,7 @@ export function Header() {
             <span className="block text-base font-semibold uppercase tracking-[0.08em]">
               Bell Mountain Camera
             </span>
-            <span className="mono block text-[0.68rem] uppercase tracking-[0.16em] text-[#0B3D91]">
+            <span className="mono block text-[0.68rem] uppercase tracking-[0.16em] text-[#2457C5]">
               Apple Valley Film Lab
             </span>
           </span>
@@ -41,7 +41,7 @@ export function Header() {
               href={item.href}
               className={[
                 "mono text-xs font-semibold uppercase tracking-[0.12em] underline-offset-4 hover:underline",
-                isActive(item.href) ? "text-[#0B3D91]" : "text-[#111111]"
+                isActive(item.href) ? "text-[#2457C5]" : "text-[#111111]"
               ].join(" ")}
             >
               {item.label}

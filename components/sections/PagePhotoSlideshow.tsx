@@ -47,7 +47,7 @@ export function PagePhotoSlideshow({
           className="object-cover"
         />
       </div>
-      <div className="mono mt-3 grid grid-cols-2 gap-2 text-[0.68rem] uppercase tracking-[0.12em] text-[#0B3D91] sm:grid-cols-4">
+      <div className="ocr mt-3 grid grid-cols-2 gap-2 text-[0.68rem] uppercase text-[#2457C5] sm:grid-cols-4">
         <span>{label}</span>
         <span>{activeFrame.label}</span>
         <span>{String(activeIndex + 1).padStart(2, "0")} / {frames.length}</span>

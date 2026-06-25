@@ -114,7 +114,7 @@ export default function ShopPage() {
               id={category.href.startsWith("#") ? category.href.slice(1) : undefined}
               className="record-cell p-5"
             >
-              <p className="mono text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#0B3D91]">
+              <p className="mono text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#2457C5]">
                 {category.code}
               </p>
               <h3 className="mt-3 text-xl font-semibold uppercase tracking-[0.03em]">

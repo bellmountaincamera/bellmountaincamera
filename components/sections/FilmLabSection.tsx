@@ -34,7 +34,7 @@ export function FilmLabSection() {
             ["DELIVERY", "Download link delivery"]
           ].map(([label, value]) => (
             <div key={label} className="terminal-panel p-5">
-              <p className="mono text-[0.7rem] uppercase tracking-[0.16em] text-[#0B3D91]">
+              <p className="mono text-[0.7rem] uppercase tracking-[0.16em] text-[#2457C5]">
                 {label}
               </p>
               <p className="mt-4 text-xl font-semibold">{value}</p>

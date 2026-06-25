@@ -32,7 +32,7 @@ export default function CheckoutPage() {
       />
       <section className="mx-auto grid max-w-7xl gap-8 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
         <div className="terminal-panel p-6">
-          <p className="mono text-xs font-semibold uppercase tracking-[0.16em] text-[#0B3D91]">
+          <p className="mono text-xs font-semibold uppercase tracking-[0.16em] text-[#2457C5]">
             Customer Information
           </p>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
@@ -69,7 +69,7 @@ export default function CheckoutPage() {
             <br />
             {site.cityStateZip}
           </p>
-          <p className="mono mt-5 text-xs uppercase tracking-[0.14em] text-[#0B3D91]">
+          <p className="mono mt-5 text-xs uppercase tracking-[0.14em] text-[#2457C5]">
             Pickup hours: {site.hoursShort}
           </p>
           <p className="mt-5 text-sm leading-7 text-[#111111]">

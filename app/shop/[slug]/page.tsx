@@ -121,7 +121,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 key={label}
                 className="grid gap-2 record-cell p-4 sm:grid-cols-[12rem_1fr]"
               >
-                <p className="mono text-xs uppercase tracking-[0.14em] text-[#0B3D91]">
+                <p className="mono text-xs uppercase tracking-[0.14em] text-[#2457C5]">
                   {label}
                 </p>
                 <p className="text-sm leading-6 text-[#111111]">{value}</p>
@@ -147,7 +147,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
             <br />
             {site.cityStateZip}
           </p>
-          <p className="mono mt-5 text-xs uppercase tracking-[0.14em] text-[#0B3D91]">
+          <p className="mono mt-5 text-xs uppercase tracking-[0.14em] text-[#2457C5]">
             {site.hoursShort}
           </p>
         </div>

@@ -37,12 +37,12 @@ export function LockScreen({ onUnlock }: LockScreenProps) {
               <p className="text-xs font-semibold uppercase tracking-[0.08em] sm:text-sm">
                 Bell Mountain Camera
               </p>
-              <p className="mono mt-0.5 text-[0.62rem] uppercase tracking-[0.14em] text-[#0B3D91] sm:text-[0.68rem] sm:tracking-[0.16em]">
+              <p className="mono mt-0.5 text-[0.62rem] uppercase tracking-[0.14em] text-[#2457C5] sm:text-[0.68rem] sm:tracking-[0.16em]">
                 Apple Valley, CA
               </p>
             </div>
           </div>
-          <p className="mono hidden text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#0B3D91] sm:block">
+          <p className="mono hidden text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#2457C5] sm:block">
             Site Locked
           </p>
         </div>
@@ -62,7 +62,7 @@ export function LockScreen({ onUnlock }: LockScreenProps) {
               className="mt-7 grid w-full max-w-sm gap-3 sm:mt-8 sm:grid-cols-[1fr_auto]"
             >
               <label className="block">
-                <span className="mono text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#0B3D91]">
+                <span className="mono text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#2457C5]">
                   Preview code
                 </span>
                 <input
@@ -70,7 +70,7 @@ export function LockScreen({ onUnlock }: LockScreenProps) {
                   onChange={(event) => setCode(event.currentTarget.value)}
                   inputMode="numeric"
                   autoComplete="off"
-                  className="mt-2 w-full border border-[#111111] bg-[#FFFFFF] px-4 py-3 text-base outline-none focus:border-[#0B3D91] sm:text-sm"
+                  className="mt-2 w-full border border-[#111111] bg-[#FFFFFF] px-4 py-3 text-base outline-none focus:border-[#2457C5] sm:text-sm"
                   aria-describedby={error ? "unlock-error" : undefined}
                 />
               </label>
@@ -83,7 +83,7 @@ export function LockScreen({ onUnlock }: LockScreenProps) {
               {error ? (
                 <p
                   id="unlock-error"
-                  className="mono text-[0.68rem] uppercase tracking-[0.12em] text-[#0B3D91] sm:col-span-2"
+                  className="mono text-[0.68rem] uppercase tracking-[0.12em] text-[#2457C5] sm:col-span-2"
                 >
                   {error}
                 </p>
@@ -93,7 +93,7 @@ export function LockScreen({ onUnlock }: LockScreenProps) {
         </div>
 
         <div className="border-t border-[#111111] pt-4">
-          <p className="mono text-[0.62rem] uppercase leading-5 tracking-[0.14em] text-[#0B3D91] sm:text-[0.68rem] sm:tracking-[0.16em]">
+          <p className="mono text-[0.62rem] uppercase leading-5 tracking-[0.14em] text-[#2457C5] sm:text-[0.68rem] sm:tracking-[0.16em]">
             Bell Mountain Camera / High Desert Film Camera Shop
           </p>
         </div>

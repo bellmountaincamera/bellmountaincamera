@@ -30,7 +30,7 @@ export default function LocalPickupPage() {
             <br />
             {site.cityStateZip}
           </p>
-          <p className="mono mt-5 text-xs uppercase tracking-[0.14em] text-[#0B3D91]">
+          <p className="mono mt-5 text-xs uppercase tracking-[0.14em] text-[#2457C5]">
             Pickup hours: {site.hoursShort}
           </p>
         </div>

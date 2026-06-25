@@ -30,7 +30,7 @@ export default function ContactPage() {
           <TerminalLabel>Direct Lines</TerminalLabel>
           <div className="mt-6 grid gap-5 text-sm">
             <div>
-              <p className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#0B3D91]">
+              <p className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#2457C5]">
                 Email
               </p>
               <a
@@ -41,7 +41,7 @@ export default function ContactPage() {
               </a>
             </div>
             <div>
-              <p className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#0B3D91]">
+              <p className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#2457C5]">
                 Phone
               </p>
               <a
@@ -52,13 +52,13 @@ export default function ContactPage() {
               </a>
             </div>
             <div>
-              <p className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#0B3D91]">
+              <p className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#2457C5]">
                 Instagram
               </p>
               <p className="mt-1 text-lg font-semibold">{site.instagram}</p>
             </div>
             <div>
-              <p className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#0B3D91]">
+              <p className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#2457C5]">
                 Visit
               </p>
               <p className="mt-1 text-lg font-semibold">
@@ -70,7 +70,7 @@ export default function ContactPage() {
               </p>
             </div>
             <div>
-              <p className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#0B3D91]">
+              <p className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#2457C5]">
                 Hours
               </p>
               {site.hours.map((item) => (
@@ -80,7 +80,7 @@ export default function ContactPage() {
               ))}
             </div>
             <div>
-              <p className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#0B3D91]">
+              <p className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#2457C5]">
                 Appointments
               </p>
               <p className="mt-1 text-lg font-semibold">
@@ -108,7 +108,7 @@ export default function ContactPage() {
           </div>
         </div>
         <div className="terminal-panel p-6">
-          <p className="mono text-xs font-semibold uppercase tracking-[0.16em] text-[#0B3D91]">
+          <p className="mono text-xs font-semibold uppercase tracking-[0.16em] text-[#2457C5]">
             Email Intake Sheet
           </p>
           <div className="mt-6 grid gap-4">
@@ -170,7 +170,7 @@ export default function ContactPage() {
           <div className="record-grid">
             {site.appointmentAvailability.map((item) => (
               <article key={item.days} className="record-cell p-5">
-                <p className="mono text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#0B3D91]">
+                <p className="mono text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#2457C5]">
                   {item.days}
                 </p>
                 <p className="mt-4 text-lg font-semibold uppercase tracking-[0.03em]">
@@ -179,7 +179,7 @@ export default function ContactPage() {
               </article>
             ))}
             <article className="record-cell p-5">
-              <p className="mono text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#0B3D91]">
+              <p className="mono text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#2457C5]">
                 Questions
               </p>
               <p className="mt-4 text-lg font-semibold uppercase tracking-[0.03em]">

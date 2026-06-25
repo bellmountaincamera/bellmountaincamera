@@ -64,7 +64,7 @@ export default function ServicesPage() {
                       {service.text}
                     </p>
                   </div>
-                  <p className="mono text-xs font-semibold uppercase tracking-[0.14em] text-[#0B3D91]">
+                  <p className="mono text-xs font-semibold uppercase tracking-[0.14em] text-[#2457C5]">
                     {service.price}
                   </p>
                 </article>
@@ -79,7 +79,7 @@ export default function ServicesPage() {
                   <p className="text-lg font-semibold uppercase tracking-[0.03em]">
                     {bundle.title}
                   </p>
-                  <p className="mono mt-4 text-sm font-semibold uppercase tracking-[0.14em] text-[#0B3D91]">
+                  <p className="mono mt-4 text-sm font-semibold uppercase tracking-[0.14em] text-[#2457C5]">
                     {bundle.price}
                   </p>
                 </article>

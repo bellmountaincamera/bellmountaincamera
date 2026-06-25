@@ -19,7 +19,7 @@ export function TerminalHeader({
       ].join(" ")}
     >
       <div>
-        <p className="mono text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-[#0B3D91]">
+        <p className="mono text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-[#2457C5]">
           {eyebrow}
         </p>
         {title ? (
