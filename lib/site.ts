@@ -31,8 +31,7 @@ export const site = {
   nav: [
     { href: "/", label: "Home" },
     { href: "/lab", label: "Film Lab" },
-    { href: "/shop/film", label: "Film" },
-    { href: "/shop/cameras", label: "Cameras" },
+    { href: "/shop", label: "Shop" },
     { href: "/services", label: "Services" },
     { href: "/contact", label: "Contact" }
   ]

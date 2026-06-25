@@ -84,12 +84,14 @@ export function HomeGifCarousel() {
             <span>3 SEC LOOP</span>
             <span>{activeClip.label}</span>
           </div>
-          <Link
-            href="/lab"
-            className="mono mt-4 inline-flex border border-[#111111] bg-[#FFFFFF] px-4 py-3 text-xs font-semibold uppercase tracking-[0.14em] text-[#111111] transition hover:border-[#0B3D91] hover:text-[#0B3D91]"
-          >
-            Film Development &amp; Info
-          </Link>
+          <div className="mt-4 flex justify-center">
+            <Link
+              href="/lab"
+              className="mono inline-flex border border-[#111111] bg-[#FFFFFF] px-4 py-3 text-xs font-semibold uppercase tracking-[0.14em] text-[#111111] transition hover:border-[#0B3D91] hover:text-[#0B3D91]"
+            >
+              Film Development &amp; Info
+            </Link>
+          </div>
         </div>
       </div>
     </section>

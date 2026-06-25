@@ -10,6 +10,54 @@ export const metadata: Metadata = {
     "Preview film stock, cameras, and rotating inventory from Bell Mountain Camera. Online shop coming soon, with shipping planned and local pickup available."
 };
 
+const cameraCategories = [
+  {
+    title: "SLRs",
+    code: "CAMERA / SLR",
+    text: "Manual and electronic 35mm SLR cameras.",
+    href: "#slrs"
+  },
+  {
+    title: "Camcorders",
+    code: "VIDEO / TAPE",
+    text: "Analog video cameras and camcorders when available.",
+    href: "#camcorders"
+  },
+  {
+    title: "Point and Shoots",
+    code: "CAMERA / P+S",
+    text: "Compact autofocus and fixed-lens film cameras.",
+    href: "#point-and-shoots"
+  }
+];
+
+const shopCategories = [
+  {
+    title: "Film",
+    code: "FILM STOCK",
+    text: "35mm, 110, instant, and rotating specialty film.",
+    href: "/shop/film"
+  },
+  {
+    title: "Accessories",
+    code: "ACCESSORIES",
+    text: "Straps, cases, lens caps, and small camera extras.",
+    href: "#accessories"
+  },
+  {
+    title: "Batteries",
+    code: "BATTERIES",
+    text: "Common camera batteries when available.",
+    href: "#batteries"
+  },
+  {
+    title: "Miscellaneous",
+    code: "MISC",
+    text: "Rotating oddities, supplies, and shop finds.",
+    href: "#miscellaneous"
+  }
+];
+
 export default function ShopPage() {
   return (
     <main>
@@ -20,35 +68,63 @@ export default function ShopPage() {
         meta={["ONLINE SHOP COMING SOON", "LOCAL PICKUP", "SHIPPING PLANNED"]}
       />
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
-        <div className="record-grid md:grid-cols-2">
-          <article className="record-cell p-6">
-            <TerminalLabel>Film Side</TerminalLabel>
-            <h2 className="mt-4 text-2xl font-semibold uppercase tracking-[0.02em]">
-              Film stock
-            </h2>
-            <p className="mt-4 text-sm leading-7 text-[#111111]">
-              35mm, 110, instant film, and rotating specialty stock.
-            </p>
-            <div className="mt-6">
-              <CTAButton href="/shop/film" variant="secondary">
-                Shop Film
-              </CTAButton>
+        <div className="mb-8 max-w-3xl">
+          <TerminalLabel>Shop Menu</TerminalLabel>
+          <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
+            Choose a section
+          </h2>
+        </div>
+
+        <div className="grid gap-8 lg:grid-cols-[1fr_1fr]">
+          <section className="record-cell p-6">
+            <TerminalLabel>Camera Categories</TerminalLabel>
+            <h3 className="mt-4 text-2xl font-semibold uppercase tracking-[0.02em]">
+              Cameras
+            </h3>
+            <div className="mt-6 grid gap-3">
+              {cameraCategories.map((category) => (
+                <CTAButton key={category.title} href={category.href} variant="secondary">
+                  {category.title}
+                </CTAButton>
+              ))}
             </div>
-          </article>
-          <article className="record-cell p-6">
-            <TerminalLabel>Camera Side</TerminalLabel>
-            <h2 className="mt-4 text-2xl font-semibold uppercase tracking-[0.02em]">
-              Used cameras
-            </h2>
-            <p className="mt-4 text-sm leading-7 text-[#111111]">
-              Used film cameras with model notes and basic specs.
-            </p>
-            <div className="mt-6">
-              <CTAButton href="/shop/cameras" variant="secondary">
-                Shop Cameras
-              </CTAButton>
+          </section>
+
+          <section className="record-cell p-6">
+            <TerminalLabel>Shop Categories</TerminalLabel>
+            <h3 className="mt-4 text-2xl font-semibold uppercase tracking-[0.02em]">
+              Film and supplies
+            </h3>
+            <div className="mt-6 grid gap-3">
+              {shopCategories.map((category) => (
+                <CTAButton key={category.title} href={category.href} variant="secondary">
+                  {category.title}
+                </CTAButton>
+              ))}
             </div>
-          </article>
+          </section>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 sm:pb-16 lg:px-8">
+        <div className="record-grid md:grid-cols-2 lg:grid-cols-3">
+          {[...cameraCategories, ...shopCategories].map((category) => (
+            <article
+              key={category.title}
+              id={category.href.startsWith("#") ? category.href.slice(1) : undefined}
+              className="record-cell p-5"
+            >
+              <p className="mono text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#0B3D91]">
+                {category.code}
+              </p>
+              <h3 className="mt-3 text-xl font-semibold uppercase tracking-[0.03em]">
+                {category.title}
+              </h3>
+              <p className="mt-3 text-sm leading-7 text-[#111111]">
+                {category.text}
+              </p>
+            </article>
+          ))}
         </div>
       </section>
       <section className="border-t border-[#111111]/15 bg-[#111111] text-[#FFFFFF]">
