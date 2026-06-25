@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import "./globals.css";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
@@ -10,15 +11,10 @@ const siteLocked = true;
 export const metadata: Metadata = {
   metadataBase: new URL("https://bellmountaincamera.com"),
   title: {
-    default: siteLocked
-      ? "Bell Mountain Camera | Coming Soon"
-      : "Bell Mountain Camera | High Desert Film Lab and Camera Shop",
+    default: "Bell Mountain Camera | High Desert Film Lab and Camera Shop",
     template: "%s | Bell Mountain Camera"
   },
-  description:
-    siteLocked
-      ? "Film cameras and equipment in Apple Valley, CA. Site is locked, coming soon."
-      : site.description,
+  description: site.description,
   keywords: [
     "Bell Mountain Camera",
     "Bell Mountain Camera Apple Valley",
@@ -42,9 +38,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Bell Mountain Camera",
-    description: siteLocked
-      ? "Film cameras and equipment in Apple Valley, CA. Site is locked, coming soon."
-      : "Film cameras and film development in Apple Valley.",
+    description: "Film cameras and film development in Apple Valley.",
     url: "https://bellmountaincamera.com",
     siteName: "Bell Mountain Camera",
     images: [
@@ -60,11 +54,15 @@ export const metadata: Metadata = {
   }
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const requestHeaders = await headers();
+  const pathname = requestHeaders.get("x-bmc-pathname") ?? "/";
+  const shouldLockPage = siteLocked && pathname !== "/";
+
   const localBusinessJsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -112,7 +110,7 @@ export default function RootLayout({
             __html: JSON.stringify(localBusinessJsonLd)
           }}
         />
-        {siteLocked ? (
+        {shouldLockPage ? (
           <LockGate>
             <Header />
             {children}

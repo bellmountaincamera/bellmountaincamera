@@ -1,6 +1,7 @@
 "use client";
 
 import { ReactNode, useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { LockScreen } from "@/components/sections/LockScreen";
 
 const storageKey = "bmc-site-unlocked";
@@ -10,6 +11,7 @@ type LockGateProps = {
 };
 
 export function LockGate({ children }: LockGateProps) {
+  const pathname = usePathname();
   const [isUnlocked, setIsUnlocked] = useState(false);
 
   useEffect(() => {
@@ -19,6 +21,10 @@ export function LockGate({ children }: LockGateProps) {
   function unlock() {
     window.localStorage.setItem(storageKey, "true");
     setIsUnlocked(true);
+  }
+
+  if (pathname === "/") {
+    return children;
   }
 
   if (!isUnlocked) {
