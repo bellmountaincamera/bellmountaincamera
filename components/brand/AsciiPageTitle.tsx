@@ -1,3 +1,5 @@
+import type { CSSProperties } from "react";
+
 const glyphs: Record<string, string[]> = {
   A: [" +++ ", "+   +", "+++++", "+   +", "+   +"],
   B: ["++++ ", "+   +", "++++ ", "+   +", "++++ "],
@@ -63,16 +65,26 @@ function buildAsciiTitle(title: string) {
 }
 
 export function AsciiPageTitle({ title, tone = "light" }: AsciiPageTitleProps) {
+  const asciiTitle = buildAsciiTitle(title);
+  const maxLineLength = Math.max(...asciiTitle.split("\n").map((line) => line.length));
+  const viewportScale = Math.min(9, Math.max(1.2, 82 / (maxLineLength * 0.62)));
+  const style = {
+    fontSize: `clamp(0.32rem, ${viewportScale}vw, 1.25rem)`
+  } satisfies CSSProperties;
+
   return (
     <div
       aria-label={title}
       className={[
-        "max-w-full overflow-x-auto border-b pb-5 text-center",
+        "max-w-full overflow-hidden border-b pb-5 text-center",
         tone === "dark" ? "border-[#FFFFFF]/30 text-[#FFFFFF]" : "border-[#111111] text-[#111111]"
       ].join(" ")}
     >
-      <pre className="mono inline-block text-left text-[0.62rem] font-semibold leading-[0.95] tracking-normal sm:text-xs md:text-sm">
-        {buildAsciiTitle(title)}
+      <pre
+        className="mono mx-auto inline-block max-w-full text-left font-semibold leading-[0.95] tracking-normal"
+        style={style}
+      >
+        {asciiTitle}
       </pre>
     </div>
   );

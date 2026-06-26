@@ -56,43 +56,35 @@ export default function LabPage() {
         <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
           Current development menu
         </h2>
-        <div className="mt-8 overflow-x-auto border border-[#111111]">
-          <table className="w-full min-w-[44rem] border-collapse text-left">
-            <caption className="sr-only">
-              Bell Mountain Camera film development pricing and processing notes
-            </caption>
-            <thead className="bg-[#111111] text-[#FFFFFF]">
-              <tr>
-                <th scope="col" className="mono px-4 py-3 text-xs uppercase tracking-[0.14em]">
-                  Service
-                </th>
-                <th scope="col" className="mono px-4 py-3 text-xs uppercase tracking-[0.14em]">
-                  Price / Detail
-                </th>
-                <th scope="col" className="mono px-4 py-3 text-xs uppercase tracking-[0.14em]">
-                  Notes
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {filmLabPricing.map((item) => (
-                <tr key={item.title} className="border-t border-[#111111] bg-[#FFFFFF]">
-                  <th
-                    scope="row"
-                    className="px-4 py-4 text-sm font-semibold uppercase tracking-[0.03em]"
-                  >
-                    {item.title}
-                  </th>
-                  <td className="mono px-4 py-4 text-sm font-semibold uppercase tracking-[0.12em] text-[#2457C5]">
-                    {item.price}
-                  </td>
-                  <td className="px-4 py-4 text-sm leading-6 text-[#111111]">
-                    {item.text}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div className="mt-8 border border-[#111111] bg-[#111111]">
+          <div className="hidden grid-cols-[1fr_0.55fr_1.6fr] gap-px text-left md:grid">
+            {["Service", "Price / Detail", "Notes"].map((heading) => (
+              <div
+                key={heading}
+                className="mono bg-[#111111] px-4 py-3 text-xs font-semibold uppercase tracking-[0.14em] text-[#FFFFFF]"
+              >
+                {heading}
+              </div>
+            ))}
+          </div>
+          <div className="grid gap-px">
+            {filmLabPricing.map((item) => (
+              <article
+                key={item.title}
+                className="grid gap-3 bg-[#FFFFFF] p-4 text-center md:grid-cols-[1fr_0.55fr_1.6fr] md:items-center md:gap-px md:p-0 md:text-left"
+              >
+                <h3 className="text-sm font-semibold uppercase tracking-[0.03em] md:px-4 md:py-4">
+                  {item.title}
+                </h3>
+                <p className="mono text-sm font-semibold uppercase tracking-[0.12em] text-[#2457C5] md:px-4 md:py-4">
+                  {item.price}
+                </p>
+                <p className="mx-auto max-w-md text-sm leading-6 text-[#111111] md:mx-0 md:max-w-none md:px-4 md:py-4">
+                  {item.text}
+                </p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
