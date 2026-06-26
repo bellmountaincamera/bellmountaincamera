@@ -147,6 +147,60 @@ export const labPhotos: PhotoFrame[] = [
     label: "ARCHIVE FRAME",
     title: "Archival Shelf Frame",
     text: "A test-roll frame with archival storage and analog equipment texture."
+  },
+  {
+    src: "/images/film-lab-scans/test-scan-shoes.jpg",
+    label: "SCAN SAMPLE",
+    title: "Disposable Camera Frame",
+    text: "Soft disposable-camera scan with flash falloff and real-world film texture."
+  },
+  {
+    src: "/images/film-lab-scans/test-scan-mortuary.jpg",
+    label: "SCAN SAMPLE",
+    title: "High Desert Sign Frame",
+    text: "Color scan sample with desert light, signage, and soft lens character."
+  },
+  {
+    src: "/images/film-lab-scans/test-scan-desert-road.jpg",
+    label: "SCAN SAMPLE",
+    title: "Desert Road Frame",
+    text: "Wide scan sample with open sky, road lines, and High Desert color."
+  },
+  {
+    src: "/images/film-lab-scans/test-scan-sunset-palms.jpg",
+    label: "SCAN SAMPLE",
+    title: "Sunset Palm Frame",
+    text: "Color scan sample with backlight, shadows, and warm sunset tones."
+  },
+  {
+    src: "/images/film-lab-scans/test-scan-cafe-interior.jpg",
+    label: "SCAN SAMPLE",
+    title: "Interior Light Frame",
+    text: "Indoor scan sample with window light, mixed color, and soft focus."
+  },
+  {
+    src: "/images/film-lab-scans/test-scan-concert-wide.jpg",
+    label: "SCAN SAMPLE",
+    title: "Concert Wide Frame",
+    text: "Low-light scan sample with stage lighting and crowd detail."
+  },
+  {
+    src: "/images/film-lab-scans/test-scan-concert-soft.jpg",
+    label: "SCAN SAMPLE",
+    title: "Concert Soft Frame",
+    text: "Soft low-light scan sample with heavy glow and stage color."
+  },
+  {
+    src: "/images/film-lab-scans/test-scan-concert-vertical.jpg",
+    label: "SCAN SAMPLE",
+    title: "Concert Vertical Frame",
+    text: "Vertical low-light scan sample with flash, haze, and crowd detail."
+  },
+  {
+    src: "/images/film-lab-scans/test-scan-stage-color.jpg",
+    label: "SCAN SAMPLE",
+    title: "Stage Color Frame",
+    text: "Low-light scan sample with saturated stage color and motion softness."
   }
 ];
 
