@@ -1,13 +1,9 @@
 import type { Metadata } from "next";
-import { headers } from "next/headers";
 import { Geist, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
-import { LockGate } from "@/components/sections/LockGate";
 import { site } from "@/lib/site";
-
-const siteLocked = true;
 
 const geist = Geist({
   subsets: ["latin"],
@@ -68,15 +64,11 @@ export const metadata: Metadata = {
   }
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const requestHeaders = await headers();
-  const pathname = requestHeaders.get("x-bmc-pathname") ?? "/";
-  const shouldLockPage = siteLocked && pathname !== "/";
-
   const localBusinessJsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -124,19 +116,9 @@ export default async function RootLayout({
             __html: JSON.stringify(localBusinessJsonLd)
           }}
         />
-        {shouldLockPage ? (
-          <LockGate>
-            <Header />
-            {children}
-            <Footer />
-          </LockGate>
-        ) : (
-          <>
-            <Header />
-            {children}
-            <Footer />
-          </>
-        )}
+        <Header />
+        {children}
+        <Footer />
       </body>
     </html>
   );
