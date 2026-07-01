@@ -6,7 +6,7 @@ import { TerminalLabel } from "@/components/ui/TerminalLabel";
 export const metadata: Metadata = {
   title: "Order Confirmation",
   description:
-    "Order confirmation placeholder for Bell Mountain Camera ecommerce checkout."
+    "Order confirmation preview for Bell Mountain Camera online orders."
 };
 
 export default function OrderConfirmationPage() {

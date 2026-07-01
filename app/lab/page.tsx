@@ -5,7 +5,7 @@ import { FilmLabPhotoCarousel } from "@/components/sections/FilmLabPhotoCarousel
 import { MetadataLine } from "@/components/ui/MetadataLine";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { TerminalLabel } from "@/components/ui/TerminalLabel";
-import { filmLabDisclaimer, filmLabPricing } from "@/lib/site";
+import { filmLabDisclaimer, filmLabPricing, site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Film Lab",
@@ -47,15 +47,27 @@ export default function LabPage() {
         label="Lab Counter"
         title="Film Lab"
         description="Film developing and scanning in Apple Valley."
-        meta={[]}
+        meta={["C-41 IN-HOUSE", site.filmTurnaround, "JPEG / TIFF SCANS"]}
         photoSet="lab"
       />
 
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
-        <TerminalLabel>Film Lab Pricing</TerminalLabel>
-        <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
-          Current development menu
-        </h2>
+        <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
+          <div>
+            <TerminalLabel>Film Lab Pricing</TerminalLabel>
+            <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
+              Current development menu
+            </h2>
+          </div>
+          <div className="document-panel p-4 text-center lg:min-w-64">
+            <p className="ocr text-[0.66rem] uppercase text-[#2457C5]">
+              Current Turnaround
+            </p>
+            <p className="mono mt-2 text-sm font-semibold uppercase tracking-[0.08em]">
+              {site.filmTurnaround}
+            </p>
+          </div>
+        </div>
         <div className="mt-8 border border-[#111111] bg-[#111111]">
           <div className="hidden grid-cols-[1fr_0.55fr_1.6fr] gap-px text-left md:grid">
             {["Service", "Price / Detail", "Notes"].map((heading) => (
@@ -85,6 +97,36 @@ export default function LabPage() {
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="border-y border-[#111111]/15 bg-[#FFFFFF]">
+        <div className="mx-auto grid max-w-7xl gap-6 px-4 py-10 sm:px-6 sm:py-14 lg:grid-cols-2 lg:px-8">
+          <article className="document-panel p-6">
+            <TerminalLabel>How To Drop Off Film</TerminalLabel>
+            <ol className="mt-5 grid gap-3 text-sm leading-7 text-[#111111]">
+              <li>1. Bring film to BMC inside Wild Goose Vintage &amp; Thrift.</li>
+              <li>2. Include name, phone number, film type, and scan preference.</li>
+              <li>3. Scans are delivered by download link.</li>
+            </ol>
+          </article>
+          <article className="document-panel p-6">
+            <TerminalLabel>Before Drop-Off</TerminalLabel>
+            <div className="mt-5 grid grid-cols-2 gap-3 text-sm text-[#111111]">
+              {[
+                "Name",
+                "Phone number",
+                "Film format",
+                "Scan preference",
+                "Push/pull notes",
+                "Special instructions"
+              ].map((item) => (
+                <p key={item} className="mono border border-[#111111]/15 p-3 text-[0.72rem] uppercase tracking-[0.12em]">
+                  {item}
+                </p>
+              ))}
+            </div>
+          </article>
         </div>
       </section>
 

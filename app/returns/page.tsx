@@ -5,7 +5,7 @@ import { TerminalLabel } from "@/components/ui/TerminalLabel";
 export const metadata: Metadata = {
   title: "Returns Policy",
   description:
-    "Returns policy framework for Bell Mountain Camera film, cameras, and accessories."
+    "Returns policy for Bell Mountain Camera film, used cameras, equipment, and lab services."
 };
 
 export default function ReturnsPage() {
@@ -22,19 +22,19 @@ export default function ReturnsPage() {
           {[
             [
               "Film stock",
-              "Film return rules should account for storage, expiration, and unopened condition before live checkout launches."
+              "Film, opened consumables, and items affected by storage condition are not returnable."
             ],
             [
               "Used cameras",
-              "Used camera returns should reference the listed condition, tested status, notes, and any sold-as-is language."
+              "Used cameras and equipment are sold according to their listed condition."
             ],
             [
               "Lab services",
-              "Lab service return rules are not finalized yet and should account for film processing risk before live checkout."
+              "Completed film development and scan services are not returnable."
             ],
             [
               "Damaged shipping items",
-              "Damaged shipping item rules are not finalized yet. Customers should contact BMC with order details and photos if a shipped item arrives damaged."
+              "Contact BMC with order details and photos before returning any item."
             ]
           ].map(([title, text]) => (
             <article key={title} className="record-cell p-6">

@@ -50,6 +50,12 @@ nav {
   font-family: var(--font-plex-mono), "IBM Plex Mono", "Courier New", monospace;
 }
 
+input,
+textarea,
+select {
+  font-size: 16px;
+}
+
 h1,
 h2,
 h3,

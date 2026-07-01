@@ -76,8 +76,7 @@ export function ShopBrowser({ products, initialFilter = "" }: ShopBrowserProps) 
             value={query}
             onChange={(event) => setQuery(event.currentTarget.value)}
             onInput={(event) => setQuery(event.currentTarget.value)}
-            placeholder="Search film, cameras, or products..."
-            className="mt-2 w-full border border-[#111111]/15 bg-[#FFFFFF] px-4 py-3 text-sm outline-none focus:border-[#2457C5]"
+            className="mt-2 w-full border border-[#111111]/15 bg-[#FFFFFF] px-4 py-3 text-base outline-none focus:border-[#2457C5]"
           />
         </label>
         <button

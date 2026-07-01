@@ -5,7 +5,7 @@ import { TerminalLabel } from "@/components/ui/TerminalLabel";
 export const metadata: Metadata = {
   title: "Terms of Service",
   description:
-    "Terms of service placeholder for Bell Mountain Camera online orders, local pickup, shipping, and lab services."
+    "Terms for Bell Mountain Camera film processing, used camera sales, local pickup, shipping, and camera service."
 };
 
 export default function TermsPage() {
@@ -19,11 +19,11 @@ export default function TermsPage() {
       />
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
         <div className="document-panel p-6">
-          <TerminalLabel>Editable Terms</TerminalLabel>
+          <TerminalLabel>Terms</TerminalLabel>
           <p className="mt-5 text-sm leading-7 text-[#111111]">
-            This page is a placeholder for final terms. It should be reviewed
-            before payment processing, live inventory, shipping rates, customer
-            accounts, or online order submission are enabled.
+            By using BMC services, customers understand that film processing,
+            used camera sales, and camera service involve some risk due to film
+            condition, camera condition, age, storage, and mechanical limits.
           </p>
         </div>
       </section>

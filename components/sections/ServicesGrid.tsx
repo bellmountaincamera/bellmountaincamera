@@ -5,7 +5,7 @@ const topics = [
   {
     title: "Film Lab",
     code: "PROCESS: C-41",
-    text: "Film development, scanning, turnaround notes, and lab pricing placeholders.",
+    text: "C-41 film development, scanning, turnaround notes, and lab pricing.",
     href: "/lab"
   },
   {
@@ -23,7 +23,7 @@ const topics = [
   {
     title: "About",
     code: "HIGH DESERT",
-    text: "A short note on Bell Mountain Camera and the Apple Valley film community.",
+    text: "A short note on BMC, Bell Mountain, and the Apple Valley shop.",
     href: "/about"
   },
   {

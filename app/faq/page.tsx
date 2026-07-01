@@ -13,11 +13,11 @@ const faqGroups = [
     questions: [
       [
         "Do you develop film?",
-        "BMC is building around 35mm C-41 film development and scanning. Film lab pricing is not finalized yet."
+        "Yes. BMC offers C-41 film development and scanning. Current pricing is listed on the Film Lab page."
       ],
       [
         "Do you scan film?",
-        "Yes. BMC is building a scanning workflow with digital scan delivery through a download link."
+        "Yes. JPEG and TIFF scans are delivered by download link."
       ],
       [
         "How long does film take?",
@@ -38,7 +38,7 @@ const faqGroups = [
       ],
       [
         "Do you sell used cameras?",
-        "Yes. Used camera inventory changes often and product pages should list condition, tested status, included items, notes, price, and availability."
+        "Yes. Tested used cameras are listed with condition notes, included items, price, and availability."
       ],
       [
         "How often is stock updated?",
@@ -64,7 +64,7 @@ const faqGroups = [
     questions: [
       [
         "Do you ship film?",
-        "Bell Mountain Camera plans to support shipping for online film and product orders. Shipping rates will be configured before live checkout."
+        "Online checkout is coming soon. Contact BMC for current shipping questions."
       ],
       [
         "Do you offer local pickup?",

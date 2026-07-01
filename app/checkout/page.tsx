@@ -7,7 +7,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Checkout",
   description:
-    "Checkout flow placeholder for Bell Mountain Camera online orders, shipping, and local pickup."
+    "Checkout preview for Bell Mountain Camera online orders, shipping, and local pickup."
 };
 
 const fields = [
@@ -73,9 +73,8 @@ export default function CheckoutPage() {
             Pickup hours: {site.hoursShort}
           </p>
           <p className="mt-5 text-sm leading-7 text-[#111111]">
-            Payment processing, shipping rate setup, and final order submission
-            are not connected yet. This page shows where those integrations can
-            connect later.
+            Online checkout is coming soon. For now, contact BMC for current
+            inventory, local pickup, or shipping.
           </p>
           <div className="mt-6">
             <CTAButton href="/contact">Contact BMC</CTAButton>

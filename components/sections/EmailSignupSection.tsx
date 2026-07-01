@@ -50,9 +50,8 @@ export function EmailSignupSection() {
             type="email"
             value={email}
             onChange={(event) => setEmail(event.currentTarget.value)}
-            placeholder="you@example.com"
             required
-            className="w-full border border-[#111111] bg-[#FFFFFF] px-4 py-3 text-center text-sm outline-none focus:border-[#2457C5] sm:text-left"
+            className="w-full border border-[#111111] bg-[#FFFFFF] px-4 py-3 text-center text-base outline-none focus:border-[#2457C5] sm:text-left"
           />
           <button type="submit" className="cta-button cta-primary">
             Sign Up

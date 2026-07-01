@@ -9,7 +9,7 @@ export function AsciiLineLogo({
   tone = "light",
   className = "",
   variant = "compact",
-  lines = ["B M C", "SYSTEM", "AV, CA"]
+  lines = ["BMC", "SYSTEM", "AV, CA"]
 }: AsciiLineLogoProps) {
   if (variant === "full") {
     return (

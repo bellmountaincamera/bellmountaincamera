@@ -11,6 +11,7 @@ export const site = {
   cityStateZip: "Apple Valley, CA 92307",
   vendorNumber: "Vendor #24",
   filmDevelopmentStatus: "Accepting film development orders",
+  filmTurnaround: "C-41: 3-7 business days",
   hoursShort: "Tuesday - Saturday, 10 AM - 4 PM",
   hours: [
     { days: "Tuesday - Saturday", time: "10:00 AM - 4:00 PM" },

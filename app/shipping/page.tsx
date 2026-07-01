@@ -16,13 +16,13 @@ export default function ShippingPage() {
         label="Store Policy"
         title="Shipping Policy"
         description="Shipping is planned. Local pickup is available."
-        meta={["SHIP TO ADDRESS", "LOCAL PICKUP", "RATES TO BE CONFIGURED"]}
+        meta={["LOCAL PICKUP", "SHIPPING QUESTIONS", "CONTACT BMC"]}
       />
       <section className="mx-auto grid max-w-7xl gap-6 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-3 lg:px-8">
         {[
           [
             "Domestic shipping",
-            "Shipping rules are not finalized yet. Domestic shipping rates, processing time, shipping carriers, and lost or damaged package policy are editable placeholders before live checkout."
+            "Online checkout is coming soon. For shipping questions, contact BMC before ordering."
           ],
           [
             "Local pickup",
@@ -30,11 +30,11 @@ export default function ShippingPage() {
           ],
           [
             "Order timing",
-            "Shipping and pickup timing depend on inventory, order volume, and final fulfillment setup."
+            "Pickup and shipping timing depend on current inventory and order volume."
           ],
           [
-            "Free shipping threshold",
-            "A free shipping threshold can be added later if BMC decides to offer one."
+            "Before ordering",
+            "Confirm current inventory, pickup timing, and shipping options with BMC."
           ]
         ].map(([title, text]) => (
           <article key={title} className="document-panel p-6">

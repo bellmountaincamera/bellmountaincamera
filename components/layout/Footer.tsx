@@ -14,7 +14,7 @@ export function Footer() {
             {site.description}
           </p>
         </div>
-        <div className="mx-auto grid w-full max-w-3xl grid-cols-3 gap-3">
+        <div className="mx-auto grid w-full max-w-3xl gap-6 sm:grid-cols-3 sm:gap-3">
           <div>
             <p className="mono text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-[#2457C5]">
               Visit
@@ -83,7 +83,7 @@ export function Footer() {
       <div className="mx-auto max-w-5xl border-t border-[#FFFFFF]/15 px-4 py-5 text-center sm:px-6 lg:px-8">
         <AsciiLineLogo
           tone="dark"
-          lines={["B M C", "EST 2025", "AV, CA"]}
+          lines={["BMC", "EST 2025", "AV, CA"]}
           className="inline-block"
         />
       </div>

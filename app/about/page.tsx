@@ -7,7 +7,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Bell Mountain Camera is named after Bell Mountain and rooted in High Desert film photography culture."
+    "Bell Mountain Camera is a film lab and used camera shop in Apple Valley, CA."
 };
 
 export default function AboutPage() {
@@ -24,22 +24,18 @@ export default function AboutPage() {
           <TerminalLabel>Shop Statement</TerminalLabel>
           <div className="mt-5 space-y-5 text-base leading-8 text-[#111111]">
             <p>
-              Bell Mountain Camera is a film camera shop and film lab located
-              inside Wild Goose Vintage & Thrift Store in Apple Valley,
-              California. BMC offers film cameras, film stock, film
-              development, scanning, and basic film camera service for the High
-              Desert film community.
+              Bell Mountain Camera started in the High Desert as a way to keep
+              film cameras in use and make film processing more accessible
+              locally.
             </p>
             <p>
-              Named after Bell Mountain, BMC is a small shop built around
-              cameras, film, development, scanning, and keeping analog
-              photography active in the desert.
+              BMC operates inside Wild Goose Vintage &amp; Thrift in Apple Valley
+              and focuses on C-41 film development, used cameras, film stock,
+              and basic camera service.
             </p>
             <p>
-              The shop serves Apple Valley, Victorville, Hesperia, and the
-              wider High Desert area with a practical walk-in counter, film
-              drop-off and pickup, camera service intake, and local analog
-              photography culture.
+              Walk-ins are welcome during shop hours. Appointments are best for
+              service questions, lab questions, or pickup timing.
             </p>
           </div>
         </div>
