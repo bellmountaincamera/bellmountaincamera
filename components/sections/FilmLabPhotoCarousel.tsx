@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { MetadataLine } from "@/components/ui/MetadataLine";
 import { TerminalLabel } from "@/components/ui/TerminalLabel";
 import { labPhotos } from "@/lib/photo-sets";
 
@@ -33,14 +32,10 @@ export function FilmLabPhotoCarousel() {
                     className="object-cover"
                   />
                 </div>
-                <div className="mt-4">
-                  <MetadataLine
-                    items={[String(index + 1).padStart(2, "0"), frame.label]}
-                  />
-                </div>
-                <h3 className="mt-3 text-lg font-semibold uppercase tracking-[0.03em]">
-                  {frame.title}
-                </h3>
+                <p className="ocr mt-4 text-center text-[0.66rem] uppercase text-[#2457C5]">
+                  {String(index + 1).padStart(2, "0")} /{" "}
+                  {String(labPhotos.length).padStart(2, "0")}
+                </p>
               </article>
             ))}
           </div>

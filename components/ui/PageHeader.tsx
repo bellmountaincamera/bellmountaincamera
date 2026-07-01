@@ -10,6 +10,7 @@ type PageHeaderProps = {
   description: string;
   meta: string[];
   photoSet?: "all" | "camera" | "lab";
+  hideIntro?: boolean;
 };
 
 export function PageHeader({
@@ -17,7 +18,8 @@ export function PageHeader({
   title,
   description,
   meta,
-  photoSet = "all"
+  photoSet = "all",
+  hideIntro = false
 }: PageHeaderProps) {
   const frames =
     photoSet === "camera" ? cameraPhotos : photoSet === "lab" ? labPhotos : allPhotoFrames;
@@ -28,18 +30,27 @@ export function PageHeader({
         <div className="mb-7">
           <AsciiPageTitle title={title} />
         </div>
-        <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-          <div>
-            <TerminalHeader eyebrow={label} description={description} />
-            <div className="mt-5">
-              <MetadataLine items={meta} />
-            </div>
+        {hideIntro ? (
+          <div className="mx-auto max-w-4xl">
+            <PagePhotoSlideshow
+              frames={frames}
+              label={photoSet === "camera" ? "Camera File" : photoSet === "lab" ? "Lab File" : "BMC File"}
+            />
           </div>
-          <PagePhotoSlideshow
-            frames={frames}
-            label={photoSet === "camera" ? "Camera File" : photoSet === "lab" ? "Lab File" : "BMC File"}
-          />
-        </div>
+        ) : (
+          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+            <div>
+              <TerminalHeader eyebrow={label} description={description} />
+              <div className="mt-5">
+                <MetadataLine items={meta} />
+              </div>
+            </div>
+            <PagePhotoSlideshow
+              frames={frames}
+              label={photoSet === "camera" ? "Camera File" : photoSet === "lab" ? "Lab File" : "BMC File"}
+            />
+          </div>
+        )}
       </div>
     </section>
   );

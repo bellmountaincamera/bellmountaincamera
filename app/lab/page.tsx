@@ -49,6 +49,7 @@ export default function LabPage() {
         description="Film developing and scanning in Apple Valley."
         meta={["C-41 IN-HOUSE", site.filmTurnaround, "JPEG / TIFF SCANS"]}
         photoSet="lab"
+        hideIntro
       />
 
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">

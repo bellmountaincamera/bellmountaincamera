@@ -79,10 +79,12 @@ export function HomeGifCarousel() {
               </h1>
             </div>
           </div>
-          <div className="mono mt-3 flex flex-wrap justify-between gap-2 text-[0.68rem] uppercase tracking-[0.12em] text-[#2457C5]">
-            <span>{activeClip.caption}</span>
+          <div className="mono mt-3 flex flex-wrap justify-center gap-4 text-[0.68rem] uppercase tracking-[0.12em] text-[#2457C5]">
+            <span>
+              {String(activeIndex + 1).padStart(2, "0")} /{" "}
+              {String(clips.length).padStart(2, "0")}
+            </span>
             <span>3 SEC LOOP</span>
-            <span>{activeClip.label}</span>
           </div>
           <div className="mt-4 flex justify-center">
             <Link
