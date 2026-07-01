@@ -15,7 +15,8 @@ export function FilmLabPhotoCarousel() {
             Lab reference photos
           </h2>
           <p className="mt-5 text-sm leading-7 text-[#111111]">
-            Processor details, chemistry, and test-roll frames.
+            Processor photos, chemistry setup, scan samples, and test frames
+            from the lab.
           </p>
         </div>
 

@@ -27,10 +27,10 @@ export default function ServicesPage() {
             Service scope and bundles
           </h2>
           <p className="mt-5 text-sm leading-7 text-[#111111]">
-            BMC handles practical film camera maintenance: diagnosis, cleaning,
-            light seals, and shutter speed adjustment when possible. Bring your
-            camera in during business hours or contact BMC to set up an
-            appointment for deeper repair questions.
+            BMC handles common film camera service: diagnosis, cleaning, light
+            seals, and shutter speed adjustment when possible. Bring your
+            camera in during business hours or contact BMC for service
+            questions.
           </p>
           <div className="mt-7">
             <CTAButton href="/contact">Start Service Inquiry</CTAButton>
@@ -95,8 +95,8 @@ export default function ServicesPage() {
             Tell BMC what the camera is doing
           </h2>
           <p className="mt-5 text-sm leading-7 text-[#111111]">
-            This static intake form is ready for a future form handler, email
-            notification, or service ticket workflow.
+            Use this form to send camera service details before drop-off or
+            appointment.
           </p>
         </div>
         <div className="terminal-panel p-6">

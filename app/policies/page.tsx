@@ -22,7 +22,7 @@ const policySections = [
   {
     title: "Store Policy",
     text:
-      "Film and camera inventory may be limited and may rotate often. Online checkout is not live yet. Sold-out and sold items should not allow checkout once Shopify is connected."
+      "Film and camera inventory is limited and changes often. Online checkout is coming soon. For now, contact BMC for current inventory, local pickup, or shipping."
   },
   {
     title: "Used Camera Policy",

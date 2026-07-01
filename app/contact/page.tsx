@@ -85,7 +85,8 @@ export default function ContactPage() {
               </p>
               <p className="mt-1 text-lg font-semibold">
                 Request appointments one week in advance for best availability.
-                Questions are always welcome by email or phone.
+                Email or call before stopping by with a specific camera, film
+                order, or service question.
               </p>
             </div>
             <div className="grid gap-3 sm:grid-cols-2">
@@ -157,9 +158,8 @@ export default function ContactPage() {
               Plan a camera or lab visit
             </h2>
             <p className="mt-5 text-sm leading-7 text-[#111111]">
-              Appointments are helpful for camera questions, service intake,
-              film lab questions, pickup timing, or anything that may need a
-              little more attention than a quick walk-in.
+              Appointments are best for camera service, detailed lab questions,
+              pickup timing, or anything that needs more than a quick walk-in.
             </p>
             <div className="mt-7">
               <CTAButton href={appointmentMailto}>

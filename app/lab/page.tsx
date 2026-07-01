@@ -96,8 +96,8 @@ export default function LabPage() {
               Full-border DSLR scans
             </h2>
             <p className="mt-5 text-sm leading-7 text-[#FFFFFF]">
-              Full-border scans are DSLR scanned for higher-detail files and
-              include the film edge around the frame.
+              Full-border scans are made with a DSLR setup and include the film
+              edge around each frame.
             </p>
           </div>
 

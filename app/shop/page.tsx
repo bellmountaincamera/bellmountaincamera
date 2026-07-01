@@ -64,7 +64,7 @@ export default function ShopPage() {
       <PageHeader
         label="Inventory Desk"
         title="Shop"
-        description="Browse film stock and used cameras."
+        description="Film, used cameras, and shop inventory from BMC."
         meta={["ONLINE SHOP COMING SOON", "LOCAL PICKUP", "SHIPPING PLANNED"]}
       />
       <section className="mx-auto max-w-5xl px-4 py-12 text-center sm:px-6 sm:py-16 lg:px-8">
@@ -113,8 +113,8 @@ export default function ShopPage() {
               Shipping planned, pickup available
             </h2>
             <p className="mt-5 text-sm leading-7 text-[#FFFFFF]">
-              Online checkout is not live yet. Contact BMC for availability,
-              local pickup, or shipping questions.
+              Online checkout is coming soon. For now, contact BMC for current
+              inventory, local pickup, or shipping.
             </p>
             <p className="mono mt-4 text-[0.72rem] uppercase tracking-[0.14em] text-[#FFFFFF]/70">
               Pickup: {site.hoursShort}

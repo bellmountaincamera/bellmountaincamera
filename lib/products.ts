@@ -333,7 +333,7 @@ const mockProducts: ProductSeed[] = [
     shippingAvailable: true,
     image: "/images/products/film/kodak-pro-400-01.jpg",
     description:
-      "Kodak 400-speed professional color negative film when available in rotating stock."
+      "Kodak 400-speed color negative film when available in rotating stock."
   },
   {
     kind: "film",
@@ -351,7 +351,7 @@ const mockProducts: ProductSeed[] = [
     shippingAvailable: true,
     image: "/images/products/film/kodak-pro-800-01.jpg",
     description:
-      "Kodak 800-speed professional color negative film when available in rotating stock."
+      "Kodak 800-speed color negative film when available in rotating stock."
   },
   {
     kind: "film",
