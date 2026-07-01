@@ -3,7 +3,7 @@ import { TerminalStatusPanel } from "@/components/brand/TerminalStatusPanel";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { TerminalLabel } from "@/components/ui/TerminalLabel";
-import { cameraServiceMenu, serviceBundles } from "@/lib/site";
+import { cameraServiceMenu, serviceBundles, site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Camera Services",
@@ -12,6 +12,12 @@ export const metadata: Metadata = {
 };
 
 export default function ServicesPage() {
+  const serviceMailto = `mailto:${site.email}?subject=${encodeURIComponent(
+    "Camera service request"
+  )}&body=${encodeURIComponent(
+    "Hi Bell Mountain Camera,\n\nI would like to send camera service details.\n\nName:\nPhone:\nCamera brand:\nCamera model:\nService requested:\nKnown issue:\nLast time camera worked:\nBattery type if known:\nHas film been tested through it?:\nNotes:\n\nThank you."
+  )}`;
+
   return (
     <main>
       <PageHeader
@@ -121,6 +127,11 @@ export default function ServicesPage() {
                 <div className="mt-2 min-h-11 border border-[#FFFFFF]/25 bg-[#FFFFFF]/5" />
               </div>
             ))}
+          </div>
+          <div className="mt-6">
+            <CTAButton href={serviceMailto} variant="dark">
+              Send Service Details
+            </CTAButton>
           </div>
         </div>
       </section>
