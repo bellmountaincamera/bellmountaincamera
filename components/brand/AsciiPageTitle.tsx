@@ -1,5 +1,3 @@
-import type { CSSProperties } from "react";
-
 const glyphs: Record<string, string[]> = {
   A: [" +++ ", "+   +", "+++++", "+   +", "+   +"],
   B: ["++++ ", "+   +", "++++ ", "+   +", "++++ "],
@@ -66,11 +64,6 @@ function buildAsciiTitle(title: string) {
 
 export function AsciiPageTitle({ title, tone = "light" }: AsciiPageTitleProps) {
   const asciiTitle = buildAsciiTitle(title);
-  const maxLineLength = Math.max(...asciiTitle.split("\n").map((line) => line.length));
-  const viewportScale = Math.min(9, Math.max(1.2, 82 / (maxLineLength * 0.62)));
-  const style = {
-    fontSize: `clamp(0.32rem, ${viewportScale}vw, 1.25rem)`
-  } satisfies CSSProperties;
 
   return (
     <div
@@ -81,8 +74,7 @@ export function AsciiPageTitle({ title, tone = "light" }: AsciiPageTitleProps) {
       ].join(" ")}
     >
       <pre
-        className="mono mx-auto inline-block max-w-full text-left font-semibold leading-[0.95] tracking-normal"
-        style={style}
+        className="mono mx-auto inline-block max-w-full text-left text-[0.34rem] font-semibold leading-[0.95] tracking-normal sm:text-[0.44rem] md:text-[0.52rem]"
       >
         {asciiTitle}
       </pre>
