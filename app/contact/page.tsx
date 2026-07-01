@@ -24,6 +24,7 @@ export default function ContactPage() {
         title="Contact"
         description="Drop off film, ask about a camera, or schedule service."
         meta={["WALK-INS WELCOME", "APPOINTMENTS AVAILABLE", "APPLE VALLEY, CA"]}
+        textOnly
       />
       <section className="mx-auto grid max-w-7xl gap-8 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
         <div className="document-panel p-6">
@@ -84,9 +85,8 @@ export default function ContactPage() {
                 Appointments
               </p>
               <p className="mt-1 text-lg font-semibold">
-                Request appointments one week in advance for best availability.
-                Email or call before stopping by with a specific camera, film
-                order, or service question.
+                Appointments available by request. Best for camera service,
+                detailed lab questions, and pickup timing.
               </p>
             </div>
             <div className="grid gap-3 sm:grid-cols-2">

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/ui/PageHeader";
+import { labInfo } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "FAQ",
@@ -13,7 +14,7 @@ const faqGroups = [
     questions: [
       [
         "Do you develop film?",
-        "Yes. BMC offers C-41 film development and scanning. Current pricing is listed on the Film Lab page."
+        `Yes. BMC offers ${labInfo.process} film development and scanning. Current pricing is listed on the Film Lab page.`
       ],
       [
         "Do you scan film?",
@@ -21,7 +22,7 @@ const faqGroups = [
       ],
       [
         "How long does film take?",
-        "Typical turnaround is usually 3-7 business days depending on volume, but turnaround is not guaranteed."
+        `Typical C-41 turnaround is usually ${labInfo.turnaround} depending on volume, but turnaround is not guaranteed.`
       ],
       [
         "What happens if my roll is blank?",
@@ -86,6 +87,7 @@ export default function FAQPage() {
         title="FAQ"
         description="Quick answers before you visit or contact BMC."
         meta={["SHIPPING", "LOCAL PICKUP", "INVENTORY"]}
+        textOnly
       />
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
         <div className="grid gap-8">

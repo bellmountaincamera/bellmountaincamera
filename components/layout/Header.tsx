@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { site } from "@/lib/site";
+import { labInfo, site } from "@/lib/site";
 
 export function Header() {
   const pathname = usePathname();
@@ -15,7 +15,7 @@ export function Header() {
         <div className="mono mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-2 px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.14em] sm:px-6 lg:px-8">
           <span className="text-[#FFFFFF]/70">Film Lab Status</span>
           <span className="vt323 text-base leading-none text-[#9CB7FF]">
-            {site.filmDevelopmentStatus}
+            {labInfo.status}
           </span>
         </div>
       </div>

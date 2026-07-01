@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { AsciiLineLogo } from "@/components/brand/AsciiLineLogo";
-import { site } from "@/lib/site";
+import { footerCopy } from "@/lib/site";
 
 export function Footer() {
   return (
@@ -11,7 +11,7 @@ export function Footer() {
             Bell Mountain Camera
           </p>
           <p className="mt-3 text-sm leading-6 text-[#FFFFFF]/85">
-            {site.description}
+            {footerCopy}
           </p>
         </div>
         <div className="mx-auto grid w-full max-w-3xl gap-6 sm:grid-cols-3 sm:gap-3">

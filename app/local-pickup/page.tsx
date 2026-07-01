@@ -17,6 +17,7 @@ export default function LocalPickupPage() {
         title="Local Pickup"
         description="Pickup at BMC during business hours."
         meta={["LOCAL PICKUP", site.hoursShort, "APPLE VALLEY"]}
+        textOnly
       />
       <section className="mx-auto grid max-w-7xl gap-8 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-2 lg:px-8">
         <div className="document-panel p-6">

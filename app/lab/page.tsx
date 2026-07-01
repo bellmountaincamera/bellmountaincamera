@@ -5,7 +5,7 @@ import { FilmLabPhotoCarousel } from "@/components/sections/FilmLabPhotoCarousel
 import { MetadataLine } from "@/components/ui/MetadataLine";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { TerminalLabel } from "@/components/ui/TerminalLabel";
-import { filmLabDisclaimer, filmLabPricing, site } from "@/lib/site";
+import { filmLabDisclaimer, filmLabPricing, labInfo } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Film Lab",
@@ -47,7 +47,7 @@ export default function LabPage() {
         label="Lab Counter"
         title="Film Lab"
         description="Film developing and scanning in Apple Valley."
-        meta={["C-41 IN-HOUSE", site.filmTurnaround, "JPEG / TIFF SCANS"]}
+        meta={[`${labInfo.process} IN-HOUSE`, `C-41: ${labInfo.turnaround}`, "JPEG / TIFF SCANS"]}
         photoSet="lab"
         hideIntro
       />
@@ -65,7 +65,7 @@ export default function LabPage() {
               Current Turnaround
             </p>
             <p className="mono mt-2 text-sm font-semibold uppercase tracking-[0.08em]">
-              {site.filmTurnaround}
+              C-41: {labInfo.turnaround}
             </p>
           </div>
         </div>
@@ -102,31 +102,17 @@ export default function LabPage() {
       </section>
 
       <section className="border-y border-[#111111]/15 bg-[#FFFFFF]">
-        <div className="mx-auto grid max-w-7xl gap-6 px-4 py-10 sm:px-6 sm:py-14 lg:grid-cols-2 lg:px-8">
+        <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
           <article className="document-panel p-6">
             <TerminalLabel>How To Drop Off Film</TerminalLabel>
-            <ol className="mt-5 grid gap-3 text-sm leading-7 text-[#111111]">
-              <li>1. Bring film to BMC inside Wild Goose Vintage &amp; Thrift.</li>
-              <li>2. Include name, phone number, film type, and scan preference.</li>
-              <li>3. Scans are delivered by download link.</li>
+            <ol className="mt-5 grid list-decimal gap-3 pl-5 text-sm leading-7 text-[#111111]">
+              <li>Bring film to BMC inside Wild Goose Vintage &amp; Thrift.</li>
+              <li>
+                Include name, phone number, film type, scan preference, and
+                push/pull notes if needed.
+              </li>
+              <li>Scans are delivered by download link.</li>
             </ol>
-          </article>
-          <article className="document-panel p-6">
-            <TerminalLabel>Before Drop-Off</TerminalLabel>
-            <div className="mt-5 grid grid-cols-2 gap-3 text-sm text-[#111111]">
-              {[
-                "Name",
-                "Phone number",
-                "Film format",
-                "Scan preference",
-                "Push/pull notes",
-                "Special instructions"
-              ].map((item) => (
-                <p key={item} className="mono border border-[#111111]/15 p-3 text-[0.72rem] uppercase tracking-[0.12em]">
-                  {item}
-                </p>
-              ))}
-            </div>
           </article>
         </div>
       </section>
@@ -180,19 +166,6 @@ export default function LabPage() {
               ))}
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
-        <div className="mb-8 max-w-3xl">
-          <TerminalLabel>Important Notes</TerminalLabel>
-          <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
-            Before you drop off film
-          </h2>
-          <p className="mt-5 text-sm leading-7 text-[#111111]">
-            Write your name, phone number, film type, and scan preference with
-            each order. Specialty film may need extra time.
-          </p>
         </div>
       </section>
 

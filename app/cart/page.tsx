@@ -21,6 +21,7 @@ export default function CartPage() {
         title="Cart Preview"
         description="Cart preview. Contact BMC for availability."
         meta={["DEMO ONLY", "LOCAL PICKUP", "SHIPPING PLANNED"]}
+        textOnly
       />
       <section className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[1.2fr_0.8fr] lg:px-8">
         <div className="record-grid">
@@ -64,9 +65,8 @@ export default function CartPage() {
             </div>
           </div>
           <p className="mt-5 text-sm leading-7 text-[#111111]">
-            This is a preview cart. Live checkout will require a payment
-            processor, inventory source, and shipping setup before customers can
-            complete real purchases.
+            This is a preview cart. Online checkout is not active yet. Contact
+            BMC for current inventory, pickup, or shipping questions.
           </p>
           <div className="mt-6">
             <CTAButton href="/contact">Contact for Availability</CTAButton>

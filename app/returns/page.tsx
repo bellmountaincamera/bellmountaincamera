@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { TerminalLabel } from "@/components/ui/TerminalLabel";
+import { policyCopy } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Returns Policy",
@@ -16,24 +17,17 @@ export default function ReturnsPage() {
         title="Returns Policy"
         description="Return notes for film, cameras, and services."
         meta={["FILM STOCK", "USED CAMERAS", "CONDITION NOTES"]}
+        textOnly
       />
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
-        <div className="record-grid md:grid-cols-2 lg:grid-cols-4">
+        <div className="record-grid md:grid-cols-2">
           {[
             [
-              "Film stock",
-              "Film, opened consumables, and items affected by storage condition are not returnable."
+              "Returns",
+              policyCopy.returns
             ],
             [
-              "Used cameras",
-              "Used cameras and equipment are sold according to their listed condition."
-            ],
-            [
-              "Lab services",
-              "Completed film development and scan services are not returnable."
-            ],
-            [
-              "Damaged shipping items",
+              "Before Returning",
               "Contact BMC with order details and photos before returning any item."
             ]
           ].map(([title, text]) => (

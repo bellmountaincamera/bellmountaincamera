@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { TerminalLabel } from "@/components/ui/TerminalLabel";
-import { filmLabDisclaimer, serviceDisclaimer, site } from "@/lib/site";
+import { businessInfo, policyCopy } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Policies",
@@ -21,29 +21,39 @@ const policyLinks = [
 const policySections = [
   {
     title: "Store Policy",
-    text:
-      "Film and camera inventory is limited and changes often. Online checkout is coming soon. For now, contact BMC for current inventory, local pickup, or shipping."
-  },
-  {
-    title: "Used Camera Policy",
-    text:
-      "Used cameras are inspected and described as accurately as possible. Condition varies by item, and known issues should be listed on the product page, including tested status, cosmetic condition, included lens or accessories, and sold-as-is language if needed."
+    text: policyCopy.store
   },
   {
     title: "Film Lab Policy",
-    text: filmLabDisclaimer
+    text: policyCopy.filmLab
   },
   {
-    title: "Service Policy",
-    text: serviceDisclaimer
+    title: "Used Camera Policy",
+    text: policyCopy.usedCamera
   },
   {
-    title: "Pickup Policy Summary",
-    text: `Local pickup is available at ${site.name} inside ${site.locationName}, ${site.street}, ${site.cityStateZip}. Pickup hours are ${site.hoursShort}. Walk-ins are welcome during business hours.`
+    title: "Camera Service Policy",
+    text: policyCopy.cameraService
   },
   {
-    title: "Contact for Questions",
-    text: `Questions about film, cameras, service, pickup, shipping, or policies can be sent to ${site.email} or ${site.phone}.`
+    title: "Local Pickup",
+    text: `${policyCopy.localPickup} Pickup hours are ${businessInfo.hours}.`
+  },
+  {
+    title: "Shipping",
+    text: policyCopy.shipping
+  },
+  {
+    title: "Returns",
+    text: policyCopy.returns
+  },
+  {
+    title: "Privacy",
+    text: policyCopy.privacy
+  },
+  {
+    title: "Terms",
+    text: policyCopy.terms
   }
 ];
 
@@ -55,6 +65,7 @@ export default function PoliciesPage() {
         title="Policies"
         description="Store, pickup, shipping, lab, and service policies."
         meta={["STORE POLICY", "LOCAL PICKUP", "SHIPPING"]}
+        textOnly
       />
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
         <div className="record-grid md:grid-cols-2">

@@ -11,6 +11,7 @@ type PageHeaderProps = {
   meta: string[];
   photoSet?: "all" | "camera" | "lab";
   hideIntro?: boolean;
+  textOnly?: boolean;
 };
 
 export function PageHeader({
@@ -19,7 +20,8 @@ export function PageHeader({
   description,
   meta,
   photoSet = "all",
-  hideIntro = false
+  hideIntro = false,
+  textOnly = false
 }: PageHeaderProps) {
   const frames =
     photoSet === "camera" ? cameraPhotos : photoSet === "lab" ? labPhotos : allPhotoFrames;
@@ -30,7 +32,14 @@ export function PageHeader({
         <div className="mb-7">
           <AsciiPageTitle title={title} />
         </div>
-        {hideIntro ? (
+        {textOnly ? (
+          <div className="mx-auto max-w-3xl text-center">
+            <TerminalHeader eyebrow={label} description={description} />
+            <div className="mt-5">
+              <MetadataLine items={meta} />
+            </div>
+          </div>
+        ) : hideIntro ? (
           <div className="mx-auto max-w-4xl">
             <PagePhotoSlideshow
               frames={frames}

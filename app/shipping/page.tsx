@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { TerminalLabel } from "@/components/ui/TerminalLabel";
-import { site } from "@/lib/site";
+import { businessInfo, policyCopy } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Shipping Policy",
@@ -17,16 +17,17 @@ export default function ShippingPage() {
         title="Shipping Policy"
         description="Shipping is planned. Local pickup is available."
         meta={["LOCAL PICKUP", "SHIPPING QUESTIONS", "CONTACT BMC"]}
+        textOnly
       />
       <section className="mx-auto grid max-w-7xl gap-6 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-3 lg:px-8">
         {[
           [
             "Domestic shipping",
-            "Online checkout is coming soon. For shipping questions, contact BMC before ordering."
+            policyCopy.shipping
           ],
           [
             "Local pickup",
-            `${site.name} offers local pickup at ${site.locationName}, ${site.street}, ${site.cityStateZip}. Pickup hours are ${site.hoursShort}.`
+            `${policyCopy.localPickup} Pickup hours are ${businessInfo.hours}.`
           ],
           [
             "Order timing",

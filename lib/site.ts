@@ -38,6 +38,29 @@ export const site = {
   ]
 };
 
+export const businessInfo = {
+  name: site.name,
+  shortName: site.abbreviation,
+  locationName: site.locationName,
+  address: `${site.street}, ${site.cityStateZip}`,
+  city: "Apple Valley",
+  state: "CA",
+  email: site.email,
+  phone: site.phone,
+  instagram: site.instagram,
+  hours: site.hoursShort
+};
+
+export const labInfo = {
+  status: "Accepting C-41 film orders",
+  process: "C-41",
+  turnaround: "3-7 business days",
+  scanDelivery: "Download link"
+};
+
+export const footerCopy =
+  "Bell Mountain Camera operates inside Wild Goose Vintage & Thrift in Apple Valley, CA. BMC processes film, sells used cameras, stocks film, and handles basic camera service.";
+
 export const services = [
   {
     title: "Film Development",
@@ -157,11 +180,6 @@ export const cameraServiceMenu = [
     title: "Light Seal Replacement",
     price: "$40",
     text: "Replacement of deteriorated light seals."
-  },
-  {
-    title: "Full Service",
-    price: "$125",
-    text: "Includes diagnosis, cleaning, light seal replacement, and shutter speed adjustment when possible."
   }
 ];
 
@@ -169,7 +187,11 @@ export const serviceBundles = [
   { title: "Diagnose + Cleaning", price: "$55" },
   { title: "Diagnose + Light Seals", price: "$50" },
   { title: "Diagnose + Shutter Speed Adjustment", price: "$50" },
-  { title: "Full Service", price: "$125" }
+  {
+    title: "Full Service",
+    price: "$125",
+    text: "Includes diagnosis, cleaning, light seal replacement, and shutter speed adjustment when possible."
+  }
 ];
 
 export const filmLabPricing = [
@@ -210,3 +232,22 @@ export const filmLabDisclaimer =
 
 export const serviceDisclaimer =
   "Service depends on the camera model, condition, and issue. Some cameras may need parts or repairs beyond what Bell Mountain Camera can provide in-house.";
+
+export const policyCopy = {
+  store:
+    "Online checkout is not active yet. Contact BMC for current film, camera, and shop availability, local pickup, or arranged shipping.",
+  filmLab: filmLabDisclaimer,
+  usedCamera:
+    "Used cameras and equipment are sold according to their listed condition. Condition notes may include tested status, cosmetic wear, included items, and known issues.",
+  cameraService: serviceDisclaimer,
+  localPickup:
+    "Local pickup is available during shop hours at Bell Mountain Camera inside Wild Goose Vintage & Thrift in Apple Valley, CA.",
+  shipping:
+    "Online checkout is not active yet. Local pickup is available during shop hours. For shipping questions, contact BMC before ordering.",
+  returns:
+    "Used cameras and equipment are sold according to their listed condition. Film, opened consumables, and completed lab services are not returnable. Contact BMC with any issue before returning an item.",
+  privacy:
+    "BMC only uses customer information to respond to messages, process film orders, manage camera service requests, and communicate about shop activity. Customer information is not sold.",
+  terms:
+    "By using BMC services, customers understand that film processing, used camera sales, and camera service involve some risk due to film condition, camera condition, age, storage, and mechanical limitations."
+};

@@ -25,6 +25,7 @@ export default function ServicesPage() {
         title="Camera Services"
         description="Basic service for film cameras."
         meta={["CAMERA SERVICE INTAKE", "WALK-INS WELCOME", "APPOINTMENTS AVAILABLE"]}
+        textOnly
       />
       <section className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
         <div>
@@ -88,6 +89,11 @@ export default function ServicesPage() {
                   <p className="mono mt-4 text-sm font-semibold uppercase tracking-[0.14em] text-[#2457C5]">
                     {bundle.price}
                   </p>
+                  {"text" in bundle ? (
+                    <p className="mt-4 text-sm leading-7 text-[#111111]">
+                      {bundle.text}
+                    </p>
+                  ) : null}
                 </article>
               ))}
             </div>

@@ -29,6 +29,7 @@ export default function CheckoutPage() {
         title="Checkout Preview"
         description="Checkout preview. Payments are not live."
         meta={["DEMO ONLY", "SHIPPING ADDRESS", "LOCAL PICKUP"]}
+        textOnly
       />
       <section className="mx-auto grid max-w-7xl gap-8 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
         <div className="terminal-panel p-6">
