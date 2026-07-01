@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, IBM_Plex_Mono } from "next/font/google";
+import { Geist, IBM_Plex_Mono, VT323 } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
@@ -15,6 +15,13 @@ const ibmPlexMono = IBM_Plex_Mono({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-plex-mono",
+  display: "swap"
+});
+
+const vt323 = VT323({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-vt323",
   display: "swap"
 });
 
@@ -48,7 +55,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Bell Mountain Camera",
-    description: "Film cameras and film development in Apple Valley.",
+    description: "Film lab, used cameras, and camera service in Apple Valley.",
     url: "https://bellmountaincamera.com",
     siteName: "Bell Mountain Camera",
     images: [
@@ -108,7 +115,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className={`${geist.variable} ${ibmPlexMono.variable}`}>
+    <html lang="en" className={`${geist.variable} ${ibmPlexMono.variable} ${vt323.variable}`}>
       <body>
         <script
           type="application/ld+json"

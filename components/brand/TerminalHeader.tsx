@@ -14,12 +14,12 @@ export function TerminalHeader({
   return (
     <div
       className={[
-        "border-b pb-6",
+        "border-b pb-6 text-center",
         tone === "dark" ? "border-[#FFFFFF]/20" : "border-[#111111]"
       ].join(" ")}
     >
       <div>
-        <p className="mono text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-[#2457C5]">
+          <p className="mono text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-[#2457C5]">
           {eyebrow}
         </p>
         {title ? (
@@ -30,7 +30,7 @@ export function TerminalHeader({
         {description ? (
           <p
             className={[
-              "mt-4 max-w-2xl text-sm leading-7",
+              "mx-auto mt-4 max-w-2xl text-left text-sm leading-7",
               tone === "dark" ? "text-[#FFFFFF]" : "text-[#111111]"
             ].join(" ")}
           >

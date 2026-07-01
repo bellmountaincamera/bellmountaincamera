@@ -14,7 +14,9 @@ export function Header() {
       <div className="border-b border-[#111111]/15 bg-[#111111] text-[#FFFFFF]">
         <div className="mono mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-2 px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.14em] sm:px-6 lg:px-8">
           <span className="text-[#FFFFFF]/70">Film Lab Status</span>
-          <span className="text-[#FFFFFF]">{site.filmDevelopmentStatus}</span>
+          <span className="vt323 text-base leading-none text-[#9CB7FF]">
+            {site.filmDevelopmentStatus}
+          </span>
         </div>
       </div>
       <nav
@@ -23,7 +25,7 @@ export function Header() {
       >
         <Link href="/" className="group inline-flex items-center gap-3">
           <span className="grid h-9 w-9 place-items-center border border-[#111111] bg-[#111111] text-[#FFFFFF]">
-            <span className="mono text-xs font-semibold">BM</span>
+            <span className="ocr text-[0.62rem] font-semibold">BMC</span>
           </span>
           <span>
             <span className="block text-base font-semibold uppercase tracking-[0.08em]">

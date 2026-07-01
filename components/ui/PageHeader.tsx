@@ -32,7 +32,7 @@ export function PageHeader({
           <div>
             <TerminalHeader eyebrow={label} description={description} />
             <div className="mt-5">
-              <MetadataLine items={["BMC PUBLIC RECORD", "APPLE VALLEY, CA"]} />
+              <MetadataLine items={meta} />
             </div>
           </div>
           <PagePhotoSlideshow

@@ -22,7 +22,7 @@ export default function ContactPage() {
       <PageHeader
         label="Contact Desk"
         title="Contact"
-        description="Walk in, call, email, or request an appointment."
+        description="Drop off film, ask about a camera, or schedule service."
         meta={["WALK-INS WELCOME", "APPOINTMENTS AVAILABLE", "APPLE VALLEY, CA"]}
       />
       <section className="mx-auto grid max-w-7xl gap-8 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
@@ -122,8 +122,8 @@ export default function ContactPage() {
             ))}
           </div>
           <p className="mt-5 text-sm leading-7 text-[#FFFFFF]">
-            No backend is connected in version 1. The public action is a mailto
-            link so the site stays static, fast, and deployment-ready.
+            This form opens an email draft so you can send details directly to
+            BMC.
           </p>
           <div className="mt-5 grid gap-2 text-sm text-[#FFFFFF] sm:grid-cols-2">
             {[

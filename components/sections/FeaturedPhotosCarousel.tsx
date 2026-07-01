@@ -40,9 +40,8 @@ export function FeaturedPhotosCarousel() {
         <h2 className="mx-auto mt-4 max-w-3xl text-3xl font-semibold uppercase tracking-[0.02em] sm:text-4xl">
           Film files from BMC
         </h2>
-        <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-[#111111]">
-          Rotating scan samples, camera photos, and shop reference frames from
-          Bell Mountain Camera.
+        <p className="mx-auto mt-4 max-w-xl text-left text-sm leading-7 text-[#111111]">
+          Sample scans, shop frames, and camera reference photos from BMC.
         </p>
 
         <div className="mx-auto mt-8 max-w-4xl border border-[#111111] bg-[#FFFFFF] p-3">

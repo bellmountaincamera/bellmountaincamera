@@ -27,7 +27,7 @@ export const site = {
   locationCopy:
     "Bell Mountain Camera is located inside Wild Goose Vintage & Thrift Store in Apple Valley, California. Walk-ins are welcome Tuesday through Saturday from 10 AM to 4 PM, or customers can contact BMC to set up an appointment. For best availability, request appointments one week in advance.",
   description:
-    "Bell Mountain Camera is a High Desert film camera shop and film lab located inside Wild Goose Vintage & Thrift Store in Apple Valley, California. BMC offers film cameras, film stock, online shopping, shipping, local pickup, film development, scanning, film drop-off and pickup, and basic camera services.",
+    "Bell Mountain Camera is a film lab and camera shop inside Wild Goose Vintage & Thrift in Apple Valley, CA. We process film, sell used cameras, stock film, and handle basic camera service.",
   nav: [
     { href: "/", label: "Home" },
     { href: "/lab", label: "Film Lab" },

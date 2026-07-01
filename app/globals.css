@@ -123,6 +123,11 @@ a {
   letter-spacing: 0.08em;
 }
 
+.vt323 {
+  font-family: var(--font-vt323), var(--font-plex-mono), monospace;
+  letter-spacing: 0.08em;
+}
+
 .cta-button {
   align-items: center;
   border: 1px solid;

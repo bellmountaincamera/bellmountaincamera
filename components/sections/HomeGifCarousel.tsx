@@ -75,7 +75,7 @@ export function HomeGifCarousel() {
             />
             <div className="pointer-events-none absolute inset-x-4 top-1/2 -translate-y-1/2 border border-[#FFFFFF]/35 bg-[#111111]/20 px-3 py-4 text-center mix-blend-screen sm:inset-x-8 sm:py-6">
               <h1 className="mx-auto max-w-4xl text-3xl font-semibold uppercase leading-[0.96] tracking-[0.01em] text-[#FFFFFF] opacity-80 sm:text-5xl lg:text-7xl">
-                Film cameras and film development in Apple Valley.
+                Film lab, used cameras, and camera service in Apple Valley.
               </h1>
             </div>
           </div>
