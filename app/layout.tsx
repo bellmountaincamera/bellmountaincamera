@@ -82,7 +82,6 @@ export default function RootLayout({
     name: site.name,
     url: `https://${site.domain}`,
     email: site.email,
-    telephone: site.phone,
     description: site.description,
     address: {
       "@type": "PostalAddress",

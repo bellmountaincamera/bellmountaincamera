@@ -43,17 +43,6 @@ export default function ContactPage() {
             </div>
             <div>
               <p className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#2457C5]">
-                Phone
-              </p>
-              <a
-                href={`tel:${site.phone.replaceAll("-", "")}`}
-                className="mt-1 block text-lg font-semibold hover:underline"
-              >
-                {site.phone}
-              </a>
-            </div>
-            <div>
-              <p className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#2457C5]">
                 Instagram
               </p>
               <p className="mt-1 text-lg font-semibold">{site.instagram}</p>
@@ -90,9 +79,6 @@ export default function ContactPage() {
               </p>
             </div>
             <div className="grid gap-3 sm:grid-cols-2">
-              <CTAButton href={`tel:${site.phone.replaceAll("-", "")}`}>
-                Call BMC
-              </CTAButton>
               <CTAButton href={`mailto:${site.email}`} variant="secondary">
                 Email BMC
               </CTAButton>
@@ -113,7 +99,7 @@ export default function ContactPage() {
             Email Intake Sheet
           </p>
           <div className="mt-6 grid gap-4">
-            {["Name", "Email", "Phone", "Reason for contact", "Message"].map((label) => (
+            {["Name", "Email", "Reason for contact", "Message"].map((label) => (
               <div key={label}>
                 <label className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#FFFFFF]">
                   {label}

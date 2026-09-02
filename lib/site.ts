@@ -4,7 +4,6 @@ export const site = {
   domain: "bellmountaincamera.com",
   owner: "Isai Torres",
   email: "bellmountaincamera@gmail.com",
-  phone: "760-669-8544",
   instagram: "@bellmountaincamera",
   locationName: "Inside Wild Goose Vintage & Thrift Store",
   street: "21810 CA-18 Unit #2",
@@ -19,7 +18,7 @@ export const site = {
   ],
   appointmentEmailSubject: "Appointment request for Bell Mountain Camera",
   appointmentEmailBody:
-    "Hi Bell Mountain Camera,\n\nI would like to request an appointment.\n\nPreferred day/time:\nReason for visit:\nPhone number:\n\nThank you.",
+    "Hi Bell Mountain Camera,\n\nI would like to request an appointment.\n\nPreferred day/time:\nReason for visit:\n\nThank you.",
   appointmentAvailability: [
     { days: "Tuesday - Thursday", time: "Usually available 11:00 AM - 1:00 PM" },
     { days: "Friday - Saturday", time: "Usually available most of the day" },
@@ -46,7 +45,6 @@ export const businessInfo = {
   city: "Apple Valley",
   state: "CA",
   email: site.email,
-  phone: site.phone,
   instagram: site.instagram,
   hours: site.hoursShort
 };
