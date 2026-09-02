@@ -36,12 +36,12 @@ export function FeaturedPhotosCarousel() {
   return (
     <section className="border-b border-[#111111]/15 bg-[#FFFFFF]">
       <div className="mx-auto max-w-6xl px-4 py-10 text-center sm:px-6 sm:py-14 lg:px-8">
-        <TerminalLabel>BMC Community Feature</TerminalLabel>
+        <TerminalLabel>Scanned By BMC</TerminalLabel>
         <h2 className="mx-auto mt-4 max-w-3xl text-3xl font-semibold uppercase tracking-[0.02em] sm:text-4xl">
-          BMC Community Feature
+          Scanned By BMC
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-left text-sm leading-7 text-[#111111]">
-          Sample scans and community frames from BMC.
+          Sample film scans from BMC.
         </p>
 
         <div className="mx-auto mt-8 max-w-4xl border border-[#111111] bg-[#FFFFFF] p-3">
