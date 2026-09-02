@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { TerminalStatusPanel } from "@/components/brand/TerminalStatusPanel";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { TerminalLabel } from "@/components/ui/TerminalLabel";
@@ -43,15 +42,11 @@ export default function ServicesPage() {
             <CTAButton href="/contact">Start Service Inquiry</CTAButton>
           </div>
           <div className="mt-6">
-            <TerminalStatusPanel
-              title="SERVICE BENCH STATUS"
-              rows={[
-                ["Diagnostics", "Available"],
-                ["Cleaning", "Available"],
-                ["Light Seals", "Available"],
-                ["Shutter", "When Possible"]
-              ]}
-            />
+            <div className="border border-[#111111] bg-[#FFFFFF] px-4 py-3 text-center">
+              <p className="mono text-xs font-semibold uppercase tracking-[0.14em] text-[#2457C5]">
+                Workbench Status: <span className="text-[#111111]">Available</span>
+              </p>
+            </div>
           </div>
         </div>
         <div className="grid gap-6">
