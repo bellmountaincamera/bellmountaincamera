@@ -5,7 +5,7 @@ import { site } from "@/lib/site";
 export function VisitSection() {
   return (
     <section className="border-y border-[#111111]/15 bg-[#FFFFFF]">
-      <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 sm:py-12 lg:grid-cols-[1fr_1.1fr] lg:items-end lg:px-8">
+      <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 text-center sm:px-6 sm:py-12 lg:grid-cols-[1fr_1.1fr] lg:items-end lg:px-8">
         <div>
           <TerminalLabel>Visit BMC</TerminalLabel>
           <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em] sm:text-4xl">

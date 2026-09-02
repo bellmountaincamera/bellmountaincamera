@@ -35,8 +35,7 @@ export function EmailSignupSection() {
           Get BMC updates
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-[#111111]">
-          Join the Bell Mountain Camera email list for film lab updates, camera
-          drops, film stock notes, and shop announcements.
+          Film lab updates, camera drops, and shop notes.
         </p>
         <form
           onSubmit={handleSubmit}
@@ -58,7 +57,7 @@ export function EmailSignupSection() {
           </button>
         </form>
         <p className="ocr mt-4 text-[0.66rem] uppercase text-[#2457C5]">
-          Opens an email draft to BMC
+          Opens email draft
         </p>
       </div>
     </section>

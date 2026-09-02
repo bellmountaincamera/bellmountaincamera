@@ -7,7 +7,7 @@ import { formatPrice, products } from "@/lib/products";
 export const metadata: Metadata = {
   title: "Cart",
   description:
-    "Shopping cart preview for Bell Mountain Camera online film and camera purchases."
+    "Shop cart information for Bell Mountain Camera."
 };
 
 const cartItems = products.slice(0, 2);
@@ -17,13 +17,13 @@ export default function CartPage() {
   return (
     <main>
       <PageHeader
-        label="Cart Preview"
-        title="Cart Preview"
-        description="Cart preview. Contact BMC for availability."
-        meta={["DEMO ONLY", "LOCAL PICKUP", "SHIPPING PLANNED"]}
+        label="Shop Desk"
+        title="Cart"
+        description="Contact BMC for availability."
+        meta={["CONTACT BMC", "LOCAL PICKUP ONLY"]}
         textOnly
       />
-      <section className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[1.2fr_0.8fr] lg:px-8">
+      <section className="mx-auto grid max-w-7xl gap-10 px-4 py-14 text-center sm:px-6 sm:py-20 lg:grid-cols-[1.2fr_0.8fr] lg:px-8">
         <div className="record-grid">
           {cartItems.map((item) => (
             <article
@@ -38,8 +38,7 @@ export default function CartPage() {
                   {item.name}
                 </h2>
                 <p className="mt-3 text-sm leading-7 text-[#111111]">
-                  {item.localPickup ? "Local pickup available. " : ""}
-                  {item.shippingAvailable ? "Shipping available." : ""}
+                  {item.localPickup ? "Local pickup only." : ""}
                 </p>
               </div>
               <p className="mono text-sm font-semibold uppercase tracking-[0.12em] text-[#2457C5]">
@@ -56,17 +55,12 @@ export default function CartPage() {
               <span className="mono">{formatPrice(subtotal)}</span>
             </div>
             <div className="flex justify-between border-b border-[#111111]/15 pb-3">
-              <span>Shipping</span>
-              <span className="mono">Calculated later</span>
-            </div>
-            <div className="flex justify-between border-b border-[#111111]/15 pb-3">
               <span>Pickup</span>
-              <span className="mono">Available</span>
+              <span className="mono">Local only</span>
             </div>
           </div>
           <p className="mt-5 text-sm leading-7 text-[#111111]">
-            This is a preview cart. Online checkout is not active yet. Contact
-            BMC for current inventory, pickup, or shipping questions.
+            Contact BMC for current inventory and pickup.
           </p>
           <div className="mt-6">
             <CTAButton href="/contact">Contact for Availability</CTAButton>

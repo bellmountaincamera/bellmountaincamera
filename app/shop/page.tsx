@@ -63,7 +63,7 @@ export default function ShopPage() {
         label="Inventory Desk"
         title="Shop"
         description="Local pickup only."
-        meta={["LOCAL PICKUP ONLY"]}
+        meta={["LOCAL PICKUP ONLY", "CONTACT FOR STOCK"]}
       />
       <section className="mx-auto max-w-5xl px-4 py-12 text-center sm:px-6 sm:py-16 lg:px-8">
         <div className="mx-auto mb-8 max-w-3xl">
@@ -104,26 +104,26 @@ export default function ShopPage() {
         </div>
       </section>
       <section className="border-t border-[#111111]/15 bg-[#111111] text-[#FFFFFF]">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 py-12 text-center sm:px-6 sm:py-16 lg:px-8">
           <div>
             <TerminalLabel tone="dark">Pickup Info</TerminalLabel>
             <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
               Local pickup only
             </h2>
-            <p className="mt-5 text-sm leading-7 text-[#FFFFFF]">
+            <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-[#FFFFFF]">
               Contact BMC for current inventory.
             </p>
           </div>
         </div>
       </section>
-      <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
+      <section className="mx-auto max-w-7xl px-4 py-14 text-center sm:px-6 sm:py-20 lg:px-8">
         <TerminalLabel>Store Policies</TerminalLabel>
         <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
           Shop policies
         </h2>
         <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          <CTAButton href="/shipping" variant="secondary">
-            Shipping Policy
+          <CTAButton href="/local-pickup" variant="secondary">
+            Local Pickup
           </CTAButton>
           <CTAButton href="/returns" variant="secondary">
             Returns Policy

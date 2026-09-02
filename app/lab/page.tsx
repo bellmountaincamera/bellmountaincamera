@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { ContactCTA } from "@/components/sections/ContactCTA";
 import { FilmLabPhotoCarousel } from "@/components/sections/FilmLabPhotoCarousel";
-import { MetadataLine } from "@/components/ui/MetadataLine";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { TerminalLabel } from "@/components/ui/TerminalLabel";
 import { filmLabDisclaimer, filmLabPricing, labInfo } from "@/lib/site";
@@ -52,7 +51,7 @@ export default function LabPage() {
         hideIntro
       />
 
-      <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
+      <section className="mx-auto max-w-7xl px-4 py-10 text-center sm:px-6 sm:py-14 lg:px-8">
         <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
           <div>
             <TerminalLabel>Film Lab Pricing</TerminalLabel>
@@ -103,12 +102,12 @@ export default function LabPage() {
 
       <section className="border-y border-[#111111]/15 bg-[#FFFFFF]">
         <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
-          <article className="document-panel p-6">
+          <article className="document-panel p-6 text-center">
             <TerminalLabel>How To Drop Off Film</TerminalLabel>
-            <ol className="mt-5 grid list-decimal gap-3 pl-5 text-sm leading-7 text-[#111111]">
+            <ol className="mx-auto mt-5 grid max-w-xl list-decimal gap-3 pl-5 text-left text-sm leading-7 text-[#111111]">
               <li>Bring film to BMC inside Wild Goose Vintage &amp; Thrift.</li>
               <li>
-                Include name, phone number, film type, scan preference, and
+                Include name, contact info, film type, scan preference, and
                 push/pull notes if needed.
               </li>
               <li>Scans are delivered by download link.</li>
@@ -119,14 +118,13 @@ export default function LabPage() {
 
       <section className="bg-[#111111] text-[#FFFFFF]">
         <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
-          <div className="mb-8 max-w-3xl">
+          <div className="mx-auto mb-8 max-w-3xl text-center">
             <TerminalLabel tone="dark">Scan Options</TerminalLabel>
             <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
               Full-border DSLR scans
             </h2>
-            <p className="mt-5 text-sm leading-7 text-[#FFFFFF]">
-              Full-border scans are made with a DSLR setup and include the film
-              edge around each frame.
+            <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-[#FFFFFF]">
+              DSLR setup. Higher-detail scans with the film edge included.
             </p>
           </div>
 
@@ -156,12 +154,9 @@ export default function LabPage() {
                       className="object-contain"
                     />
                   </div>
-                  <div className="mt-4">
-                    <MetadataLine
-                      tone="dark"
-                      items={[`DSLR SAMPLE ${String(index + 1).padStart(2, "0")}`, "FULL BORDER"]}
-                    />
-                  </div>
+                  <p className="ocr mt-4 text-center text-[0.66rem] uppercase text-[#FFFFFF]">
+                    {String(index + 1).padStart(2, "0")} / 03
+                  </p>
                 </article>
               ))}
             </div>
@@ -172,15 +167,15 @@ export default function LabPage() {
       <FilmLabPhotoCarousel />
 
       <section className="border-y border-[#111111]/15">
-        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 py-10 text-center sm:px-6 lg:px-8">
           <TerminalLabel>Film Lab Policy</TerminalLabel>
-          <p className="mt-5 max-w-4xl text-sm leading-7 text-[#111111]">
+          <p className="mx-auto mt-5 max-w-4xl text-sm leading-7 text-[#111111]">
             {filmLabDisclaimer}
           </p>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+      <section className="mx-auto max-w-7xl px-4 py-12 text-center sm:px-6 sm:py-16 lg:px-8">
         <TerminalLabel>FAQ</TerminalLabel>
         <div className="mt-6 record-grid">
           {faqs.map(([question, answer]) => (

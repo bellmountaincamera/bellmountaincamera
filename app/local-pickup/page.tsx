@@ -6,7 +6,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Local Pickup Policy",
   description:
-    "Local pickup policy and pickup location for Bell Mountain Camera online orders."
+    "Local pickup policy and pickup location for Bell Mountain Camera."
 };
 
 export default function LocalPickupPage() {
@@ -19,7 +19,7 @@ export default function LocalPickupPage() {
         meta={["LOCAL PICKUP", site.hoursShort, "APPLE VALLEY"]}
         textOnly
       />
-      <section className="mx-auto grid max-w-7xl gap-8 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-2 lg:px-8">
+      <section className="mx-auto grid max-w-7xl gap-8 px-4 py-14 text-center sm:px-6 sm:py-20 lg:grid-cols-2 lg:px-8">
         <div className="document-panel p-6">
           <TerminalLabel>Pickup Address</TerminalLabel>
           <p className="mt-5 text-lg font-semibold leading-8">
@@ -38,8 +38,8 @@ export default function LocalPickupPage() {
         <div className="document-panel p-6">
           <TerminalLabel>Pickup Notes</TerminalLabel>
           <p className="mt-5 text-sm leading-7 text-[#111111]">
-            Walk-ins are welcome during business hours. Customers can also call
-            or email to arrange pickup for online orders.
+            Walk-ins are welcome during business hours. Email BMC for current
+            stock before pickup.
           </p>
         </div>
       </section>

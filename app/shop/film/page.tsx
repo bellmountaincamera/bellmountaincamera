@@ -18,8 +18,8 @@ export default function ShopFilmPage() {
       <PageHeader
         label="Film Stock"
         title="Shop Film"
-        description="Rotating film stock and availability."
-        meta={["35MM FILM", "KODAK STOCK", "SHIPPING + PICKUP"]}
+        description="Rotating film stock. Local pickup only."
+        meta={["35MM FILM", "ROTATING STOCK", "LOCAL PICKUP"]}
         photoSet="lab"
       />
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">

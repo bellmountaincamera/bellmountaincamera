@@ -4,49 +4,48 @@ import { TerminalLabel } from "@/components/ui/TerminalLabel";
 const topics = [
   {
     title: "Film Lab",
-    code: "PROCESS: C-41",
-    text: "C-41 film development, scanning, turnaround notes, and lab pricing.",
+    code: "PROCESS",
+    text: "Development, scans, turnaround, and pricing.",
     href: "/lab"
   },
   {
     title: "Shop",
     code: "INVENTORY",
-    text: "Preview film stock and used cameras. Contact BMC for availability.",
+    text: "Film, used cameras, and local pickup.",
     href: "/shop"
   },
   {
     title: "Camera Services",
     code: "SERVICE",
-    text: "Diagnosis, cleaning, light seals, and basic shutter adjustment when possible.",
+    text: "Diagnosis, cleaning, light seals, and shutter checks.",
     href: "/services"
   },
   {
     title: "About",
     code: "HIGH DESERT",
-    text: "A short note on BMC, Bell Mountain, and the Apple Valley shop.",
+    text: "BMC location and shop notes.",
     href: "/about"
   },
   {
     title: "Contact",
     code: "VISIT",
-    text: "Location, hours, email, and walk-in information.",
+    text: "Email, hours, location, and appointments.",
     href: "/contact"
   }
 ];
 
 export function ServicesGrid() {
   return (
-    <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
-      <div className="mb-8 max-w-2xl">
+    <section className="mx-auto max-w-7xl px-4 py-12 text-center sm:px-6 sm:py-16 lg:px-8">
+      <div className="mx-auto mb-8 max-w-2xl">
         <div>
-          <TerminalLabel>Page Guide</TerminalLabel>
+          <TerminalLabel>Site Index</TerminalLabel>
           <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em] sm:text-4xl">
-            Find the right page fast
+            Find a page
           </h2>
         </div>
-        <p className="mt-4 text-sm leading-7 text-[#111111]">
-          Each page keeps to one job: lab, shop, camera service, shop story, or
-          contact details.
+        <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-[#111111]">
+          Film lab, shop, service, about, and contact.
         </p>
       </div>
       <div className="record-grid sm:grid-cols-2 lg:grid-cols-5">

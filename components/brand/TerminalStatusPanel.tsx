@@ -21,16 +21,16 @@ export function TerminalStatusPanel({
           : "border-[#111111] bg-[#FFFFFF] text-[#111111]"
       ].join(" ")}
     >
-      <div className="flex items-start justify-between gap-4 border-b border-current/20 pb-4">
+      <div className="flex flex-wrap items-start justify-center gap-4 border-b border-current/20 pb-4 text-center sm:justify-between">
         <p className="mono text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#2457C5]">
           {title}
         </p>
         <AsciiLineLogo
           tone={tone}
-          lines={["STATUS", "ACTIVE", "LOG"]}
+          lines={["BMC", "STATUS", "AV, CA"]}
         />
       </div>
-      <div className="mt-4 flex flex-wrap gap-2">
+      <div className="mt-4 flex flex-wrap justify-center gap-2">
         {rows.map(([label, status]) => (
           <StatusIndicator
             key={label}

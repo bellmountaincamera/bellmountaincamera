@@ -67,12 +67,6 @@ export type CameraProduct = BaseProduct & {
 
 export type Product = FilmProduct | CameraProduct;
 
-// Ecommerce integration notes:
-// - Shopify can map `externalProductId` and `externalVariantId` to product/variant IDs.
-// - Square can map those same fields to catalog item and variation IDs.
-// - Stripe Checkout can map `slug`, `name`, `price`, `images`, and quantity to Product/Price records.
-// - Keep private/internal notes, serials, admin tokens, and provider secrets out of this public product data.
-
 export const productCategories: ProductCategory[] = [
   "Film",
   "Cameras",
@@ -148,11 +142,10 @@ const mockProducts: ProductSeed[] = [
     status: "In Stock",
     quantity: 8,
     localPickup: true,
-    shippingAvailable: true,
+    shippingAvailable: false,
     image: "/images/products/film/reflex-lab-400d-01.jpg",
     featured: true,
-    description:
-      "A flexible 35mm color negative film option for everyday daylight shooting, travel, and desert color."
+    description: "35mm color negative film. ISO 400. Local pickup only."
   },
   {
     kind: "film",
@@ -167,11 +160,10 @@ const mockProducts: ProductSeed[] = [
     status: "In Stock",
     quantity: 6,
     localPickup: true,
-    shippingAvailable: true,
+    shippingAvailable: false,
     image: "/images/products/film/reflex-lab-800t-01.jpg",
     featured: true,
-    description:
-      "A tungsten-balanced 35mm color negative film for night scenes, mixed light, and cinematic color."
+    description: "35mm tungsten color negative film. ISO 800. Local pickup only."
   },
   {
     kind: "film",
@@ -186,10 +178,9 @@ const mockProducts: ProductSeed[] = [
     status: "In Stock",
     quantity: 5,
     localPickup: true,
-    shippingAvailable: true,
+    shippingAvailable: false,
     image: "/images/products/film/reflex-lab-100d-01.jpg",
-    description:
-      "A daylight-balanced 35mm film for bright conditions, clean color, and slower-speed shooting."
+    description: "35mm daylight film. ISO 100. Local pickup only."
   },
   {
     kind: "film",
@@ -204,10 +195,9 @@ const mockProducts: ProductSeed[] = [
     status: "In Stock",
     quantity: 10,
     localPickup: true,
-    shippingAvailable: true,
+    shippingAvailable: false,
     image: "/images/products/film/lucky-color-200-01.jpg",
-    description:
-      "Affordable 35mm color negative film for everyday cameras, quick walks, and casual rolls."
+    description: "35mm color negative film. ISO 200. Local pickup only."
   },
   {
     kind: "film",
@@ -222,10 +212,9 @@ const mockProducts: ProductSeed[] = [
     status: "In Stock",
     quantity: 12,
     localPickup: true,
-    shippingAvailable: true,
+    shippingAvailable: false,
     image: "/images/products/film/luckypan-shd100-01.jpg",
-    description:
-      "Slow black-and-white 35mm film for bright light, clean contrast, and deliberate shooting."
+    description: "35mm black-and-white film. ISO 100. Local pickup only."
   },
   {
     kind: "film",
@@ -240,10 +229,9 @@ const mockProducts: ProductSeed[] = [
     status: "In Stock",
     quantity: 12,
     localPickup: true,
-    shippingAvailable: true,
+    shippingAvailable: false,
     image: "/images/products/film/luckypan-shd400-01.jpg",
-    description:
-      "Faster black-and-white 35mm film for handheld shooting, shade, interiors, and daily carry."
+    description: "35mm black-and-white film. ISO 400. Local pickup only."
   },
   {
     kind: "film",
@@ -258,10 +246,9 @@ const mockProducts: ProductSeed[] = [
     status: "Rotating Stock",
     quantity: 0,
     localPickup: true,
-    shippingAvailable: true,
+    shippingAvailable: false,
     image: "/images/products/film/kodak-colorplus-200-01.jpg",
-    description:
-      "Classic Kodak 35mm color negative film. Availability rotates with shelf stock."
+    description: "35mm color negative film. ISO 200. Rotating stock."
   },
   {
     kind: "film",
@@ -276,10 +263,9 @@ const mockProducts: ProductSeed[] = [
     status: "Rotating Stock",
     quantity: 0,
     localPickup: true,
-    shippingAvailable: true,
+    shippingAvailable: false,
     image: "/images/products/film/kodak-ultramax-400-01.jpg",
-    description:
-      "A flexible Kodak 400-speed color film for everyday shooting. Availability rotates with stock."
+    description: "35mm color negative film. ISO 400. Rotating stock."
   },
   {
     kind: "film",
@@ -294,10 +280,9 @@ const mockProducts: ProductSeed[] = [
     status: "Rotating Stock",
     quantity: 0,
     localPickup: true,
-    shippingAvailable: true,
+    shippingAvailable: false,
     image: "/images/products/film/kodak-kodacolor-100-01.jpg",
-    description:
-      "A slower Kodak color negative film option when available in rotating stock."
+    description: "35mm color negative film. ISO 100. Rotating stock."
   },
   {
     kind: "film",
@@ -312,10 +297,9 @@ const mockProducts: ProductSeed[] = [
     status: "Rotating Stock",
     quantity: 0,
     localPickup: true,
-    shippingAvailable: true,
+    shippingAvailable: false,
     image: "/images/products/film/kodak-eastman-100d-01.jpg",
-    description:
-      "A Kodak daylight-balanced specialty stock when available in rotating inventory."
+    description: "35mm daylight specialty film. ISO 100. Rotating stock."
   },
   {
     kind: "film",
@@ -330,10 +314,9 @@ const mockProducts: ProductSeed[] = [
     status: "Rotating Stock",
     quantity: 0,
     localPickup: true,
-    shippingAvailable: true,
+    shippingAvailable: false,
     image: "/images/products/film/kodak-pro-400-01.jpg",
-    description:
-      "Kodak 400-speed color negative film when available in rotating stock."
+    description: "35mm color negative film. ISO 400. Rotating stock."
   },
   {
     kind: "film",
@@ -348,10 +331,9 @@ const mockProducts: ProductSeed[] = [
     status: "Rotating Stock",
     quantity: 0,
     localPickup: true,
-    shippingAvailable: true,
+    shippingAvailable: false,
     image: "/images/products/film/kodak-pro-800-01.jpg",
-    description:
-      "Kodak 800-speed color negative film when available in rotating stock."
+    description: "35mm color negative film. ISO 800. Rotating stock."
   },
   {
     kind: "film",
@@ -366,10 +348,9 @@ const mockProducts: ProductSeed[] = [
     status: "Rotating Stock",
     quantity: 0,
     localPickup: true,
-    shippingAvailable: true,
+    shippingAvailable: false,
     image: "/images/products/film/lomography-metropolis-110-01.jpg",
-    description:
-      "110 color negative film for pocket cameras when available in rotating stock."
+    description: "110 color negative film. ISO 100-400. Rotating stock."
   },
   {
     kind: "film",
@@ -384,10 +365,9 @@ const mockProducts: ProductSeed[] = [
     status: "Rotating Stock",
     quantity: 0,
     localPickup: true,
-    shippingAvailable: true,
+    shippingAvailable: false,
     image: "/images/products/film/fujifilm-instax-wide-01.jpg",
-    description:
-      "Instant film for FUJIFILM instax WIDE cameras when available in rotating stock."
+    description: "FUJIFILM instax WIDE instant film. Rotating stock."
   },
   {
     kind: "camera",
@@ -401,16 +381,15 @@ const mockProducts: ProductSeed[] = [
     testedStatus: "Tested status listed per camera",
     included: "Lens/accessories listed per camera",
     notes:
-      "Used camera inventory changes often. Contact BMC with any questions about condition, functionality, or availability.",
+      "Inventory changes often. Contact BMC for current condition and availability.",
     price: 0,
-    status: "Coming Soon",
+    status: "Rotating Stock",
     quantity: 0,
     localPickup: true,
-    shippingAvailable: true,
+    shippingAvailable: false,
     image: "/images/products/cameras/used-35mm-camera-intake-01.jpg",
     featured: true,
-    description:
-      "A future product listing area for one-off used film cameras with condition notes, tested status, lens details, price, shipping, and pickup options."
+    description: "Used 35mm camera records with condition notes. Local pickup only."
   }
 ];
 

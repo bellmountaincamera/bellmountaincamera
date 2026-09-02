@@ -7,16 +7,12 @@ import { labPhotos } from "@/lib/photo-sets";
 export function FilmLabPhotoCarousel() {
   return (
     <section className="border-y border-[#111111]/15 bg-[#FFFFFF]">
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
-        <div className="mb-8 max-w-3xl">
-          <TerminalLabel>Lab Photo Index</TerminalLabel>
+      <div className="mx-auto max-w-7xl px-4 py-12 text-center sm:px-6 sm:py-16 lg:px-8">
+        <div className="mx-auto mb-8 max-w-3xl">
+          <TerminalLabel>Lab Index</TerminalLabel>
           <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
-            Lab reference photos
+            Lab Photos
           </h2>
-          <p className="mt-5 text-sm leading-7 text-[#111111]">
-            Processor photos, chemistry setup, scan samples, and test frames
-            from the lab.
-          </p>
         </div>
 
         <div className="overflow-x-auto">

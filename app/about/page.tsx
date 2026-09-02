@@ -15,12 +15,12 @@ export default function AboutPage() {
     <main>
       <PageHeader
         label="Local Record"
-        title="About Bell Mountain Camera"
+        title="About"
         description="A High Desert film lab and camera shop."
         meta={["LOCATION: APPLE VALLEY", "FOCUS: FILM", "OWNER: ISAI TORRES"]}
       />
-      <section className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[1fr_0.8fr] lg:px-8">
-        <div className="max-w-3xl">
+      <section className="mx-auto grid max-w-7xl gap-10 px-4 py-14 text-center sm:px-6 sm:py-20 lg:grid-cols-[1fr_0.8fr] lg:px-8">
+        <div className="mx-auto max-w-3xl">
           <TerminalLabel>Shop Statement</TerminalLabel>
           <div className="mt-5 space-y-5 text-base leading-8 text-[#111111]">
             <p>
@@ -32,10 +32,6 @@ export default function AboutPage() {
               BMC operates inside Wild Goose Vintage &amp; Thrift in Apple Valley
               and focuses on C-41 film development, used cameras, film stock,
               and basic camera service.
-            </p>
-            <p>
-              Walk-ins are welcome during shop hours. Appointments are best for
-              service questions, lab questions, or pickup timing.
             </p>
           </div>
         </div>

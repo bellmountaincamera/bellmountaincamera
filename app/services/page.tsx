@@ -14,7 +14,7 @@ export default function ServicesPage() {
   const serviceMailto = `mailto:${site.email}?subject=${encodeURIComponent(
     "Camera service request"
   )}&body=${encodeURIComponent(
-    "Hi Bell Mountain Camera,\n\nI would like to send camera service details.\n\nName:\nPhone:\nCamera brand:\nCamera model:\nService requested:\nKnown issue:\nLast time camera worked:\nBattery type if known:\nHas film been tested through it?:\nNotes:\n\nThank you."
+    "Hi Bell Mountain Camera,\n\nI would like to send camera service details.\n\nName:\nCamera brand:\nCamera model:\nService requested:\nKnown issue:\nLast time camera worked:\nBattery type if known:\nHas film been tested through it?:\nNotes:\n\nThank you."
   )}`;
 
   return (
@@ -26,20 +26,17 @@ export default function ServicesPage() {
         meta={["CAMERA SERVICE INTAKE", "WALK-INS WELCOME", "APPOINTMENTS AVAILABLE"]}
         textOnly
       />
-      <section className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
+      <section className="mx-auto grid max-w-7xl gap-10 px-4 py-14 text-center sm:px-6 sm:py-20 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
         <div>
-          <TerminalLabel>Service Menu</TerminalLabel>
+          <TerminalLabel>Workbench</TerminalLabel>
           <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
-            Service scope and bundles
+            Service Menu
           </h2>
-          <p className="mt-5 text-sm leading-7 text-[#111111]">
-            BMC handles common film camera service: diagnosis, cleaning, light
-            seals, and shutter speed adjustment when possible. Bring your
-            camera in during business hours or contact BMC for service
-            questions.
+          <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-[#111111]">
+            Diagnosis, cleaning, light seals, and shutter checks when possible.
           </p>
           <div className="mt-7">
-            <CTAButton href="/contact">Start Service Inquiry</CTAButton>
+            <CTAButton href="/contact">Service Inquiry</CTAButton>
           </div>
           <div className="mt-6">
             <div className="border border-[#111111] bg-[#FFFFFF] px-4 py-3 text-center">
@@ -95,14 +92,14 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
-      <section className="mx-auto grid max-w-7xl gap-8 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
+      <section className="mx-auto grid max-w-7xl gap-8 px-4 py-14 text-center sm:px-6 sm:py-20 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
         <div>
           <TerminalLabel>Service Intake</TerminalLabel>
           <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
-            Camera service request
+            Camera Service
           </h2>
-          <p className="mt-5 text-sm leading-7 text-[#111111]">
-            Send the camera model, issue, and drop-off notes.
+          <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-[#111111]">
+            Send model, issue, and drop-off notes.
           </p>
         </div>
         <div className="terminal-panel p-6">
@@ -110,7 +107,6 @@ export default function ServicesPage() {
             {[
               "Name",
               "Email",
-              "Phone",
               "Camera brand",
               "Camera model",
               "Service requested",
@@ -136,9 +132,9 @@ export default function ServicesPage() {
         </div>
       </section>
       <section className="border-t border-[#111111]/15 bg-[#111111] text-[#FFFFFF]">
-        <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
-          <TerminalLabel tone="dark">Service Disclaimer</TerminalLabel>
-          <p className="mt-5 max-w-3xl text-base leading-8 text-[#FFFFFF]">
+        <div className="mx-auto max-w-7xl px-4 py-14 text-center sm:px-6 sm:py-20 lg:px-8">
+          <TerminalLabel tone="dark">Service Note</TerminalLabel>
+          <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-[#FFFFFF]">
             Service depends on the camera model, condition, and issue. Some
             cameras may need parts or repairs beyond what Bell Mountain Camera
             can provide in-house.

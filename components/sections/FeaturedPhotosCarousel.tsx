@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { TerminalLabel } from "@/components/ui/TerminalLabel";
 import { labPhotos } from "@/lib/photo-sets";
 
 const featuredPhotos = [
@@ -36,13 +35,9 @@ export function FeaturedPhotosCarousel() {
   return (
     <section className="border-b border-[#111111]/15 bg-[#FFFFFF]">
       <div className="mx-auto max-w-6xl px-4 py-10 text-center sm:px-6 sm:py-14 lg:px-8">
-        <TerminalLabel>Scanned By BMC</TerminalLabel>
         <h2 className="mx-auto mt-4 max-w-3xl text-3xl font-semibold uppercase tracking-[0.02em] sm:text-4xl">
           Scanned By BMC
         </h2>
-        <p className="mx-auto mt-4 max-w-xl text-left text-sm leading-7 text-[#111111]">
-          Sample film scans from BMC.
-        </p>
 
         <div className="mx-auto mt-8 max-w-4xl border border-[#111111] bg-[#FFFFFF] p-3">
           <div className="photo-grain relative aspect-[4/3] overflow-hidden bg-[#111111] sm:aspect-[16/10]">

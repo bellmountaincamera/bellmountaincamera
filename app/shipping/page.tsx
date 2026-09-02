@@ -4,9 +4,9 @@ import { TerminalLabel } from "@/components/ui/TerminalLabel";
 import { businessInfo, policyCopy } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Shipping Policy",
+  title: "No Shipping",
   description:
-    "Shipping and local pickup information for Bell Mountain Camera online orders."
+    "Shipping and local pickup information for Bell Mountain Camera."
 };
 
 export default function ShippingPage() {
@@ -14,28 +14,20 @@ export default function ShippingPage() {
     <main>
       <PageHeader
         label="Store Policy"
-        title="Shipping Policy"
-        description="Shipping is planned. Local pickup is available."
-        meta={["LOCAL PICKUP", "SHIPPING QUESTIONS", "CONTACT BMC"]}
+        title="No Shipping"
+        description="Local pickup only."
+        meta={["NO SHIPPING", "LOCAL PICKUP ONLY", "CONTACT BMC"]}
         textOnly
       />
-      <section className="mx-auto grid max-w-7xl gap-6 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-3 lg:px-8">
+      <section className="mx-auto grid max-w-7xl gap-6 px-4 py-14 text-center sm:px-6 sm:py-20 lg:grid-cols-2 lg:px-8">
         {[
           [
-            "Domestic shipping",
+            "Shipping",
             policyCopy.shipping
           ],
           [
             "Local pickup",
             `${policyCopy.localPickup} Pickup hours are ${businessInfo.hours}.`
-          ],
-          [
-            "Order timing",
-            "Pickup and shipping timing depend on current inventory and order volume."
-          ],
-          [
-            "Before ordering",
-            "Confirm current inventory, pickup timing, and shipping options with BMC."
           ]
         ].map(([title, text]) => (
           <article key={title} className="document-panel p-6">

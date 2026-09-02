@@ -5,7 +5,7 @@ import { labInfo } from "@/lib/site";
 export const metadata: Metadata = {
   title: "FAQ",
   description:
-    "Frequently asked questions about Bell Mountain Camera shipping, pickup, film stock, cameras, and online orders."
+    "Frequently asked questions about Bell Mountain Camera film lab, shop, pickup, and camera service."
 };
 
 const faqGroups = [
@@ -61,11 +61,11 @@ const faqGroups = [
     ]
   },
   {
-    title: "Shipping / Pickup",
+    title: "Pickup",
     questions: [
       [
-        "Do you ship film?",
-        "Online checkout is coming soon. Contact BMC for current shipping questions."
+        "Do you ship?",
+        "Shipping is not available right now. Local pickup only."
       ],
       [
         "Do you offer local pickup?",
@@ -86,10 +86,10 @@ export default function FAQPage() {
         label="Customer FAQ"
         title="FAQ"
         description="Quick answers before you visit or contact BMC."
-        meta={["SHIPPING", "LOCAL PICKUP", "INVENTORY"]}
+        meta={["FILM LAB", "LOCAL PICKUP", "INVENTORY"]}
         textOnly
       />
-      <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
+      <section className="mx-auto max-w-7xl px-4 py-14 text-center sm:px-6 sm:py-20 lg:px-8">
         <div className="grid gap-8">
           {faqGroups.map((group) => (
             <section key={group.title}>

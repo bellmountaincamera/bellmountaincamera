@@ -7,11 +7,11 @@ import { businessInfo, policyCopy } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Policies",
   description:
-    "Bell Mountain Camera store, shipping, returns, used camera, film lab, local pickup, privacy, and terms policies."
+    "Bell Mountain Camera store, pickup, returns, lab, service, privacy, and terms policies."
 };
 
 const policyLinks = [
-  ["/shipping", "Shipping Policy"],
+  ["/shipping", "No Shipping"],
   ["/returns", "Returns Policy"],
   ["/local-pickup", "Local Pickup Policy"],
   ["/privacy", "Privacy Policy"],
@@ -40,7 +40,7 @@ const policySections = [
     text: `${policyCopy.localPickup} Pickup hours are ${businessInfo.hours}.`
   },
   {
-    title: "Shipping",
+    title: "No Shipping",
     text: policyCopy.shipping
   },
   {
@@ -63,11 +63,11 @@ export default function PoliciesPage() {
       <PageHeader
         label="Policy Index"
         title="Policies"
-        description="Store, pickup, shipping, lab, and service policies."
-        meta={["STORE POLICY", "LOCAL PICKUP", "SHIPPING"]}
+        description="Store, pickup, lab, and service policies."
+        meta={["STORE POLICY", "LOCAL PICKUP", "NO SHIPPING"]}
         textOnly
       />
-      <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
+      <section className="mx-auto max-w-7xl px-4 py-14 text-center sm:px-6 sm:py-20 lg:px-8">
         <div className="record-grid md:grid-cols-2">
           {policySections.map((section) => (
             <article key={section.title} className="record-cell p-6">

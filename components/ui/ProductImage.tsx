@@ -25,7 +25,7 @@ export function ProductImage({ src, alt, label, className = "" }: ProductImagePr
       ) : (
         <>
           <span className="mono text-[0.68rem] uppercase tracking-[0.14em] text-[#2457C5]">
-            Product image coming soon
+            Image pending
           </span>
           <span className="mt-3 text-center text-xl font-semibold uppercase tracking-[0.03em]">
             {label ?? alt}

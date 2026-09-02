@@ -85,21 +85,18 @@ export default async function ProductPage({ params }: ProductPageProps) {
       />
       <section className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
         <ProductGallery images={getProductImages(product)} productName={product.name} />
-        <div>
-          <TerminalLabel>Online Shop Coming Soon</TerminalLabel>
+        <div className="text-center">
+          <TerminalLabel>Inventory File</TerminalLabel>
           <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
             {formatPrice(product.price)}
           </h2>
-          <p className="mt-5 text-sm leading-7 text-[#111111]">
-            Online purchasing is coming soon. Until real checkout is connected,
-            contact BMC to confirm availability, shipping, and local pickup for
-            this item.
+          <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-[#111111]">
+            Contact BMC to confirm availability. Local pickup only.
           </p>
           <div className="mt-6">
             <MetadataLine
               items={[
-                product.localPickup ? "LOCAL PICKUP AVAILABLE" : "NO PICKUP",
-                product.shippingAvailable ? "SHIP TO ADDRESS" : "NO SHIPPING",
+                product.localPickup ? "LOCAL PICKUP ONLY" : "NO PICKUP",
                 "CONTACT FOR AVAILABILITY"
               ]}
             />
@@ -109,17 +106,17 @@ export default async function ProductPage({ params }: ProductPageProps) {
               {getContactCta(product)}
             </CTAButton>
             <CTAButton href="/local-pickup" variant="secondary">
-              Local Pickup Available
+              Local Pickup
             </CTAButton>
           </div>
           <div className="mt-8 record-grid">
             <div className="record-cell p-4">
-              <TerminalDivider label="PRODUCT SPEC / PREVIEW" />
+              <TerminalDivider label="PRODUCT SPEC" />
             </div>
             {detailRows.map(([label, value]) => (
               <div
                 key={label}
-                className="grid gap-2 record-cell p-4 sm:grid-cols-[12rem_1fr]"
+                className="grid gap-2 record-cell p-4 text-center sm:grid-cols-[12rem_1fr] sm:text-left"
               >
                 <p className="mono text-xs uppercase tracking-[0.14em] text-[#2457C5]">
                   {label}
@@ -129,14 +126,14 @@ export default async function ProductPage({ params }: ProductPageProps) {
             ))}
           </div>
           {product.kind === "camera" ? (
-            <p className="mt-5 text-sm leading-7 text-[#111111]">
+            <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-[#111111]">
               {product.notes}
             </p>
           ) : null}
         </div>
       </section>
       <section className="border-t border-[#111111]/15">
-        <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 py-14 text-center sm:px-6 lg:px-8">
           <TerminalLabel>Pickup Location</TerminalLabel>
           <p className="mt-4 text-lg font-semibold leading-8">
             {site.name}

@@ -9,7 +9,7 @@ export const site = {
   street: "21810 CA-18 Unit #2",
   cityStateZip: "Apple Valley, CA 92307",
   vendorNumber: "Vendor #24",
-  filmDevelopmentStatus: "Accepting film development orders",
+  filmDevelopmentStatus: "Accepting C-41 film orders",
   filmTurnaround: "C-41: 3-7 business days",
   hoursShort: "Tuesday - Saturday, 10 AM - 4 PM",
   hours: [
@@ -25,7 +25,7 @@ export const site = {
     { days: "Best availability", time: "Request appointments one week in advance" }
   ],
   locationCopy:
-    "Bell Mountain Camera is located inside Wild Goose Vintage & Thrift Store in Apple Valley, California. Walk-ins are welcome Tuesday through Saturday from 10 AM to 4 PM, or customers can contact BMC to set up an appointment. For best availability, request appointments one week in advance.",
+    "BMC is inside Wild Goose Vintage & Thrift Store in Apple Valley. Walk-ins are welcome Tuesday through Saturday.",
   description:
     "Bell Mountain Camera operates inside Wild Goose Vintage & Thrift in Apple Valley, CA. BMC processes film, sells used cameras, stocks film, and handles basic camera service.",
   nav: [
@@ -62,26 +62,26 @@ export const footerCopy =
 export const services = [
   {
     title: "Film Development",
-    code: "PROCESS: C-41",
-    text: "C-41 processing and scanning.",
+    code: "PROCESS",
+    text: "C-41 development and scans.",
     href: "/lab"
   },
   {
     title: "Film Stock",
     code: "COLD STORE",
-    text: "Rotating 35mm film, Kodak, black-and-white, and specialty film.",
+    text: "35mm, black-and-white, and specialty film.",
     href: "/shop/film"
   },
   {
     title: "Used Cameras",
     code: "SHELF: 35MM",
-    text: "Film cameras available in-store and online soon.",
+    text: "Used cameras. Inventory rotates.",
     href: "/shop/cameras"
   },
   {
     title: "Camera Services",
     code: "SERVICE INTAKE",
-    text: "Diagnosis, cleaning, light seals, and shutter speed adjustment when possible.",
+    text: "Diagnosis, cleaning, light seals, and shutter checks.",
     href: "/services"
   }
 ];
@@ -98,8 +98,8 @@ export const statusBoard = [
   ["Film Scanning", "Available"],
   ["Camera Service Intake", "Available"],
   ["Film Stock", "Rotating"],
-  ["Online Orders", "Coming Soon"],
-  ["Shipping", "Planned"],
+  ["Orders", "By Contact"],
+  ["Shipping", "Not Available"],
   ["Local Pickup", "Available"],
   ["Walk-Ins", "Welcome"]
 ];
@@ -108,27 +108,27 @@ export const labWorkflow = [
   {
     step: "01",
     title: "Drop off your film",
-    text: "Bring disposable cameras, 35mm, 110, or APS film to Bell Mountain Camera during business hours."
+    text: "Bring disposable cameras, 35mm, 110, or APS film during business hours."
   },
   {
     step: "02",
     title: "Choose processing",
-    text: "C-41 is the main process. Black-and-white and E-6 are handled as specialty orders and may take longer."
+    text: "C-41 is the main process. Black-and-white and E-6 are specialty batches."
   },
   {
     step: "03",
     title: "Add push or pull notes",
-    text: "C-41 orders can include push or pull development for $3 per stop."
+    text: "Push or pull C-41 for $3 per stop."
   },
   {
     step: "04",
     title: "Select scan files",
-    text: "Scans can be delivered as JPEG files or TIFF files."
+    text: "Choose JPEG or TIFF scans."
   },
   {
     step: "05",
     title: "Scans are delivered",
-    text: "Digital scans are delivered after processing. Specialty orders may have a delayed turnaround."
+    text: "Scans are delivered by download link."
   }
 ];
 
@@ -162,12 +162,12 @@ export const cameraServiceMenu = [
   {
     title: "Diagnose",
     price: "$15",
-    text: "Inspection of overall camera condition and basic function, including light leaks, shutter behavior, film transport, and general function."
+    text: "Basic function check and issue notes."
   },
   {
     title: "Cleaning",
     price: "$45",
-    text: "Basic cleaning of the camera body, film compartment, battery contacts, and accessible viewfinder areas."
+    text: "Body, film compartment, contacts, and accessible finder glass."
   },
   {
     title: "Shutter Speed Adjustment",
@@ -177,7 +177,7 @@ export const cameraServiceMenu = [
   {
     title: "Light Seal Replacement",
     price: "$40",
-    text: "Replacement of deteriorated light seals."
+    text: "Old foam removed and seals replaced."
   }
 ];
 
@@ -196,44 +196,44 @@ export const filmLabPricing = [
   {
     title: "Develop + Scan",
     price: "$15",
-    text: "Includes film development and digital scan delivery. JPEG or TIFF files available."
+    text: "Processing with JPEG or TIFF scan delivery."
   },
   {
     title: "Develop Only",
     price: "$10",
-    text: "Processing only. Choose this if you do not need digital scans."
+    text: "Processing only. No scans."
   },
   {
     title: "Push / Pull",
     price: "$3 / stop",
-    text: "Available for C-41 orders when exposure needs adjustment."
+    text: "C-41 exposure adjustment."
   },
   {
     title: "Accepted Formats",
     price: "35MM / 110 / APS",
-    text: "Disposable cameras, 35mm, 110, and APS film accepted."
+    text: "Disposable cameras, 35mm, 110, and APS."
   },
   {
     title: "Main Process",
     price: "C-41",
-    text: "Standard color negative processing for most common film stocks."
+    text: "Color negative film."
   },
   {
     title: "Specialty Process",
     price: "B&W / E-6",
-    text: "Black-and-white and slide film are handled in specialty batches. Turnaround may be longer."
+    text: "Specialty batches. Longer turnaround."
   }
 ];
 
 export const filmLabDisclaimer =
-  "Film processing carries inherent risk due to film age, exposure, storage condition, camera condition, and development variables. Bell Mountain Camera is not responsible for blank rolls, pre-existing film damage, camera loading issues, heat damage, expired film damage, or exposure problems.";
+  "Film results can be affected by age, storage, exposure, camera condition, heat, loading, and development variables.";
 
 export const serviceDisclaimer =
   "Service depends on the camera model, condition, and issue. Some cameras may need parts or repairs beyond what Bell Mountain Camera can provide in-house.";
 
 export const policyCopy = {
   store:
-    "Online checkout is not active yet. Contact BMC for current film, camera, and shop availability, local pickup, or arranged shipping.",
+    "Contact BMC for current availability. Local pickup only.",
   filmLab: filmLabDisclaimer,
   usedCamera:
     "Used cameras and equipment are sold according to their listed condition. Condition notes may include tested status, cosmetic wear, included items, and known issues.",
@@ -241,7 +241,7 @@ export const policyCopy = {
   localPickup:
     "Local pickup is available during shop hours at Bell Mountain Camera inside Wild Goose Vintage & Thrift in Apple Valley, CA.",
   shipping:
-    "Online checkout is not active yet. Local pickup is available during shop hours. For shipping questions, contact BMC before ordering.",
+    "Shipping is not available right now. Local pickup only during shop hours.",
   returns:
     "Used cameras and equipment are sold according to their listed condition. Film, opened consumables, and completed lab services are not returnable. Contact BMC with any issue before returning an item.",
   privacy:

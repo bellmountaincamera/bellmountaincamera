@@ -26,9 +26,9 @@ export default function ContactPage() {
         meta={["WALK-INS WELCOME", "APPOINTMENTS AVAILABLE", "APPLE VALLEY, CA"]}
         textOnly
       />
-      <section className="mx-auto grid max-w-7xl gap-8 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
+      <section className="mx-auto grid max-w-7xl gap-8 px-4 py-14 text-center sm:px-6 sm:py-20 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
         <div className="document-panel p-6">
-          <TerminalLabel>Direct Lines</TerminalLabel>
+          <TerminalLabel>Contact Info</TerminalLabel>
           <div className="mt-6 grid gap-5 text-sm">
             <div>
               <p className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#2457C5]">
@@ -74,8 +74,7 @@ export default function ContactPage() {
                 Appointments
               </p>
               <p className="mt-1 text-lg font-semibold">
-                Appointments available by request. Best for camera service,
-                detailed lab questions, and pickup timing.
+                Available by request.
               </p>
             </div>
             <div className="grid gap-3 sm:grid-cols-2">
@@ -119,8 +118,6 @@ export default function ContactPage() {
               "Camera service",
               "Film stock question",
               "Camera inventory question",
-              "Online order question",
-              "Shipping question",
               "Local pickup question",
               "General question"
             ].map((reason) => (
@@ -137,13 +134,13 @@ export default function ContactPage() {
         </div>
       </section>
       <section className="border-t border-[#111111]/15 bg-[#FFFFFF]">
-        <div className="mx-auto grid max-w-7xl gap-8 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-8 px-4 py-14 text-center sm:px-6 sm:py-20 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
           <div>
             <TerminalLabel>Appointment Request</TerminalLabel>
             <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
               Plan a camera or lab visit
             </h2>
-            <p className="mt-5 text-sm leading-7 text-[#111111]">
+            <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-[#111111]">
               Appointments are best for camera service, detailed lab questions,
               pickup timing, or anything that needs more than a quick walk-in.
             </p>
@@ -176,13 +173,13 @@ export default function ContactPage() {
         </div>
       </section>
       <section className="border-t border-[#111111]/15">
-        <div className="mx-auto grid max-w-7xl gap-8 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-8 px-4 py-14 text-center sm:px-6 sm:py-20 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
           <div>
             <TerminalLabel>Google Maps</TerminalLabel>
             <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
               Visit Bell Mountain Camera
             </h2>
-            <p className="mt-5 text-sm leading-7 text-[#111111]">
+            <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-[#111111]">
               {site.locationName}
               <br />
               {site.street}

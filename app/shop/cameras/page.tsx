@@ -17,18 +17,17 @@ export default function ShopCamerasPage() {
         label="Camera Shelf"
         title="Shop Cameras"
         description="Used film cameras and basic specs."
-        meta={["USED CAMERAS", "SOLD STATUS", "SHIPPING + PICKUP"]}
+        meta={["USED CAMERAS", "LOCAL PICKUP", "ROTATING STOCK"]}
         photoSet="camera"
       />
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
-        <div className="mb-8 max-w-3xl">
-          <TerminalLabel>Camera Photo Index</TerminalLabel>
+      <section className="mx-auto max-w-7xl px-4 py-12 text-center sm:px-6 sm:py-16 lg:px-8">
+        <div className="mx-auto mb-8 max-w-3xl">
+          <TerminalLabel>Camera Index</TerminalLabel>
           <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
-            Cameras photographed for BMC inventory
+            Camera Records
           </h2>
-          <p className="mt-5 text-sm leading-7 text-[#111111]">
-            Short reference files for camera models, film format, lens range,
-            and camera type.
+          <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-[#111111]">
+            Model, format, lens, and type.
           </p>
         </div>
         <div className="record-grid sm:grid-cols-2 lg:grid-cols-3">

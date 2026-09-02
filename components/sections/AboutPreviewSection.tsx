@@ -5,16 +5,14 @@ export function AboutPreviewSection() {
   return (
     <section className="border-y border-[#111111]/15 bg-[#FFFFFF]">
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
-        <div className="max-w-3xl">
-          <TerminalLabel>High Desert Archive</TerminalLabel>
+        <div className="mx-auto max-w-3xl text-center">
+          <TerminalLabel>About BMC</TerminalLabel>
           <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em] sm:text-5xl">
-            Named after Bell Mountain, rooted in local film culture
+            High Desert film lab
           </h2>
-          <p className="mt-6 text-base leading-8 text-[#111111]">
-            Bell Mountain Camera keeps the focus on film photography: processing
-            rolls, scanning negatives, getting cameras back into hands, and
-            supporting the people documenting Apple Valley, Victorville,
-            Hesperia, and the wider High Desert.
+          <p className="mx-auto mt-6 max-w-xl text-base leading-8 text-[#111111]">
+            Film processing, used cameras, film stock, and basic service in
+            Apple Valley.
           </p>
           <div className="mt-8">
             <CTAButton href="/about" variant="secondary">

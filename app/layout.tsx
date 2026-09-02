@@ -49,9 +49,8 @@ export const metadata: Metadata = {
     "Victorville film development",
     "Hesperia film development",
     "Apple Valley film lab",
-    "online film store",
-    "35mm film shipping",
-    "used film cameras online"
+    "local camera shop Apple Valley",
+    "used camera pickup Apple Valley"
   ],
   openGraph: {
     title: "Bell Mountain Camera",
@@ -104,8 +103,6 @@ export default function RootLayout({
       "Film development",
       "Film scanning",
       "Film stock",
-      "Online purchases",
-      "Shipping",
       "Local pickup",
       "Used film cameras",
       "Light seal replacement",

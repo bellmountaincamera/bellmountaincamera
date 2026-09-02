@@ -19,7 +19,7 @@ export default function ReturnsPage() {
         meta={["FILM STOCK", "USED CAMERAS", "CONDITION NOTES"]}
         textOnly
       />
-      <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
+      <section className="mx-auto max-w-7xl px-4 py-14 text-center sm:px-6 sm:py-20 lg:px-8">
         <div className="record-grid md:grid-cols-2">
           {[
             [

@@ -7,17 +7,13 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Checkout",
   description:
-    "Checkout preview for Bell Mountain Camera online orders, shipping, and local pickup."
+    "Checkout information for Bell Mountain Camera local pickup."
 };
 
 const fields = [
   "Name",
   "Email",
-  "Phone",
-  "Shipping address",
-  "City",
-  "State",
-  "ZIP code",
+  "Pickup item",
   "Order notes"
 ];
 
@@ -25,13 +21,13 @@ export default function CheckoutPage() {
   return (
     <main>
       <PageHeader
-        label="Checkout Preview"
-        title="Checkout Preview"
-        description="Checkout preview. Payments are not live."
-        meta={["DEMO ONLY", "SHIPPING ADDRESS", "LOCAL PICKUP"]}
+        label="Pickup Desk"
+        title="Checkout"
+        description="Contact BMC for availability."
+        meta={["CONTACT BMC", "LOCAL PICKUP ONLY"]}
         textOnly
       />
-      <section className="mx-auto grid max-w-7xl gap-8 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
+      <section className="mx-auto grid max-w-7xl gap-8 px-4 py-14 text-center sm:px-6 sm:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
         <div className="terminal-panel p-6">
           <p className="mono text-xs font-semibold uppercase tracking-[0.16em] text-[#2457C5]">
             Customer Information
@@ -47,7 +43,7 @@ export default function CheckoutPage() {
             ))}
           </div>
           <div className="mt-6 grid gap-px border border-[#FFFFFF]/20 bg-[#FFFFFF]/20 sm:grid-cols-2">
-            {["Ship to address", "Local pickup in store"].map((option) => (
+            {["Local pickup only", "Contact BMC first"].map((option) => (
               <div key={option} className="bg-[#111111] p-4">
                 <p className="mono text-xs uppercase tracking-[0.14em] text-[#FFFFFF]">
                   {option}
@@ -74,8 +70,7 @@ export default function CheckoutPage() {
             Pickup hours: {site.hoursShort}
           </p>
           <p className="mt-5 text-sm leading-7 text-[#111111]">
-            Online checkout is coming soon. For now, contact BMC for current
-            inventory, local pickup, or shipping.
+            Contact BMC for current inventory and pickup.
           </p>
           <div className="mt-6">
             <CTAButton href="/contact">Contact BMC</CTAButton>

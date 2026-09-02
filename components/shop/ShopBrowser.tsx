@@ -67,7 +67,7 @@ export function ShopBrowser({ products, initialFilter = "" }: ShopBrowserProps) 
 
   return (
     <div>
-      <div className="mb-6 grid gap-3 border border-[#111111] record-cell p-4 lg:grid-cols-[1fr_auto] lg:items-end">
+      <div className="mb-6 grid gap-3 border border-[#111111] record-cell p-4 text-center lg:grid-cols-[1fr_auto] lg:items-end">
         <label className="block">
           <span className="mono text-xs font-semibold uppercase tracking-[0.14em] text-[#2457C5]">
             Search
@@ -76,7 +76,7 @@ export function ShopBrowser({ products, initialFilter = "" }: ShopBrowserProps) 
             value={query}
             onChange={(event) => setQuery(event.currentTarget.value)}
             onInput={(event) => setQuery(event.currentTarget.value)}
-            className="mt-2 w-full border border-[#111111]/15 bg-[#FFFFFF] px-4 py-3 text-base outline-none focus:border-[#2457C5]"
+            className="mt-2 w-full border border-[#111111]/15 bg-[#FFFFFF] px-4 py-3 text-center text-base outline-none focus:border-[#2457C5]"
           />
         </label>
         <button
@@ -90,7 +90,7 @@ export function ShopBrowser({ products, initialFilter = "" }: ShopBrowserProps) 
           Clear
         </button>
       </div>
-      <div className="mb-8 flex flex-wrap gap-2">
+      <div className="mb-8 flex flex-wrap justify-center gap-2">
         {filterOptions.map((filter) => (
           <button
             key={filter}
@@ -113,7 +113,7 @@ export function ShopBrowser({ products, initialFilter = "" }: ShopBrowserProps) 
           ))}
         </div>
       ) : (
-        <div className="border border-[#111111] record-cell p-6 text-sm leading-7 text-[#111111]">
+        <div className="border border-[#111111] record-cell p-6 text-center text-sm leading-7 text-[#111111]">
           <AsciiLineLogo
             className="mb-4"
             lines={["SEARCH", "NO MATCH", "ASK BMC"]}

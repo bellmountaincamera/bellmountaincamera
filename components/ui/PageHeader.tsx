@@ -47,8 +47,8 @@ export function PageHeader({
             />
           </div>
         ) : (
-          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-            <div>
+          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+            <div className="text-center">
               <TerminalHeader eyebrow={label} description={description} />
               <div className="mt-5">
                 <MetadataLine items={meta} />

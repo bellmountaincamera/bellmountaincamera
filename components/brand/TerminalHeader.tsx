@@ -30,7 +30,7 @@ export function TerminalHeader({
         {description ? (
           <p
             className={[
-              "mx-auto mt-4 max-w-2xl text-left text-sm leading-7",
+              "mx-auto mt-4 max-w-2xl text-center text-sm leading-7",
               tone === "dark" ? "text-[#FFFFFF]" : "text-[#111111]"
             ].join(" ")}
           >
