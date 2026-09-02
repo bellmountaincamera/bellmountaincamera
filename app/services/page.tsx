@@ -102,13 +102,12 @@ export default function ServicesPage() {
       </section>
       <section className="mx-auto grid max-w-7xl gap-8 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
         <div>
-          <TerminalLabel>Camera Service Intake</TerminalLabel>
+          <TerminalLabel>Service Intake</TerminalLabel>
           <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
-            Tell BMC what the camera is doing
+            Camera service request
           </h2>
           <p className="mt-5 text-sm leading-7 text-[#111111]">
-            Use this form to send camera service details before drop-off or
-            appointment.
+            Send the camera model, issue, and drop-off notes.
           </p>
         </div>
         <div className="terminal-panel p-6">
