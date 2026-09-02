@@ -11,7 +11,7 @@ export function HeroSection() {
             items={[
               "LOCATION: APPLE VALLEY, CA",
               "STATUS: ACCEPTING FILM ORDERS",
-              "PROCESS: C-41",
+              "PROCESS ACCEPTED: 35MM C-41 AND B&W",
               "PICKUP: INSIDE WILD GOOSE"
             ]}
           />
