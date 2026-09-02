@@ -2,12 +2,10 @@ import type { Metadata } from "next";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { TerminalLabel } from "@/components/ui/TerminalLabel";
-import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Shop",
-  description:
-    "Preview film stock, cameras, and rotating inventory from Bell Mountain Camera. Online shop coming soon, with shipping planned and local pickup available."
+  description: "Shop inventory from Bell Mountain Camera. Local pickup only."
 };
 
 const cameraCategories = [
@@ -64,8 +62,8 @@ export default function ShopPage() {
       <PageHeader
         label="Inventory Desk"
         title="Shop"
-        description="Film, used cameras, and shop inventory from BMC."
-        meta={["ONLINE SHOP COMING SOON", "LOCAL PICKUP", "SHIPPING PLANNED"]}
+        description="Local pickup only."
+        meta={["LOCAL PICKUP ONLY"]}
       />
       <section className="mx-auto max-w-5xl px-4 py-12 text-center sm:px-6 sm:py-16 lg:px-8">
         <div className="mx-auto mb-8 max-w-3xl">
@@ -108,16 +106,12 @@ export default function ShopPage() {
       <section className="border-t border-[#111111]/15 bg-[#111111] text-[#FFFFFF]">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
           <div>
-            <TerminalLabel tone="dark">Pickup / Shipping Info</TerminalLabel>
+            <TerminalLabel tone="dark">Pickup Info</TerminalLabel>
             <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
-              Shipping planned, pickup available
+              Local pickup only
             </h2>
             <p className="mt-5 text-sm leading-7 text-[#FFFFFF]">
-              Online checkout is coming soon. For now, contact BMC for current
-              inventory, local pickup, or shipping.
-            </p>
-            <p className="mono mt-4 text-[0.72rem] uppercase tracking-[0.14em] text-[#FFFFFF]/70">
-              Pickup: {site.hoursShort}
+              Contact BMC for current inventory.
             </p>
           </div>
         </div>
