@@ -19,7 +19,6 @@ export function PagePhotoSlideshow({ frames, label = "BMC photos", aspect = "wid
 
   return (
     <div className="photo-slideshow" role="region" aria-roledescription="carousel" aria-label={label}
-      onMouseEnter={() => slideshow.setInteracting(true)} onMouseLeave={() => slideshow.setInteracting(false)}
       onFocusCapture={() => slideshow.setInteracting(true)}
       onBlurCapture={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) slideshow.setInteracting(false); }}
       onKeyDown={(event) => { if (event.key === "ArrowLeft") { event.preventDefault(); slideshow.previous(); } if (event.key === "ArrowRight") { event.preventDefault(); slideshow.next(); } }}>
