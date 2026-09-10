@@ -55,7 +55,7 @@ export function ServicesGrid() {
             href={service.href}
             className="record-cell p-5 hover:bg-[#FFFFFF]"
           >
-            <p className="mono text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-[#2457C5]">
+            <p className="mono text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-[#496787]">
               {service.code}
             </p>
             <h3 className="mt-4 text-lg font-semibold uppercase tracking-[0.03em]">

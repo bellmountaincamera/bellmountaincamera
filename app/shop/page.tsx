@@ -1,139 +1,49 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { TerminalLabel } from "@/components/ui/TerminalLabel";
 
-export const metadata: Metadata = {
-  title: "Shop",
-  description: "Shop inventory from Bell Mountain Camera. Local pickup only."
-};
+export const metadata: Metadata = { title: "Shop", description: "Film, used cameras, and shop inventory from Bell Mountain Camera. Local pickup only." };
 
-const cameraCategories = [
-  {
-    title: "SLRs",
-    code: "CAMERA / SLR",
-    text: "Manual and electronic 35mm SLR cameras.",
-    href: "/shop/cameras"
-  },
-  {
-    title: "Camcorders",
-    code: "VIDEO / TAPE",
-    text: "Analog video cameras and camcorders when available.",
-    href: "/shop/cameras"
-  },
-  {
-    title: "Point and Shoots",
-    code: "CAMERA / P+S",
-    text: "Compact autofocus and fixed-lens film cameras.",
-    href: "/shop/cameras"
-  }
+const cameras = [
+  { title: "SLRs", href: "/shop/cameras" }, { title: "Camcorders", href: "/shop/cameras" },
+  { title: "Point and shoots", href: "/shop/cameras" }
 ];
-
-const shopCategories = [
-  {
-    title: "Film",
-    code: "FILM STOCK",
-    text: "35mm, 110, instant, and rotating specialty film.",
-    href: "/shop/film"
-  },
-  {
-    title: "Accessories",
-    code: "ACCESSORIES",
-    text: "Straps, cases, lens caps, and small camera extras.",
-    href: "/contact"
-  },
-  {
-    title: "Batteries",
-    code: "BATTERIES",
-    text: "Common camera batteries when available.",
-    href: "/contact"
-  },
-  {
-    title: "Miscellaneous",
-    code: "MISC",
-    text: "Rotating oddities, supplies, and shop finds.",
-    href: "/contact"
-  }
+const supplies = [
+  { title: "Film", href: "/shop/film" }, { title: "Accessories", href: "/contact" },
+  { title: "Batteries", href: "/contact" }, { title: "Miscellaneous", href: "/contact" }
 ];
 
 export default function ShopPage() {
   return (
     <main>
-      <PageHeader
-        label="Inventory Desk"
-        title="Shop"
-        description="Local pickup only."
-        meta={["LOCAL PICKUP ONLY", "CONTACT FOR STOCK"]}
-      />
-      <section className="mx-auto max-w-5xl px-4 py-12 text-center sm:px-6 sm:py-16 lg:px-8">
-        <div className="mx-auto mb-8 max-w-3xl">
-          <TerminalLabel>Shop Menu</TerminalLabel>
-          <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
-            Choose a section
-          </h2>
-        </div>
-
-        <div className="grid gap-8 lg:grid-cols-[1fr_1fr]">
-          <section className="record-cell p-6">
-            <TerminalLabel>Camera Categories</TerminalLabel>
-            <h3 className="mt-4 text-2xl font-semibold uppercase tracking-[0.02em]">
-              Cameras
-            </h3>
-            <div className="mt-6 grid gap-3">
-              {cameraCategories.map((category) => (
-                <CTAButton key={category.title} href={category.href} variant="secondary">
-                  {category.title}
-                </CTAButton>
-              ))}
-            </div>
-          </section>
-
-          <section className="record-cell p-6">
-            <TerminalLabel>Shop Categories</TerminalLabel>
-            <h3 className="mt-4 text-2xl font-semibold uppercase tracking-[0.02em]">
-              Film and supplies
-            </h3>
-            <div className="mt-6 grid gap-3">
-              {shopCategories.map((category) => (
-                <CTAButton key={category.title} href={category.href} variant="secondary">
-                  {category.title}
-                </CTAButton>
-              ))}
-            </div>
-          </section>
-        </div>
-      </section>
-      <section className="border-t border-[#111111]/15 bg-[#111111] text-[#FFFFFF]">
-        <div className="mx-auto max-w-7xl px-4 py-12 text-center sm:px-6 sm:py-16 lg:px-8">
-          <div>
-            <TerminalLabel tone="dark">Pickup Info</TerminalLabel>
-            <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
-              Local pickup only
-            </h2>
-            <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-[#FFFFFF]">
-              Contact BMC for current inventory.
-            </p>
+      <PageHeader label="Shop" title="Shop" description="Film, cameras, and equipment."
+        meta={["Local pick up only", "Contact for current stock"]} />
+      <section className="section-band">
+        <div className="section-container">
+          <div className="shop-menu text-center">
+            {[{ title: "Cameras", links: cameras }, { title: "Film & supplies", links: supplies }].map((category) => <section key={category.title}>
+              <h2>{category.title}</h2>
+              <div className="shop-links">
+                {category.links.map((item, index) => <Link key={item.title} href={item.href}>
+                  <span>{String(index + 1).padStart(2, "0")}</span>{item.title}<ArrowUpRight size={16} />
+                </Link>)}
+              </div>
+            </section>)}
           </div>
         </div>
       </section>
-      <section className="mx-auto max-w-7xl px-4 py-14 text-center sm:px-6 sm:py-20 lg:px-8">
-        <TerminalLabel>Store Policies</TerminalLabel>
-        <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
-          Shop policies
-        </h2>
-        <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          <CTAButton href="/local-pickup" variant="secondary">
-            Local Pickup
-          </CTAButton>
-          <CTAButton href="/returns" variant="secondary">
-            Returns Policy
-          </CTAButton>
-          <CTAButton href="/policies" variant="secondary">
-            Store Policies
-          </CTAButton>
-          <CTAButton href="/faq" variant="secondary">
-            FAQ
-          </CTAButton>
+      <section className="section-band text-center">
+        <div className="section-container">
+          <TerminalLabel>Local pickup only</TerminalLabel>
+          <h2 className="mt-4">Find it at the counter.</h2>
+          <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-[#686c72]">Contact BMC for current stock. Pickup inside Wild Goose Vintage &amp; Thrift.</p>
+          <div className="mt-7 flex flex-wrap justify-center gap-3">
+            <CTAButton href="/contact">Ask about stock</CTAButton>
+            <CTAButton href="/policies" variant="secondary">Shop policies</CTAButton>
+          </div>
         </div>
       </section>
     </main>

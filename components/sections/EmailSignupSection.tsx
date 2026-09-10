@@ -28,9 +28,9 @@ export function EmailSignupSection() {
   }
 
   return (
-    <section className="border-b border-[#111111]/15">
-      <div className="mx-auto max-w-5xl px-4 py-10 text-center sm:px-6 sm:py-14 lg:px-8">
-        <TerminalLabel>Email Signup</TerminalLabel>
+    <section className="newsletter-section section-band">
+      <div className="section-container text-center">
+        <TerminalLabel>From the lab</TerminalLabel>
         <h2 className="mx-auto mt-4 max-w-3xl text-3xl font-semibold uppercase tracking-[0.02em] sm:text-4xl">
           Get BMC updates
         </h2>
@@ -47,16 +47,18 @@ export function EmailSignupSection() {
           <input
             id="bmc-email-signup"
             type="email"
+            autoComplete="email"
+            placeholder="Your email address"
             value={email}
             onChange={(event) => setEmail(event.currentTarget.value)}
             required
-            className="w-full border border-[#111111] bg-[#FFFFFF] px-4 py-3 text-center text-base outline-none focus:border-[#2457C5] sm:text-left"
+            className="w-full border border-[#111111] bg-[#FFFFFF] px-4 py-3 text-center text-base outline-none focus:border-[#496787] sm:text-left"
           />
           <button type="submit" className="cta-button cta-primary">
             Sign Up
           </button>
         </form>
-        <p className="ocr mt-4 text-[0.66rem] uppercase text-[#2457C5]">
+        <p className="ocr mt-4 text-[0.66rem] uppercase text-[#496787]">
           Opens email draft
         </p>
       </div>

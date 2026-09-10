@@ -87,6 +87,20 @@ export const cameraPhotos: PhotoFrame[] = [
   }
 ];
 
+const cameraModelNames: Record<string, string> = {
+  "Olympus Superzoom 105 Detail": "Olympus Superzoom 105",
+  "Olympus Superzoom 105 Close-Up": "Olympus Superzoom 105",
+  "Canon A-1 System": "Canon A-1",
+  "Canon A-1 Close-Up": "Canon A-1"
+};
+
+export const cameraRecords = Object.values(cameraPhotos.reduce<Record<string, { name: string; specs: string; photos: PhotoFrame[] }>>((records, photo) => {
+  const name = cameraModelNames[photo.title] ?? photo.title;
+  records[name] ??= { name, specs: photo.text, photos: [] };
+  records[name].photos.push(photo);
+  return records;
+}, {}));
+
 export const labPhotos: PhotoFrame[] = [
   {
     src: "/images/test-rolls/lab-processor-vertical.jpg",

@@ -1,203 +1,66 @@
 import type { Metadata } from "next";
 import { site } from "@/lib/site";
 import { CTAButton } from "@/components/ui/CTAButton";
+import { EmailDraftForm } from "@/components/ui/EmailDraftForm";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { TerminalLabel } from "@/components/ui/TerminalLabel";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description:
-    "Contact Bell Mountain Camera in Apple Valley for film drop-off, development, scanning, film stock, appointments, local pickup, and camera service."
+  description: "Visit Bell Mountain Camera in Apple Valley for film development, used cameras, and camera service."
 };
 
 export default function ContactPage() {
-  const directionsUrl =
-    "https://www.google.com/maps/search/?api=1&query=Bell%20Mountain%20Camera%2021810%20CA-18%20Unit%20%232%20Apple%20Valley%20CA%2092307";
-  const appointmentMailto = `mailto:${site.email}?subject=${encodeURIComponent(
-    site.appointmentEmailSubject
-  )}&body=${encodeURIComponent(site.appointmentEmailBody)}`;
-
+  const directionsUrl = "https://www.google.com/maps/search/?api=1&query=Bell%20Mountain%20Camera%2021810%20CA-18%20Unit%20%232%20Apple%20Valley%20CA%2092307";
+  const appointmentMailto = `mailto:${site.email}?subject=${encodeURIComponent(site.appointmentEmailSubject)}&body=${encodeURIComponent(site.appointmentEmailBody)}`;
   return (
     <main>
-      <PageHeader
-        label="Contact Desk"
-        title="Contact"
-        description="Drop off film, ask about a camera, or schedule service."
-        meta={["WALK-INS WELCOME", "APPOINTMENTS AVAILABLE", "APPLE VALLEY, CA"]}
-        textOnly
-      />
-      <section className="mx-auto grid max-w-7xl gap-8 px-4 py-14 text-center sm:px-6 sm:py-20 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
-        <div className="document-panel p-6">
-          <TerminalLabel>Contact Info</TerminalLabel>
-          <div className="mt-6 grid gap-5 text-sm">
-            <div>
-              <p className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#2457C5]">
-                Email
-              </p>
-              <a
-                href={`mailto:${site.email}`}
-                className="mt-1 block text-lg font-semibold hover:underline"
-              >
-                {site.email}
-              </a>
-            </div>
-            <div>
-              <p className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#2457C5]">
-                Instagram
-              </p>
-              <p className="mt-1 text-lg font-semibold">{site.instagram}</p>
-            </div>
-            <div>
-              <p className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#2457C5]">
-                Visit
-              </p>
-              <p className="mt-1 text-lg font-semibold">
-                {site.locationName}
-                <br />
-                {site.street}
-                <br />
-                {site.cityStateZip}
-              </p>
-            </div>
-            <div>
-              <p className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#2457C5]">
-                Hours
-              </p>
-              {site.hours.map((item) => (
-                <p key={item.days} className="mt-1 text-lg font-semibold">
-                  {item.days}: {item.time}
-                </p>
-              ))}
-            </div>
-            <div>
-              <p className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#2457C5]">
-                Appointments
-              </p>
-              <p className="mt-1 text-lg font-semibold">
-                Available by request.
-              </p>
-            </div>
-            <div className="grid gap-3 sm:grid-cols-2">
-              <CTAButton href={`mailto:${site.email}`} variant="secondary">
-                Email BMC
-              </CTAButton>
-              <CTAButton href={appointmentMailto} variant="secondary">
-                Request Appointment
-              </CTAButton>
-              <CTAButton href={directionsUrl} variant="secondary">
-                Get Directions
-              </CTAButton>
-              <CTAButton href="/local-pickup" variant="secondary">
-                Visit the Shop
-              </CTAButton>
+      <PageHeader label="Contact" title="Contact" description="Drop off film, ask about a camera, or schedule service."
+        meta={["Apple Valley, CA", "Walk-ins welcome"]} textOnly />
+      <section className="section-band">
+        <div className="section-container contact-layout">
+          <div className="contact-details">
+            <div><TerminalLabel>Email</TerminalLabel><a href={`mailto:${site.email}`}>{site.email}</a></div>
+            <div><TerminalLabel>Instagram</TerminalLabel><a href="https://www.instagram.com/bellmountaincamera/">{site.instagram}</a></div>
+            <div><TerminalLabel>Visit</TerminalLabel><p>{site.locationName}<br />{site.street}<br />{site.cityStateZip}</p><p className="mt-3">{site.vendorNumber} / By the cashier</p></div>
+            <div><TerminalLabel>Hours</TerminalLabel>{site.hours.map((item) => <p key={item.days}>{item.days}<br />{item.time}</p>)}</div>
+            <div><TerminalLabel>Appointments</TerminalLabel><p>Available by request.</p></div>
+            <div className="flex flex-wrap justify-center gap-3">
+              <CTAButton href={directionsUrl} variant="secondary">Get directions</CTAButton>
+              <CTAButton href="#appointments" variant="secondary">Appointments</CTAButton>
             </div>
           </div>
-        </div>
-        <div className="terminal-panel p-6">
-          <p className="mono text-xs font-semibold uppercase tracking-[0.16em] text-[#2457C5]">
-            Email Intake Sheet
-          </p>
-          <div className="mt-6 grid gap-4">
-            {["Name", "Email", "Reason for contact", "Message"].map((label) => (
-              <div key={label}>
-                <label className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#FFFFFF]">
-                  {label}
-                </label>
-                <div className="mt-2 min-h-11 border border-[#FFFFFF]/25 bg-[#FFFFFF]/5" />
-              </div>
-            ))}
-          </div>
-          <p className="mt-5 text-sm leading-7 text-[#FFFFFF]">
-            This form opens an email draft so you can send details directly to
-            BMC.
-          </p>
-          <div className="mt-5 grid gap-2 text-sm text-[#FFFFFF] sm:grid-cols-2">
-            {[
-              "Film drop-off",
-              "Film scanning",
-              "Camera service",
-              "Film stock question",
-              "Camera inventory question",
-              "Local pickup question",
-              "General question"
-            ].map((reason) => (
-              <p key={reason} className="mono text-xs uppercase tracking-[0.12em]">
-                {reason}
-              </p>
-            ))}
-          </div>
-          <div className="mt-6">
-            <CTAButton href={`mailto:${site.email}`} variant="dark">
-              Email the Shop
-            </CTAButton>
-          </div>
+          <EmailDraftForm id="contact" title="Email BMC" subject="BMC shop inquiry" submitLabel="Open email draft"
+            fields={[
+              { name: "name", label: "Name", required: true, autoComplete: "name" },
+              { name: "email", label: "Email", type: "email", required: true, autoComplete: "email" },
+              { name: "reason", label: "Reason for contact", type: "select", required: true, options: ["Film drop-off", "Film scanning", "Camera service", "Film stock", "Camera inventory", "Local pickup", "General question"] },
+              { name: "message", label: "Message", type: "textarea", required: true }
+            ]} />
         </div>
       </section>
-      <section className="border-t border-[#111111]/15 bg-[#FFFFFF]">
-        <div className="mx-auto grid max-w-7xl gap-8 px-4 py-14 text-center sm:px-6 sm:py-20 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
-          <div>
-            <TerminalLabel>Appointment Request</TerminalLabel>
-            <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
-              Plan a camera or lab visit
-            </h2>
-            <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-[#111111]">
-              Appointments are best for camera service, detailed lab questions,
-              pickup timing, or anything that needs more than a quick walk-in.
-            </p>
-            <div className="mt-7">
-              <CTAButton href={appointmentMailto}>
-                Request Appointment
-              </CTAButton>
-            </div>
+      <section className="section-band" id="appointments">
+        <div className="section-container service-layout">
+          <div className="service-intro">
+            <TerminalLabel>By appointment</TerminalLabel>
+            <h2 className="mt-4">Plan your visit.</h2>
+            <p className="mt-5 text-base leading-7 text-[#686c72]">For camera service, detailed lab questions, and pickup timing.</p>
+            <div className="mt-7"><CTAButton href={appointmentMailto}>Request appointment</CTAButton></div>
           </div>
           <div className="record-grid">
-            {site.appointmentAvailability.map((item) => (
-              <article key={item.days} className="record-cell p-5">
-                <p className="mono text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#2457C5]">
-                  {item.days}
-                </p>
-                <p className="mt-4 text-lg font-semibold uppercase tracking-[0.03em]">
-                  {item.time}
-                </p>
-              </article>
-            ))}
-            <article className="record-cell p-5">
-              <p className="mono text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#2457C5]">
-                Questions
-              </p>
-              <p className="mt-4 text-lg font-semibold uppercase tracking-[0.03em]">
-                Contact BMC anytime for information before stopping by.
-              </p>
-            </article>
+            {site.appointmentAvailability.map((item) => <article key={item.days} className="record-cell p-6 text-center">
+              <TerminalLabel>{item.days}</TerminalLabel><p className="mt-3 text-base">{item.time}</p>
+            </article>)}
           </div>
         </div>
       </section>
-      <section className="border-t border-[#111111]/15">
-        <div className="mx-auto grid max-w-7xl gap-8 px-4 py-14 text-center sm:px-6 sm:py-20 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
-          <div>
-            <TerminalLabel>Google Maps</TerminalLabel>
-            <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
-              Visit Bell Mountain Camera
-            </h2>
-            <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-[#111111]">
-              {site.locationName}
-              <br />
-              {site.street}
-              <br />
-              {site.cityStateZip}
-            </p>
-          </div>
-          <iframe
-            title="Map to Bell Mountain Camera inside Wild Goose Vintage and Thrift Store"
+      <section className="section-band">
+        <div className="section-container">
+          <div className="section-heading"><TerminalLabel>Apple Valley, CA</TerminalLabel><h2>Find the shop.</h2></div>
+          <iframe title="Map to Bell Mountain Camera inside Wild Goose Vintage and Thrift Store"
             src="https://www.google.com/maps?q=21810%20CA-18%20Unit%20%232%20Apple%20Valley%20CA%2092307&output=embed"
-            className="min-h-[22rem] w-full border border-[#111111]/20"
-            loading="lazy"
-          />
-          <div className="mt-4">
-            <CTAButton href={directionsUrl} variant="secondary">
-              Open Directions
-            </CTAButton>
-          </div>
+            className="h-80 w-full border border-[#d8dce0] sm:h-96" loading="lazy" />
+          <div className="mt-6 text-center"><CTAButton href={directionsUrl} variant="secondary">Open directions</CTAButton></div>
         </div>
       </section>
     </main>

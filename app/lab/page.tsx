@@ -8,187 +8,85 @@ import { filmLabDisclaimer, filmLabPricing, labInfo } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Film Lab",
-  description:
-    "Film development, scanning, JPEG and TIFF delivery, regular-border scans, and full-border scans from Bell Mountain Camera."
+  description: "Film development, scanning, JPEG and TIFF delivery, and full-border DSLR scans from Bell Mountain Camera in Apple Valley."
 };
 
 const faqs = [
-  [
-    "What film can I drop off?",
-    "Disposable cameras, 35mm, 110, and APS film are accepted."
-  ],
-  [
-    "What processes are available?",
-    "C-41 is the main process. Black-and-white and E-6 are handled in specialty batches, so turnaround may be longer."
-  ],
-  [
-    "What is the difference between JPEG and TIFF?",
-    "JPEG files are smaller, easy to share, and work well for everyday posting, texting, and general use. TIFF files are larger and keep more image information, which makes them better for editing, archiving, and higher-quality output."
-  ],
-  [
-    "Can I get full-border scans?",
-    "Yes. Regular scans crop to the image area. Full-border scans show the film edge and frame border for a more archival look."
-  ],
-  [
-    "Can C-41 be pushed or pulled?",
-    "Yes. Push and pull development is available for C-41 orders at $3 per stop."
-  ],
-  [
-    "Where do I drop off film?",
-    "Drop off film at Bell Mountain Camera inside Wild Goose Vintage & Thrift Store in Apple Valley during business hours."
-  ]
+  ["What film can I drop off?", "Disposable cameras, 35mm, 110, and APS film are accepted."],
+  ["What processes are available?", "C-41 is the main process. Black-and-white and E-6 are handled in specialty batches; turnaround may be longer."],
+  ["JPEG or TIFF?", "JPEG files are smaller and ready to share. TIFF files retain more image information for editing and archiving."],
+  ["Can I get full-border scans?", "Yes. Regular scans show the image area. Full-border scans also include the film edge."],
+  ["Can C-41 be pushed or pulled?", "Yes. Push and pull development is available for C-41 at $3 per stop."]
+];
+const samples = [
+  { src: "/images/test-rolls/full-border-dslr-01.jpg", alt: "Full-border DSLR scan of a house between trees, with Kodak film edges visible" },
+  { src: "/images/test-rolls/full-border-dslr-02.jpg", alt: "Full-border DSLR scan of Half Dome, with the film edges visible" },
+  { src: "/images/test-rolls/full-border-dslr-03.jpg", alt: "Full-border DSLR scan of a mountain wall, with the film edges visible" }
 ];
 
 export default function LabPage() {
   return (
     <main>
-      <PageHeader
-        label="Lab Counter"
-        title="Film Lab"
-        description="Film developing and scanning in Apple Valley."
-        meta={[`${labInfo.process} IN-HOUSE`, `C-41: ${labInfo.turnaround}`, "JPEG / TIFF SCANS"]}
-        photoSet="lab"
-        hideIntro
-      />
-
-      <section className="mx-auto max-w-7xl px-4 py-10 text-center sm:px-6 sm:py-14 lg:px-8">
-        <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
-          <div>
-            <TerminalLabel>Film Lab Pricing</TerminalLabel>
-            <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
-              Current development menu
-            </h2>
+      <PageHeader label="Film Lab" title="Film Lab" description="Film developing and scanning in Apple Valley."
+        meta={[`${labInfo.process} IN-HOUSE`, "JPEG / TIFF SCANS"]} photoSet="lab" hideIntro />
+      <section className="section-band" id="pricing">
+        <div className="section-container">
+          <div className="section-heading">
+            <TerminalLabel>Film development</TerminalLabel>
+            <h2>Lab menu</h2>
+            <p className="turnaround mono"><span>Current turnaround</span>C-41: {labInfo.turnaround}</p>
           </div>
-          <div className="document-panel p-4 text-center lg:min-w-64">
-            <p className="ocr text-[0.66rem] uppercase text-[#2457C5]">
-              Current Turnaround
-            </p>
-            <p className="mono mt-2 text-sm font-semibold uppercase tracking-[0.08em]">
-              C-41: {labInfo.turnaround}
-            </p>
-          </div>
-        </div>
-        <div className="mt-8 border border-[#111111] bg-[#111111]">
-          <div className="hidden grid-cols-[1fr_0.55fr_1.6fr] gap-px text-left md:grid">
-            {["Service", "Price / Detail", "Notes"].map((heading) => (
-              <div
-                key={heading}
-                className="mono bg-[#111111] px-4 py-3 text-xs font-semibold uppercase tracking-[0.14em] text-[#FFFFFF]"
-              >
-                {heading}
-              </div>
-            ))}
-          </div>
-          <div className="grid gap-px">
-            {filmLabPricing.map((item) => (
-              <article
-                key={item.title}
-                className="grid gap-3 bg-[#FFFFFF] p-4 text-center md:grid-cols-[1fr_0.55fr_1.6fr] md:items-center md:gap-px md:p-0 md:text-left"
-              >
-                <h3 className="text-sm font-semibold uppercase tracking-[0.03em] md:px-4 md:py-4">
-                  {item.title}
-                </h3>
-                <p className="mono text-sm font-semibold uppercase tracking-[0.12em] text-[#2457C5] md:px-4 md:py-4">
-                  {item.price}
-                </p>
-                <p className="mx-auto max-w-md text-sm leading-6 text-[#111111] md:mx-0 md:max-w-none md:px-4 md:py-4">
-                  {item.text}
-                </p>
-              </article>
-            ))}
+          <div className="price-list">
+            <div className="price-list-header mono" aria-hidden="true"><span>Service</span><span>Price / Format</span><span>Details</span></div>
+            {filmLabPricing.map((item) => <article key={item.title} className="price-row">
+              <h3>{item.title}</h3>
+              <p className={`price mono ${item.price.startsWith("$") ? "" : "detail"}`}>{item.price}</p>
+              <p className="price-description">{item.text}</p>
+            </article>)}
           </div>
         </div>
       </section>
-
-      <section className="border-y border-[#111111]/15 bg-[#FFFFFF]">
-        <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
-          <article className="document-panel p-6 text-center">
-            <TerminalLabel>How To Drop Off Film</TerminalLabel>
-            <ol className="mx-auto mt-5 grid max-w-xl list-decimal gap-3 pl-5 text-left text-sm leading-7 text-[#111111]">
-              <li>Bring film to BMC inside Wild Goose Vintage &amp; Thrift.</li>
-              <li>
-                Include name, contact info, film type, scan preference, and
-                push/pull notes if needed.
-              </li>
-              <li>Scans are delivered by download link.</li>
-            </ol>
-          </article>
+      <section className="section-band" id="drop-off">
+        <div className="section-container">
+          <div className="section-heading"><h2>How to drop off film</h2></div>
+          <ol className="dropoff-steps">
+            <li>Bring film to BMC inside Wild Goose Vintage &amp; Thrift.</li>
+            <li>Include name, contact info, film type, scan preference, and push/pull notes if needed.</li>
+            <li>Scans are delivered by download link.</li>
+          </ol>
         </div>
       </section>
-
-      <section className="bg-[#111111] text-[#FFFFFF]">
-        <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
-          <div className="mx-auto mb-8 max-w-3xl text-center">
-            <TerminalLabel tone="dark">Scan Options</TerminalLabel>
-            <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
-              Full-border DSLR scans
-            </h2>
-            <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-[#FFFFFF]">
-              DSLR setup. Higher-detail scans with the film edge included.
-            </p>
+      <section className="section-band scan-section">
+        <div className="section-container">
+          <div className="section-heading">
+            <TerminalLabel tone="dark">Scan options</TerminalLabel>
+            <h2>Full-border DSLR scans</h2>
+            <p className="mx-auto mt-4 max-w-xl text-base leading-7">Made with a DSLR setup. Film edges included.</p>
           </div>
-
-          <div className="overflow-x-auto">
-            <div className="flex min-w-max gap-4 pb-2">
-              {[
-                {
-                  src: "/images/test-rolls/full-border-dslr-01.jpg",
-                  alt: "Full-border DSLR scan sample of a house between trees"
-                },
-                {
-                  src: "/images/test-rolls/full-border-dslr-02.jpg",
-                  alt: "Full-border DSLR scan sample of Half Dome"
-                },
-                {
-                  src: "/images/test-rolls/full-border-dslr-03.jpg",
-                  alt: "Full-border DSLR scan sample of a mountain wall"
-                }
-              ].map((sample, index) => (
-                <article key={sample.src} className="w-[18rem] shrink-0 border border-[#FFFFFF]/20 p-3 sm:w-[22rem] lg:w-[24rem]">
-                  <div className="photo-grain relative aspect-square overflow-hidden bg-[#111111]">
-                    <Image
-                      src={sample.src}
-                      alt={sample.alt}
-                      fill
-                      sizes="(min-width: 1024px) 24rem, (min-width: 640px) 22rem, 18rem"
-                      className="object-contain"
-                    />
-                  </div>
-                  <p className="ocr mt-4 text-center text-[0.66rem] uppercase text-[#FFFFFF]">
-                    {String(index + 1).padStart(2, "0")} / 03
-                  </p>
-                </article>
-              ))}
-            </div>
+          <div className="scan-track" tabIndex={0} role="region" aria-label="Full-border scan examples">
+            {samples.map((sample) => <article key={sample.src}>
+              <div className="scan-image"><Image src={sample.src} alt={sample.alt} fill sizes="(min-width: 640px) 33vw, 86vw" className="object-contain" /></div>
+            </article>)}
           </div>
         </div>
       </section>
-
       <FilmLabPhotoCarousel />
-
-      <section className="border-y border-[#111111]/15">
-        <div className="mx-auto max-w-7xl px-4 py-10 text-center sm:px-6 lg:px-8">
-          <TerminalLabel>Film Lab Policy</TerminalLabel>
-          <p className="mx-auto mt-5 max-w-4xl text-sm leading-7 text-[#111111]">
-            {filmLabDisclaimer}
-          </p>
+      <section className="section-band">
+        <div className="section-container text-center">
+          <TerminalLabel>Film lab policy</TerminalLabel>
+          <p className="mx-auto mt-5 max-w-2xl text-left text-base leading-7 text-[#686c72]">{filmLabDisclaimer}</p>
         </div>
       </section>
-
-      <section className="mx-auto max-w-7xl px-4 py-12 text-center sm:px-6 sm:py-16 lg:px-8">
-        <TerminalLabel>FAQ</TerminalLabel>
-        <div className="mt-6 record-grid">
-          {faqs.map(([question, answer]) => (
-            <details key={question} className="group record-cell p-5">
-              <summary className="cursor-pointer text-lg font-semibold uppercase tracking-[0.03em]">
-                {question}
-              </summary>
-              <p className="mt-4 text-sm leading-7 text-[#111111]">{answer}</p>
-            </details>
-          ))}
+      <section className="section-band">
+        <div className="section-container">
+          <div className="section-heading"><h2>Good to know</h2></div>
+          <div className="record-grid mx-auto max-w-4xl">
+            {faqs.map(([question, answer]) => <details key={question} className="record-cell">
+              <summary>{question}</summary><p className="mt-4">{answer}</p>
+            </details>)}
+          </div>
         </div>
       </section>
-
       <ContactCTA />
     </main>
   );

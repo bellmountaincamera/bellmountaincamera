@@ -63,21 +63,13 @@ function buildAsciiTitle(title: string) {
 }
 
 export function AsciiPageTitle({ title, tone = "light" }: AsciiPageTitleProps) {
-  const asciiTitle = buildAsciiTitle(title);
-
   return (
-    <div
-      aria-label={title}
-      className={[
-        "max-w-full overflow-hidden border-b pb-5 text-center",
-        tone === "dark" ? "border-[#FFFFFF]/30 text-[#FFFFFF]" : "border-[#111111] text-[#111111]"
-      ].join(" ")}
-    >
-      <pre
-        className="mono mx-auto inline-block max-w-full text-left text-[0.34rem] font-semibold leading-[0.95] tracking-normal sm:text-[0.44rem] md:text-[0.52rem]"
-      >
-        {asciiTitle}
-      </pre>
+    <div role="img" aria-label={title} className={`ascii-page-title ${tone === "dark" ? "on-dark" : ""}`}>
+      <div className="ascii-page-art" aria-hidden="true">
+        {title.split(" ").map((word, index) => (
+          <pre key={`${word}-${index}`}>{buildAsciiTitle(word)}</pre>
+        ))}
+      </div>
     </div>
   );
 }

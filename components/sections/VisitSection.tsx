@@ -1,35 +1,33 @@
-import Link from "next/link";
+import Image from "next/image";
+import { CTAButton } from "@/components/ui/CTAButton";
 import { TerminalLabel } from "@/components/ui/TerminalLabel";
 import { site } from "@/lib/site";
 
 export function VisitSection() {
   return (
-    <section className="border-y border-[#111111]/15 bg-[#FFFFFF]">
-      <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 text-center sm:px-6 sm:py-12 lg:grid-cols-[1fr_1.1fr] lg:items-end lg:px-8">
-        <div>
+    <section className="visit-section section-band">
+      <div className="section-container">
+        <div className="section-heading">
           <TerminalLabel>Visit BMC</TerminalLabel>
-          <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em] sm:text-4xl">
-            Located inside Wild Goose Vintage & Thrift
-          </h2>
+          <h2>Your local film counter.</h2>
         </div>
-        <div className="grid gap-3 text-sm leading-6 text-[#111111] sm:grid-cols-[1fr_auto] sm:items-end">
-          <div>
-            <p className="font-semibold uppercase tracking-[0.03em]">
-              Unit #2 / {site.vendorNumber}
-            </p>
-            <p>Find Bell Mountain Camera by the cashier.</p>
-            <p>{site.street}</p>
-            <p>{site.cityStateZip}</p>
-            <p className="mono mt-2 text-[0.72rem] uppercase tracking-[0.14em] text-[#2457C5]">
-              {site.hoursShort} / Walk-ins welcome
-            </p>
+        <div className="visit-layout">
+          <div className="visit-photo">
+            <Image src="/images/home-camera-counter.jpg" alt="The BMC camera counter in black and white" fill sizes="(min-width: 1024px) 600px, 92vw" className="object-cover" />
           </div>
-          <Link
-            href="/contact"
-            className="mono text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-[#2457C5] underline-offset-4 hover:underline"
-          >
-            Contact details
-          </Link>
+          <div className="visit-details">
+            <h3>Inside Wild Goose<br />Vintage &amp; Thrift</h3>
+            <p className="visit-vendor mono">Unit #2 / {site.vendorNumber} / By the cashier</p>
+            <div className="visit-record">
+              <span className="terminal-label">Find us</span>
+              <p>{site.street}<br />{site.cityStateZip}</p>
+            </div>
+            <div className="visit-record">
+              <span className="terminal-label">Shop hours</span>
+              <p>Tuesday - Saturday<br />10 AM - 4 PM</p>
+            </div>
+            <CTAButton href="/contact" variant="secondary">Visit &amp; Contact</CTAButton>
+          </div>
         </div>
       </div>
     </section>

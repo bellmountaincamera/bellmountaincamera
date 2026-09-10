@@ -120,7 +120,7 @@ export default function RootLayout({
           }}
         />
         <Header />
-        {children}
+        <div id="main-content" tabIndex={-1}>{children}</div>
         <Footer />
       </body>
     </html>

@@ -69,14 +69,14 @@ export function ShopBrowser({ products, initialFilter = "" }: ShopBrowserProps) 
     <div>
       <div className="mb-6 grid gap-3 border border-[#111111] record-cell p-4 text-center lg:grid-cols-[1fr_auto] lg:items-end">
         <label className="block">
-          <span className="mono text-xs font-semibold uppercase tracking-[0.14em] text-[#2457C5]">
+          <span className="mono text-xs font-semibold uppercase tracking-[0.14em] text-[#496787]">
             Search
           </span>
           <input
             value={query}
             onChange={(event) => setQuery(event.currentTarget.value)}
             onInput={(event) => setQuery(event.currentTarget.value)}
-            className="mt-2 w-full border border-[#111111]/15 bg-[#FFFFFF] px-4 py-3 text-center text-base outline-none focus:border-[#2457C5]"
+            className="mt-2 w-full border border-[#111111]/15 bg-[#FFFFFF] px-4 py-3 text-center text-base outline-none focus:border-[#496787]"
           />
         </label>
         <button
@@ -98,8 +98,8 @@ export function ShopBrowser({ products, initialFilter = "" }: ShopBrowserProps) 
             onClick={() => toggleFilter(filter)}
             className={`mono border px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-[0.14em] ${
               activeFilters.includes(filter)
-                ? "border-[#2457C5] bg-[#111111] text-[#FFFFFF]"
-                : "border-[#111111]/15 bg-[#FFFFFF] text-[#2457C5] hover:border-[#2457C5]"
+                ? "border-[#496787] bg-[#111111] text-[#FFFFFF]"
+                : "border-[#111111]/15 bg-[#FFFFFF] text-[#496787] hover:border-[#496787]"
             }`}
           >
             {filter}

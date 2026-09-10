@@ -18,8 +18,8 @@ export function StatusIndicator({
           : "border-[#111111] text-[#111111]"
       ].join(" ")}
     >
-      <span aria-hidden="true" className="h-1.5 w-1.5 bg-[#2457C5]" />
-      <span className="text-[#2457C5]">{label}:</span>
+      <span aria-hidden="true" className="h-1.5 w-1.5 bg-[#496787]" />
+      <span className="text-[#496787]">{label}:</span>
       <span>{status}</span>
     </div>
   );

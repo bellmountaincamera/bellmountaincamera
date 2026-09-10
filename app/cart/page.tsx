@@ -31,7 +31,7 @@ export default function CartPage() {
               className="grid gap-4 record-cell p-5 sm:grid-cols-[1fr_auto]"
             >
               <div>
-                <p className="mono text-xs uppercase tracking-[0.14em] text-[#2457C5]">
+                <p className="mono text-xs uppercase tracking-[0.14em] text-[#496787]">
                   {item.category} / Qty 1
                 </p>
                 <h2 className="mt-2 text-xl font-semibold uppercase tracking-[0.03em]">
@@ -41,7 +41,7 @@ export default function CartPage() {
                   {item.localPickup ? "Local pickup only." : ""}
                 </p>
               </div>
-              <p className="mono text-sm font-semibold uppercase tracking-[0.12em] text-[#2457C5]">
+              <p className="mono text-sm font-semibold uppercase tracking-[0.12em] text-[#496787]">
                 {formatPrice(item.price)}
               </p>
             </article>

@@ -1,69 +1,41 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
-const clips = [
-  "/images/home-carousel/clip-01.gif",
-  "/images/home-carousel/clip-04.gif",
-  "/images/home-carousel/clip-05.gif",
-  "/images/home-carousel/clip-08.gif",
-  "/images/home-carousel/clip-09.gif",
-  "/images/home-carousel/clip-10.gif",
-  "/images/home-carousel/clip-11.gif",
-  "/images/home-carousel/clip-13.gif",
-  "/images/home-carousel/clip-14.gif"
-];
+import { useEffect, useRef } from "react";
+import { ArrowUpRight } from "lucide-react";
+import { CarouselControls } from "@/components/ui/CarouselControls";
+import { MetadataLine } from "@/components/ui/MetadataLine";
+import { useSlideshow } from "@/lib/use-slideshow";
+
+const clips = ["01", "04", "05", "08", "09", "10", "11", "13", "14"];
 
 export function HomeGifCarousel() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const activeClip = clips[activeIndex];
+  const slideshow = useSlideshow(clips.length);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    const timer = window.setInterval(() => {
-      setActiveIndex((current) => (current === clips.length - 1 ? 0 : current + 1));
-    }, 3000);
-
-    return () => window.clearInterval(timer);
-  }, []);
-
+    const video = videoRef.current;
+    if (!video) return;
+    if (slideshow.paused) video.pause();
+    else video.play().catch(() => { /* The poster remains visible if autoplay is unavailable. */ });
+  }, [slideshow.index, slideshow.paused]);
   return (
-    <section className="border-b border-[#111111]/15">
-      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
-        <div className="border border-[#111111] bg-[#FFFFFF] p-3">
-          <div className="photo-grain relative mx-auto aspect-[9/16] max-h-[36rem] max-w-sm overflow-hidden border border-[#111111]/20 bg-[#111111] sm:max-h-[42rem] lg:aspect-[16/9] lg:max-h-[36rem] lg:max-w-none">
-            <img
-              key={activeClip}
-              src={activeClip}
-              alt={`BMC animated frame ${activeIndex + 1}`}
-              className="h-full w-full object-cover"
-            />
-            <div className="pointer-events-none absolute inset-x-4 top-1/2 -translate-y-1/2 border border-[#FFFFFF]/35 bg-[#111111]/20 px-3 py-4 text-center mix-blend-screen sm:inset-x-8 sm:py-6">
-              <h1 className="mx-auto max-w-4xl text-3xl font-semibold uppercase leading-[0.96] tracking-[0.01em] text-[#FFFFFF] opacity-80 sm:text-5xl lg:text-7xl">
-                Film Lab
-                <br />
-                Cameras
-                <br />
-                and Equipment
-                <br />
-                In Apple Valley, CA
-              </h1>
-            </div>
-          </div>
-          <div className="mono mt-3 flex flex-wrap justify-center gap-4 text-[0.68rem] uppercase tracking-[0.12em] text-[#2457C5]">
-            <span>
-              {String(activeIndex + 1).padStart(2, "0")} /{" "}
-              {String(clips.length).padStart(2, "0")}
-            </span>
-          </div>
-          <div className="mt-4 flex justify-center">
-            <Link
-              href="/lab"
-              className="mono inline-flex border border-[#111111] bg-[#FFFFFF] px-4 py-3 text-xs font-semibold uppercase tracking-[0.14em] text-[#111111] transition hover:border-[#2457C5] hover:text-[#2457C5]"
-            >
-              Film Development &amp; Info
-            </Link>
-          </div>
+    <section className="home-film-section">
+      <div className="hero-film" role="region" aria-roledescription="carousel" aria-label="Inside the BMC film lab">
+        <video ref={videoRef} key={clips[slideshow.index]} src={`/videos/clip-${clips[slideshow.index]}.mp4`}
+          poster={`/videos/clip-${clips[slideshow.index]}.jpg`} muted playsInline loop preload="metadata"
+          className="hero-film-image" aria-label="Film processing at Bell Mountain Camera" />
+        <div className="hero-film-content">
+          <p className="hero-eyebrow mono">Bell Mountain Camera</p>
+          <h1>Film Lab<br />Cameras<br />and Equipment</h1>
+          <p className="hero-location mono">In Apple Valley, CA</p>
         </div>
+      </div>
+      <div className="hero-film-footer">
+        <CarouselControls index={slideshow.index} count={clips.length} paused={slideshow.paused}
+          onPrevious={slideshow.previous} onNext={slideshow.next} onToggle={slideshow.toggle} />
+        <Link href="/lab" className="cta-button cta-primary">Film Development &amp; Info <ArrowUpRight size={17} /></Link>
+        <MetadataLine items={["Process accepted: 35mm C-41 and B&W", "Local pickup only"]} />
       </div>
     </section>
   );

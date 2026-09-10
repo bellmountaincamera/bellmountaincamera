@@ -1,8 +1,7 @@
 import { AsciiPageTitle } from "@/components/brand/AsciiPageTitle";
-import { TerminalHeader } from "@/components/brand/TerminalHeader";
 import { PagePhotoSlideshow } from "@/components/sections/PagePhotoSlideshow";
 import { MetadataLine } from "@/components/ui/MetadataLine";
-import { allPhotoFrames, cameraPhotos, labPhotos } from "@/lib/photo-sets";
+import { cameraPhotos, homePhotos, labPhotos } from "@/lib/photo-sets";
 
 type PageHeaderProps = {
   label: string;
@@ -14,52 +13,18 @@ type PageHeaderProps = {
   textOnly?: boolean;
 };
 
-export function PageHeader({
-  label,
-  title,
-  description,
-  meta,
-  photoSet = "all",
-  hideIntro = false,
-  textOnly = false
-}: PageHeaderProps) {
-  const frames =
-    photoSet === "camera" ? cameraPhotos : photoSet === "lab" ? labPhotos : allPhotoFrames;
-
+export function PageHeader({ title, description, meta, photoSet = "all", hideIntro = false, textOnly = false }: PageHeaderProps) {
+  const frames = photoSet === "camera" ? cameraPhotos : photoSet === "lab" ? labPhotos.slice(0, 6) : [...homePhotos, ...cameraPhotos];
   return (
-    <section className="border-b border-[#111111]">
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
-        <div className="mb-7">
-          <AsciiPageTitle title={title} />
-        </div>
-        {textOnly ? (
-          <div className="mx-auto max-w-3xl text-center">
-            <TerminalHeader eyebrow={label} description={description} />
-            <div className="mt-5">
-              <MetadataLine items={meta} />
-            </div>
-          </div>
-        ) : hideIntro ? (
-          <div className="mx-auto max-w-4xl">
-            <PagePhotoSlideshow
-              frames={frames}
-              label={photoSet === "camera" ? "Camera File" : photoSet === "lab" ? "Lab File" : "BMC File"}
-            />
-          </div>
-        ) : (
-          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-            <div className="text-center">
-              <TerminalHeader eyebrow={label} description={description} />
-              <div className="mt-5">
-                <MetadataLine items={meta} />
-              </div>
-            </div>
-            <PagePhotoSlideshow
-              frames={frames}
-              label={photoSet === "camera" ? "Camera File" : photoSet === "lab" ? "Lab File" : "BMC File"}
-            />
-          </div>
-        )}
+    <section className="page-header">
+      <div className="section-container">
+        <h1 className="sr-only">{title}</h1>
+        <AsciiPageTitle title={title} />
+        {!hideIntro && <div className="page-intro">
+          <p>{description}</p>
+          <MetadataLine items={meta} />
+        </div>}
+        {!textOnly && <PagePhotoSlideshow frames={frames} label={`${title} photos`} priority />}
       </div>
     </section>
   );

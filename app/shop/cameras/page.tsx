@@ -1,58 +1,27 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { PageHeader } from "@/components/ui/PageHeader";
-import { TerminalLabel } from "@/components/ui/TerminalLabel";
-import { cameraPhotos } from "@/lib/photo-sets";
+import { PagePhotoSlideshow } from "@/components/sections/PagePhotoSlideshow";
+import { CTAButton } from "@/components/ui/CTAButton";
+import { cameraRecords } from "@/lib/photo-sets";
 
-export const metadata: Metadata = {
-  title: "Shop Cameras",
-  description:
-    "Used film cameras at Bell Mountain Camera."
-};
+export const metadata: Metadata = { title: "Shop Cameras", description: "Used film cameras at Bell Mountain Camera in Apple Valley." };
 
 export default function ShopCamerasPage() {
   return (
     <main>
-      <PageHeader
-        label="Camera Shelf"
-        title="Shop Cameras"
-        description="Used film cameras and basic specs."
-        meta={["USED CAMERAS", "LOCAL PICKUP", "ROTATING STOCK"]}
-        photoSet="camera"
-      />
-      <section className="mx-auto max-w-7xl px-4 py-12 text-center sm:px-6 sm:py-16 lg:px-8">
-        <div className="mx-auto mb-8 max-w-3xl">
-          <TerminalLabel>Camera Index</TerminalLabel>
-          <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
-            Camera Records
-          </h2>
-          <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-[#111111]">
-            Model, format, lens, and type.
-          </p>
-        </div>
-        <div className="record-grid sm:grid-cols-2 lg:grid-cols-3">
-          {cameraPhotos.map((camera) => (
-            <article key={camera.src} className="record-cell p-4">
-              <div className="photo-grain relative aspect-[4/5] overflow-hidden border border-[#111111]/20 bg-[#111111]">
-                <Image
-                  src={camera.src}
-                  alt={camera.title}
-                  fill
-                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                  className="object-cover"
-                />
-              </div>
-              <p className="mono mt-4 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#2457C5]">
-                {camera.label}
-              </p>
-              <h3 className="mt-2 text-lg font-semibold uppercase tracking-[0.03em]">
-                {camera.title}
-              </h3>
-              <p className="mt-3 text-sm leading-7 text-[#111111]">
-                {camera.text}
-              </p>
-            </article>
-          ))}
+      <PageHeader label="Camera Shelf" title="Shop Cameras" description="Used film cameras and basic specs."
+        meta={["Local pickup only", "Rotating stock"]} photoSet="camera" />
+      <section className="section-band">
+        <div className="section-container">
+          <div className="section-heading"><h2>The camera shelf</h2></div>
+          <div className="camera-records">
+            {cameraRecords.map((camera) => <article key={camera.name} className="camera-record">
+              <PagePhotoSlideshow frames={camera.photos} label={`${camera.name} photos`} aspect="portrait" />
+              <h3>{camera.name}</h3>
+              <p>{camera.specs}</p>
+            </article>)}
+          </div>
+          <div className="mt-10 text-center"><CTAButton href="/contact">Ask about availability</CTAButton></div>
         </div>
       </section>
     </main>

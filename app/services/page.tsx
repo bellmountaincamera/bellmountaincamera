@@ -1,144 +1,76 @@
 import type { Metadata } from "next";
 import { CTAButton } from "@/components/ui/CTAButton";
+import { EmailDraftForm } from "@/components/ui/EmailDraftForm";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { TerminalLabel } from "@/components/ui/TerminalLabel";
-import { cameraServiceMenu, serviceBundles, site } from "@/lib/site";
+import { cameraServiceMenu, serviceBundles, serviceDisclaimer } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Camera Services",
-  description:
-    "Diagnostics, cleaning, light seal replacement, and basic function checks for film cameras at Bell Mountain Camera."
+  description: "Diagnostics, cleaning, light seal replacement, and basic function checks for film cameras at Bell Mountain Camera."
 };
 
 export default function ServicesPage() {
-  const serviceMailto = `mailto:${site.email}?subject=${encodeURIComponent(
-    "Camera service request"
-  )}&body=${encodeURIComponent(
-    "Hi Bell Mountain Camera,\n\nI would like to send camera service details.\n\nName:\nCamera brand:\nCamera model:\nService requested:\nKnown issue:\nLast time camera worked:\nBattery type if known:\nHas film been tested through it?:\nNotes:\n\nThank you."
-  )}`;
-
   return (
     <main>
-      <PageHeader
-        label="Service Bench"
-        title="Camera Services"
-        description="Basic service for film cameras."
-        meta={["CAMERA SERVICE INTAKE", "WALK-INS WELCOME", "APPOINTMENTS AVAILABLE"]}
-        textOnly
-      />
-      <section className="mx-auto grid max-w-7xl gap-10 px-4 py-14 text-center sm:px-6 sm:py-20 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
-        <div>
-          <TerminalLabel>Workbench</TerminalLabel>
-          <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
-            Service Menu
-          </h2>
-          <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-[#111111]">
-            Diagnosis, cleaning, light seals, and shutter checks when possible.
-          </p>
-          <div className="mt-7">
-            <CTAButton href="/contact">Service Inquiry</CTAButton>
-          </div>
-          <div className="mt-6">
-            <div className="border border-[#111111] bg-[#FFFFFF] px-4 py-3 text-center">
-              <p className="mono text-xs font-semibold uppercase tracking-[0.14em] text-[#2457C5]">
-                Workbench Status: <span className="text-[#111111]">Available</span>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="grid gap-6">
-          <div>
-            <TerminalLabel>Individual Services</TerminalLabel>
-            <div className="mt-4 record-grid">
-              {cameraServiceMenu.map((service) => (
-                <article
-                  key={service.title}
-                  className="grid gap-4 record-cell p-5 sm:grid-cols-[1fr_auto]"
-                >
-                  <div>
-                    <h3 className="text-xl font-semibold uppercase tracking-[0.03em]">
-                      {service.title}
-                    </h3>
-                    <p className="mt-3 text-sm leading-7 text-[#111111]">
-                      {service.text}
-                    </p>
-                  </div>
-                  <p className="mono text-xs font-semibold uppercase tracking-[0.14em] text-[#2457C5]">
-                    {service.price}
-                  </p>
-                </article>
-              ))}
-            </div>
+      <PageHeader label="Service Bench" title="Camera Services" description="Basic service for film cameras."
+        meta={["Walk-ins welcome", "Appointments available"]} textOnly />
+      <section className="section-band">
+        <div className="section-container service-layout">
+          <div className="service-intro">
+            <TerminalLabel>Workbench</TerminalLabel>
+            <h2 className="mt-4">Camera service menu</h2>
+            <p className="mt-5 text-base leading-7 text-[#686c72]">Diagnosis, cleaning, light seals, and shutter checks when possible.</p>
+            <p className="workbench-status mono">Workbench status: Available</p>
+            <div className="mt-6"><CTAButton href="#service-intake">Service inquiry</CTAButton></div>
           </div>
           <div>
-            <TerminalLabel>Bundles</TerminalLabel>
-            <div className="mt-4 record-grid sm:grid-cols-2">
-              {serviceBundles.map((bundle) => (
-                <article key={bundle.title} className="record-cell p-5">
-                  <p className="text-lg font-semibold uppercase tracking-[0.03em]">
-                    {bundle.title}
-                  </p>
-                  <p className="mono mt-4 text-sm font-semibold uppercase tracking-[0.14em] text-[#2457C5]">
-                    {bundle.price}
-                  </p>
-                  {"text" in bundle ? (
-                    <p className="mt-4 text-sm leading-7 text-[#111111]">
-                      {bundle.text}
-                    </p>
-                  ) : null}
-                </article>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="mx-auto grid max-w-7xl gap-8 px-4 py-14 text-center sm:px-6 sm:py-20 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
-        <div>
-          <TerminalLabel>Service Intake</TerminalLabel>
-          <h2 className="mt-4 text-3xl font-semibold uppercase tracking-[0.02em]">
-            Camera Service
-          </h2>
-          <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-[#111111]">
-            Send model, issue, and drop-off notes.
-          </p>
-        </div>
-        <div className="terminal-panel p-6">
-          <div className="grid gap-4 sm:grid-cols-2">
-            {[
-              "Name",
-              "Email",
-              "Camera brand",
-              "Camera model",
-              "Service requested",
-              "Known issue",
-              "Last time camera worked",
-              "Battery type if known",
-              "Has film been tested through it?",
-              "Notes"
-            ].map((label) => (
-              <div key={label} className={label === "Notes" ? "sm:col-span-2" : ""}>
-                <label className="mono text-[0.7rem] uppercase tracking-[0.14em] text-[#FFFFFF]">
-                  {label}
-                </label>
-                <div className="mt-2 min-h-11 border border-[#FFFFFF]/25 bg-[#FFFFFF]/5" />
+            <div className="service-menu-group">
+              <TerminalLabel>Individual services</TerminalLabel>
+              <div className="price-list">
+                {cameraServiceMenu.map((service) => <article key={service.title} className="price-row">
+                  <h3>{service.title}</h3><p className="price mono">{service.price}</p>
+                  <p className="price-description">{service.text}</p>
+                </article>)}
               </div>
-            ))}
-          </div>
-          <div className="mt-6">
-            <CTAButton href={serviceMailto} variant="dark">
-              Send Service Details
-            </CTAButton>
+            </div>
+            <div className="service-menu-group">
+              <TerminalLabel>Bundles</TerminalLabel>
+              <div className="price-list">
+                {serviceBundles.map((bundle) => <article key={bundle.title} className="price-row">
+                  <h3>{bundle.title}</h3><p className="price mono">{bundle.price}</p>
+                  {"text" in bundle && <p className="price-description">{bundle.text}</p>}
+                </article>)}
+              </div>
+            </div>
           </div>
         </div>
       </section>
-      <section className="border-t border-[#111111]/15 bg-[#111111] text-[#FFFFFF]">
-        <div className="mx-auto max-w-7xl px-4 py-14 text-center sm:px-6 sm:py-20 lg:px-8">
-          <TerminalLabel tone="dark">Service Note</TerminalLabel>
-          <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-[#FFFFFF]">
-            Service depends on the camera model, condition, and issue. Some
-            cameras may need parts or repairs beyond what Bell Mountain Camera
-            can provide in-house.
-          </p>
+      <section className="section-band" id="service-intake">
+        <div className="section-container service-layout">
+          <div className="service-intro">
+            <TerminalLabel>Service intake</TerminalLabel>
+            <h2 className="mt-4">Tell us about your camera.</h2>
+            <p className="mt-5 text-base leading-7 text-[#686c72]">Send model, issue, and drop-off notes.</p>
+          </div>
+          <EmailDraftForm id="service" title="Camera details" subject="Camera service request" submitLabel="Send service details" columns
+            fields={[
+              { name: "name", label: "Name", required: true, autoComplete: "name" },
+              { name: "email", label: "Email", type: "email", required: true, autoComplete: "email" },
+              { name: "brand", label: "Camera brand", required: true },
+              { name: "model", label: "Camera model", required: true },
+              { name: "service", label: "Service requested", type: "select", options: ["Diagnosis", "Cleaning", "Light seal replacement", "Shutter speed adjustment", "Full service", "Not sure"] },
+              { name: "last-worked", label: "Last worked" },
+              { name: "battery", label: "Battery type, if known" },
+              { name: "film-tested", label: "Film tested?", type: "select", options: ["Yes", "No", "Not sure"] },
+              { name: "issue", label: "Issue and notes", type: "textarea", required: true, fullWidth: true }
+            ]} />
+        </div>
+      </section>
+      <section className="section-band">
+        <div className="section-container text-center">
+          <TerminalLabel>Service note</TerminalLabel>
+          <p className="mx-auto mt-5 max-w-2xl text-left text-base leading-8 text-[#686c72]">{serviceDisclaimer}</p>
         </div>
       </section>
     </main>

@@ -44,7 +44,7 @@ export function AsciiLineLogo({
       aria-hidden="true"
       className={[
         "ascii-logo-shell max-w-full overflow-hidden",
-        tone === "dark" ? "text-[#FFFFFF]" : "text-[#2457C5]",
+        tone === "dark" ? "text-[#FFFFFF]" : "text-[#496787]",
         className
       ].join(" ")}
     >

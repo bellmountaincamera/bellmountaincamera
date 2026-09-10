@@ -24,7 +24,7 @@ export function ProductCard({ product }: ProductCardProps) {
       </Link>
       <div className="mt-4 grid gap-3 border-t border-[#111111]/15 pt-4">
         <div>
-          <p className="mono text-[0.68rem] uppercase tracking-[0.14em] text-[#2457C5]">
+          <p className="mono text-[0.68rem] uppercase tracking-[0.14em] text-[#496787]">
             INV / {product.category}
           </p>
           <h3 className="mt-2 text-lg font-semibold uppercase tracking-[0.03em]">
@@ -37,11 +37,11 @@ export function ProductCard({ product }: ProductCardProps) {
       </div>
       <p className="mt-3 text-sm leading-6 text-[#111111]">{product.description}</p>
       <div className="mt-4 flex flex-wrap justify-center gap-2">
-        <span className="mono border border-[#2457C5] px-2 py-1 text-[0.65rem] uppercase tracking-[0.12em] text-[#2457C5]">
+        <span className="mono border border-[#496787] px-2 py-1 text-[0.65rem] uppercase tracking-[0.12em] text-[#496787]">
           {getInventoryStatus(product)}
         </span>
         {product.localPickup ? (
-          <span className="mono border border-[#111111]/15 px-2 py-1 text-[0.65rem] uppercase tracking-[0.12em] text-[#2457C5]">
+          <span className="mono border border-[#111111]/15 px-2 py-1 text-[0.65rem] uppercase tracking-[0.12em] text-[#496787]">
             Pickup Only
           </span>
         ) : null}

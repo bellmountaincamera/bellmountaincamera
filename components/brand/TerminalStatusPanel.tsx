@@ -22,7 +22,7 @@ export function TerminalStatusPanel({
       ].join(" ")}
     >
       <div className="flex flex-wrap items-start justify-center gap-4 border-b border-current/20 pb-4 text-center sm:justify-between">
-        <p className="mono text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#2457C5]">
+        <p className="mono text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#496787]">
           {title}
         </p>
         <AsciiLineLogo

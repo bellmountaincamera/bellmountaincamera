@@ -1,57 +1,34 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
 import type { PhotoFrame } from "@/lib/photo-sets";
+import { useSlideshow } from "@/lib/use-slideshow";
+import { CarouselControls } from "@/components/ui/CarouselControls";
 
 type PagePhotoSlideshowProps = {
   frames: PhotoFrame[];
   label?: string;
   aspect?: "wide" | "portrait";
+  priority?: boolean;
 };
 
-export function PagePhotoSlideshow({
-  frames,
-  label = "Photo File",
-  aspect = "wide"
-}: PagePhotoSlideshowProps) {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const activeFrame = frames[activeIndex] ?? frames[0];
-
-  useEffect(() => {
-    if (frames.length <= 1) return;
-
-    const timer = window.setInterval(() => {
-      setActiveIndex((current) => (current === frames.length - 1 ? 0 : current + 1));
-    }, 3000);
-
-    return () => window.clearInterval(timer);
-  }, [frames.length]);
-
+export function PagePhotoSlideshow({ frames, label = "BMC photos", aspect = "wide", priority = false }: PagePhotoSlideshowProps) {
+  const slideshow = useSlideshow(frames.length);
+  const activeFrame = frames[slideshow.index] ?? frames[0];
   if (!activeFrame) return null;
 
   return (
-    <div className="border border-[#111111] bg-[#FFFFFF] p-3">
-      <div
-        className={[
-          "photo-grain relative overflow-hidden border border-[#111111]/20 bg-[#111111]",
-          aspect === "portrait" ? "aspect-[4/5]" : "aspect-[4/3]"
-        ].join(" ")}
-      >
-        <Image
-          key={activeFrame.src}
-          src={activeFrame.src}
-          alt={activeFrame.alt ?? activeFrame.title}
-          fill
-          sizes="(min-width: 1024px) 38vw, 100vw"
-          className="object-cover"
-        />
+    <div className="photo-slideshow" role="region" aria-roledescription="carousel" aria-label={label}
+      onMouseEnter={() => slideshow.setInteracting(true)} onMouseLeave={() => slideshow.setInteracting(false)}
+      onFocusCapture={() => slideshow.setInteracting(true)}
+      onBlurCapture={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) slideshow.setInteracting(false); }}
+      onKeyDown={(event) => { if (event.key === "ArrowLeft") { event.preventDefault(); slideshow.previous(); } if (event.key === "ArrowRight") { event.preventDefault(); slideshow.next(); } }}>
+      <div className={`slideshow-image ${aspect === "portrait" ? "portrait" : ""}`}>
+        <Image src={activeFrame.src} alt={activeFrame.alt ?? activeFrame.title} fill
+          sizes="(min-width: 1200px) 1000px, (min-width: 768px) 85vw, 94vw" className="object-contain" priority={priority && slideshow.index === 0} />
       </div>
-      <div className="ocr mt-3 grid grid-cols-3 gap-2 text-[0.68rem] uppercase text-[#2457C5]">
-        <span>{label}</span>
-        <span>{String(activeIndex + 1).padStart(2, "0")} / {frames.length}</span>
-        <span className="text-right">3 SEC</span>
-      </div>
+      {frames.length > 1 && <CarouselControls index={slideshow.index} count={frames.length} paused={slideshow.paused}
+        onPrevious={slideshow.previous} onNext={slideshow.next} onToggle={slideshow.toggle} />}
     </div>
   );
 }

@@ -21,7 +21,7 @@ export function MetadataPanel({ rows, tone = "light" }: MetadataPanelProps) {
             tone === "dark" ? "border-[#FFFFFF]/20" : "border-[#111111]/15"
           ].join(" ")}
         >
-          <dt className="ocr text-[0.68rem] uppercase text-[#2457C5]">
+          <dt className="ocr text-[0.68rem] uppercase text-[#496787]">
             {label}
           </dt>
           <dd className="ocr text-xs uppercase">{value}</dd>
