@@ -243,9 +243,11 @@ export const policyCopy = {
   shipping:
     "Shipping is not available right now. Local pickup only during shop hours.",
   returns:
-    "Used cameras and equipment are sold according to their listed condition. Film, opened consumables, and completed lab services are not returnable. Contact BMC with any issue before returning an item.",
+    "Used cameras and equipment: full refund within 30 days of purchase. Film, opened consumables, and completed lab services are not returnable except where required by law. Contact BMC before returning an item.",
   privacy:
     "BMC only uses customer information to respond to messages, process film orders, manage camera service requests, and communicate about shop activity. Customer information is not sold.",
+  cookies:
+    "BMC does not add advertising or analytics cookies. The optional Google Map loads only when you request it and may use Google cookies.",
   terms:
     "By using BMC services, customers understand that film processing, used camera sales, and camera service involve some risk due to film condition, camera condition, age, storage, and mechanical limitations."
 };

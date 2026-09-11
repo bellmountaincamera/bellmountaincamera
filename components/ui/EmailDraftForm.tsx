@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 import { site } from "@/lib/site";
 
 export type EmailField = {
@@ -29,7 +30,9 @@ export function EmailDraftForm({ id, title, subject, fields, submitLabel, column
   function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const values = new FormData(event.currentTarget);
-    const body = fields.map((field) => `${field.label}: ${String(values.get(field.name) ?? "").trim()}`).join("\n\n");
+    const body = [...fields.map((field) => `${field.label}: ${String(values.get(field.name) ?? "").trim()}`),
+      "Contact permission: BMC may use these details to respond to this request."
+    ].join("\n\n");
     window.location.href = `mailto:${site.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     setOpened(true);
   }
@@ -37,6 +40,7 @@ export function EmailDraftForm({ id, title, subject, fields, submitLabel, column
   return (
     <form className="email-form" onSubmit={submit} aria-labelledby={`${id}-title`} onChange={() => setOpened(false)}>
       <h3 id={`${id}-title`} className="terminal-label">{title}</h3>
+      <p className="form-note">* Required fields. Please leave out payment details and other sensitive information.</p>
       <div className={`form-fields ${columns ? "two-column" : ""}`}>
         {fields.map((field) => {
           const props = { id: `${id}-${field.name}`, name: field.name, required: field.required, autoComplete: field.autoComplete };
@@ -50,7 +54,11 @@ export function EmailDraftForm({ id, title, subject, fields, submitLabel, column
           );
         })}
       </div>
-      <p className="form-note">Opens an email draft with your details. Send it to complete your request.</p>
+      <label className="form-consent" htmlFor={`${id}-consent`}>
+        <input id={`${id}-consent`} name="contact-consent" type="checkbox" required />
+        <span>BMC may use these details to respond to my request. *</span>
+      </label>
+      <p className="form-note">Opens an email draft. Nothing is sent to BMC until you send it. This does not sign you up for marketing. <Link href="/privacy">Privacy policy</Link>.</p>
       <div className="form-actions"><button type="submit" className="cta-button cta-primary">{submitLabel}<ArrowUpRight size={17} /></button></div>
       {opened && <p className="form-result" role="status">Check your email app to send your request. You can also email <a href={`mailto:${site.email}`} className="underline">{site.email}</a>.</p>}
     </form>

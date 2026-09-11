@@ -39,7 +39,7 @@ const faqGroups = [
       ],
       [
         "Do you sell used cameras?",
-        "Yes. Tested used cameras are listed with condition notes, included items, price, and availability."
+        "Yes. Used cameras are listed by model. Contact BMC for condition notes, testing details, and current availability."
       ],
       [
         "How often is stock updated?",

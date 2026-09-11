@@ -20,6 +20,7 @@ const routes = [
   "/policies",
   "/local-pickup",
   "/privacy",
+  "/cookies",
   "/terms",
   "/faq"
 ];

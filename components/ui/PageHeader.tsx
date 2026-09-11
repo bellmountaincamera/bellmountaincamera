@@ -17,9 +17,11 @@ export function PageHeader({ title, description, meta, photoSet = "all", hideInt
   const frames = photoSet === "camera" ? cameraPhotos : photoSet === "lab" ? labPhotos.slice(0, 6) : [...homePhotos, ...cameraPhotos];
   return (
     <section className="page-header">
-      <div className="section-container">
+      <div className="page-masthead">
         <h1 className="sr-only">{title}</h1>
         <AsciiPageTitle title={title} />
+      </div>
+      <div className="section-container">
         {!hideIntro && <div className="page-intro">
           <p>{description}</p>
           <MetadataLine items={meta} />

@@ -4,6 +4,7 @@ import { CTAButton } from "@/components/ui/CTAButton";
 import { EmailDraftForm } from "@/components/ui/EmailDraftForm";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { TerminalLabel } from "@/components/ui/TerminalLabel";
+import { LocationMap } from "@/components/ui/LocationMap";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -57,9 +58,7 @@ export default function ContactPage() {
       <section className="section-band">
         <div className="section-container">
           <div className="section-heading"><TerminalLabel>Apple Valley, CA</TerminalLabel><h2>Find the shop.</h2></div>
-          <iframe title="Map to Bell Mountain Camera inside Wild Goose Vintage and Thrift Store"
-            src="https://www.google.com/maps?q=21810%20CA-18%20Unit%20%232%20Apple%20Valley%20CA%2092307&output=embed"
-            className="h-80 w-full border border-[#d8dce0] sm:h-96" loading="lazy" />
+          <LocationMap />
           <div className="mt-6 text-center"><CTAButton href={directionsUrl} variant="secondary">Open directions</CTAButton></div>
         </div>
       </section>

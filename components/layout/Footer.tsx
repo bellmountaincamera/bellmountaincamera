@@ -7,7 +7,8 @@ export function Footer() {
     { href: "/contact", label: "Contact" }, { href: "/local-pickup", label: "Local Pickup" },
     { href: "/lab", label: "Film Lab" }, { href: "/shop", label: "Shop" },
     { href: "/faq", label: "FAQ" }, { href: "/policies", label: "Policies" },
-    { href: "/privacy", label: "Privacy" }, { href: "/terms", label: "Terms" }
+    { href: "/privacy", label: "Privacy" }, { href: "/cookies", label: "Cookies" },
+    { href: "/returns", label: "Returns" }, { href: "/terms", label: "Terms" }
   ];
   return (
     <footer className="site-footer">

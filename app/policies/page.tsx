@@ -12,9 +12,10 @@ export const metadata: Metadata = {
 
 const policyLinks = [
   ["/shipping", "No Shipping"],
-  ["/returns", "Returns Policy"],
+  ["/returns", "Returns and Refunds"],
   ["/local-pickup", "Local Pickup Policy"],
   ["/privacy", "Privacy Policy"],
+  ["/cookies", "Cookie Policy"],
   ["/terms", "Terms of Service"]
 ];
 
@@ -44,12 +45,16 @@ const policySections = [
     text: policyCopy.shipping
   },
   {
-    title: "Returns",
+    title: "Returns and Refunds",
     text: policyCopy.returns
   },
   {
     title: "Privacy",
     text: policyCopy.privacy
+  },
+  {
+    title: "Cookies",
+    text: policyCopy.cookies
   },
   {
     title: "Terms",

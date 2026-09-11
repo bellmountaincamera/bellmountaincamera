@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/ui/PageHeader";
-import { TerminalLabel } from "@/components/ui/TerminalLabel";
-import { policyCopy } from "@/lib/site";
+import { PolicyDocument } from "@/components/ui/PolicyDocument";
+import { termsSections } from "@/lib/policies";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
@@ -14,19 +14,12 @@ export default function TermsPage() {
     <main>
       <PageHeader
         label="Terms"
-        title="Terms of Service"
+        title="Terms"
         description="Terms for shop, lab, and service use."
         meta={["SHOP", "LAB SERVICES", "CAMERA SERVICE"]}
         textOnly
       />
-      <section className="mx-auto max-w-7xl px-4 py-14 text-center sm:px-6 sm:py-20 lg:px-8">
-        <div className="document-panel p-6">
-          <TerminalLabel>Terms</TerminalLabel>
-          <p className="mt-5 text-sm leading-7 text-[#111111]">
-            {policyCopy.terms}
-          </p>
-        </div>
-      </section>
+      <PolicyDocument sections={termsSections} />
     </main>
   );
 }

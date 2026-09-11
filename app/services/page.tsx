@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <main>
-      <PageHeader label="Service Bench" title="Camera Services" description="Basic service for film cameras."
+      <PageHeader label="Service Bench" title="Services" description="Basic service for film cameras."
         meta={["Walk-ins welcome", "Appointments available"]} textOnly />
       <section className="section-band">
         <div className="section-container service-layout">
@@ -53,7 +53,7 @@ export default function ServicesPage() {
             <h2 className="mt-4">Tell us about your camera.</h2>
             <p className="mt-5 text-base leading-7 text-[#686c72]">Send model, issue, and drop-off notes.</p>
           </div>
-          <EmailDraftForm id="service" title="Camera details" subject="Camera service request" submitLabel="Send service details" columns
+          <EmailDraftForm id="service" title="Camera details" subject="Camera service request" submitLabel="Open service email" columns
             fields={[
               { name: "name", label: "Name", required: true, autoComplete: "name" },
               { name: "email", label: "Email", type: "email", required: true, autoComplete: "email" },

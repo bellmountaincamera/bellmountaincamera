@@ -3,16 +3,14 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { labInfo, site } from "@/lib/site";
+import { LabStatusTicker } from "@/components/layout/LabStatusTicker";
 
 export function Header() {
   const pathname = usePathname();
   return (
     <header className="site-header">
       <a className="skip-link" href="#main-content">Skip to content</a>
-      <div className="lab-status-bar">
-        <span className="status-dot" aria-hidden="true" />
-        <span>{labInfo.status}</span>
-      </div>
+      <LabStatusTicker text={labInfo.status} />
       <div className="header-inner">
         <Link href="/" className="brand-link" aria-label="Bell Mountain Camera home">
           <span className="brand-mark ocr">BMC</span>
