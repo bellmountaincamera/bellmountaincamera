@@ -247,7 +247,7 @@ export const policyCopy = {
   privacy:
     "BMC only uses customer information to respond to messages, process film orders, manage camera service requests, and communicate about shop activity. Customer information is not sold.",
   cookies:
-    "BMC does not add advertising or analytics cookies. The optional Google Map loads only when you request it and may use Google cookies.",
+    "Optional email signup and Google Maps load only when requested. MailerLite records form activity and may use cookies; Google Maps may use Google cookies.",
   terms:
     "By using BMC services, customers understand that film processing, used camera sales, and camera service involve some risk due to film condition, camera condition, age, storage, and mechanical limitations."
 };

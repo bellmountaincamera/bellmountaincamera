@@ -1,3 +1,5 @@
+import { LedAccent } from "@/components/brand/LedAccent";
+
 const glyphs: Record<string, string[]> = {
   A: [" +++ ", "+   +", "+++++", "+   +", "+   +"],
   B: ["++++ ", "+   +", "++++ ", "+   +", "++++ "],
@@ -65,10 +67,13 @@ function buildAsciiTitle(title: string) {
 export function AsciiPageTitle({ title, tone = "light" }: AsciiPageTitleProps) {
   return (
     <div role="img" aria-label={title} className={`ascii-page-title ${tone === "dark" ? "on-dark" : ""}`}>
-      <div className="ascii-page-art" aria-hidden="true">
+      <div className="ascii-page-display" aria-hidden="true">
+        <div className="ascii-page-art">
         {title.split(" ").map((word, index) => (
           <pre key={`${word}-${index}`}>{buildAsciiTitle(word)}</pre>
         ))}
+        </div>
+        <LedAccent />
       </div>
     </div>
   );

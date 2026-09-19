@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>BMC email signup</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 8px; background: white; color: #111; font: 16px/1.6 Arial, sans-serif; }
+    .ml-embedded { width: 100%; min-width: 0; overflow-wrap: anywhere; }
+    .ml-embedded form { max-width: 100% !important; margin-inline: auto !important; }
+    .ml-embedded input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]),
+    .ml-embedded select, .ml-embedded textarea { min-width: 0 !important; max-width: 100% !important; min-height: 48px; font-size: 16px !important; border-radius: 2px !important; }
+    .ml-embedded button { min-height: 48px; max-width: 100%; white-space: normal; border-radius: 2px !important; }
+    .ml-embedded button[type="submit"] { background: #496787 !important; color: white !important; }
+    .ml-embedded input[type="checkbox"] { accent-color: #496787; }
+    .ml-embedded a { color: #496787; text-decoration: underline; }
+    .ml-embedded :focus-visible { outline: 3px solid #496787 !important; outline-offset: 3px; }
+    .ml-embedded h1, .ml-embedded h2, .ml-embedded h3 { text-align: center !important; font-size: 22px !important; }
+    .ml-embedded p, .ml-embedded label { line-height: 1.6 !important; }
+  </style>
+  <!-- MailerLite Universal: public account identifier, not an API token. -->
+  <script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '2637966');
+  </script>
+</head>
+<body>
+  <div class="ml-embedded" data-form="6zJeIZ"></div>
+  <script>
+    // The frame isolates the provider lifecycle from Next.js client-side navigation.
+    const container = document.querySelector('.ml-embedded');
+    let ready = false;
+    function report(status) {
+      parent.postMessage({ type: 'bmc-newsletter', status, height: document.body.scrollHeight + 16 }, location.origin);
+    }
+    const timer = setTimeout(() => { if (!ready) report('error'); }, 12000);
+    new MutationObserver(() => {
+      if (!ready && container.querySelector('form')) {
+        ready = true;
+        clearTimeout(timer);
+        report('ready');
+      }
+    }).observe(container, { childList: true, subtree: true });
+    new ResizeObserver(() => { if (ready) report('ready'); }).observe(document.body);
+  </script>
+</body>
+</html>

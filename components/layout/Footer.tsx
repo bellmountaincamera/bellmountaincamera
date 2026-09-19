@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { AsciiLineLogo } from "@/components/brand/AsciiLineLogo";
+import { LedAccent } from "@/components/brand/LedAccent";
 import { footerCopy, site } from "@/lib/site";
 
 export function Footer() {
@@ -20,6 +21,7 @@ export function Footer() {
           {links.map((item) => <Link key={item.href} href={item.href}>{item.label}</Link>)}
         </nav>
         <div className="footer-signoff">
+          <LedAccent />
           <AsciiLineLogo tone="dark" lines={["BMC", "EST 2025", "AV, CA"]} />
           <span className="mono">Independent. Apple Valley, CA.</span>
         </div>

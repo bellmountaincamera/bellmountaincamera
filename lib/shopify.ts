@@ -1,3 +1,4 @@
+import "server-only";
 import type { Product } from "@/lib/products";
 
 // Future server-only Shopify configuration:

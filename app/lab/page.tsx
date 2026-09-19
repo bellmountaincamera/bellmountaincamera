@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import { ContinuousPhotoCarousel } from "@/components/ui/ContinuousPhotoCarousel";
 import { ContactCTA } from "@/components/sections/ContactCTA";
 import { FilmLabPhotoCarousel } from "@/components/sections/FilmLabPhotoCarousel";
 import { PageHeader } from "@/components/ui/PageHeader";
@@ -63,11 +63,7 @@ export default function LabPage() {
             <h2>Full-border DSLR scans</h2>
             <p className="mx-auto mt-4 max-w-xl text-base leading-7">Made with a DSLR setup. Film edges included.</p>
           </div>
-          <div className="scan-track" tabIndex={0} role="region" aria-label="Full-border scan examples">
-            {samples.map((sample) => <article key={sample.src}>
-              <div className="scan-image"><Image src={sample.src} alt={sample.alt} fill sizes="(min-width: 640px) 33vw, 86vw" className="object-contain" /></div>
-            </article>)}
-          </div>
+          <ContinuousPhotoCarousel frames={samples} label="Full-border scan examples" />
         </div>
       </section>
       <FilmLabPhotoCarousel />

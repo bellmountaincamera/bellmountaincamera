@@ -1,6 +1,6 @@
 import { policyCopy, site } from "@/lib/site";
 
-export const policyUpdated = "2026-09-11";
+export const policyUpdated = "2026-09-16";
 
 export type PolicySection = {
   title: string;
@@ -12,21 +12,22 @@ export const privacySections: PolicySection[] = [
   {
     title: "Information you provide",
     paragraphs: [policyCopy.privacy,
-      "Contact and service forms ask for your name, email, and request details. Newsletter signup asks for your email and permission to send updates. Forms prepare an email in your email app; BMC receives it only if you send it.",
+      "Contact and service forms ask for your name, email, and request details. These forms prepare an email in your email app; BMC receives it only if you send it. Newsletter signup is separate and asks for your email and permission to receive updates.",
       "Film orders also involve your contact details, order preferences, and film images so BMC can process your film and deliver scans. Do not include payment card details, passwords, or identification documents in website forms."],
   },
   {
     title: "Website visits and providers",
-    paragraphs: ["The website is hosted by Vercel. Hosting services may process IP addresses, browser information, requested pages, and request times to deliver and protect the website. BMC has not added advertising pixels, audience analytics, or cross-site tracking scripts.",
+    paragraphs: ["The website is hosted by Vercel. Hosting services may process IP addresses, browser information, requested pages, and request times to deliver and protect the website. BMC has not added advertising pixels. Optional signup and map services have their own data practices, described below.",
       "Messages sent to BMC are handled through Gmail and your chosen email provider. Scan delivery may use a download-link service. Those providers handle the information needed for the relevant service.",
+      "Email signup loads only after you choose Open email signup. It connects to MailerLite, which receives connection information, records form activity, and may use cookies. Submitting the form sends your email and marketing permission to MailerLite for BMC updates. Confirm your subscription through the email you receive. Service inquiries do not subscribe you.",
       "Google Maps loads only after you select Load Google Map. At that point Google receives connection information and may use cookies. Instagram and directions links open external services with their own privacy practices."],
-    links: [{ href: "/cookies", label: "Cookies and optional maps" }, { href: "https://vercel.com/legal/privacy-policy", label: "Vercel privacy policy" }, { href: "https://policies.google.com/privacy", label: "Google privacy policy" }],
+    links: [{ href: "/cookies", label: "Cookies and optional maps" }, { href: "https://vercel.com/legal/privacy-policy", label: "Vercel privacy policy" }, { href: "https://policies.google.com/privacy", label: "Google privacy policy" }, { href: "https://www.mailerlite.com/legal/privacy-policy", label: "MailerLite privacy policy" }],
   },
   {
     title: "Your choices",
     paragraphs: ["Email BMC to ask about your information, request a correction or deletion, or ask how long order records and scan files are kept. Some records may need to be retained for orders, accounting, or legal obligations.",
-      "Service requests do not subscribe you to marketing. To stop BMC updates, email BMC with an unsubscribe request.",
-      "This website does not sell personal information or use it for targeted advertising. Its behavior does not change in response to Do Not Track or Global Privacy Control because no such tracking is enabled. Optional external services follow their own settings and policies."],
+      "Service requests do not subscribe you to marketing. Use the unsubscribe link in a BMC update or email BMC to stop receiving updates.",
+      "BMC does not sell personal information or use it for targeted advertising. Optional MailerLite and Google services remain unloaded until you choose to open them, regardless of Do Not Track or Global Privacy Control settings. Their own privacy and browser settings apply after loading."],
   },
   {
     title: "Policy updates",
@@ -38,7 +39,13 @@ export const cookieSections: PolicySection[] = [
   {
     title: "Cookies on this website",
     paragraphs: [policyCopy.cookies,
-      "The website does not save form entries or gallery preferences in cookies or browser storage. Your browser or email app may retain drafts or autofill information according to its settings. Hosting and security services may use technical information to deliver and protect the site."],
+      "BMC's own interface does not save form entries or gallery preferences in cookies or browser storage. Optional third-party signup and map services may use cookies after you load them. Your browser or email app may retain drafts or autofill information according to its settings."],
+  },
+  {
+    title: "Optional email signup",
+    paragraphs: ["MailerLite loads only when you choose Open email signup. Its scripts record form views and can use session and form-interaction cookies. It also receives your IP address and browser information when your browser connects. Marketing permission is requested separately in the signup form.",
+      "Close signup removes the embedded form but does not delete cookies already set by MailerLite. You can manage those through your browser. Opening permission is not saved between page visits. Unsubscribe using the link in a BMC email or contact BMC."],
+    links: [{ href: "https://www.mailerlite.com/legal/cookie-policy", label: "MailerLite cookie policy" }, { href: "https://www.mailerlite.com/legal/privacy-policy", label: "MailerLite privacy policy" }],
   },
   {
     title: "Optional Google Maps",
@@ -56,7 +63,7 @@ export const cookieSections: PolicySection[] = [
 export const termsSections: PolicySection[] = [
   {
     title: "Orders and appointments",
-    paragraphs: ["Website forms open email drafts. Sending an inquiry does not confirm an order, reservation, or appointment. Contact BMC for current inventory, prices, and timing. Local pickup only; online payment is not available."],
+    paragraphs: ["Contact, service, and pickup forms open email drafts. Sending an inquiry does not confirm an order, reservation, or appointment. Contact BMC for current inventory, prices, and timing. Local pickup only; online payment is not available."],
   },
   {
     title: "Film lab and camera service",

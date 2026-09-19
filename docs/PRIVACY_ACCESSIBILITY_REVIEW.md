@@ -3,6 +3,17 @@
 Reviewed September 11, 2026. This is an implementation review, not legal advice,
 a legal-compliance certification, or a guarantee against claims.
 
+## September 15 newsletter update
+
+The unused server-side MailerLite integration has been removed in favor of the
+requested free embedded form. The owner-supplied embed is now installed locally
+behind an explicit Open email signup action. Form double opt-in is enabled, but
+MailerLite still returns an empty template. Privacy/cookie copy discloses the
+provider script, form-view reporting, and possible cookies. Check the actual
+published form's fields and additional scripts before deployment. See
+`MAILERLITE_SETUP.md` for remaining checks. Earlier API unit-test results do not
+verify the embedded form or real email delivery. No deployment has been performed.
+
 ## Owner confirmations
 
 - The owner confirmed permission to publish all photos and video, including
