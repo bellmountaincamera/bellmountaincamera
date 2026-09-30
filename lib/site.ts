@@ -113,20 +113,15 @@ export const labWorkflow = [
   {
     step: "02",
     title: "Choose processing",
-    text: "C-41 is the main process. Black-and-white and E-6 are specialty batches."
+    text: "C-41 is the main process. Black-and-white is handled in specialty batches."
   },
   {
     step: "03",
-    title: "Add push or pull notes",
-    text: "Push or pull C-41 for $3 per stop."
-  },
-  {
-    step: "04",
     title: "Select scan files",
     text: "Choose JPEG or TIFF scans."
   },
   {
-    step: "05",
+    step: "04",
     title: "Scans are delivered",
     text: "Scans are delivered by download link."
   }
@@ -202,26 +197,6 @@ export const filmLabPricing = [
     title: "Develop Only",
     price: "$10",
     text: "Processing only. No scans."
-  },
-  {
-    title: "Push / Pull",
-    price: "$3 / stop",
-    text: "C-41 exposure adjustment."
-  },
-  {
-    title: "Accepted Formats",
-    price: "35MM / 110 / APS",
-    text: "Disposable cameras, 35mm, 110, and APS."
-  },
-  {
-    title: "Main Process",
-    price: "C-41",
-    text: "Color negative film."
-  },
-  {
-    title: "Specialty Process",
-    price: "B&W / E-6",
-    text: "Specialty batches. Longer turnaround."
   }
 ];
 

@@ -1,29 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, IBM_Plex_Mono, VT323 } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { site } from "@/lib/site";
-
-const geist = Geist({
-  subsets: ["latin"],
-  variable: "--font-geist",
-  display: "swap"
-});
-
-const ibmPlexMono = IBM_Plex_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-plex-mono",
-  display: "swap"
-});
-
-const vt323 = VT323({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-vt323",
-  display: "swap"
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://bellmountaincamera.com"),
@@ -111,7 +90,12 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className={`${geist.variable} ${ibmPlexMono.variable} ${vt323.variable}`}>
+    <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=IBM+Plex+Mono:wght@400;500;600;700&amp;family=VT323&amp;display=swap" />
+      </head>
       <body>
         <script
           type="application/ld+json"

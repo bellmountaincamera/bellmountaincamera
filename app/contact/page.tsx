@@ -18,18 +18,14 @@ export default function ContactPage() {
     <main>
       <PageHeader label="Contact" title="Contact" description="Drop off film, ask about a camera, or schedule service."
         meta={["Apple Valley, CA", "Walk-ins welcome"]} textOnly />
-      <section className="section-band">
+      <section className="section-band contact-main-band">
         <div className="section-container contact-layout">
           <div className="contact-details">
             <div><TerminalLabel>Email</TerminalLabel><a href={`mailto:${site.email}`}>{site.email}</a></div>
             <div><TerminalLabel>Instagram</TerminalLabel><a href="https://www.instagram.com/bellmountaincamera/">{site.instagram}</a></div>
             <div><TerminalLabel>Visit</TerminalLabel><p>{site.locationName}<br />{site.street}<br />{site.cityStateZip}</p><p className="mt-3">{site.vendorNumber} / By the cashier</p></div>
             <div><TerminalLabel>Hours</TerminalLabel>{site.hours.map((item) => <p key={item.days}>{item.days}<br />{item.time}</p>)}</div>
-            <div><TerminalLabel>Appointments</TerminalLabel><p>Available by request.</p></div>
-            <div className="flex flex-wrap justify-center gap-3">
-              <CTAButton href={directionsUrl} variant="secondary">Get directions</CTAButton>
-              <CTAButton href="#appointments" variant="secondary">Appointments</CTAButton>
-            </div>
+            <div className="contact-directions"><CTAButton href={directionsUrl} variant="secondary">Get directions</CTAButton></div>
           </div>
           <EmailDraftForm id="contact" title="Email BMC" subject="BMC shop inquiry" submitLabel="Open email draft"
             fields={[
@@ -40,22 +36,20 @@ export default function ContactPage() {
             ]} />
         </div>
       </section>
-      <section className="section-band" id="appointments">
-        <div className="section-container service-layout">
-          <div className="service-intro">
+      <section className="section-band appointment-band" id="appointments">
+        <div className="section-container appointment-layout">
+          <div className="appointment-intro">
             <TerminalLabel>By appointment</TerminalLabel>
-            <h2 className="mt-4">Plan your visit.</h2>
-            <p className="mt-5 text-base leading-7 text-[#686c72]">For camera service, detailed lab questions, and pickup timing.</p>
-            <div className="mt-7"><CTAButton href={appointmentMailto}>Request appointment</CTAButton></div>
+            <h2>Appointments</h2>
+            <p>Camera service, lab questions, and pickup.</p>
           </div>
-          <div className="record-grid">
-            {site.appointmentAvailability.map((item) => <article key={item.days} className="record-cell p-6 text-center">
-              <TerminalLabel>{item.days}</TerminalLabel><p className="mt-3 text-base">{item.time}</p>
-            </article>)}
+          <div className="appointment-times">
+            {site.appointmentAvailability.map((item) => <p key={item.days}><strong>{item.days}</strong><span>{item.time}</span></p>)}
           </div>
+          <CTAButton href={appointmentMailto}>Request appointment</CTAButton>
         </div>
       </section>
-      <section className="section-band">
+      <section className="section-band contact-map-band">
         <div className="section-container">
           <div className="section-heading"><TerminalLabel>Apple Valley, CA</TerminalLabel><h2>Find the shop.</h2></div>
           <LocationMap />

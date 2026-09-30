@@ -17,7 +17,7 @@ export const privacySections: PolicySection[] = [
   },
   {
     title: "Website visits and providers",
-    paragraphs: ["The website is hosted by Vercel. Hosting services may process IP addresses, browser information, requested pages, and request times to deliver and protect the website. BMC has not added advertising pixels. Optional signup and map services have their own data practices, described below.",
+    paragraphs: ["The website is hosted by Vercel. Hosting services may process IP addresses, browser information, requested pages, and request times to deliver and protect the website. BMC has not added advertising pixels. Site fonts load from Google Fonts, which receives connection information when you visit. Optional signup and map services have their own data practices, described below.",
       "Messages sent to BMC are handled through Gmail and your chosen email provider. Scan delivery may use a download-link service. Those providers handle the information needed for the relevant service.",
       "Email signup loads only after you choose Open email signup. It connects to MailerLite, which receives connection information, records form activity, and may use cookies. Submitting the form sends your email and marketing permission to MailerLite for BMC updates. Confirm your subscription through the email you receive. Service inquiries do not subscribe you.",
       "Google Maps loads only after you select Load Google Map. At that point Google receives connection information and may use cookies. Instagram and directions links open external services with their own privacy practices."],
