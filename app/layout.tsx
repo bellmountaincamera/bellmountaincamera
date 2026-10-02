@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
+import { FilmStripMotion } from "@/components/layout/FilmStripMotion";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -94,9 +95,10 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=IBM+Plex+Mono:wght@400;500;600;700&amp;family=VT323&amp;display=swap" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Geist+Mono:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600;700&amp;family=VT323&amp;display=swap" />
       </head>
       <body>
+        <FilmStripMotion />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

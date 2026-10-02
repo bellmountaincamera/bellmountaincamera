@@ -25,7 +25,7 @@ const samples = [
 
 export default function LabPage() {
   return (
-    <main>
+    <main className="lab-type">
       <PageHeader label="Film Lab" title="Film Lab" description="Film developing and scanning in Apple Valley."
         meta={[`${labInfo.process} IN-HOUSE`, "JPEG / TIFF SCANS"]} textOnly hideIntro />
       <section className="section-band" id="pricing">

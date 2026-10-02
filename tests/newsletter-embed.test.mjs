@@ -67,12 +67,12 @@ test("provider rendering after an initial timeout can recover", () => {
   assert.equal(frame.sent[1].data.status, "ready");
 });
 
-test("local homepage does not preload the optional embed", async () => {
+test("local homepage does not show the paused signup", async () => {
   const base = process.env.BMC_TEST_URL ?? "http://127.0.0.1:3102";
   const response = await fetch(base);
   assert.equal(response.status, 200);
   const body = await response.text();
-  assert.match(body, /Open email signup/);
+  assert.doesNotMatch(body, /Open email signup|Get BMC updates/);
   assert.doesNotMatch(body, /<iframe[^>]*newsletter\/embed/);
   assert.doesNotMatch(body, /https:\/\/assets\.mailerlite\.com\/js\/universal\.js/);
   const embed = await fetch(new URL("/newsletter/embed.html", base));

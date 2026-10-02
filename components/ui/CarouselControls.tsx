@@ -15,7 +15,7 @@ export function CarouselControls({ index, count, paused, onPrevious, onNext, onT
   return (
     <div className="carousel-controls">
       <button type="button" className="icon-button" onClick={onPrevious} aria-label="Previous photo" title="Previous photo"><ArrowLeft size={17} /></button>
-      <span className="frame-counter mono" aria-label={`Photo ${index + 1} of ${count}`}>
+      <span className="frame-counter mono" role="group" aria-label={`Photo ${index + 1} of ${count}`}>
         {String(index + 1).padStart(2, "0")} <span>/</span> {String(count).padStart(2, "0")}
       </span>
       <button type="button" className="icon-button" onClick={onNext} aria-label="Next photo" title="Next photo"><ArrowRight size={17} /></button>

@@ -6,7 +6,7 @@ import { footerCopy, site } from "@/lib/site";
 export function Footer() {
   const links = [
     { href: "/contact", label: "Contact" }, { href: "/local-pickup", label: "Local Pickup" },
-    { href: "/lab", label: "Film Lab" }, { href: "/shop", label: "Shop" },
+    { href: "/lab", label: "Film Lab" },
     { href: "/faq", label: "FAQ" }, { href: "/policies", label: "Policies" },
     { href: "/privacy", label: "Privacy" }, { href: "/cookies", label: "Cookies" },
     { href: "/returns", label: "Returns" }, { href: "/terms", label: "Terms" }
@@ -14,8 +14,8 @@ export function Footer() {
   return (
     <footer className="site-footer">
       <div className="section-container">
-        <p className="footer-wordmark mono">Bell Mountain Camera</p>
-        <p className="footer-description">{footerCopy}</p>
+        <p className="footer-wordmark ocr">Bell Mountain Camera</p>
+        <p className="footer-description ocr">{footerCopy}</p>
         <a className="footer-email mono" href={`mailto:${site.email}`}>{site.email}</a>
         <nav aria-label="Footer navigation" className="footer-nav">
           {links.map((item) => <Link key={item.href} href={item.href}>{item.label}</Link>)}

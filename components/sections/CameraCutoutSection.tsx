@@ -7,7 +7,7 @@ const cameras = [
   { name: "Minolta 7", type: "35mm rangefinder", image: "/images/camera-cutouts/minolta-7.webp" },
   { name: "Sure Shot Owl", type: "35mm point & shoot", image: "/images/camera-cutouts/canon-owl.webp" },
   { name: "Canon Sure Shot 85 Zoom", type: "35mm point & shoot", image: "/images/camera-cutouts/canon-sureshot-85.webp" },
-  { name: "Pentax IQZoom 110", type: "35mm point & shoot", image: "/images/camera-cutouts/pentax-iqzoom.webp" }
+  { name: "Olympus Superzoom 105", type: "35mm point & shoot", image: "/images/camera-cutouts/olympus-superzoom-105.webp" }
 ];
 
 export function CameraCutoutSection() {
@@ -33,7 +33,7 @@ export function CameraCutoutSection() {
           ))}
         </div>
         <div className="camera-cutout-action">
-          <Link href="/shop/cameras" className="cta-button cta-secondary">View cameras <ArrowUpRight size={17} /></Link>
+          <Link href="/contact" className="cta-button cta-secondary">Ask about cameras <ArrowUpRight size={17} /></Link>
         </div>
       </div>
     </section>

@@ -31,7 +31,6 @@ export const site = {
   nav: [
     { href: "/", label: "Home" },
     { href: "/lab", label: "Film Lab" },
-    { href: "/shop", label: "Shop" },
     { href: "/services", label: "Services" },
     { href: "/contact", label: "Contact" }
   ]
@@ -222,7 +221,7 @@ export const policyCopy = {
   privacy:
     "BMC only uses customer information to respond to messages, process film orders, manage camera service requests, and communicate about shop activity. Customer information is not sold.",
   cookies:
-    "Optional email signup and Google Maps load only when requested. MailerLite records form activity and may use cookies; Google Maps may use Google cookies.",
+    "The contact page loads a Google map automatically. Google may receive connection information and use cookies when the map loads. The homepage does not load MailerLite.",
   terms:
     "By using BMC services, customers understand that film processing, used camera sales, and camera service involve some risk due to film condition, camera condition, age, storage, and mechanical limitations."
 };

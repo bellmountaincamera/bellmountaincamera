@@ -1,5 +1,4 @@
 import { ContactCTA } from "@/components/sections/ContactCTA";
-import { EmailSignupSection } from "@/components/sections/EmailSignupSection";
 import { FeaturedPhotosCarousel } from "@/components/sections/FeaturedPhotosCarousel";
 import { HomeGifCarousel } from "@/components/sections/HomeGifCarousel";
 import { CameraCutoutSection } from "@/components/sections/CameraCutoutSection";
@@ -14,7 +13,6 @@ export default function Home() {
       <CameraCutoutSection />
       <FeaturedPhotosCarousel />
       <VisitSection />
-      <EmailSignupSection />
       <ContactCTA />
     </main>
   );

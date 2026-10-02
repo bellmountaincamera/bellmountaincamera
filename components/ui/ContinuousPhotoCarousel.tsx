@@ -73,7 +73,7 @@ export function ContinuousPhotoCarousel({ frames, label }: { frames: Frame[]; la
 
   return (
     <div className="continuous-gallery" role="region" aria-label={label} aria-roledescription="carousel">
-      <div id={id} ref={viewport} className="continuous-viewport" tabIndex={0}
+      <div id={id} ref={viewport} className="continuous-viewport" role="group" tabIndex={0}
         aria-label={`${label}. Use arrow keys to browse.`}
         onFocus={() => setPaused(true)} onPointerDown={() => setPaused(true)} onWheel={() => setPaused(true)}
         onKeyDown={(event) => {

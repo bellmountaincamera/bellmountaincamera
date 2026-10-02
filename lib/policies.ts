@@ -1,6 +1,6 @@
 import { policyCopy, site } from "@/lib/site";
 
-export const policyUpdated = "2026-09-16";
+export const policyUpdated = "2026-10-01";
 
 export type PolicySection = {
   title: string;
@@ -12,22 +12,21 @@ export const privacySections: PolicySection[] = [
   {
     title: "Information you provide",
     paragraphs: [policyCopy.privacy,
-      "Contact and service forms ask for your name, email, and request details. These forms prepare an email in your email app; BMC receives it only if you send it. Newsletter signup is separate and asks for your email and permission to receive updates.",
+      "Contact and service forms ask for your name, email, and request details. These forms prepare an email in your email app; BMC receives it only if you send it. The homepage newsletter signup is currently unavailable.",
       "Film orders also involve your contact details, order preferences, and film images so BMC can process your film and deliver scans. Do not include payment card details, passwords, or identification documents in website forms."],
   },
   {
     title: "Website visits and providers",
-    paragraphs: ["The website is hosted by Vercel. Hosting services may process IP addresses, browser information, requested pages, and request times to deliver and protect the website. BMC has not added advertising pixels. Site fonts load from Google Fonts, which receives connection information when you visit. Optional signup and map services have their own data practices, described below.",
+    paragraphs: ["The website is hosted by Vercel. Hosting services may process IP addresses, browser information, requested pages, and request times to deliver and protect the website. BMC has not added advertising pixels. Site fonts load from Google Fonts, which receives connection information when you visit.",
       "Messages sent to BMC are handled through Gmail and your chosen email provider. Scan delivery may use a download-link service. Those providers handle the information needed for the relevant service.",
-      "Email signup loads only after you choose Open email signup. It connects to MailerLite, which receives connection information, records form activity, and may use cookies. Submitting the form sends your email and marketing permission to MailerLite for BMC updates. Confirm your subscription through the email you receive. Service inquiries do not subscribe you.",
-      "Google Maps loads only after you select Load Google Map. At that point Google receives connection information and may use cookies. Instagram and directions links open external services with their own privacy practices."],
-    links: [{ href: "/cookies", label: "Cookies and optional maps" }, { href: "https://vercel.com/legal/privacy-policy", label: "Vercel privacy policy" }, { href: "https://policies.google.com/privacy", label: "Google privacy policy" }, { href: "https://www.mailerlite.com/legal/privacy-policy", label: "MailerLite privacy policy" }],
+      "The contact page loads Google Maps automatically. Google receives connection information and may use cookies when the map loads. Instagram and directions links open external services with their own privacy practices."],
+    links: [{ href: "/cookies", label: "Cookies and maps" }, { href: "https://vercel.com/legal/privacy-policy", label: "Vercel privacy policy" }, { href: "https://policies.google.com/privacy", label: "Google privacy policy" }],
   },
   {
     title: "Your choices",
     paragraphs: ["Email BMC to ask about your information, request a correction or deletion, or ask how long order records and scan files are kept. Some records may need to be retained for orders, accounting, or legal obligations.",
       "Service requests do not subscribe you to marketing. Use the unsubscribe link in a BMC update or email BMC to stop receiving updates.",
-      "BMC does not sell personal information or use it for targeted advertising. Optional MailerLite and Google services remain unloaded until you choose to open them, regardless of Do Not Track or Global Privacy Control settings. Their own privacy and browser settings apply after loading."],
+      "BMC does not sell personal information or use it for targeted advertising. Your browser settings may limit third-party cookies. Service inquiries do not subscribe you to marketing."],
   },
   {
     title: "Policy updates",
@@ -39,18 +38,12 @@ export const cookieSections: PolicySection[] = [
   {
     title: "Cookies on this website",
     paragraphs: [policyCopy.cookies,
-      "BMC's own interface does not save form entries or gallery preferences in cookies or browser storage. Optional third-party signup and map services may use cookies after you load them. Your browser or email app may retain drafts or autofill information according to its settings."],
+      "BMC's own interface does not save form entries or gallery preferences in cookies or browser storage. Your browser or email app may retain drafts or autofill information according to its settings."],
   },
   {
-    title: "Optional email signup",
-    paragraphs: ["MailerLite loads only when you choose Open email signup. Its scripts record form views and can use session and form-interaction cookies. It also receives your IP address and browser information when your browser connects. Marketing permission is requested separately in the signup form.",
-      "Close signup removes the embedded form but does not delete cookies already set by MailerLite. You can manage those through your browser. Opening permission is not saved between page visits. Unsubscribe using the link in a BMC email or contact BMC."],
-    links: [{ href: "https://www.mailerlite.com/legal/cookie-policy", label: "MailerLite cookie policy" }, { href: "https://www.mailerlite.com/legal/privacy-policy", label: "MailerLite privacy policy" }],
-  },
-  {
-    title: "Optional Google Maps",
-    paragraphs: ["The map is blocked until you choose Load Google Map. Loading it connects your browser to Google, which may use cookies and receive your IP address and browser information. You can leave it unloaded and use the written address instead.",
-      "Hide Google Map stops displaying the embed; it does not delete cookies already stored by Google. Use your browser settings to manage those cookies. Map permission is not saved between page visits."],
+    title: "Google Maps",
+    paragraphs: ["The contact page loads an embedded Google map automatically. Google may receive your IP address and browser information and use cookies when the map loads.",
+      "You can use the written address instead of the map. Browser settings can be used to manage Google cookies."],
     links: [{ href: "https://policies.google.com/technologies/cookies", label: "Google's cookie information" }],
   },
   {
