@@ -16,7 +16,7 @@ export function FilmLabSection() {
             C-41 development and scans
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-sm leading-7 text-[#FFFFFF]">
-            Local drop-off. JPEG and TIFF scans by download link.
+            35mm and 110 C-41 color negative film. Digital photos by Dropbox download link.
           </p>
           <div className="mt-8">
             <CTAButton href="/lab" variant="dark">
@@ -26,10 +26,10 @@ export function FilmLabSection() {
         </div>
         <div className="grid gap-4 sm:grid-cols-2">
           {[
-            ["PROCESS", "35mm C-41"],
-            ["SCAN", "JPEG / TIFF"],
-            ["TURNAROUND", "Usually 3-7 business days"],
-            ["DELIVERY", "Download link"]
+            ["PROCESS", "C-41 color negative"],
+            ["FORMATS", "35mm / 110"],
+            ["SCANNING", "Developed negatives"],
+            ["DELIVERY", "Dropbox download link"]
           ].map(([label, value]) => (
             <div key={label} className="terminal-panel p-5">
               <p className="mono text-[0.7rem] uppercase tracking-[0.16em] text-[#496787]">

@@ -1,6 +1,6 @@
 import { policyCopy, site } from "@/lib/site";
 
-export const policyUpdated = "2026-10-01";
+export const policyUpdated = "2026-10-02";
 
 export type PolicySection = {
   title: string;
@@ -18,7 +18,7 @@ export const privacySections: PolicySection[] = [
   {
     title: "Website visits and providers",
     paragraphs: ["The website is hosted by Vercel. Hosting services may process IP addresses, browser information, requested pages, and request times to deliver and protect the website. BMC has not added advertising pixels. Site fonts load from Google Fonts, which receives connection information when you visit.",
-      "Messages sent to BMC are handled through Gmail and your chosen email provider. Scan delivery may use a download-link service. Those providers handle the information needed for the relevant service.",
+      "Messages sent to BMC are handled through Gmail and your chosen email provider. Digital photos are delivered through a Dropbox download link. Those providers handle the information needed for the relevant service.",
       "The contact page loads Google Maps automatically. Google receives connection information and may use cookies when the map loads. Instagram and directions links open external services with their own privacy practices."],
     links: [{ href: "/cookies", label: "Cookies and maps" }, { href: "https://vercel.com/legal/privacy-policy", label: "Vercel privacy policy" }, { href: "https://policies.google.com/privacy", label: "Google privacy policy" }],
   },
@@ -61,7 +61,7 @@ export const termsSections: PolicySection[] = [
   {
     title: "Film lab and camera service",
     paragraphs: [policyCopy.terms, policyCopy.cameraService,
-      "Ask BMC to confirm the process, scan options, service scope, and price before drop-off. Turnaround is an estimate, not a guaranteed delivery date."],
+      "BMC processes 35mm and 110 C-41 color negative film. Ask BMC to confirm scan options and service scope before drop-off."],
   },
   {
     title: "Used equipment and returns",

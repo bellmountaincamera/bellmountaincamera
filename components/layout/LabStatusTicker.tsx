@@ -1,8 +1,3 @@
-"use client";
-
-import { useState } from "react";
-import { Pause, Play } from "lucide-react";
-
 // Five columns of seven pixels per glyph, like a single-line LED sign.
 const glyphs: Record<string, number[]> = {
   A: [126, 9, 9, 9, 126], B: [127, 73, 73, 73, 54], C: [62, 65, 65, 65, 34],
@@ -35,14 +30,13 @@ function matrixPath(text: string) {
 }
 
 export function LabStatusTicker({ text }: { text: string }) {
-  const [paused, setPaused] = useState(false);
   const message = text.toUpperCase();
   const supported = [...message].every((character) => glyphs[character]);
   const path = supported ? matrixPath(message) : "";
   const width = message.length * 18;
 
   return (
-    <div className="lab-status-bar" data-paused={paused}>
+    <div className="lab-status-bar">
       <span className="sr-only">Film lab status: {text}</span>
       <div className="led-sign">
         <div className="led-viewport" aria-hidden="true">
@@ -55,11 +49,6 @@ export function LabStatusTicker({ text }: { text: string }) {
           </div>
         </div>
         <span className="led-static" aria-hidden="true">{text}</span>
-        <button type="button" className="led-control" onClick={() => setPaused(!paused)}
-          aria-label={paused ? "Play lab status animation" : "Pause lab status animation"}
-          title={paused ? "Play lab status animation" : "Pause lab status animation"}>
-          {paused ? <Play size={15} aria-hidden="true" /> : <Pause size={15} aria-hidden="true" />}
-        </button>
       </div>
     </div>
   );

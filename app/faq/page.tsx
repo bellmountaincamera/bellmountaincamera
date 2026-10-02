@@ -18,15 +18,15 @@ const faqGroups = [
       ],
       [
         "Do you scan film?",
-        "Yes. JPEG and TIFF scans are delivered by download link."
+        "Yes. Scanning-only service is available for already-developed 35mm and 110 negatives. Digital photos are delivered through a Dropbox download link."
       ],
       [
-        "How long does film take?",
-        `Typical C-41 turnaround is usually ${labInfo.turnaround} depending on volume, but turnaround is not guaranteed.`
+        "What film can BMC process?",
+        "35mm and 110 C-41 color negative film only."
       ],
       [
-        "What happens if my roll is blank?",
-        "Film results can be affected by film age, exposure, storage condition, camera condition, loading errors, heat, and development variables."
+        "Do you scan slides?",
+        "Yes. Already-developed positive slides are $10 per 36 slides. Slide development is not available."
       ]
     ]
   },

@@ -10,7 +10,6 @@ export const site = {
   cityStateZip: "Apple Valley, CA 92307",
   vendorNumber: "Vendor #24",
   filmDevelopmentStatus: "Accepting C-41 film orders",
-  filmTurnaround: "C-41: 3-7 business days",
   hoursShort: "Tuesday - Saturday, 10 AM - 4 PM",
   hours: [
     { days: "Tuesday - Saturday", time: "10:00 AM - 4:00 PM" },
@@ -36,6 +35,9 @@ export const site = {
   ]
 };
 
+// Flip this off when the page/section editing pass is finished.
+export const showEditorSectionLabels = true;
+
 export const businessInfo = {
   name: site.name,
   shortName: site.abbreviation,
@@ -50,13 +52,13 @@ export const businessInfo = {
 
 export const labInfo = {
   status: "Accepting C-41 film orders",
-  process: "C-41",
-  turnaround: "3-7 business days",
-  scanDelivery: "Download link"
+  process: "C-41 color negative",
+  formats: "35mm and 110",
+  scanDelivery: "Your digital photos are delivered through a Dropbox download link."
 };
 
 export const footerCopy =
-  "Bell Mountain Camera operates inside Wild Goose Vintage & Thrift in Apple Valley, CA. BMC processes film, sells used cameras, stocks film, and handles basic camera service.";
+  "Film lab, used cameras, and camera service inside Wild Goose Vintage & Thrift in Apple Valley, CA.";
 
 export const services = [
   {
@@ -107,22 +109,12 @@ export const labWorkflow = [
   {
     step: "01",
     title: "Drop off your film",
-    text: "Bring disposable cameras, 35mm, 110, or APS film during business hours."
+    text: "Fill out a shop envelope with your information and film request, then check out with the cashier."
   },
   {
     step: "02",
-    title: "Choose processing",
-    text: "C-41 is the main process. Black-and-white is handled in specialty batches."
-  },
-  {
-    step: "03",
-    title: "Select scan files",
-    text: "Choose JPEG or TIFF scans."
-  },
-  {
-    step: "04",
-    title: "Scans are delivered",
-    text: "Scans are delivered by download link."
+    title: "Watch for email updates",
+    text: "BMC emails you when your film is collected, processing begins, and the order is complete. For scans, the final email includes a Dropbox download link."
   }
 ];
 
@@ -188,19 +180,26 @@ export const serviceBundles = [
 
 export const filmLabPricing = [
   {
-    title: "Develop + Scan",
-    price: "$15",
-    text: "Processing with JPEG or TIFF scan delivery."
+    title: "Development + scans",
+    description: "Process the film and deliver digital images.",
+    prices: { "35mm": "$15", "110": "$17" }
   },
   {
-    title: "Develop Only",
-    price: "$10",
-    text: "Processing only. No scans."
+    title: "Development only",
+    description: "Process the film without digital scans.",
+    prices: { "35mm": "$10", "110": "$10" }
+  },
+  {
+    title: "Scanning only",
+    description: "Digitize already-developed negatives. Development is not included.",
+    prices: { "35mm": "$5", "110": "$7" }
   }
 ];
 
 export const filmLabDisclaimer =
-  "Film results can be affected by age, storage, exposure, camera condition, heat, loading, and development variables.";
+  "By leaving film with Bell Mountain Camera, you acknowledge that film is processed using industry-standard methods. BMC is not responsible for loss or damage caused by manufacturer defects, age, or handling before drop-off. To the extent permitted by law, BMC's liability is limited to replacement with equivalent unexposed film. This does not limit rights or remedies that cannot be excluded by law.";
+
+export const appleMapsUrl = `https://maps.apple.com/place?address=${encodeURIComponent(`${site.street}, ${site.cityStateZip}`)}`;
 
 export const serviceDisclaimer =
   "Service depends on the camera model, condition, and issue. Some cameras may need parts or repairs beyond what Bell Mountain Camera can provide in-house.";

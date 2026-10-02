@@ -3,6 +3,7 @@ import "./globals.css";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { FilmStripMotion } from "@/components/layout/FilmStripMotion";
+import { EditorSectionLabels } from "@/components/layout/EditorSectionLabels";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -108,6 +109,7 @@ export default function RootLayout({
         <Header />
         <div id="main-content" tabIndex={-1}>{children}</div>
         <Footer />
+        <EditorSectionLabels />
       </body>
     </html>
   );

@@ -52,7 +52,7 @@ export function HomeGifCarousel() {
         <CarouselControls index={slideshow.index} count={clips.length} paused={slideshow.paused}
           onPrevious={slideshow.previous} onNext={slideshow.next} onToggle={slideshow.toggle} />
         <Link href="/lab" className="cta-button cta-primary">Film Development &amp; Info <ArrowUpRight size={17} /></Link>
-        <MetadataLine items={["Process accepted: 35mm C-41 and B&W", "Local pickup only"]} />
+        <MetadataLine items={["C-41 color negative / 35mm + 110", "Local pickup only"]} />
       </div>
     </section>
   );

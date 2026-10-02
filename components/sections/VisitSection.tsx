@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { TerminalLabel } from "@/components/ui/TerminalLabel";
-import { site } from "@/lib/site";
+import { appleMapsUrl, site } from "@/lib/site";
 
 export function VisitSection() {
   return (
@@ -20,11 +20,11 @@ export function VisitSection() {
             <p className="visit-vendor mono">Unit #2 / {site.vendorNumber} / By the cashier</p>
             <div className="visit-record">
               <span className="terminal-label">Find us</span>
-              <p>{site.street}<br />{site.cityStateZip}</p>
+              <p><a className="visit-link" href={appleMapsUrl} target="_blank" rel="noopener noreferrer">{site.street}<br />{site.cityStateZip}</a></p>
             </div>
             <div className="visit-record">
               <span className="terminal-label">Shop hours</span>
-              <p>Tuesday - Saturday<br />10 AM - 4 PM</p>
+              <p><a className="visit-link" href="/contact#hours">Tuesday - Saturday<br />10 AM - 4 PM</a></p>
             </div>
             <CTAButton href="/contact" variant="secondary">Visit &amp; Contact</CTAButton>
           </div>

@@ -75,7 +75,7 @@ export default function PoliciesPage() {
       <section className="mx-auto max-w-7xl px-4 py-14 text-center sm:px-6 sm:py-20 lg:px-8">
         <div className="record-grid md:grid-cols-2">
           {policySections.map((section) => (
-            <article key={section.title} className="record-cell p-6">
+            <article key={section.title} className="record-cell p-6" data-editor-name={section.title}>
               <TerminalLabel>{section.title}</TerminalLabel>
               <p className="mt-5 text-sm leading-7 text-[#111111]">
                 {section.text}

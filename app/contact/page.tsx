@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { site } from "@/lib/site";
+import { appleMapsUrl, site } from "@/lib/site";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { EmailDraftForm } from "@/components/ui/EmailDraftForm";
 import { PageHeader } from "@/components/ui/PageHeader";
@@ -12,20 +12,24 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
-  const directionsUrl = "https://www.google.com/maps/search/?api=1&query=Bell%20Mountain%20Camera%2021810%20CA-18%20Unit%20%232%20Apple%20Valley%20CA%2092307";
   const appointmentMailto = `mailto:${site.email}?subject=${encodeURIComponent(site.appointmentEmailSubject)}&body=${encodeURIComponent(site.appointmentEmailBody)}`;
   return (
     <main>
       <PageHeader label="Contact" title="Contact" description="Drop off film, ask about a camera, or schedule service."
         meta={["Apple Valley, CA", "Walk-ins welcome"]} textOnly />
-      <section className="section-band contact-main-band">
+      <section className="section-band contact-main-band" data-editor-name="Visit and contact">
         <div className="section-container contact-layout">
           <div className="contact-details">
+            <div className="contact-location"><TerminalLabel>Visit</TerminalLabel>
+              <a className="contact-address" href={appleMapsUrl} target="_blank" rel="noopener noreferrer">
+                {site.locationName}<br />{site.street}<br />{site.cityStateZip}
+              </a>
+              <p className="mt-3">{site.vendorNumber} / By the cashier</p>
+            </div>
+            <div id="hours" className="contact-hours"><TerminalLabel>Hours</TerminalLabel>{site.hours.map((item) => <p key={item.days}>{item.days}<br />{item.time}</p>)}</div>
             <div><TerminalLabel>Email</TerminalLabel><a href={`mailto:${site.email}`}>{site.email}</a></div>
-            <div><TerminalLabel>Instagram</TerminalLabel><a href="https://www.instagram.com/bellmountaincamera/">{site.instagram}</a></div>
-            <div><TerminalLabel>Visit</TerminalLabel><p>{site.locationName}<br />{site.street}<br />{site.cityStateZip}</p><p className="mt-3">{site.vendorNumber} / By the cashier</p></div>
-            <div><TerminalLabel>Hours</TerminalLabel>{site.hours.map((item) => <p key={item.days}>{item.days}<br />{item.time}</p>)}</div>
-            <div className="contact-directions"><CTAButton href={directionsUrl} variant="secondary">Get directions</CTAButton></div>
+            <div><TerminalLabel>Instagram</TerminalLabel><a href="https://www.instagram.com/bellmountaincamera/" target="_blank" rel="noopener noreferrer">{site.instagram}</a></div>
+            <div className="contact-directions"><CTAButton href={appleMapsUrl} variant="secondary">Open in Apple Maps</CTAButton></div>
           </div>
           <EmailDraftForm id="contact" title="Email BMC" subject="BMC shop inquiry" submitLabel="Open email draft"
             fields={[
@@ -53,7 +57,7 @@ export default function ContactPage() {
         <div className="section-container">
           <div className="section-heading"><TerminalLabel>Apple Valley, CA</TerminalLabel><h2>Find the shop.</h2></div>
           <LocationMap />
-          <div className="mt-6 text-center"><CTAButton href={directionsUrl} variant="secondary">Open directions</CTAButton></div>
+          <div className="mt-6 text-center"><CTAButton href={appleMapsUrl} variant="secondary">Open in Apple Maps</CTAButton></div>
         </div>
       </section>
     </main>
