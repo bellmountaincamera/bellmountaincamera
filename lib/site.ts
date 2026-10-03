@@ -15,14 +15,6 @@ export const site = {
     { days: "Tuesday - Saturday", time: "10:00 AM - 4:00 PM" },
     { days: "Sunday - Monday", time: "Closed" }
   ],
-  appointmentEmailSubject: "Appointment request for Bell Mountain Camera",
-  appointmentEmailBody:
-    "Hi Bell Mountain Camera,\n\nI would like to request an appointment.\n\nPreferred day/time:\nReason for visit:\n\nThank you.",
-  appointmentAvailability: [
-    { days: "Tuesday - Thursday", time: "Usually available 11:00 AM - 1:00 PM" },
-    { days: "Friday - Saturday", time: "Usually available most of the day" },
-    { days: "Best availability", time: "Request appointments one week in advance" }
-  ],
   locationCopy:
     "BMC is inside Wild Goose Vintage & Thrift Store in Apple Valley. Walk-ins are welcome Tuesday through Saturday.",
   description:
@@ -197,7 +189,7 @@ export const filmLabPricing = [
 ];
 
 export const filmLabDisclaimer =
-  "By leaving film with Bell Mountain Camera, you acknowledge that film is processed using industry-standard methods. BMC is not responsible for loss or damage caused by manufacturer defects, age, or handling before drop-off. To the extent permitted by law, BMC's liability is limited to replacement with equivalent unexposed film. This does not limit rights or remedies that cannot be excluded by law.";
+  "Film is processed using industry-standard methods. BMC is not responsible for results affected by manufacturer defects, film age, or handling before drop-off. If BMC loses or damages a roll, we will replace it with equivalent unexposed film.";
 
 export const appleMapsUrl = `https://maps.apple.com/place?address=${encodeURIComponent(`${site.street}, ${site.cityStateZip}`)}`;
 

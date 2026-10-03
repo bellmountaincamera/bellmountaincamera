@@ -29,7 +29,7 @@ const topics = [
   {
     title: "Contact",
     code: "VISIT",
-    text: "Email, hours, location, and appointments.",
+    text: "Email, hours, and location.",
     href: "/contact"
   }
 ];

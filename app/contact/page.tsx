@@ -12,13 +12,13 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
-  const appointmentMailto = `mailto:${site.email}?subject=${encodeURIComponent(site.appointmentEmailSubject)}&body=${encodeURIComponent(site.appointmentEmailBody)}`;
   return (
     <main>
-      <PageHeader label="Contact" title="Contact" description="Drop off film, ask about a camera, or schedule service."
+      <PageHeader label="Contact" title="Contact" description="Visit the shop or email BMC about film and cameras."
         meta={["Apple Valley, CA", "Walk-ins welcome"]} textOnly />
       <section className="section-band contact-main-band" data-editor-name="Visit and contact">
         <div className="section-container contact-layout">
+          <h2 className="sr-only">Visit and contact BMC</h2>
           <div className="contact-details">
             <div className="contact-location"><TerminalLabel>Visit</TerminalLabel>
               <a className="contact-address" href={appleMapsUrl} target="_blank" rel="noopener noreferrer">
@@ -27,8 +27,8 @@ export default function ContactPage() {
               <p className="mt-3">{site.vendorNumber} / By the cashier</p>
             </div>
             <div id="hours" className="contact-hours"><TerminalLabel>Hours</TerminalLabel>{site.hours.map((item) => <p key={item.days}>{item.days}<br />{item.time}</p>)}</div>
-            <div><TerminalLabel>Email</TerminalLabel><a href={`mailto:${site.email}`}>{site.email}</a></div>
-            <div><TerminalLabel>Instagram</TerminalLabel><a href="https://www.instagram.com/bellmountaincamera/" target="_blank" rel="noopener noreferrer">{site.instagram}</a></div>
+            <div><TerminalLabel>Email</TerminalLabel><a href={`mailto:${site.email}`} aria-label={`Email BMC at ${site.email}`}>{site.email}</a></div>
+            <div><TerminalLabel>Instagram</TerminalLabel><a href="https://www.instagram.com/bellmountaincamera/" target="_blank" rel="noopener noreferrer" aria-label="Bell Mountain Camera on Instagram">{site.instagram}</a></div>
             <div className="contact-directions"><CTAButton href={appleMapsUrl} variant="secondary">Open in Apple Maps</CTAButton></div>
           </div>
           <EmailDraftForm id="contact" title="Email BMC" subject="BMC shop inquiry" submitLabel="Open email draft"
@@ -38,19 +38,6 @@ export default function ContactPage() {
               { name: "reason", label: "Reason for contact", type: "select", required: true, options: ["Film drop-off", "Film scanning", "Camera service", "Film stock", "Camera inventory", "Local pickup", "General question"] },
               { name: "message", label: "Message", type: "textarea", required: true }
             ]} />
-        </div>
-      </section>
-      <section className="section-band appointment-band" id="appointments">
-        <div className="section-container appointment-layout">
-          <div className="appointment-intro">
-            <TerminalLabel>By appointment</TerminalLabel>
-            <h2>Appointments</h2>
-            <p>Camera service, lab questions, and pickup.</p>
-          </div>
-          <div className="appointment-times">
-            {site.appointmentAvailability.map((item) => <p key={item.days}><strong>{item.days}</strong><span>{item.time}</span></p>)}
-          </div>
-          <CTAButton href={appointmentMailto}>Request appointment</CTAButton>
         </div>
       </section>
       <section className="section-band contact-map-band">

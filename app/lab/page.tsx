@@ -55,16 +55,15 @@ export default function LabPage() {
                   ))}
                 </tbody>
               </table>
+              <div className="lab-slide-row">
+                <div>
+                  <h3>Positive slide scanning</h3>
+                  <p>Already-developed positive slides. No slide development.</p>
+                </div>
+                <div className="lab-slide-price"><strong>$10</strong><span>per 36 slides</span></div>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="section-band lab-detail-band" id="slides" data-editor-name="Positive slide scanning">
-        <div className="section-container lab-detail-content">
-          <TerminalLabel>Positive slide scanning</TerminalLabel>
-          <h2>$10 <span>/ 36 slides</span></h2>
-          <p>Scanning for already-developed positive slides. Slide development is not available.</p>
         </div>
       </section>
 

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { CSSProperties } from "react";
 import { ArrowUpRight } from "lucide-react";
 
 const cameras = [
@@ -21,7 +22,7 @@ export function CameraCutoutSection() {
         <div className="camera-cutout-grid">
           {cameras.map((camera, index) => (
             <figure className={`camera-cutout camera-cutout-${index + 1}`} key={camera.name}>
-              <div className="camera-cutout-stage">
+              <div className="camera-cutout-stage" style={{ "--camera-mask": `url("${camera.image}")` } as CSSProperties}>
                 <Image src={camera.image} alt={camera.name} width={900} height={600}
                   sizes="(max-width: 639px) 43vw, (max-width: 1023px) 27vw, 260px" />
               </div>

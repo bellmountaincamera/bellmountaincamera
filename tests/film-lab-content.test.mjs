@@ -22,7 +22,8 @@ test("film lab shows the confirmed prices and only the accepted development form
     assert.deepEqual([...rows[index].matchAll(/<td>([^<]+)<\/td>/g)].map((match) => match[1]), [price35, price110]);
   }
   assert.match(html, /USD, per roll/);
-  assert.match(html, /\$10[\s\S]*?\/ 36 slides/);
+  assert.match(html, /Positive slide scanning[\s\S]*?<strong>\$10<\/strong><span>per 36 slides<\/span>/);
+  assert.ok(html.indexOf("Positive slide scanning") < html.indexOf("</section>", html.indexOf("lab-pricing-band")));
   assert.match(html, /already-developed positive slides/);
   assert.match(html, /Your digital photos are delivered through a Dropbox download link/);
   assert.match(html, /processor-open\.jpg/);
@@ -32,8 +33,11 @@ test("film lab shows the confirmed prices and only the accepted development form
 test("other public pages agree with the lab and expose contact directions", async () => {
   const [home, faq, contact, policies] = await Promise.all([page("/"), page("/faq"), page("/contact"), page("/policies")]);
   assert.match(home, /C-41 color negative \/ 35mm \+ 110/);
+  assert.match(home, /Processed by BMC/);
+  assert.equal((home.match(/class="film-static-frame"/g) ?? []).length, 9);
+  assert.doesNotMatch(home, /film-ribbon-edge|BMC \/ HIGH DESERT \/ 35MM/);
   assert.doesNotMatch(home, /35mm C-41 and B&amp;W/);
   assert.match(faq, /35mm and 110 C-41 color negative film only/);
   assert.match(contact, /maps\.apple\.com\/place\?address=/);
-  assert.match(policies, /replacement with equivalent unexposed film/);
+  assert.match(policies, /replace it with equivalent unexposed film/);
 });
