@@ -3,6 +3,7 @@ import Image from "next/image";
 import { ContinuousPhotoCarousel } from "@/components/ui/ContinuousPhotoCarousel";
 import { ContactCTA } from "@/components/sections/ContactCTA";
 import { PageHeader } from "@/components/ui/PageHeader";
+import { MetadataLine } from "@/components/ui/MetadataLine";
 import { TerminalLabel } from "@/components/ui/TerminalLabel";
 import { filmLabDisclaimer, filmLabPricing, labInfo, labWorkflow } from "@/lib/site";
 
@@ -28,14 +29,14 @@ export default function LabPage() {
   return (
     <main className="lab-type">
       <PageHeader label="Film Lab" title="Film Lab"
-        meta={[labInfo.formats, "C-41 ONLY"]} textOnly />
+        meta={[]} hideIntro textOnly />
 
       <section className="section-band lab-pricing-band" id="pricing">
         <div className="section-container">
           <div className="section-heading">
             <TerminalLabel>Film development</TerminalLabel>
             <h2>Film lab menu</h2>
-            <p className="lab-menu-intro">35mm and 110 C-41 color negative film.</p>
+            <MetadataLine items={[labInfo.formats, "C-41 ONLY"]} />
           </div>
           <div className="lab-menu-photo">
             <Image src="/images/test-rolls/processor-open.jpg" alt="Noritsu film processor at Bell Mountain Camera" fill

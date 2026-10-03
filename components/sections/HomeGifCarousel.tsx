@@ -43,8 +43,8 @@ export function HomeGifCarousel() {
           className={`hero-film-image ${slot === activeSlot ? "is-active" : ""}`} />)}
         <div className="hero-film-content">
           <p className="hero-eyebrow mono">Bell Mountain Camera</p>
-          <h1>Film Lab<br />Cameras and<br />Equipment</h1>
-          <p className="hero-location mono">In Apple Valley, CA</p>
+          <h1>Film Lab<br />Cameras<br />and<br />Equipment</h1>
+          <p className="hero-location mono">In Apple Valley, California</p>
         </div>
       </div>
       <div className="hero-film-footer">

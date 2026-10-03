@@ -3,15 +3,15 @@ import Link from "next/link";
 import type { CSSProperties } from "react";
 import { ArrowUpRight } from "lucide-react";
 
-const cameras: { name: string; type: string; image: string; height?: number }[] = [
-  { name: "Canon A-1", type: "35mm SLR", image: "/images/camera-cutouts/canon-a1.webp" },
-  { name: "Minolta 7", type: "35mm rangefinder", image: "/images/camera-cutouts/minolta-7.webp" },
-  { name: "Sure Shot Owl", type: "35mm point & shoot", image: "/images/camera-cutouts/canon-owl.webp" },
-  { name: "Canon Sure Shot 85 Zoom", type: "35mm point & shoot", image: "/images/camera-cutouts/canon-sureshot-85.webp" },
-  { name: "Olympus Superzoom 105", type: "35mm point & shoot", image: "/images/camera-cutouts/olympus-superzoom-105.webp" },
-  { name: "Pentax IQZoom 110", type: "35mm point & shoot", image: "/images/camera-cutouts/pentax-iqzoom.webp", height: 946 },
-  { name: "Canon AE-1 Program", type: "35mm SLR", image: "/images/camera-cutouts/canon-ae1.webp" },
-  { name: "Olympus Infinity Twin", type: "35mm point & shoot", image: "/images/camera-cutouts/olympus-infinity-twin.webp", height: 403 }
+const cameras: { name: string; image: string; height?: number }[] = [
+  { name: "Canon A-1", image: "/images/camera-cutouts/canon-a1.webp" },
+  { name: "Minolta 7", image: "/images/camera-cutouts/minolta-7.webp" },
+  { name: "Sure Shot Owl", image: "/images/camera-cutouts/canon-owl.webp" },
+  { name: "Canon Sure Shot 85 Zoom", image: "/images/camera-cutouts/canon-sureshot-85.webp" },
+  { name: "Olympus Superzoom 105", image: "/images/camera-cutouts/olympus-superzoom-105.webp" },
+  { name: "Pentax IQZoom 110", image: "/images/camera-cutouts/pentax-iqzoom.webp", height: 946 },
+  { name: "Canon AE-1 Program", image: "/images/camera-cutouts/canon-ae1.webp" },
+  { name: "Olympus Infinity Twin", image: "/images/camera-cutouts/olympus-infinity-twin.webp", height: 403 }
 ];
 
 export function CameraCutoutSection() {
@@ -31,7 +31,6 @@ export function CameraCutoutSection() {
               </div>
               <figcaption>
                 <strong>{camera.name}</strong>
-                <span>{camera.type}</span>
               </figcaption>
             </figure>
           ))}
