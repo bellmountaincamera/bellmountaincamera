@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main>
+    <main className="contact-page">
       <PageHeader label="Contact" title="Contact" description="Visit the shop or email BMC about film and cameras."
         meta={["Apple Valley, CA", "Walk-ins welcome"]} textOnly />
       <section className="section-band contact-main-band" data-editor-name="Visit and contact">

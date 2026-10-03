@@ -43,14 +43,14 @@ export function HomeGifCarousel() {
           className={`hero-film-image ${slot === activeSlot ? "is-active" : ""}`} />)}
         <div className="hero-film-content">
           <p className="hero-eyebrow mono">Bell Mountain Camera</p>
-          <h1>Film Lab<br />Cameras<br />and Equipment</h1>
+          <h1>Film Lab<br />Cameras and<br />Equipment</h1>
           <p className="hero-location mono">In Apple Valley, CA</p>
         </div>
       </div>
       <div className="hero-film-footer">
         <Link href="/lab" className="cta-button cta-primary">Film Development &amp; Info <ArrowUpRight size={17} /></Link>
         <MetadataLine items={["C-41 color negative / 35mm + 110", "Local pickup only"]} />
-        <p className="camera-buying-note">We buy old cameras and equipment.</p>
+        <p className="camera-buying-note">Sell us your old cameras and equipment. <Link href="/contact">Contact us</Link></p>
       </div>
     </section>
   );
