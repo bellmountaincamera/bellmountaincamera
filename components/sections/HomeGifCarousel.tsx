@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
-import { CarouselControls } from "@/components/ui/CarouselControls";
 import { MetadataLine } from "@/components/ui/MetadataLine";
 import { useSlideshow } from "@/lib/use-slideshow";
 
@@ -36,7 +35,7 @@ export function HomeGifCarousel() {
   }, [activeSlot, slideshow.paused, slots]);
   return (
     <section className="home-film-section">
-      <div className="hero-film" role="region" aria-roledescription="carousel" aria-label="Inside the BMC film lab">
+      <div className="hero-film" role="region" aria-label="Inside the BMC film lab">
         {slots.map((clipIndex, slot) => <video key={slot} ref={(node) => { videoRefs.current[slot] = node; }}
           src={`/videos/clip-${clips[clipIndex]}.mp4`} poster={`/videos/clip-${clips[clipIndex]}.jpg`}
           muted playsInline loop preload="auto" aria-hidden="true"
@@ -49,10 +48,9 @@ export function HomeGifCarousel() {
         </div>
       </div>
       <div className="hero-film-footer">
-        <CarouselControls index={slideshow.index} count={clips.length} paused={slideshow.paused}
-          onPrevious={slideshow.previous} onNext={slideshow.next} onToggle={slideshow.toggle} />
         <Link href="/lab" className="cta-button cta-primary">Film Development &amp; Info <ArrowUpRight size={17} /></Link>
         <MetadataLine items={["C-41 color negative / 35mm + 110", "Local pickup only"]} />
+        <p className="camera-buying-note">We buy old cameras and equipment.</p>
       </div>
     </section>
   );

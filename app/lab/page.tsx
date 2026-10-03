@@ -27,7 +27,7 @@ const samples = [
 export default function LabPage() {
   return (
     <main className="lab-type">
-      <PageHeader label="Film Lab" title="Film Lab" description="C-41 color negative film development and scanning in Apple Valley."
+      <PageHeader label="Film Lab" title="Film Lab"
         meta={[labInfo.formats, "C-41 ONLY"]} textOnly />
 
       <section className="section-band lab-pricing-band" id="pricing">
@@ -35,7 +35,7 @@ export default function LabPage() {
           <div className="section-heading">
             <TerminalLabel>Film development</TerminalLabel>
             <h2>Film lab menu</h2>
-            <p className="lab-menu-intro">35mm and 110 C-41 color negative film. All prices are in USD, per roll.</p>
+            <p className="lab-menu-intro">35mm and 110 C-41 color negative film.</p>
           </div>
           <div className="lab-menu-photo">
             <Image src="/images/test-rolls/processor-open.jpg" alt="Noritsu film processor at Bell Mountain Camera" fill
@@ -43,7 +43,7 @@ export default function LabPage() {
             <div className="lab-menu-surface">
               <p className="lab-menu-kicker ocr">BMC / C-41 / PER ROLL</p>
               <table className="lab-menu-table">
-                <caption className="sr-only">Film development and scanning prices per roll in US dollars</caption>
+                <caption className="sr-only">Film development and scanning prices per roll</caption>
                 <colgroup><col className="lab-service-column" /><col /><col /></colgroup>
                 <thead><tr><th scope="col">Service</th><th scope="col">35mm</th><th scope="col">110</th></tr></thead>
                 <tbody>
@@ -64,13 +64,6 @@ export default function LabPage() {
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="section-band lab-detail-band" id="delivery" data-editor-name="Digital delivery">
-        <div className="section-container lab-detail-content">
-          <TerminalLabel>Digital delivery</TerminalLabel>
-          <p>{labInfo.scanDelivery}</p>
         </div>
       </section>
 

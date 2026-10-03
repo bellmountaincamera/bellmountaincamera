@@ -6,7 +6,7 @@ import { cameraPhotos, homePhotos, labPhotos } from "@/lib/photo-sets";
 type PageHeaderProps = {
   label: string;
   title: string;
-  description: string;
+  description?: string;
   meta: string[];
   photoSet?: "all" | "camera" | "lab";
   hideIntro?: boolean;
@@ -23,7 +23,7 @@ export function PageHeader({ title, description, meta, photoSet = "all", hideInt
       </div>
       <div className="section-container">
         {!hideIntro && <div className="page-intro">
-          <p>{description}</p>
+          {description && <p>{description}</p>}
           <MetadataLine items={meta} />
         </div>}
         {!textOnly && <PagePhotoSlideshow frames={frames} label={`${title} photos`} priority />}

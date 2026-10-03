@@ -9,7 +9,7 @@ export function VisitSection() {
       <div className="section-container">
         <div className="section-heading">
           <TerminalLabel>Visit BMC</TerminalLabel>
-          <h2>Your local film counter.</h2>
+          <h2 className="ocr">Your local film counter.</h2>
         </div>
         <div className="visit-layout">
           <div className="visit-photo">
