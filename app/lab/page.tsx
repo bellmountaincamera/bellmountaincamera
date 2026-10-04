@@ -70,9 +70,9 @@ export default function LabPage() {
 
       <section className="section-band" id="drop-off">
         <div className="section-container">
-          <div className="section-heading"><h2>How to leave film</h2></div>
+          <div className="section-heading"><h2>Film drop-off</h2></div>
           <ol className="dropoff-steps">
-            {labWorkflow.map((item) => <li key={item.step}>{item.text}</li>)}
+            {labWorkflow.map((item) => <li key={item.step}><div><h3>{item.title}</h3><p>{item.text}</p></div></li>)}
           </ol>
         </div>
       </section>

@@ -100,13 +100,13 @@ export const statusBoard = [
 export const labWorkflow = [
   {
     step: "01",
-    title: "Drop off your film",
-    text: "Fill out a shop envelope with your information and film request, then check out with the cashier."
+    title: "Drop off at Wild Goose",
+    text: "Visit Wild Goose Vintage & Thrift in Apple Valley. Fill out a shop envelope with your information and film request, then check out with the cashier."
   },
   {
     step: "02",
     title: "Watch for email updates",
-    text: "BMC emails you when your film is collected, processing begins, and the order is complete. For scans, the final email includes a Dropbox download link."
+    text: "BMC emails you when your film is collected, processing starts, and your order is delivered. All scans are delivered by Dropbox download link."
   }
 ];
 

@@ -11,9 +11,9 @@ export default function Home() {
       <HeroSection />
       <HomeGifCarousel />
       <CameraCutoutSection />
+      <ContactCTA cameraOnly />
       <FilmStripShowcase />
       <VisitSection />
-      <ContactCTA />
     </main>
   );
 }

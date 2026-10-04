@@ -49,15 +49,9 @@ export function FilmStripShowcase() {
         texture.colorSpace = THREE.SRGBColorSpace;
         texture.anisotropy = Math.min(4, renderer?.capabilities.getMaxAnisotropy() ?? 1);
 
-        const image = texture.image as HTMLImageElement;
-        const ratio = image.naturalWidth / image.naturalHeight;
-        const [focusX, focusY] = (frame.focalPoint ?? "50% 50%").split(" ").map((value) => Number.parseFloat(value) / 100);
-        if (ratio > 1.5) {
-          texture.repeat.x = 1.5 / ratio;
-          texture.offset.x = (1 - texture.repeat.x) * focusX;
-        } else if (ratio < 1.5) {
-          texture.repeat.y = ratio / 1.5;
-          texture.offset.y = (1 - texture.repeat.y) * (1 - focusY);
+        if (frame.rotation) {
+          texture.center.set(0.5, 0.5);
+          texture.rotation = Math.PI / 2;
         }
         return texture;
       }));
@@ -96,7 +90,8 @@ export function FilmStripShowcase() {
       const ribbon = new THREE.Group();
       scene.add(ribbon);
       const loopWidth = filmStripFrames.length * frameWidth;
-      const wave = (x: number) => 2 * Math.PI * x / (loopWidth / 2);
+      const waveCycles = Math.max(1, Math.round(filmStripFrames.length / 4.5));
+      const wave = (x: number) => 2 * Math.PI * x / (loopWidth / waveCycles);
 
       function curvedPanel(width: number, height: number, centerX: number, depth: number) {
         const geometry = new THREE.PlaneGeometry(width, height, 24, 1);
@@ -189,12 +184,16 @@ export function FilmStripShowcase() {
           <h2 id="film-showcase-title" className="ocr">Processed by BMC</h2>
         </div>
       </div>
-      <div className="film-ribbon-scene" role="region" aria-label="Nine photographs on a moving 35mm film strip" data-ready={ready}>
+      <div className="film-ribbon-scene" role="region" aria-label={`${filmStripFrames.length} photographs on a moving 35mm film strip`} data-ready={ready}>
         <div className="film-ribbon-canvas" ref={canvasHost} aria-hidden="true" />
         <div className="film-ribbon-static" aria-hidden="true">
           {filmStripFrames.map((frame) => (
             <div className="film-static-frame" key={frame.src}>
-              <div className="film-static-exposure"><Image src={frame.src} alt="" fill unoptimized style={{ objectPosition: frame.focalPoint ?? "50% 50%" }} /></div>
+              <div className="film-static-exposure">
+                <div className={`film-static-photo${frame.rotation ? " film-static-portrait" : ""}`}>
+                  <Image src={frame.src} alt="" fill unoptimized />
+                </div>
+              </div>
             </div>
           ))}
         </div>

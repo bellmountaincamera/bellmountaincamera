@@ -46,7 +46,7 @@ test("other public pages agree with the lab and expose contact directions", asyn
   assert.match(home, /In Apple Valley, California/);
   assert.doesNotMatch(home, /aria-label="Previous photo"|aria-label="Pause slideshow"|aria-label="Photo 1 of 9"/);
   assert.match(home, /Processed by BMC/);
-  assert.equal((home.match(/class="film-static-frame"/g) ?? []).length, 9);
+  assert.equal((home.match(/class="film-static-frame"/g) ?? []).length, 17);
   assert.doesNotMatch(home, /film-ribbon-edge|BMC \/ HIGH DESERT \/ 35MM/);
   assert.doesNotMatch(home, /35mm C-41 and B&amp;W/);
   assert.match(faq, /35mm and 110 C-41 color negative film only/);

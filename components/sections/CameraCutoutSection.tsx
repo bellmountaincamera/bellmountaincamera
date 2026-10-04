@@ -1,7 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
 import type { CSSProperties } from "react";
-import { ArrowUpRight } from "lucide-react";
+import { CameraFloatScene } from "@/components/sections/CameraFloatScene";
 
 const cameras: { name: string; image: string; height?: number }[] = [
   { name: "Canon A-1", image: "/images/camera-cutouts/canon-a1.webp" },
@@ -22,22 +21,21 @@ export function CameraCutoutSection() {
           <h2 id="camera-cutout-title" className="ocr">Cameras at BMC</h2>
           <p className="camera-cutout-intro">Used camera inventory changes regularly.</p>
         </div>
-        <div className="camera-cutout-grid" role="list" aria-label="Cameras at BMC">
-          {cameras.map((camera, index) => (
-            <figure className={`camera-cutout camera-cutout-${index + 1}`} key={camera.name} role="listitem">
-              <div className="camera-cutout-stage" style={{ "--camera-mask": `url("${camera.image}")` } as CSSProperties}>
-                <Image src={camera.image} alt={camera.name} width={900} height={camera.height ?? 600}
-                  sizes="(max-width: 639px) 42vw, (max-width: 1023px) 29vw, 230px" />
-              </div>
-              <figcaption>
-                <strong>{camera.name}</strong>
-              </figcaption>
-            </figure>
-          ))}
-        </div>
-        <div className="camera-cutout-action">
-          <Link href="/contact" className="cta-button cta-secondary">Ask about cameras <ArrowUpRight size={17} /></Link>
-        </div>
+        <CameraFloatScene>
+          <div className="camera-cutout-grid" role="list" aria-label="Cameras at BMC">
+            {cameras.map((camera, index) => (
+              <figure className={`camera-cutout camera-cutout-${index + 1}`} key={camera.name} role="listitem">
+                <div className="camera-cutout-stage" data-camera-src={camera.image} style={{ "--camera-mask": `url("${camera.image}")` } as CSSProperties}>
+                  <Image src={camera.image} alt={camera.name} width={900} height={camera.height ?? 600}
+                    sizes="(max-width: 639px) 42vw, (max-width: 1023px) 29vw, 230px" />
+                </div>
+                <figcaption>
+                  <strong>{camera.name}</strong>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </CameraFloatScene>
       </div>
     </section>
   );
