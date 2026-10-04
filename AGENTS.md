@@ -15,7 +15,7 @@
 - Install dependencies when needed: `npm ci` (Node 24.x).
 - Development: `npm run dev`. Production build: `npm run build`. Production server: `npm run start`.
 - Type-check: `npm run typecheck` (`tsc --noEmit`). A production build also checks TypeScript and generates Next route types.
-- Lint: `npm run lint` exists but currently fails because it invokes `next lint`, removed in Next.js 16. There is no ESLint dependency/configuration. Report this known limitation; do not claim lint passed or repeatedly retry it. Repair lint when requested or required by the change, keeping scope explicit.
+- Lint: `npm run lint` (`eslint .`) uses `eslint.config.mjs` with Next.js Core Web Vitals and TypeScript rules. ESLint 9 matches the React/accessibility plugins' supported peer versions; check their compatibility before upgrading to ESLint 10. Existing warnings remain visible for fonts, an image element, an unused parameter, and the carousel's state-in-effect pattern (warning scoped to `HomeGifCarousel.tsx` to avoid changing playback during lint setup). Do not add broad rule suppressions to hide new problems.
 - No npm test script exists. Use `node --test tests/<relevant-file>.test.mjs`; full suite: `node --test tests/*.test.mjs`.
 - `continuous-gallery.test.mjs` needs installed dependencies; `security-audit.test.mjs` needs a completed production build. `film-lab-content.test.mjs` and `newsletter-embed.test.mjs` require a running site (default `http://127.0.0.1:3102`; override with `BMC_TEST_URL`). Start a local production server with `npm run start -- --hostname 127.0.0.1 --port 3102` before the full suite.
 - Review the diff before publishing. Run targeted checks appropriate to the change; run the production build before publishing production-code changes.

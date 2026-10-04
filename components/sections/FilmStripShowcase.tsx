@@ -21,7 +21,6 @@ export function FilmStripShowcase() {
     let frameRequest = 0;
     let resizeObserver: ResizeObserver | undefined;
     let intersectionObserver: IntersectionObserver | undefined;
-    let loadObserver: IntersectionObserver | undefined;
     const resources: { dispose: () => void }[] = [];
     let renderer: import("three").WebGLRenderer | undefined;
 
@@ -159,7 +158,7 @@ export function FilmStripShowcase() {
       setReady(true);
     }
 
-    loadObserver = new IntersectionObserver(([entry]) => {
+    const loadObserver = new IntersectionObserver(([entry]) => {
       if (!entry.isIntersecting) return;
       loadObserver?.disconnect();
       void mount().catch(() => { if (!disposed) setReady(false); });
