@@ -28,7 +28,7 @@ export const site = {
 };
 
 // Flip this off when the page/section editing pass is finished.
-export const showEditorSectionLabels = true;
+export const showEditorSectionLabels = false;
 
 export const businessInfo = {
   name: site.name,
