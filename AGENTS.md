@@ -2,6 +2,7 @@
 
 ## Project
 - Preserve the existing architecture, accessibility, functionality, and responsive mobile/desktop layouts. Make no unrelated visual or architectural changes.
+- SEO work must preserve the site's appearance and visible copy unless the user explicitly requests a visual/content change. Canonical origin is `https://www.bellmountaincamera.com` (apex redirects there); metadata helpers live in `lib/seo.ts`, business/service schema in `lib/structured-data.ts`.
 - Stack: Next.js 16 App Router, React 19, TypeScript (strict), Tailwind CSS 4; npm with `package-lock.json`. Vercel uses Node 24.x.
 - Routes: `app/`; shared UI: `components/`; content/helpers: `lib/`; assets: `public/`; operational notes: `docs/`; tests: `tests/*.test.mjs`.
 - Keep Shopify credentials server-only in `lib/shopify.ts`; never commit secrets or environment files.
@@ -17,7 +18,7 @@
 - Type-check: `npm run typecheck` (`tsc --noEmit`). A production build also checks TypeScript and generates Next route types.
 - Lint: `npm run lint` (`eslint .`) uses `eslint.config.mjs` with Next.js Core Web Vitals and TypeScript rules. ESLint 9 matches the React/accessibility plugins' supported peer versions; check their compatibility before upgrading to ESLint 10. Existing warnings remain visible for fonts, an image element, an unused parameter, and the carousel's state-in-effect pattern (warning scoped to `HomeGifCarousel.tsx` to avoid changing playback during lint setup). Do not add broad rule suppressions to hide new problems.
 - No npm test script exists. Use `node --test tests/<relevant-file>.test.mjs`; full suite: `node --test tests/*.test.mjs`.
-- `continuous-gallery.test.mjs` needs installed dependencies; `security-audit.test.mjs` needs a completed production build. `film-lab-content.test.mjs` and `newsletter-embed.test.mjs` require a running site (default `http://127.0.0.1:3102`; override with `BMC_TEST_URL`). Start a local production server with `npm run start -- --hostname 127.0.0.1 --port 3102` before the full suite.
+- `continuous-gallery.test.mjs` needs installed dependencies; `security-audit.test.mjs` needs a completed production build. `film-lab-content.test.mjs`, `newsletter-embed.test.mjs`, and `seo.test.mjs` require a running site (default `http://127.0.0.1:3102`; override with `BMC_TEST_URL`). Start a local production server with `npm run start -- --hostname 127.0.0.1 --port 3102` before the full suite.
 - Review the diff before publishing. Run targeted checks appropriate to the change; run the production build before publishing production-code changes.
 - For changes affecting TypeScript, linting, routing, forms, dependencies, configuration, or shared components, run the relevant checks and test affected behavior. Check mobile/desktop and accessibility for UI changes.
 - Fix errors introduced by the requested change before publishing. Never knowingly publish a broken build. Record pre-existing failures accurately without unrelated fixes.

@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
-import { site } from "@/lib/site";
+import { siteUrl } from "@/lib/seo";
 
-import { products } from "@/lib/products";
+import { isIndexableProduct, products } from "@/lib/products";
 
 const routes = [
   "",
@@ -9,9 +9,6 @@ const routes = [
   "/shop",
   "/shop/film",
   "/shop/cameras",
-  "/cart",
-  "/checkout",
-  "/order-confirmation",
   "/services",
   "/about",
   "/contact",
@@ -28,16 +25,10 @@ const routes = [
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...routes.map((route) => ({
-      url: `https://${site.domain}${route}`,
-      lastModified: new Date(),
-      changeFrequency: "monthly" as const,
-      priority: route === "" ? 1 : 0.8
+      url: `${siteUrl}${route}`
     })),
-    ...products.map((product) => ({
-      url: `https://${site.domain}/shop/${product.slug}`,
-      lastModified: new Date(),
-      changeFrequency: "weekly" as const,
-      priority: 0.7
+    ...products.filter(isIndexableProduct).map((product) => ({
+      url: `${siteUrl}/shop/${product.slug}`
     }))
   ];
 }

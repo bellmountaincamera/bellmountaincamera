@@ -395,6 +395,11 @@ const mockProducts: ProductSeed[] = [
 
 export const products: Product[] = mockProducts.map(withMockCommerceFields);
 
+// The generic intake record is not a specific product available for discovery.
+export function isIndexableProduct(product: Product) {
+  return product.slug !== "used-35mm-camera-intake";
+}
+
 export function formatPrice(price: number) {
   if (price === 0) {
     return "Price listed per item";

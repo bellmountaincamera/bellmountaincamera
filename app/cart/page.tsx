@@ -1,14 +1,16 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { TerminalLabel } from "@/components/ui/TerminalLabel";
 import { formatPrice, products } from "@/lib/products";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Cart",
   description:
-    "Shop cart information for Bell Mountain Camera."
-};
+    "Shop cart information for Bell Mountain Camera.",
+  path: "/cart",
+  noIndex: true
+});
 
 const cartItems = products.slice(0, 2);
 const subtotal = cartItems.reduce((sum, item) => sum + item.price, 0);

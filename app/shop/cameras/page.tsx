@@ -1,10 +1,15 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { PagePhotoSlideshow } from "@/components/sections/PagePhotoSlideshow";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { cameraRecords } from "@/lib/photo-sets";
 
-export const metadata: Metadata = { title: "Shop Cameras", description: "Used film cameras at Bell Mountain Camera in Apple Valley." };
+export const metadata = createPageMetadata({
+  title: "Used Film Cameras in Apple Valley",
+  description:
+    "Browse used film cameras and basic specifications at Bell Mountain Camera in Apple Valley. Contact the shop for current availability and local pickup.",
+  path: "/shop/cameras"
+});
 
 export default function ShopCamerasPage() {
   return (

@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 import { TerminalDivider } from "@/components/brand/TerminalDivider";
 import { ShopBrowser } from "@/components/shop/ShopBrowser";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { getFilmProducts } from "@/lib/products";
 
-export const metadata: Metadata = {
-  title: "Shop Film",
+export const metadata = createPageMetadata({
+  title: "35mm, 110 & Instant Film in Apple Valley",
   description:
-    "Shop 35mm, Kodak, specialty, 110, and instant film from Bell Mountain Camera."
-};
+    "Explore 35mm, 110, instant, and specialty film at Bell Mountain Camera in Apple Valley. Contact the shop for current availability and local pickup.",
+  path: "/shop/film"
+});
 
 export default function ShopFilmPage() {
   const film = getFilmProducts();

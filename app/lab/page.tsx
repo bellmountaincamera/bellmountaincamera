@@ -1,4 +1,6 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
+import { StructuredData } from "@/components/seo/StructuredData";
+import { labStructuredData } from "@/lib/structured-data";
 import Image from "next/image";
 import { ContinuousPhotoCarousel } from "@/components/ui/ContinuousPhotoCarousel";
 import { ContactCTA } from "@/components/sections/ContactCTA";
@@ -7,10 +9,12 @@ import { MetadataLine } from "@/components/ui/MetadataLine";
 import { TerminalLabel } from "@/components/ui/TerminalLabel";
 import { filmLabDisclaimer, filmLabPricing, labInfo, labWorkflow } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Film Lab",
-  description: "C-41 color negative film development and scanning for 35mm and 110 in Apple Valley, CA. View per-roll prices and slide scanning."
-};
+export const metadata = createPageMetadata({
+  title: "35mm & 110 Film Developing in Apple Valley",
+  description:
+    "C-41 film developing and scanning for 35mm and 110 in Apple Valley. See per-roll prices, slide scanning, drop-off instructions, and digital scan delivery.",
+  path: "/lab"
+});
 
 const faqs = [
   ["What film can I drop off?", "BMC processes 35mm and 110 C-41 color negative film."],
@@ -28,6 +32,7 @@ const samples = [
 export default function LabPage() {
   return (
     <main className="lab-type">
+      <StructuredData data={labStructuredData} />
       <PageHeader label="Film Lab" title="Film Lab"
         meta={[]} hideIntro textOnly />
 

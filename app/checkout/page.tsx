@@ -1,15 +1,17 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { EmailDraftForm } from "@/components/ui/EmailDraftForm";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { TerminalLabel } from "@/components/ui/TerminalLabel";
 import { site } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Checkout",
   description:
-    "Checkout information for Bell Mountain Camera local pickup."
-};
+    "Checkout information for Bell Mountain Camera local pickup.",
+  path: "/checkout",
+  noIndex: true
+});
 
 export default function CheckoutPage() {
   return (

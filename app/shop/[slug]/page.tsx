@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import { existsSync } from "node:fs";
+import path from "node:path";
+import { createPageMetadata } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import { TerminalDivider } from "@/components/brand/TerminalDivider";
 import { CTAButton } from "@/components/ui/CTAButton";
@@ -12,6 +15,7 @@ import {
   getInventoryStatus,
   getProduct,
   getProductImages,
+  isIndexableProduct,
   products
 } from "@/lib/products";
 import { site } from "@/lib/site";
@@ -35,15 +39,20 @@ export async function generateMetadata({
   const product = getProduct(slug);
 
   if (!product) {
-    return {
-      title: "Product Not Found"
-    };
+    notFound();
   }
 
-  return {
+  const image = getProductImages(product).find((src) =>
+    src.startsWith("/images/") && existsSync(path.join(process.cwd(), "public", src))
+  );
+
+  return createPageMetadata({
     title: product.name,
-    description: product.description
-  };
+    description: `${product.name}: ${product.description} Contact Bell Mountain Camera in Apple Valley for current availability and local pickup.`,
+    path: `/shop/${product.slug}`,
+    noIndex: !isIndexableProduct(product),
+    ...(image ? { image: { url: image, alt: product.name } } : {})
+  });
 }
 
 export default async function ProductPage({ params }: ProductPageProps) {

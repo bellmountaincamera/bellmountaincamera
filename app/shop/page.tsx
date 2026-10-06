@@ -1,11 +1,16 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { TerminalLabel } from "@/components/ui/TerminalLabel";
 
-export const metadata: Metadata = { title: "Shop", description: "Film, used cameras, and shop inventory from Bell Mountain Camera. Local pickup only." };
+export const metadata = createPageMetadata({
+  title: "Film & Used Cameras in Apple Valley",
+  description:
+    "Explore film and used cameras at Bell Mountain Camera in Apple Valley. Contact the shop for current availability and local pickup.",
+  path: "/shop"
+});
 
 const cameras = [
   { title: "SLRs", href: "/shop/cameras" }, { title: "Camcorders", href: "/shop/cameras" },

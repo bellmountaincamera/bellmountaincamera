@@ -1,18 +1,23 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
+import { StructuredData } from "@/components/seo/StructuredData";
+import { cameraServiceStructuredData } from "@/lib/structured-data";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { EmailDraftForm } from "@/components/ui/EmailDraftForm";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { TerminalLabel } from "@/components/ui/TerminalLabel";
 import { cameraServiceMenu, serviceBundles, serviceDisclaimer } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Camera Services",
-  description: "Diagnostics, cleaning, light seal replacement, and basic function checks for film cameras at Bell Mountain Camera."
-};
+export const metadata = createPageMetadata({
+  title: "Film Camera Service in Apple Valley",
+  description:
+    "Basic film camera diagnosis, cleaning, light seal replacement, and shutter adjustment when possible at Bell Mountain Camera in Apple Valley. View service prices.",
+  path: "/services"
+});
 
 export default function ServicesPage() {
   return (
     <main>
+      <StructuredData data={cameraServiceStructuredData} />
       <PageHeader label="Service Bench" title="Services" description="Basic service for film cameras."
         meta={["Walk-ins welcome", "Appointments available"]} textOnly />
       <section className="section-band">

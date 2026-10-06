@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { TerminalLabel } from "@/components/ui/TerminalLabel";
 import { businessInfo, policyCopy } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Policies",
   description:
-    "Bell Mountain Camera store, pickup, returns, lab, service, privacy, and terms policies."
-};
+    "Bell Mountain Camera store, local pickup, returns, film lab, camera service, privacy, and terms policies.",
+  path: "/policies"
+});
 
 const policyLinks = [
   ["/shipping", "No Shipping"],

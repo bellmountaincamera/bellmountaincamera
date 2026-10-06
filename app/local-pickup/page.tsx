@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { TerminalLabel } from "@/components/ui/TerminalLabel";
 import { site } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Local Pickup Policy",
+export const metadata = createPageMetadata({
+  title: "Local Pickup in Apple Valley",
   description:
-    "Local pickup policy and pickup location for Bell Mountain Camera."
-};
+    "Arrange local pickup at Bell Mountain Camera inside Wild Goose Vintage & Thrift in Apple Valley. View pickup hours, location, and shop policy.",
+  path: "/local-pickup"
+});
 
 export default function LocalPickupPage() {
   return (

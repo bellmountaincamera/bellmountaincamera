@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { TerminalLabel } from "@/components/ui/TerminalLabel";
 import { businessInfo, policyCopy } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "No Shipping",
+export const metadata = createPageMetadata({
+  title: "No Shipping & Local Pickup",
   description:
-    "Shipping and local pickup information for Bell Mountain Camera."
-};
+    "Bell Mountain Camera offers local pickup in Apple Valley. Read the current no-shipping policy and find pickup information.",
+  path: "/shipping"
+});
 
 export default function ShippingPage() {
   return (

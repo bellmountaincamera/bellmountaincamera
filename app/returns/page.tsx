@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { PolicyDocument } from "@/components/ui/PolicyDocument";
 import { returnSections } from "@/lib/policies";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Returns and Refunds",
   description:
-    "Returns policy for Bell Mountain Camera film, used cameras, equipment, and lab services."
-};
+    "Returns policy for Bell Mountain Camera film, used cameras, equipment, and lab services.",
+  path: "/returns"
+});
 
 export default function ReturnsPage() {
   return (

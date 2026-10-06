@@ -1,13 +1,15 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { TerminalLabel } from "@/components/ui/TerminalLabel";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Order Confirmation",
   description:
-    "Order confirmation information for Bell Mountain Camera."
-};
+    "Order confirmation information for Bell Mountain Camera.",
+  path: "/order-confirmation",
+  noIndex: true
+});
 
 export default function OrderConfirmationPage() {
   return (

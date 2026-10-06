@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 import { ContactCTA } from "@/components/sections/ContactCTA";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { TerminalLabel } from "@/components/ui/TerminalLabel";
 import { site } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "About",
+export const metadata = createPageMetadata({
+  title: "About Our High Desert Film & Camera Shop",
   description:
-    "Bell Mountain Camera is a film lab and used camera shop in Apple Valley, CA."
-};
+    "Meet Bell Mountain Camera, a local film lab and used camera shop inside Wild Goose Vintage & Thrift in Apple Valley, California.",
+  path: "/about"
+});
 
 export default function AboutPage() {
   return (

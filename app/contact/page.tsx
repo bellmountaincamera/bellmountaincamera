@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 import { appleMapsUrl, site } from "@/lib/site";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { EmailDraftForm } from "@/components/ui/EmailDraftForm";
@@ -6,10 +6,12 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { TerminalLabel } from "@/components/ui/TerminalLabel";
 import { LocationMap } from "@/components/ui/LocationMap";
 
-export const metadata: Metadata = {
-  title: "Contact",
-  description: "Visit Bell Mountain Camera in Apple Valley for film development, used cameras, and camera service."
-};
+export const metadata = createPageMetadata({
+  title: "Visit Our Apple Valley Film & Camera Shop",
+  description:
+    "Find Bell Mountain Camera at 21810 CA-18, Unit #2, inside Wild Goose Vintage & Thrift in Apple Valley. View shop hours, directions, and contact details.",
+  path: "/contact"
+});
 
 export default function ContactPage() {
   return (

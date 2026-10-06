@@ -1,12 +1,14 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
+import { StructuredData } from "@/components/seo/StructuredData";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { labInfo } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "FAQ",
+export const metadata = createPageMetadata({
+  title: "Film Developing & Camera Shop FAQ",
   description:
-    "Frequently asked questions about Bell Mountain Camera film lab, shop, pickup, and camera service."
-};
+    "Answers about C-41 film developing, scans, used cameras, basic camera service, and local pickup at Bell Mountain Camera in Apple Valley.",
+  path: "/faq"
+});
 
 const faqGroups = [
   {
@@ -82,6 +84,15 @@ const faqGroups = [
 export default function FAQPage() {
   return (
     <main>
+      <StructuredData data={{
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faqGroups.flatMap((group) => group.questions.map(([question, answer]) => ({
+          "@type": "Question",
+          name: question,
+          acceptedAnswer: { "@type": "Answer", text: answer }
+        })))
+      }} />
       <PageHeader
         label="Customer FAQ"
         title="FAQ"

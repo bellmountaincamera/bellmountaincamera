@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { PolicyDocument } from "@/components/ui/PolicyDocument";
 import { privacySections } from "@/lib/policies";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Privacy Policy",
   description:
-    "Privacy policy for Bell Mountain Camera customer messages, film orders, and service requests."
-};
+    "Privacy policy for Bell Mountain Camera customer messages, film orders, and service requests.",
+  path: "/privacy"
+});
 
 export default function PrivacyPage() {
   return (

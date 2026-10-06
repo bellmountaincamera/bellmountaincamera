@@ -5,49 +5,32 @@ import { Header } from "@/components/layout/Header";
 import { FilmStripMotion } from "@/components/layout/FilmStripMotion";
 import { EditorSectionLabels } from "@/components/layout/EditorSectionLabels";
 import { site } from "@/lib/site";
+import { siteUrl, defaultSocialImage } from "@/lib/seo";
+import { businessStructuredData } from "@/lib/structured-data";
+import { StructuredData } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://bellmountaincamera.com"),
+  metadataBase: new URL(siteUrl),
   title: {
-    default: "Bell Mountain Camera | High Desert Film Lab and Camera Shop",
+    default: "Bell Mountain Camera | Film Developing in Apple Valley",
     template: "%s | Bell Mountain Camera"
   },
   description: site.description,
-  keywords: [
-    "Bell Mountain Camera",
-    "Bell Mountain Camera Apple Valley",
-    "film camera shop Apple Valley",
-    "film development Apple Valley",
-    "35mm film Apple Valley",
-    "High Desert film lab",
-    "film scanning Apple Valley",
-    "film camera repair Apple Valley",
-    "light seal replacement Apple Valley",
-    "camera service Apple Valley",
-    "used film cameras Apple Valley",
-    "film stock Apple Valley",
-    "C-41 film development High Desert",
-    "Victorville film development",
-    "Hesperia film development",
-    "Apple Valley film lab",
-    "local camera shop Apple Valley",
-    "used camera pickup Apple Valley"
-  ],
+  applicationName: site.name,
+  icons: { icon: "/images/bmc-circle-logo.png", apple: "/images/bmc-circle-logo.png" },
   openGraph: {
-    title: "Bell Mountain Camera",
-    description: "Film lab, used cameras, and camera service in Apple Valley.",
-    url: "https://bellmountaincamera.com",
-    siteName: "Bell Mountain Camera",
-    images: [
-      {
-        url: "/images/home-camera-counter.jpg",
-        width: 1280,
-        height: 853,
-        alt: "Hands holding a Nikon Nikkormat film camera over a counter of used cameras"
-      }
-    ],
+    title: site.name,
+    description: site.description,
+    siteName: site.name,
+    images: [defaultSocialImage],
     locale: "en_US",
     type: "website"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: site.name,
+    description: site.description,
+    images: [defaultSocialImage]
   }
 };
 
@@ -56,41 +39,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const localBusinessJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    name: site.name,
-    url: `https://${site.domain}`,
-    email: site.email,
-    description: site.description,
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: site.street,
-      addressLocality: "Apple Valley",
-      addressRegion: "CA",
-      postalCode: "92307",
-      addressCountry: "US"
-    },
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-        opens: "10:00",
-        closes: "16:00"
-      }
-    ],
-    areaServed: ["Apple Valley", "Victorville", "Hesperia", "High Desert"],
-    makesOffer: [
-      "Film development",
-      "Film scanning",
-      "Film stock",
-      "Local pickup",
-      "Used film cameras",
-      "Light seal replacement",
-      "Camera service"
-    ]
-  };
-
   return (
     <html lang="en" data-scroll-behavior="smooth">
       <head>
@@ -100,12 +48,7 @@ export default function RootLayout({
       </head>
       <body>
         <FilmStripMotion />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(localBusinessJsonLd)
-          }}
-        />
+        <StructuredData data={businessStructuredData} />
         <Header />
         <div id="main-content" tabIndex={-1}>{children}</div>
         <Footer />
